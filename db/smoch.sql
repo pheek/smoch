@@ -32,36 +32,52 @@ INSERT INTO `tbl_objekt``
 ('cd'            , 'CD - ROM'      ,     '1979'        , 'Philipp Gressly Freimann', 'Die Geschichte der CD-ROM'          );
 
 
-CREATE TABLE `tbl_reihenfolge` (
- `IDurl`      varchar(200) NOT NULL PRIMARY KEY
-,`vorgaenger` varchar(200)
-,`nachfolger` varchar(200)
-, FOREIGN KEY (`IDurl`     ) REFERENCES `tbl_exponat` (`IDurl`)
-, FOREIGN KEY (`vorgaenger`) REFERENCES `tbl_exponat` (`IDurl`)
-, FOREIGN KEY (`nachfolger`) REFERENCES `tbl_exponat` (`IDurl`)
+CREATE TABLE `tbl_kategorie` (
+  `ID` int PRIMARY KEY
+, `titel` text
+, `beschreibung` text
 );
 
+INSERT INTO `tbl_kategorie`
+(`ID`, `titel`        , `beschreibung`                       )   VALUES
+( 1  , 'Rechnen'      , 'Berechnungen aller Art'             ),
+( 2  , 'Speichern'    , 'Speichern von Materialien und Daten'),
+( 3  , 'Kommunizieren', 'Wie menschen Information übertragen');
+
+
+
+CREATE TABLE `tbl_reihenfolge` (
+ `IDurl`         varchar(200) NOT NULL PRIMARY KEY
+,`kategorie_fk`  int
+,`ordinal`       int
+, FOREIGN KEY (`IDurl`       ) REFERENCES `tbl_exponat` (`IDurl`)
+, FOREIGN KEY (`kategorie_fk`) REFERENCES `tbl_kategorie` (`ID`)
+);
+
+
+
+
 INSERT INTO `tbl_reihenfolge`
-(`IDurl`         , `vorgaenger`    , `nachfolger`    ) VALUES
-('abakus'        ,  null           , 'rechenschieber'),
-('rechenschieber', 'abakus'        , 'pascaline'     ),
-('pascaline'     , 'rechenschieber',  null           ),
+(`IDurl`         , `kategorie_fk`, `ordinal`) VALUES
+('abakus'        ,   1           ,   1      ),
+('rechenschieber',   1           ,   2      ),
+('pascaline'     ,   1           ,   3      ),
 
-('amphore'       ,  null           , 'kernspeicher'  ),
-('kernspeicher'  , 'amphore'       , 'cd'            ),
-('cd'            , 'kernspeicher'  ,  null           );
-
+('amphore'       ,   2           ,   1      ),
+('kernspeicher'  ,   2           ,   2      ),
+('cd'            ,   2           ,   3      );
 
 
 CREATE TABLE `tbl_image` (
   `ID`           int PRIMARY KEY AUTO_INCREMENT
 , `IDurl_fk`     varchar(200)
-, `laufnummer`   int              COMMENT 'Das vievielte Bild zum Exopnat?'
+, `ordinal`      int              COMMENT 'Das vievielte Bild zum Exopnat?'
 , `filename`     varchar(200)     COMMENT 'Jahr des ältesten Ausstellungsobjekts'
 , `bildlegende`  text             COMMENT 'Auch als "title" zu verwenden beim <img>-Tag.'
 , `alt_text`     text
 , FOREIGN KEY (`IDurl_fk`) REFERENCES `tbl_objekt` (`IDurl`)
 );
+
 
 INSERT INTO `tbl_image`
 (`IDurl_fk`      , `filename`          , `bildlegende`                   , `alt_text`                  ) VALUES
@@ -100,7 +116,6 @@ CREATE TABLE `tbl_keyword` (
 , FOREIGN KEY (`IDurl_fk`  ) REFERENCES `tbl_objekt` (`IDurl`)
 , FOREIGN KEY (`keyword_fk`) REFERENCES `tbl_keyword` (`ID`);
 );
-
 
 
 INSERT INTO `tbl_keyword`

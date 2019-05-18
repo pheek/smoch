@@ -1,0 +1,51 @@
+Deutsches Museum (München) schreibt 2018 folgenden Text zum Z4:
+
+Relais Rechenanlage mit mechanischem Speicher
+Z4 von Konrda Zuse (Unikat)
+Berlid, 1942 - 1945
+
+Stifter: Zuse KG, Bad Hersfeld
+Inv. Nr.: 74692
+
+Die Anlage (ursprünglich V4 genannt) wurde
+aufgrund der guten Erfahrungen mit der Z3 um
+1942 begonnen und war 1945 fertiggestellt; sie
+wurde im März 1945 zum ersten Mal einem Kreis
+von Wissenschaftlern in Göttingen vorgeführt.
+Sie konnte aus Berlin gerettet werden und wurde
+1946 provisorisch in Hopferau im Allgäu
+aufgestellt. Von 1950 bis 1955 war sie an die
+Eidgenössische Technische Hochschule (EHT)
+Zürich vermitete (die Miete betrug für die 5 Jahre
+30 000 Franken) und wurde anschließend an
+das Laboratoire de Recherches Techniques d
+Saint-Louis in Weil am Rhein verkauft, und
+1959 von der ZUSE KG, Bad Hersfeld, zurück-
+gekauft. 1960 wurde sie dem Deutschen Museum überlassen.
+
+Binäre GLeitpunktzalhne mit 23 Bit für Mantisse,
+6 Bit für den Exponenten (+1 Bit für das Vor-
+zeichen des Exponenten); Wortlänge also 32 Bit.
+Zwei simultan arbeitende Rechenwerke für
+Mantisse bzw. Exponent; Addition parallel.
+Nebe den vier arithmetischen Grundrechen-
+arten sind unter anderem Quadrieren und
+Wurzelziehen realisiert, sowie Multiplikationen
+mit gewissen Konstanten.
+Hauptspeicher mechanich, für 64 Worte
+(ausbaufähig bis 500).
+Daten- und Programm-Eingabe über Bedienfeld
+und/oder Filmstreifenabtaster;
+starres Programm, maximal 2 Schleifen.
+Verbesserung 1950: Überspringen von Befehlen.
+Arbeitsgeschwindigkeit:
+im Schnitt 30 Operationen pro Minute.
+Addition: ½ sec., Multiplikation: 3½ sec.
+Für den späteren Ausbau vorgesehen, aber nicht
+mehr realisiert waren u. a.: Erhöhung der Zahl
+der Programmabtaster von 2 auf maximal 6;
+Ausgabe über maximal 2 Lochstreifenlocher;
+bedingte Programmsprünge; Indexregister zur
+Adreßumrechnung.
+
+

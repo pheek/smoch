@@ -1,0 +1,27 @@
+Museumstext 2018 Deutsches Museum schreibt zur Zuse Z3:
+=======================================================
+
+<b>Z3: Erster funktionsfähiger
+programmgesteuerter Rechenautomat</b>
+
+Zuses «Bedingungskombinatorik» und die «abstarkte Schaltgliedtechnik»
+erlauten den unmittelbaren Nachbau des mechanischen Gerätes Z1
+als Relais-Rechenmaschine.
+Zuse folgte dabei dem Rat seines Freundes Schreyer.
+Er baute ab 1938 ein Rechnewerk, später Z3 genannt, in Relaistechnik.
+Zuse machte mit diesem Versuchsgerät wertvolle Erfahrungen.
+
+Mitte 1940 begann Zuse mit dem Bau der Z3.
+Sie war im Mai 1941 funktionsfähig.
+Das Rechenwerk war elektromechanisch mit 600 Relais,
+der Speicher aus 1400 Relais aufgebaut.
+
+Die Z3 kostete rund 25 000 RM.
+Sie wurde 1943 bei einem Luftangriff beschädigt und 1944 zerstört.
+
+Die Z3 von 1941 ist der erste voll funktionsfähige,
+frei programmierbare, programmgesteuerte binäre Rechenautomat.
+Der Programmablauf erfolgte in <i>einer</i> Schleife.
+
+
+
