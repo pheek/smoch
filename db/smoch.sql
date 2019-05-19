@@ -244,8 +244,13 @@ SELECT `tbl_erfindung`.`IDurl`    AS `core`
 ,			 `tbl_autor`    .`name`     AS `Autor`
 ,      `vw_reihenfolge`.`vor`     AS `vorgaenger`
 ,      `vw_reihenfolge`.`nach`    AS `nachfolger`
+,      `tbl_kategorie`.`titel`    AS `Kategorie`
+,      `tbl_kategorie`.`ID`       AS `KategorieID`
 FROM `tbl_erfindung`
-LEFT       JOIN `tbl_editor`     ON `tbl_editor`   .`IDurl_fk` = `tbl_erfindung`.`IDurl`
-LEFT       JOIN `tbl_autor`      ON `tbl_autor`    .`ID`       = `tbl_editor`   .`autor_fk`
-LEFT OUTER JOIN `vw_reihenfolge` ON `tbl_erfindung`.`IDurl`    = `vw_reihenfolge`.`core`;
+LEFT       JOIN `tbl_editor`      ON `tbl_editor`     .`IDurl_fk`     = `tbl_erfindung`.`IDurl`
+LEFT       JOIN `tbl_autor`       ON `tbl_autor`      .`ID`           = `tbl_editor`   .`autor_fk`
+LEFT OUTER JOIN `vw_reihenfolge`  ON `tbl_erfindung`  .`IDurl`        = `vw_reihenfolge`.`core`
+           JOIN `tbl_reihenfolge` ON `tbl_reihenfolge`.`IDurl`        = `tbl_erfindung`.`IDurl`
+           JOIN `tbl_kategorie`   ON `tbl_reihenfolge`.`kategorie_fk` = `tbl_kategorie`.`ID`;
+
 
