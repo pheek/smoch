@@ -65,23 +65,26 @@ INSERT INTO `tbl_erfindung`
 CREATE TABLE `tbl_reihenfolge` (
  `IDurl`         varchar(200) NOT NULL PRIMARY KEY
 ,`kategorie_fk`  int
-,`ordinal`       int
+,`ord`       int
 , FOREIGN KEY (`IDurl`       ) REFERENCES `tbl_erfindung` (`IDurl`)
 , FOREIGN KEY (`kategorie_fk`) REFERENCES `tbl_kategorie` (`ID`   )
 );
 
 INSERT INTO `tbl_reihenfolge`
-(`IDurl`         , `kategorie_fk`, `ordinal`) VALUES
+(`IDurl`         , `kategorie_fk`, `ord`    ) VALUES
+-- rechnen
 ('abakus'        ,   1           ,   1      ),
 ('rechenschieber',   1           ,   2      ),
 ('pascaline'     ,   1           ,   3      ),
 ('computer'      ,   1           ,   4      ),
 ('smartphone'    ,   1           ,   5      ),
 
+-- speichern
 ('amphore'       ,   2           ,   1      ),
 ('diskette'      ,   2           ,   2      ),
 ('cd'            ,   2           ,   3      ),
 
+-- kommunizieren
 ('keilschrift'   ,   3           ,   1      ),
 ('morsegeraet'   ,   3           ,   2      );
 
@@ -143,15 +146,13 @@ INSERT INTO `tbl_image`
 ( 16 , 'notRelaisNachbau_schema.png'    , 'Schema, für das NOT-Gatter mit Relais', 'phi@smoch.ch', 'Schema (elektronisch), für ein NOT-Gatter mittels Relais'),
 ( 17 , 'notTransistorNachbau_schema.png', 'Schema, um ein NOT-Gatter mit Transistoren zu bauen', 'phi@smoch.ch', 'Schema (elektronisch), um ein NOT-Gatter mittels Tranistoren zu bauen.'),
 ( 18 , 'volladdiererNachbau_schema.png', 'Schema, um einen Volladdierer zu bauen', 'phi@smoch.ch', 'Schema, um einen Volladdierer zu bauen.'),
-( 19 , 'wafer.png'                     , 'Wafer'                           , 'phi@smoch.ch', 'Waferplatte'               ),
+( 19 , 'wafer.png'                     , 'Wafer'                           , 'phi@smoch.ch', 'Waferplatte'                ),
 ( 20 , 'wafer_mikroskop.jpg'           , 'Wafer Mikroskopausschnitt'       , 'phi@smoch.ch', 'Mikroskopier eines Wafers (Ausschnitt)' ),
-( 21 , 'zahlenschieber.png'            , 'Zahlenschieber Addimult'         , 'phi@smoch.ch', 'Zahlenschieber Addimult'),
-( 22 , 'zuse_z3_a.jpg'                 , 'Zuse Z3 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z3'                ),
-( 23 , 'zuse_z3_b.jpg'                 , 'Zuse Z3 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z3'                ),
-( 24 , 'zuse_z4.jpg'                   , 'Zuse Z4 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z4'                ),
-( 25 , 'zuse_z4_eingabetastatur.jpg'   , 'Zuse Z4 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z4'                ),
-
-
+( 21 , 'zahlenschieber.png'            , 'Zahlenschieber Addimult'         , 'phi@smoch.ch', 'Zahlenschieber Addimult'    ),
+( 22 , 'zuse_z3_a.jpg'                 , 'Zuse Z3 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z3'                    ),
+( 23 , 'zuse_z3_b.jpg'                 , 'Zuse Z3 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z3'                    ),
+( 24 , 'zuse_z4.jpg'                   , 'Zuse Z4 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z4'                    ),
+( 25 , 'zuse_z4_eingabetastatur.jpg'   , 'Zuse Z4 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z4'                    );
 
 
 
@@ -216,20 +217,21 @@ INSERT INTO `tbl_exponatbild`
 CREATE TABLE `tbl_erfindungsexponat` (
   `IDurl_fk`    varchar(200)
 , `exponat_fk`  int
+, `ord`         int  -- Reihenfolge
 , FOREIGN KEY (`IDurl_fk`  ) REFERENCES `tbl_erfindung` (`IDurl`)
 , FOREIGN KEY (`exponat_fk`) REFERENCES `tbl_exponat`   (`ID`   )
 );
 
 INSERT INTO `tbl_erfindungsexponat`
-(`IDurl_fk`      , `exponat_fk`) VALUES
-('abakus'        ,  1          ),
-('rechenschieber',  2          ),
-('smartphone'    ,  3          ),
-('amphore'       ,  4          ),
-('amphore'       ,  5          ),
-('diskette'      ,  6          ),
-('cd'            ,  7          ),
-('keilschrift'   ,  8          );
+(`IDurl_fk`      , `exponat_fk` , `ord`) VALUES
+('abakus'        ,  1           ,  1   ),
+('rechenschieber',  2           ,  1   ),
+('smartphone'    ,  3           ,  1   ),
+('amphore'       ,  4           ,  1   ),
+('amphore'       ,  5           ,  2   ),
+('diskette'      ,  6           ,  1   ),
+('cd'            ,  7           ,  1   ),
+('keilschrift'   ,  8           ,  1   );
 
 
 
@@ -340,7 +342,7 @@ SELECT `tbl_1`.`IDurl` AS `core`,
 FROM `tbl_reihenfolge` AS `tbl_1`
 LEFT JOIN `tbl_reihenfolge` AS `tbl_2`
 ON (`tbl_1`.`kategorie_fk` = `tbl_2`.`kategorie_fk`) AND
-   (`tbl_1`.`ordinal`      = `tbl_2`.`ordinal` - 1 );
+   (`tbl_1`.`ord`      = `tbl_2`.`ord` - 1 );
 
 CREATE VIEW `tmp_vw_vorgaenger` AS
 SELECT `tbl_1`.`IDurl` AS `core`
@@ -348,7 +350,7 @@ SELECT `tbl_1`.`IDurl` AS `core`
 FROM `tbl_reihenfolge` AS `tbl_1`
 LEFT JOIN `tbl_reihenfolge` AS `tbl_2`
 ON (`tbl_1`.`kategorie_fk` = `tbl_2`.`kategorie_fk`) AND
-   (`tbl_1`.`ordinal`      = `tbl_2`.`ordinal` + 1 );
+   (`tbl_1`.`ord`      = `tbl_2`.`ord` + 1 );
 
 CREATE VIEW `tmp_vw_reihenfolge` AS
 SELECT `core_vorgaenger`            AS `vor`
