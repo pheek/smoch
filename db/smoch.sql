@@ -16,6 +16,23 @@ GRANT SELECT ON smoch.* TO smoch@'%' IDENTIFIED BY '123';
 -- --------------------------------------------------------------
 -- tables
 -- --------------------------------------------------------------
+
+-- --------------------------------------------------------------
+CREATE TABLE `tbl_kategorie` (
+  `ID` int PRIMARY KEY
+, `titel` text
+, `beschreibung` text
+);
+
+INSERT INTO `tbl_kategorie`
+(`ID`, `titel`        , `beschreibung`                       )   VALUES
+( 1  , 'Rechnen'      , 'Berechnungen aller Art'             ),
+( 2  , 'Speichern'    , 'Speichern von Materialien und Daten'),
+( 3  , 'Kommunizieren', 'Wie menschen Information übertragen');
+
+-- -----------------------------------------------------------
+-- Erfindungen
+--
 CREATE TABLE `tbl_erfindung` (
   `IDurl`         varchar(200) NOT NULL PRIMARY KEY
                                         COMMENT 'withount *.php without *http://" without path. Wird ebenfalls verwendet für das Freitext-Prefix'
@@ -41,20 +58,6 @@ INSERT INTO `tbl_erfindung`
 ('keilschrift'   , 'Babylonische Keilschrift' , 'ca. 3000 v. Chr.???'),
 ('morsegeraet'   , 'Morsegerät/Relaisstation' , 'ca. 17?? '          );
 
-
-
--- --------------------------------------------------------------
-CREATE TABLE `tbl_kategorie` (
-  `ID` int PRIMARY KEY
-, `titel` text
-, `beschreibung` text
-);
-
-INSERT INTO `tbl_kategorie`
-(`ID`, `titel`        , `beschreibung`                       )   VALUES
-( 1  , 'Rechnen'      , 'Berechnungen aller Art'             ),
-( 2  , 'Speichern'    , 'Speichern von Materialien und Daten'),
-( 3  , 'Kommunizieren', 'Wie menschen Information übertragen');
 
 
 -- --------------------------------------------------------------
@@ -120,19 +123,37 @@ CREATE TABLE `tbl_image` (
 );
 
 INSERT INTO `tbl_image`
-(`ID`, `filename`              , `bildlegende`                     , `bildrechte`   , `alt_text`									) VALUES
-(  1 , 'abakus.png'            , 'Chinesischen Abakus'             , 'phi@smoch.ch' , 'Zählrahmen aus Holz'      ),
-(  2 , 'rechenschieber.png'    , 'Rechenschieber'                  , 'phi@smoch.ch' , 'Rechenschieber'           ),
-(  3 , 'pascaline.jpg'             , 'Pascaline'                       , 'phi@smoch.ch' , 'Pascaline'                ) ,
-(  4 , 'smartphone_htc_desire.jpg', 'Smartphone HTC Desire' , 'phi@smoch.ch', 'Smartphone'),
+(`ID`, `filename`                       , `bildlegende`                     , `bildrechte`   , `alt_text`									) VALUES
+(  1 , 'abakus.png'                     , 'Chinesischen Abakus'             , 'phi@smoch.ch' , 'Zählrahmen aus Holz'      ),
+(  2 , 'rechenschieber.png'             , 'Rechenschieber'                  , 'phi@smoch.ch' , 'Rechenschieber'           ),
+(  3 , 'pascaline.jpg'                  , 'Pascaline'                       , 'phi@smoch.ch' , 'Pascaline'                ) ,
+(  4 , 'smartphone_htc_desire.jpg'      , 'Smartphone HTC Desire' , 'phi@smoch.ch', 'Smartphone'),
 
-(  5 , 'amphore_etruskisch.png', 'Etruskische Amphore: Nachbildung', 'phi@smoch.ch' , 'Amphore aus Ton'          ),
-(  6 , 'amphore_3d_druck.png'  , 'Amphore aus dem 3D-Drucker'      , 'phi@smoch.ch' , 'Amphore aus Plastik'      ),
-(  7 , 'amphoren_wiki.png'     , 'Amphoren antik (Bild Wikimedia)' , 'wikimedia.org', 'Antike Amphoren Wikimedia'),
-(  8 , 'diskette35.png'        , 'Diskette 3.5 Zoll'               , 'phi@smoch.ch' , 'Diskette 3.5 Zoll'        ),
-(  9 , 'cd-ubuntu.png'         , 'Compct Disk (CD)'                , 'phi@smoch.ch' , 'Compact Disk (Daten)'     ),
-( 10 , 'cd-vince.png'          , 'Compct Disk (CD)'                , 'phi@smoch.ch' , 'Audio CD'                 ),
-( 11 , 'keilschrift.png'       , 'Keilschrift selbst gerannt'      , 'phi@smoch.ch' , 'Keilschrift auf Ton'      );
+(  5 , 'amphore_etruskisch.png'         , 'Etruskische Amphore: Nachbildung aus Popolonio', 'phi@smoch.ch' , 'Amphore aus Ton'          ),
+(  6 , 'amphore_3d_druck.png'           , 'Amphore aus dem 3D-Drucker'      , 'phi@smoch.ch' , 'Amphore aus Plastik'      ),
+(  7 , 'amphoren_wiki.png'              , 'Amphoren antik (Bild Wikimedia)' , 'wikimedia.org', 'Antike Amphoren Wikimedia'),
+(  8 , 'diskette35.png'                 , 'Diskette 3.5 Zoll'               , 'phi@smoch.ch' , 'Diskette 3.5 Zoll'        ),
+(  9 , 'cd-ubuntu.png'                  , 'Compct Disk (CD)'                , 'phi@smoch.ch' , 'Compact Disk (Daten)'     ),
+( 10 , 'cd-vince.png'                   , 'Compct Disk (CD)'                , 'phi@smoch.ch' , 'Audio CD'                 ),
+( 11 , 'keilschrift.png'                , 'Keilschrift selbst gebannt'      , 'phi@smoch.ch' , 'Keilschrift auf Ton'      ),
+( 12 , 'bitRelaisNachbau_schema.png'    , 'Schema, um ein Bit mit Relais zu speichern', 'phi@smoch.ch', 'Schema (elektronisch), um ein Bit mittels Relais zu speichern'),
+( 13 , 'bitTransistorNachbau_schema.png', 'Schema, um ein Bit mittels Transistoren zu speichern', 'phi@smoch.ch', 'Schema (elektronisch), um ein Bit mittels Relais zu speichern'),
+( 14 , 'differenzenmaschine.png'        , 'Ch. Babbage: Differenzenmaschine im Da Vinci Museum in Mailand', 'phi@smoch.ch', 'Foto: Differenzenmaschine'),
+( 15 , 'halbleiter.png'                 , 'Silizium, eines der häufigsten Elemente: Daraus werden die meisten Halbleiter gebaut.', 'phi@smoch.ch', 'Siliziumkristall'),
+( 16 , 'notRelaisNachbau_schema.png'    , 'Schema, für das NOT-Gatter mit Relais', 'phi@smoch.ch', 'Schema (elektronisch), für ein NOT-Gatter mittels Relais'),
+( 17 , 'notTransistorNachbau_schema.png', 'Schema, um ein NOT-Gatter mit Transistoren zu bauen', 'phi@smoch.ch', 'Schema (elektronisch), um ein NOT-Gatter mittels Tranistoren zu bauen.'),
+( 18 , 'volladdiererNachbau_schema.png', 'Schema, um einen Volladdierer zu bauen', 'phi@smoch.ch', 'Schema, um einen Volladdierer zu bauen.'),
+( 19 , 'wafer.png'                     , 'Wafer'                           , 'phi@smoch.ch', 'Waferplatte'               ),
+( 20 , 'wafer_mikroskop.jpg'           , 'Wafer Mikroskopausschnitt'       , 'phi@smoch.ch', 'Mikroskopier eines Wafers (Ausschnitt)' ),
+( 21 , 'zahlenschieber.png'            , 'Zahlenschieber Addimult'         , 'phi@smoch.ch', 'Zahlenschieber Addimult'),
+( 22 , 'zuse_z3_a.jpg'                 , 'Zuse Z3 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z3'                ),
+( 23 , 'zuse_z3_b.jpg'                 , 'Zuse Z3 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z3'                ),
+( 24 , 'zuse_z4.jpg'                   , 'Zuse Z4 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z4'                ),
+( 25 , 'zuse_z4_eingabetastatur.jpg'   , 'Zuse Z4 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z4'                ),
+
+
+
+
 
 -- -----------------------------------------------------
 -- Erfindungsbilder sind die Bilder auf der Webseite.
