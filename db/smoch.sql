@@ -11,7 +11,7 @@ ALTER  DATABASE           `smoch`
 	DEFAULT COLLATE 'utf8_general_ci';
 USE                       `smoch`  ;
 
-GRANT SELECT ON smoch.* TO smoch@'%' IDENTIFIED BY '123';
+GRANT SELECT ON `smoch`.* TO 'smoch'@'%' IDENTIFIED BY '123';
 
 -- --------------------------------------------------------------
 -- tables
@@ -41,52 +41,66 @@ CREATE TABLE `tbl_erfindung` (
 );
 
 INSERT INTO `tbl_erfindung`
-(`IDurl`,          `Titel`                    , `Jahrzahl`           ) VALUES
+(`IDurl`,          `Titel`                    , `Jahrzahl`        ) VALUES
 -- rechnen
-('abakus'        , 'Abakus'                   , 'ca. 2500 v. Chr.'   ),
-('rechenschieber', 'Rechenschieber'           ,     '1632'           ),
-('pascaline'     , 'Pascaline'                ,     '1642'           ),
-('computer'      , 'Computer'                 ,     '1940'           ),
-('smartphone'    , 'Smartphone'               ,     'ca 1990'        ),
+('abakus'        , 'Abakus'                   , 'ca. 2500 v. Chr.'),
+('pascaline'     , 'Pascaline'                ,     '1642'        ),
+('zahlenschieber', 'Addiator'                 , 'ca. 1730'        ),
+('rechenschieber', 'Rechenschieber'           ,     '1632'        ),
+('computer'      , 'Computer'                 ,     '1937'        ),
 
 -- speichern
-('amphore'       , 'Amphore'                  ,  'ca. 500 v. Chr.'   ),
-('diskette'      , 'Diskette'                 ,     '1949??'         ),
-('cd'            , 'CD - ROM'                 ,     '1979??'         ),
+('amphore'       , 'Amphore'                  ,  'ca. 500 v. Chr.'),
+('harddisk'      , 'Harddisk'                 ,     '1956'        ),
+('diskette'      , 'Diskette'                 ,     '1969'        ),
+('cd'            , 'CD - ROM'                 ,     '1977'        ),
 
 -- kommunizieren
-('keilschrift'   , 'Babylonische Keilschrift' , 'ca. 3000 v. Chr.???'),
-('morsegeraet'   , 'Morsegerät/Relaisstation' , 'ca. 17?? '          );
+('keilschrift'   , 'Babylonische Keilschrift' , 'ca. 3400 v. Chr.'),
+('morsetaste'    , 'Morsegerät/Relaisstation' ,     '1833'        ),
 
+
+-- diverse
+('smartphone'    , 'Smartphone'               ,     '1994'        ),
+('chip'          , 'Rechner- / Speicherchip'  , 'ca. 1950'        );
 
 
 -- --------------------------------------------------------------
 -- Reihnfolge der Erfindungen.
 CREATE TABLE `tbl_reihenfolge` (
- `IDurl`         varchar(200) NOT NULL PRIMARY KEY
+ `IDurl_fk`      varchar(200) NOT NULL
 ,`kategorie_fk`  int
 ,`ord`       int
-, FOREIGN KEY (`IDurl`       ) REFERENCES `tbl_erfindung` (`IDurl`)
+, PRIMARY KEY (`IDurl_fk`, `kategorie_fk`, `ord`)
+, FOREIGN KEY (`IDurl_fk`    ) REFERENCES `tbl_erfindung` (`IDurl`)
 , FOREIGN KEY (`kategorie_fk`) REFERENCES `tbl_kategorie` (`ID`   )
 );
 
+
 INSERT INTO `tbl_reihenfolge`
-(`IDurl`         , `kategorie_fk`, `ord`    ) VALUES
+(`IDurl_fk`      , `kategorie_fk`, `ord`    ) VALUES
 -- rechnen
 ('abakus'        ,   1           ,   1      ),
-('rechenschieber',   1           ,   2      ),
-('pascaline'     ,   1           ,   3      ),
-('computer'      ,   1           ,   4      ),
-('smartphone'    ,   1           ,   5      ),
+('zahlenschieber',   1           ,   2      ),
+('rechenschieber',   1           ,   3      ),
+('pascaline'     ,   1           ,   4      ),
+('computer'      ,   1           ,   5      ),
+('chip'          ,   1           ,   6      ),
+('smartphone'    ,   1           ,   7      ),
+
 
 -- speichern
 ('amphore'       ,   2           ,   1      ),
-('diskette'      ,   2           ,   2      ),
-('cd'            ,   2           ,   3      ),
+('chip'          ,   2           ,   2      ),
+('harddisk'      ,   2           ,   3      ),
+('diskette'      ,   2           ,   4      ),
+('cd'            ,   2           ,   5      ),
+('smartphone'    ,   2           ,   6      ),
 
 -- kommunizieren
 ('keilschrift'   ,   3           ,   1      ),
-('morsegeraet'   ,   3           ,   2      );
+('morsegeraet'   ,   3           ,   2      ),
+('smartphone'    ,   3           ,   3      );
 
 
 -- Mehrere Exponate zu einem Objekt sind möglich.
@@ -104,15 +118,25 @@ CREATE TABLE `tbl_exponat` (
 );
 
 INSERT INTO `tbl_exponat`
-(`ID`, `Exponat_Jahr` , `Exponat_Modell`                                     , `inventarNr`, `ausgestellt`) VALUES
-(  1 , 'ca. 1960'     , 'Chinesischen Abakus'                                , 'R_001_a'     , true         ),
-(  2 , 'ca. 1970'     , 'Aristo 75 ...??'                                    , 'R_002_r'     , true         ),
-(  3 , 'ca 2004?'     , 'HTC Desire'                                         , 'R_003_s'     , true         ),
-(  4 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_002_a'     , true         ),
-(  5 , '2017'         , 'Nachbildung aus dem 3D-Drucker'                     , 'S_001_a'     , false        ),
-(  6 , '1997'         , '3.5 Zoll Boot-Diskette S.U.s.E. Linux Kernel 2.0.3x', 'S_003_d'     , true         ),
-(  7 , '2018'         , 'Vince Ebers Ur-Knaller'                             , 'S_004_c'     , true         ),
-(  8 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false        );
+( `ID`, `Exponat_Jahr` , `Exponat_Modell`                                     , `inventarNr`, `ausgestellt`) VALUES
+-- rechnen
+(1001 , 'ca. 1960'     , 'Chinesischen Abakus'                                , 'R_001_a'     , true       ),
+(1002 , 'ca. 1970'     , 'Aristo 75 ...??'                                    , 'R_002_r'     , true       ),
+(1003 , 'ca. 1970'     , 'Zahlenschieber Adimult'                             , 'R_003_z'     , true       ),
+
+-- speichern
+(2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
+(2002 , '2017'         , 'Nachbildung aus dem 3D-Drucker'                     , 'S_002_a'     , false      ),
+(2003 , '????'         , 'Harddisk offen'                                     , 'S_003_h'     , true       ),
+(2004 , '1997'         , '3.5 Zoll Boot-Diskette S.U.s.E. Linux Kernel 2.0.3x', 'S_004_d'     , true       ),
+(2005 , '2008'         , 'Ubuntu OS 8.10'                                     , 'S_005_u'     , true       ),
+(2006 , '2018'         , 'Vince Ebers Ur-Knaller'                             , 'S_006_c'     , true       ),
+
+-- kommunizieren
+(3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
+
+-- diverse
+(9001 , 'ca 2004?'     , 'HTC Desire'                                         , 'K_002_s'     , true       );
 
 
 -- --------------------------------------------------------------
@@ -126,34 +150,39 @@ CREATE TABLE `tbl_image` (
 );
 
 INSERT INTO `tbl_image`
-(`ID`, `filename`                       , `bildlegende`                     , `bildrechte`   , `alt_text`									) VALUES
-(  1 , 'abakus.png'                     , 'Chinesischen Abakus'             , 'phi@smoch.ch' , 'Zählrahmen aus Holz'      ),
-(  2 , 'rechenschieber.png'             , 'Rechenschieber'                  , 'phi@smoch.ch' , 'Rechenschieber'           ),
-(  3 , 'pascaline.jpg'                  , 'Pascaline'                       , 'phi@smoch.ch' , 'Pascaline'                ) ,
-(  4 , 'smartphone_htc_desire.jpg'      , 'Smartphone HTC Desire' , 'phi@smoch.ch', 'Smartphone'),
+(`ID`   , `filename`                       , `bildrechte`   , `bildlegende`                     , `alt_text`									) VALUES
+-- RECHNEN
+(  1001 , 'abakus.png'                     , 'phi@smoch.ch' , 'Chinesischen Abakus'             , 'Zählrahmen aus Holz'      ),
+(  1002 , 'pascaline.jpg'                  , 'phi@smoch.ch' , 'Pascaline'                       , 'Pascaline'                ) ,
+(  1003 , 'zahlenschieber.png'             , 'phi@smoch.ch' , 'Zahlenschieber Addimult'         , 'Zahlenschieber Addimult'   ),
+(  1004 , 'rechenschieber.png'             , 'phi@smoch.ch' , 'Rechenschieber'                  , 'Rechenschieber'           ),
+(  1005 , 'zuse_z3_a.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3 Deutsches Museum'        , 'Zuse Z3'                   ),
+(  1006 , 'zuse_z3_b.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3 Deutsches Museum'        , 'Zuse Z3'                   ),
+(  1007 , 'zuse_z4.jpg'                    , 'phi@smoch.ch' , 'Zuse Z4 Deutsches Museum'        , 'Zuse Z4'                   ),
+(  1008 , 'zuse_z4_eingabetastatur.jpg'    , 'phi@smoch.ch' , 'Zuse Z4 Deutsches Museum'        , 'Zuse Z4'                   ),
+(  1009 , 'notRelaisNachbau_schema.png'    , 'phi@smoch.ch' , 'Schema, für das NOT-Gatter mit Relais', 'Schema (elektronisch), für ein NOT-Gatter mittels Relais'),
+(  1010 , 'notTransistorNachbau_schema.png', 'phi@smoch.ch' ,  'Schema, um ein NOT-Gatter mit Transistoren zu bauen', 'Schema (elektronisch), um ein NOT-Gatter mittels Tranistoren zu bauen.'),
+(  1011 , 'differenzenmaschine.png'        , 'phi@smoch.ch' , 'Ch. Babbage: Differenzenmaschine im Da Vinci Museum in Mailand', 'Foto: Differenzenmaschine'),
+(  1012 , 'volladdiererNachbau_schema.png ', 'phi@smoch.ch' , 'Schema, um einen Volladdierer zu bauen', 'Schema, um einen Volladdierer zu bauen.'),
 
-(  5 , 'amphore_etruskisch.png'         , 'Etruskische Amphore: Nachbildung aus Popolonio', 'phi@smoch.ch' , 'Amphore aus Ton'          ),
-(  6 , 'amphore_3d_druck.png'           , 'Amphore aus dem 3D-Drucker'      , 'phi@smoch.ch' , 'Amphore aus Plastik'      ),
-(  7 , 'amphoren_wiki.png'              , 'Amphoren antik (Bild Wikimedia)' , 'wikimedia.org', 'Antike Amphoren Wikimedia'),
-(  8 , 'diskette35.png'                 , 'Diskette 3.5 Zoll'               , 'phi@smoch.ch' , 'Diskette 3.5 Zoll'        ),
-(  9 , 'cd-ubuntu.png'                  , 'Compct Disk (CD)'                , 'phi@smoch.ch' , 'Compact Disk (Daten)'     ),
-( 10 , 'cd-vince.png'                   , 'Compct Disk (CD)'                , 'phi@smoch.ch' , 'Audio CD'                 ),
-( 11 , 'keilschrift.png'                , 'Keilschrift selbst gebannt'      , 'phi@smoch.ch' , 'Keilschrift auf Ton'      ),
-( 12 , 'bitRelaisNachbau_schema.png'    , 'Schema, um ein Bit mit Relais zu speichern', 'phi@smoch.ch', 'Schema (elektronisch), um ein Bit mittels Relais zu speichern'),
-( 13 , 'bitTransistorNachbau_schema.png', 'Schema, um ein Bit mittels Transistoren zu speichern', 'phi@smoch.ch', 'Schema (elektronisch), um ein Bit mittels Relais zu speichern'),
-( 14 , 'differenzenmaschine.png'        , 'Ch. Babbage: Differenzenmaschine im Da Vinci Museum in Mailand', 'phi@smoch.ch', 'Foto: Differenzenmaschine'),
-( 15 , 'halbleiter.png'                 , 'Silizium, eines der häufigsten Elemente: Daraus werden die meisten Halbleiter gebaut.', 'phi@smoch.ch', 'Siliziumkristall'),
-( 16 , 'notRelaisNachbau_schema.png'    , 'Schema, für das NOT-Gatter mit Relais', 'phi@smoch.ch', 'Schema (elektronisch), für ein NOT-Gatter mittels Relais'),
-( 17 , 'notTransistorNachbau_schema.png', 'Schema, um ein NOT-Gatter mit Transistoren zu bauen', 'phi@smoch.ch', 'Schema (elektronisch), um ein NOT-Gatter mittels Tranistoren zu bauen.'),
-( 18 , 'volladdiererNachbau_schema.png', 'Schema, um einen Volladdierer zu bauen', 'phi@smoch.ch', 'Schema, um einen Volladdierer zu bauen.'),
-( 19 , 'wafer.png'                     , 'Wafer'                           , 'phi@smoch.ch', 'Waferplatte'                ),
-( 20 , 'wafer_mikroskop.jpg'           , 'Wafer Mikroskopausschnitt'       , 'phi@smoch.ch', 'Mikroskopier eines Wafers (Ausschnitt)' ),
-( 21 , 'zahlenschieber.png'            , 'Zahlenschieber Addimult'         , 'phi@smoch.ch', 'Zahlenschieber Addimult'    ),
-( 22 , 'zuse_z3_a.jpg'                 , 'Zuse Z3 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z3'                    ),
-( 23 , 'zuse_z3_b.jpg'                 , 'Zuse Z3 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z3'                    ),
-( 24 , 'zuse_z4.jpg'                   , 'Zuse Z4 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z4'                    ),
-( 25 , 'zuse_z4_eingabetastatur.jpg'   , 'Zuse Z4 Deutsches Museum'        , 'phi@smoch.ch', 'Zuse Z4'                    );
+-- speichern
+(  2001 , 'amphore_etruskisch.png'         , 'phi@smoch.ch' , 'Etruskische Amphore: Nachbildung aus Popolonio', 'Amphore aus Ton'          ),
+(  2002 , 'amphore_3d_druck.png'           , 'phi@smoch.ch' , 'Amphore aus dem 3D-Drucker'      , 'Amphore aus Plastik'      ),
+(  2003 , 'amphoren_wiki.png'              , 'phi@smoch.ch' , 'Amphoren antik (Bild Wikimedia)' , 'Antike Amphoren Wikimedia'),
+(  2004 , 'diskette35.png'                 , 'phi@smoch.ch' , 'Diskette 3.5 Zoll'               , 'Diskette 3.5 Zoll'        ),
+(  2005 , 'cd-ubuntu.png'                  , 'phi@smoch.ch' , 'Compct Disk (CD)'                , 'Compact Disk (Daten)'     ),
+(  2006 , 'cd-vince.png'                   , 'phi@smoch.ch' , 'Compct Disk (CD)'                , 'Audio CD'                 ),
+(  2008 , 'bitRelaisNachbau_schema.png'    , 'phi@smoch.ch' , 'Schema, um ein Bit mit Relais zu speichern',  'Schema (elektronisch), um ein Bit mittels Relais zu speichern'),
+(  2009 , 'bitTransistorNachbau_schema.png', 'phi@smoch.ch' , 'Schema, um ein Bit mittels Transistoren zu speichern', 'Schema (elektronisch), um ein Bit mittels Relais zu speichern'),
 
+-- kommunizieren
+(  3001 , 'keilschrift.png'                , 'phi@smoch.ch' , 'Keilschrift selbst gebannt'      , 'Keilschrift auf Ton'      ),
+
+-- diverse
+(  9001 , 'smartphone_htc_desire.jpg'      , 'phi@smoch.ch' , 'Smartphone HTC Desire'           , 'Smartphone'                ),
+(  9002 , 'halbleiter.png'                 , 'phi@smoch.ch' , 'Silizium, eines der häufigsten Elemente: Daraus werden die meisten Halbleiter gebaut.', 'Siliziumkristall'),
+(  9003 , 'wafer.png'                      , 'phi@smoch.ch' , 'Wafer'                           , 'Waferplatte'               ),
+(  9004 , 'wafer_mikroskop.jpg'            , 'phi@smoch.ch' , 'Wafer Mikroskopausschnitt'       , 'Mikroskopier eines Wafers (Ausschnitt)' );
 
 
 -- -----------------------------------------------------
@@ -173,17 +202,29 @@ CREATE TABLE `tbl_erfindungsbild` (
 
 INSERT INTO `tbl_erfindungsbild`
 (`IDurl_fk`      , `ord`, `img_fk`) VALUES
-('abakus'        ,  1   ,   1     ),  -- abakus
-('rechenschieber',  1   ,   2     ),  -- rechenschieber
-('pascaline'     ,  1   ,   3     ),  -- foto pascaline deutsches museum
-('smartphone'    ,  1   ,   4     ),  -- htc desire smartphone
-('amphore'       ,  1   ,   5     ),  -- Amphora Etruskisch Popolonio
-('amphore'       ,  2   ,   6     ),  -- 3D-Drucker Amhpore
-('amphore'       ,  3   ,   7     ),  -- Bild Wikipedia von Amphoren
-('diskette'      ,  1   ,   8     ),  -- Diskette S.U.s.E
-('cd'            ,  1   ,   9     ),  -- Ubuntu CD
-('cd'            ,  2   ,  10     ),  -- Vince Eberts CD "ur Knaller"
-('keilschrift'   ,  1   ,  11     );  -- bild von eigenen schriftZeichnen
+-- rechnen
+('abakus'        ,  1   ,   1001  ),  -- abakus
+('pascaline'     ,  1   ,   1002  ),  -- foto pascaline deutsches Museum
+('zahlenschieber',  1   ,   1003  ),  -- Zahlenschieber
+('rechenschieber',  1   ,   1004  ),  -- rechenschieber deutsches Museum
+('computer'      ,  1   ,   1005  ),  -- Zuse
+('computer'      ,  2   ,   1006  ),  -- Zuse
+('computer'      ,  3   ,   1007  ),  -- Zuse 
+('computer'      ,  4   ,   1008  ),  -- Zuse Eingabegerät
+
+-- spechern
+('amphore'       ,  1   ,   2001  ),  -- Amphora Etruskisch Popolonio
+('amphore'       ,  2   ,   2002  ),  -- 3D-Drucker Amhpore
+('amphore'       ,  3   ,   2003  ),  -- Bild Wikipedia von Amphoren
+('diskette'      ,  1   ,   2004  ),  -- Diskette S.U.s.E
+('cd'            ,  1   ,   2005  ),  -- Ubuntu CD
+('cd'            ,  2   ,   2006  ),  -- Vince Eberts CD "ur Knaller"
+
+-- kommunizieren
+('keilschrift'   ,  1   ,   3001  ),  -- bild von eigenen schriftZeichnen
+
+-- diverse
+('smartphone'    ,  1   ,   9001  );  -- htc desire smartphone
 
 
 -- ---------------------------------------------------
@@ -192,6 +233,7 @@ INSERT INTO `tbl_erfindungsbild`
 CREATE TABLE `tbl_exponatbild` (
   `exponat_fk`  int
 , `image_fk`    int
+, `ord`         int   COMMENT 'Reihenfolge der Bilder der Exponate'
 , FOREIGN KEY (`exponat_fk`) REFERENCES `tbl_exponat` (`ID`)
 , FOREIGN KEY (`image_fk`  ) REFERENCES `tbl_image`   (`ID`)
 );
@@ -199,17 +241,24 @@ CREATE TABLE `tbl_exponatbild` (
 
 INSERT INTO `tbl_exponatbild`
 ( `exponat_fk`, `image_fk` ) VALUES
-(  1          ,   1        ), -- abakus
-(  2          ,   2        ), -- rechenschieber
-(  3          ,   4        ), -- smartphone HTC Desire
-(  4          ,   5        ), -- amphore Etruskisch 
-(  5          ,   6        ), -- amphore 3D Druck
-(  6          ,   8        ), -- 3.5 Zoll Diskette
-(  7          ,  10        ), -- Ur Knaller
-(  8          ,  11        ); -- Tontäfelchen	
+-- rechnen
+(  1001       ,   1001     ), -- abakus
+(  1002       ,   1004     ), -- rechenschieber
+(  1003       ,   1003     ), -- zahlenschieber
 
+-- speichern
+(  2001       ,   2001     ), -- Etruskische Amphoore Popolonio
+(  2002       ,   2002     ), -- Amphore Bild aus dem 3DDrucker
+-- ( 2003     ,  not yet   ), -- Harddisk offen
+(  2004       ,   2004     ), -- Diskette S.U.s.E.
+(  2005       ,   2005     ), -- CD (Ubuntu OS 2008 Oktober (10)
+(  2006       ,   2006     ), -- CD (Audio : "Vince Eberts Ur-Knaller")
 
+-- kommunizieren
+(  3001       ,   3001     ), -- Tontäfelchen selbt gebrannt
 
+-- diverses
+(  9001       ,   9001     ); -- smartphone
 
 -- ---------------------------------------------------
 -- Welche Exponate gehören zu welchen Erfindungen.
@@ -224,14 +273,24 @@ CREATE TABLE `tbl_erfindungsexponat` (
 
 INSERT INTO `tbl_erfindungsexponat`
 (`IDurl_fk`      , `exponat_fk` , `ord`) VALUES
-('abakus'        ,  1           ,  1   ),
-('rechenschieber',  2           ,  1   ),
-('smartphone'    ,  3           ,  1   ),
-('amphore'       ,  4           ,  1   ),
-('amphore'       ,  5           ,  2   ),
-('diskette'      ,  6           ,  1   ),
-('cd'            ,  7           ,  1   ),
-('keilschrift'   ,  8           ,  1   );
+-- rechnen
+('abakus'        ,  1001        ,  1   ),
+('rechenschieber',  1002        ,  1   ),
+('zahlenschieber',  1003        ,  1   ),
+
+-- speichern
+('amphore'       ,  2001        ,  1   ),
+('amphore'       ,  2002        ,  2   ),
+('harddisk'      ,  2003        ,  1   ),
+('diskette'      ,  2004        ,  1   ),
+('cd'            ,  2005        ,  1   ),
+('cd'            ,  2006        ,  1   ),
+
+-- kommunizieren
+('keilschrift'   ,  3001        ,  1   ),
+
+-- diveses
+('smartphone'    ,  9001        ,  1   );
 
 
 
@@ -292,16 +351,20 @@ CREATE TABLE `tbl_editor` (
 
 INSERT INTO `tbl_editor`
 (`IDurl_fk`      , `autor_fk`) VALUES
+-- rechnen
 ('abakus'        , 1),
 ('rechenschieber', 1),
 ('pascaline'     , 1),
 
+-- speichern
 ('amphore'       , 1),
 ('diskette'      , 1),
 ('cd'            , 1),
+('morsegeraet'   , 1),
+-- kommmunizieren
 ('keilschrift'   , 1),
-('morsegeraet'   , 1);
-
+-- diverse
+('smartphone'    , 1);
 
 -- --------------------------------------------------------
 -- views
@@ -337,16 +400,23 @@ LEFT JOIN `tbl_erfindung`         ON `tbl_erfindung`.`IDurl` = `tbl_erfindungsex
 
 -- Synthetische Reihenfolge (nach tbl_reihenfolge)
 CREATE VIEW `tmp_vw_nachfolger` AS
-SELECT `tbl_1`.`IDurl` AS `core`,
-       `tbl_2`.`IDurl` AS `core_nachfolger`
+SELECT DISTINCT
+     `tbl_1`.`IDurl_fk`     AS `core`
+,		 `tbl_1`.`ord`          AS `ord`
+,    `tbl_1`.`kategorie_fk` AS `kat`
+,    `tbl_2`.`IDurl_fk`     AS `core_nachfolger`
 FROM `tbl_reihenfolge` AS `tbl_1`
 LEFT JOIN `tbl_reihenfolge` AS `tbl_2`
 ON (`tbl_1`.`kategorie_fk` = `tbl_2`.`kategorie_fk`) AND
    (`tbl_1`.`ord`      = `tbl_2`.`ord` - 1 );
 
+
 CREATE VIEW `tmp_vw_vorgaenger` AS
-SELECT `tbl_1`.`IDurl` AS `core`
-,      `tbl_2`.`IDurl` AS `core_vorgaenger`
+SELECT DISTINCT
+   `tbl_1`.`IDurl_fk`     AS `core`
+,  `tbl_1`.`ord`          AS `ord`
+,  `tbl_1`.`kategorie_fk` AS `kat`
+,  `tbl_2`.`IDurl_fk`     AS `core_vorgaenger`
 FROM `tbl_reihenfolge` AS `tbl_1`
 LEFT JOIN `tbl_reihenfolge` AS `tbl_2`
 ON (`tbl_1`.`kategorie_fk` = `tbl_2`.`kategorie_fk`) AND
@@ -356,8 +426,10 @@ CREATE VIEW `tmp_vw_reihenfolge` AS
 SELECT `core_vorgaenger`            AS `vor`
 ,      `tmp_vw_vorgaenger`.`core`   AS `core`
 ,			 `core_nachfolger`            AS `nach`
-FROM `tmp_vw_vorgaenger`, `tmp_vw_nachfolger`
-WHERE `tmp_vw_vorgaenger`.`core` = `tmp_vw_nachfolger`.`core`;
+,      `tmp_vw_vorgaenger`.`kat`    AS `Kategorie`
+FROM `tmp_vw_vorgaenger`
+LEFT OUTER JOIN `tmp_vw_nachfolger` ON
+(`tmp_vw_vorgaenger`.`core` = `tmp_vw_nachfolger`.`core`) AND (`tmp_vw_vorgaenger`.`kat` = `tmp_vw_nachfolger`.`kat`);
 
 
 -- Im Gegensatz zum Exponat-View (wo die Exonate erscheinen), sind hier
@@ -374,6 +446,25 @@ SELECT `tbl_erfindung`     .`IDurl`    AS `core`
 FROM `tbl_erfindung`
 LEFT       JOIN `tbl_editor`         ON `tbl_editor`     .`IDurl_fk`     = `tbl_erfindung`     .`IDurl`
 LEFT       JOIN `tbl_autor`          ON `tbl_autor`      .`ID`           = `tbl_editor`        .`autor_fk`
-LEFT OUTER JOIN `tmp_vw_reihenfolge` ON `tbl_erfindung`  .`IDurl`        = `tmp_vw_reihenfolge`.`core`
-           JOIN `tbl_reihenfolge`    ON `tbl_reihenfolge`.`IDurl`        = `tbl_erfindung`     .`IDurl`
+LEFT       JOIN `tmp_vw_reihenfolge` ON `tbl_erfindung`  .`IDurl`        = `tmp_vw_reihenfolge`.`core`
+           JOIN `tbl_reihenfolge`    ON `tbl_reihenfolge`.`IDurl_fk`     = `tbl_erfindung`     .`IDurl`
            JOIN `tbl_kategorie`      ON `tbl_reihenfolge`.`kategorie_fk` = `tbl_kategorie`     .`ID`;
+
+
+CREATE VIEW `vw_webseite2` AS
+SELECT
+  `tmp_vw_reihenfolge`.`core`       AS `URL_Infix`
+,	`tbl_erfindung`.`Titel`           AS `ErfindungsTitel`
+, `tbl_erfindung`.`Jahrzahl`        AS `ErfindungsJahrzahl`
+, `tmp_vw_reihenfolge`.`vor`        AS `vorgaenger_URL_Infix`
+, `tmp_vw_reihenfolge`.`nach`       AS `nachfolger_URL_Infix`
+, `tmp_vw_reihenfolge`.`Kategorie`  AS `KategorieID`
+, `tbl_kategorie`.`titel`           AS `KategorieName`
+, `tbl_kategorie`.`beschreibung`    AS `KategorieBeschreibung`
+, CONCAT(`tmp_vw_reihenfolge`.`core` , '_', `tmp_vw_reihenfolge`.`Kategorie`) AS `EnrichedURLInfix`
+, `tbl_autor`.`name` AS `Editor`
+FROM `tmp_vw_reihenfolge`
+LEFT JOIN `tbl_kategorie` ON `tmp_vw_reihenfolge`.`Kategorie` = `tbl_kategorie`.`ID`
+LEFT JOIN `tbl_erfindung` ON `tmp_vw_reihenfolge`.`core`      = `tbl_erfindung`.`IDurl`
+LEFT OUTER JOIN `tbl_editor`    ON `tmp_vw_reihenfolge`.`core`      = `tbl_editor`.`IDurl_fk`
+LEFT JOIN `tbl_autor`     ON `tbl_editor`.`autor_fk`          = `tbl_autor`.`ID`
