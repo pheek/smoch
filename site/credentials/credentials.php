@@ -8,9 +8,6 @@
 $_CREDENTIALS_HOST_ = 'localhost';
 $_CREDENTIALS_USER_ = 'smoch'    ;
 $_CREDENTIALS_DB_   = 'smoch'    ;
-$_CREDENTIALS_PASS_ = '123'      ;
+$_CREDENTIALS_PASS_ = '123'      ; // change in real system
 
-if(false) { // TODO: Check, if called directly in the url
-	echo 'credentials.php is not allowed!';
-}
 ?>
