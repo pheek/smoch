@@ -5,7 +5,10 @@
  * 2019-05-19
  */
 
-require_once  __DIR__ . '/../credentials/credentials.php';
+// leave the "/site/"-folderfor security reason.
+// Otherwise a false push to the server from github password "123" will
+// make the site crash.
+require_once  __DIR__ . '/../../../credentials/credentials.php';
 
 class ConnectionSingleton {
 	private static $connectionSingleton;

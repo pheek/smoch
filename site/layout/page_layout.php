@@ -5,20 +5,20 @@
 <html lang="de">
 
 	<head>
-		<title>{{layout.header.title}}</title>
+		<title><?php echo $_PRE_TITLE;?></title>
 
 		<meta   charset = "utf-8" />
 		<!-- change author and date -->
 		<meta   name    = "author"
-		        content = "Philipp Gressly Freimann phi@gress.ly" />
+		        content = "<?php echo $_PRE_AUTHOR; ?>" />
 		<!-- date: Non standard attribute. (ev. remove): -->
 		<meta   name    = "date"
-		        content = "2019-05-23"
+		        content = "<?php echo $_PRE_DATE;?>"
 		        scheme  = "YYYY-MM-DD"/>
 		<meta   name    = "description"
-		        content = "{{layout.header.description}}" />
+		        content = "<?php echo $_PRE_DESCRIPTION;?>" />
 		<meta   name    = "keywords"
-		        content = "{{layout.header.keywords}}" />
+		        content = "computing history, computing, history, museum, swiss, small, <?php echo $_PRE_KEYWORDS; ?>" />
 
 		<link   rel     = "stylesheet"
 		        href    = "layout/css/style.css" />

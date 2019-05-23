@@ -5,6 +5,7 @@
  * 2019-05-19
  * Data Access Object
  */
+
 require_once 'sql.php';
 require_once '../domain/Erfindung.php';
 

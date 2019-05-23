@@ -15,6 +15,10 @@ body {
 .mainTour {
 	color: green;
 	background-color: #efe;
+	border-style: solid;
+	border-color: blue;
+	border-size: 2px;
+	padding: 3px;
 }
 
 .tourHeader {
@@ -25,6 +29,12 @@ body {
 .erfindung {
 	color: #f80;
 	background-color: #fed;
+}
+
+.erfindung h1 {
+	font-style: italic;
+	font-size: 112%;
+	color: black;
 }
 
 .erfindungsHeader {
@@ -41,3 +51,4 @@ body {
   color: #0F8;
   background-color: #dfe;
 }
+

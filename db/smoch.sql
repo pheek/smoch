@@ -17,16 +17,19 @@ GRANT SELECT ON `smoch`.* TO 'smoch'@'%' IDENTIFIED BY '123';
 -- tables
 -- --------------------------------------------------------------
 CREATE TABLE `tbl_program_parameters` (
-  `name` varchar(20) PRIMARY KEY NOT NULL
-, `value` text
+  `name`        varchar(20) PRIMARY KEY NOT NULL
+, `value`       text
+, `description` text
 );
 
 INSERT INTO `tbl_program_parameters`
-(`name`                , `value`                            ) VALUES
-('browser_path'        , '/'                                ),
-('blowser_path_develop', '/smoch/'                          ),
-('image_path'          , '/exponate/images/'                ),
-('article_repl'        , '/exponate/artikel/{1}.php?kat={2}');
+(`name`                , `value`                            , `description`) VALUES
+('isDevelop'           , 'true'                             , 'false = scharf; true=localhost o. ä.'             ),
+('browser_path'        , '/'                                , 'url after "host:port" entry on targed host'       ),
+('blowser_path_develop', '/smoch/'                          , 'same as browser_path, but on development machine.'),
+('server_root'         , '/var/www/smoch'                   , 'server root for php includes or file readings.'   ),
+('server_root_develop' , '/var/www/html/smoch'              , 'server root on localhost for development'         ),
+('image_path'          , '/erfindungen/images/'             , 'path for Erfindungs Bilder'                       );
 
 
 -- --------------------------------------------------------------
@@ -204,17 +207,17 @@ INSERT INTO `tbl_bild`
 
 
 CREATE TABLE `tbl_erfindungsbild` (
-  `IDurl_fk`            varchar(200)
-, `ord`                 int             COMMENT 'Bildreihenfolge auf der Webseite'
-, `image_fk`            int
+  `IDurl_fk`  varchar(200)
+, `ord`       int             COMMENT 'Bildreihenfolge auf der Webseite'
+, `bild_fk`   int
 , PRIMARY KEY (IDurl_fk, `ord`)
 , FOREIGN KEY (`IDurl_fk`) REFERENCES `tbl_erfindung` (`IDurl`)
-, FOREIGN KEY (`image_fk`) REFERENCES `tbl_bild`     (`ID`   )
+, FOREIGN KEY (`bild_fk` ) REFERENCES `tbl_bild`     (`ID`   )
 );
 
 
 INSERT INTO `tbl_erfindungsbild`
-(`IDurl_fk`      , `ord`, `image_fk`) VALUES
+(`IDurl_fk`      , `ord`, `bild_fk`) VALUES
 -- rechnen
 ('abakus'        ,  1   ,   1001    ),  -- abakus
 ('pascaline'     ,  1   ,   1002    ),  -- foto pascaline deutsches Museum
@@ -245,15 +248,15 @@ INSERT INTO `tbl_erfindungsbild`
 -- Theoretisch wären mehrere Bilder zum selben Exponat möglich.
 CREATE TABLE `tbl_exponatbild` (
   `exponat_fk`  int
-, `image_fk`    int
+, `bild_fk`     int
 , `ord`         int  DEFAULT 1 COMMENT 'Reihenfolge der Bilder der Exponate (Nur, falls einmal ein Exponat mehrere Fotos in der DB haben sollte)'
 , FOREIGN KEY (`exponat_fk`) REFERENCES `tbl_exponat` (`ID`)
-, FOREIGN KEY (`image_fk`  ) REFERENCES `tbl_bild`   (`ID`)
+, FOREIGN KEY (`bild_fk`  ) REFERENCES `tbl_bild`   (`ID`)
 );
 
 
 INSERT INTO `tbl_exponatbild`
-( `exponat_fk`, `image_fk`, `ord`) VALUES
+( `exponat_fk`, `bild_fk`, `ord`) VALUES
 -- rechnen
 (  1001       ,   1001    ,  1   ), -- abakus
 (  1002       ,   1004    ,  1   ), -- rechenschieber
@@ -483,7 +486,13 @@ SELECT
 , `tbl_bild`.`bildrechte`        AS `rechte`
 , `tbl_erfindungsbild`.`ord`      AS `ord`
 FROM `tbl_bild`
-JOIN `tbl_erfindungsbild` ON `tbl_erfindungsbild`.`image_fk` = `tbl_bild`.`ID`;
+JOIN `tbl_erfindungsbild` ON `tbl_erfindungsbild`.`bild_fk` = `tbl_bild`.`ID`;
+
+CREATE VIEW `vw_exponatbilder` AS
+SELECT `tbl_exponat`.`id` AS `exponat_ID`, `ord`, `filename`, `bildrechte`, `bildlegende`, `alt_text`, `Exponat_Jahr`, `Exponat_Modell`, `ausgestellt`, `inventarNr`
+FROM `tbl_exponatbild`
+LEFT JOIN `tbl_exponat` ON `tbl_exponat`.`ID` = `tbl_exponatbild`.`exponat_fk`
+LEFT JOIN `tbl_bild`    ON `tbl_bild`.`ID` = `tbl_exponatbild`.`bild_fk`;
 
 -- Testabfragen:
 CREATE VIEW `TEST_VIEW_amphoreBilderTest` AS
