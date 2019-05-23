@@ -1,4 +1,5 @@
-<div id='exponat'>
+<!-- Erfindung -->
+<div class='exponat'>
 	 <h1>Nutzen / Verwendung</h1>
 	 <p>..... dummy comming soon .... </p>
 	 <h1>Funktionsweise</h1>

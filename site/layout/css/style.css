@@ -1,0 +1,43 @@
+/**
+ * phi@smoch.ch
+ * 2019-05-23
+ */
+
+body {
+	font-family: verdana, arial, sans;
+}
+
+#mainHeader, #mainFooter {
+	color: red;
+	background-color: #fee;
+}
+
+.mainTour {
+	color: green;
+	background-color: #efe;
+}
+
+.tourHeader {
+	color: blue;
+	background-color: #eef;
+}
+
+.erfindung {
+	color: #f80;
+	background-color: #fed;
+}
+
+.erfindungsHeader {
+  color: #8F0;
+  background-color: #efd;
+}
+
+.erfindungsBilder {
+  color: #08F;
+  background-color: #def;
+}
+
+.erfindungsExponate {
+  color: #0F8;
+  background-color: #dfe;
+}
