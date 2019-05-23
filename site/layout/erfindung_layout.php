@@ -6,7 +6,7 @@
 			{{BILDERGALERIE}}
 	</div>
 	<div class='erfindungsText'>
-		<?php include 'exponate/artikel/_erfindung_template.php'; ?>
+		<?php include 'erfindungen/artikel/_erfindung_template.php'; ?>
 	</div>
 	<div class='erfindungsExponate'>
 			{{EXPONAT_GALERIE}}

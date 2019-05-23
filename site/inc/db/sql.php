@@ -58,4 +58,20 @@ class SQL {
 		return SQL::fetchRows($SQL);
 	}
 
+
+	public static function getApplicationVariable($varName) {
+		$SQL = 'SELECT `value` FROM `tbl_program_parameters` WHERE `name` = "' . $varName . '"';
+		$val = SQL::fetchSingle($SQL);
+		return $val['value'];
+	}
+
+
+	public static function getActBrowserPath() {
+		$isDevel = SQL::getApplicationVariable('isDevelop');
+		if('true' == $isDevel) {
+			return SQL::getApplicationVariable('browser_path_develop');
+		} else {
+			return SQL::getApplicationVariable('browser_path');
+		}
+	}	
 }

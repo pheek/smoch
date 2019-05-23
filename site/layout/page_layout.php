@@ -19,10 +19,13 @@
 		        content = "<?php echo $_PRE_DESCRIPTION;?>" />
 		<meta   name    = "keywords"
 		        content = "computing history, computing, history, museum, swiss, small, <?php echo $_PRE_KEYWORDS; ?>" />
-
+<?php
+ require_once __DIR__ . '/../inc/db/sql.php';
+ $browserPath = SQL::getActBrowserPath();
+?>	                                
 		<link   rel     = "stylesheet"
-		        href    = "layout/css/style.css" />
-		<script src     = "js/dom/asyncLoader.js" async></script>
+		        href    = "<?php echo $browserPath;?>layout/css/style.css" />
+		<script src     = "<?php echo $browserPath;?>js/dom/asyncLoader.js" async></script>
 	</head>
 
 	<body>

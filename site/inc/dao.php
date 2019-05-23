@@ -6,8 +6,8 @@
  * Data Access Object
  */
 
-require_once 'sql.php';
-require_once '../domain/Erfindung.php';
+require_once 'db/sql.php';
+require_once 'domain/Erfindung.php';
 
 class DAO {
 	

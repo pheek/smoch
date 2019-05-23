@@ -26,7 +26,7 @@ INSERT INTO `tbl_program_parameters`
 (`name`                , `value`                            , `description`) VALUES
 ('isDevelop'           , 'true'                             , 'false = scharf; true=localhost o. ä.'             ),
 ('browser_path'        , '/'                                , 'url after "host:port" entry on targed host'       ),
-('blowser_path_develop', '/smoch/'                          , 'same as browser_path, but on development machine.'),
+('browser_path_develop', '/smoch/'                          , 'same as browser_path, but on development machine.'),
 ('server_root'         , '/var/www/smoch'                   , 'server root for php includes or file readings.'   ),
 ('server_root_develop' , '/var/www/html/smoch'              , 'server root on localhost for development'         ),
 ('image_path'          , '/erfindungen/images/'             , 'path for Erfindungs Bilder'                       );
