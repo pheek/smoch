@@ -153,8 +153,8 @@ INSERT INTO `tbl_exponat`
 
 
 -- --------------------------------------------------------------
--- Fotos in der Datenbank. 
-CREATE TABLE `tbl_image` (
+-- Fotos in der Datenbank.
+CREATE TABLE `tbl_bild` (
   `ID`           int PRIMARY KEY AUTO_INCREMENT
 , `filename`     varchar(200)     COMMENT 'Bild Filename (inkl. "*.png" oder "*.jpg" ...)'
 , `bildlegende`  text             COMMENT 'Auch als "title" zu verwenden beim <img>-Tag.'
@@ -162,7 +162,7 @@ CREATE TABLE `tbl_image` (
 , `alt_text`     text
 );
 
-INSERT INTO `tbl_image`
+INSERT INTO `tbl_bild`
 (`ID`   , `filename`                       , `bildrechte`   , `bildlegende`                     , `alt_text`									) VALUES
 -- RECHNEN
 (  1001 , 'abakus.png'                     , 'phi@smoch.ch' , 'Chinesischen Abakus'             , 'Zählrahmen aus Holz'      ),
@@ -209,7 +209,7 @@ CREATE TABLE `tbl_erfindungsbild` (
 , `image_fk`            int
 , PRIMARY KEY (IDurl_fk, `ord`)
 , FOREIGN KEY (`IDurl_fk`) REFERENCES `tbl_erfindung` (`IDurl`)
-, FOREIGN KEY (`image_fk`) REFERENCES `tbl_image`     (`ID`   )
+, FOREIGN KEY (`image_fk`) REFERENCES `tbl_bild`     (`ID`   )
 );
 
 
@@ -246,32 +246,32 @@ INSERT INTO `tbl_erfindungsbild`
 CREATE TABLE `tbl_exponatbild` (
   `exponat_fk`  int
 , `image_fk`    int
-, `ord`         int   COMMENT 'Reihenfolge der Bilder der Exponate'
+, `ord`         int  DEFAULT 1 COMMENT 'Reihenfolge der Bilder der Exponate (Nur, falls einmal ein Exponat mehrere Fotos in der DB haben sollte)'
 , FOREIGN KEY (`exponat_fk`) REFERENCES `tbl_exponat` (`ID`)
-, FOREIGN KEY (`image_fk`  ) REFERENCES `tbl_image`   (`ID`)
+, FOREIGN KEY (`image_fk`  ) REFERENCES `tbl_bild`   (`ID`)
 );
 
 
 INSERT INTO `tbl_exponatbild`
-( `exponat_fk`, `image_fk` ) VALUES
+( `exponat_fk`, `image_fk`, `ord`) VALUES
 -- rechnen
-(  1001       ,   1001     ), -- abakus
-(  1002       ,   1004     ), -- rechenschieber
-(  1003       ,   1003     ), -- zahlenschieber
+(  1001       ,   1001    ,  1   ), -- abakus
+(  1002       ,   1004    ,  1   ), -- rechenschieber
+(  1003       ,   1003    ,  1   ), -- zahlenschieber
 
 -- speichern
-(  2001       ,   2001     ), -- Etruskische Amphoore Popolonio
-(  2002       ,   2002     ), -- Amphore Bild aus dem 3DDrucker
--- ( 2003     ,  not yet   ), -- Harddisk offen
-(  2004       ,   2004     ), -- Diskette S.U.s.E.
-(  2005       ,   2005     ), -- CD (Ubuntu OS 2008 Oktober (10)
-(  2006       ,   2006     ), -- CD (Audio : "Vince Eberts Ur-Knaller")
+(  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
+(  2002       ,   2002    ,  1   ), -- Amphore Bild aus dem 3DDrucker
+-- ( 2003     ,  not yet  ,  1   ), -- Harddisk offen
+(  2004       ,   2004    ,  1   ), -- Diskette S.U.s.E.
+(  2005       ,   2005    ,  1   ), -- CD (Ubuntu OS 2008 Oktober (10)
+(  2006       ,   2006    ,  1   ), -- CD (Audio : "Vince Eberts Ur-Knaller")
 
 -- kommunizieren
-(  3001       ,   3001     ), -- Tontäfelchen selbt gebrannt
+(  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
 
 -- diverses
-(  9001       ,   9001     ); -- smartphone
+(  9001       ,   9001    ,  1   ); -- smartphone
 
 -- ---------------------------------------------------
 -- Welche Exponate gehören zu welchen Erfindungen.
@@ -316,7 +316,6 @@ CREATE TABLE `tbl_keyword` (
 , `keyword`   text
 , FOREIGN KEY (`IDurl_fk`  ) REFERENCES `tbl_erfindung` (`IDurl`)
 );
-
 
 
 INSERT INTO `tbl_keyword`
@@ -400,10 +399,10 @@ INSERT INTO `tbl_editor`
 -- ,			     `tbl_exponat`    . `Exponat_Modell` AS `ExponatTitel`
 -- ,			     `tbl_exponat`    . `ausgestellt`    AS `ausgestellt`
 -- ,          `tbl_exponat`    . `inventarNr`     AS `InventarNummer`
--- ,          `tbl_image`      . `filename`       AS `IMG_Filename`
+-- ,          `tbl_bild`      . `filename`       AS `IMG_Filename`
 -- FROM       `tbl_exponat` 
 -- LEFT  JOIN `tbl_erfindung` ON `tbl_exponat`.`IDurl_fk`       = `tbl_erfindung`.`IDurl`
--- INNER JOIN `tbl_image`     ON `tbl_exponat`.`Exponat_img_fk` = `tbl_image` .`ID`
+-- INNER JOIN `tbl_bild`     ON `tbl_exponat`.`Exponat_img_fk` = `tbl_bild` .`ID`
 -- WHERE `ausgestellt` > 0;
 
 CREATE VIEW `vw_exponat` AS
@@ -478,13 +477,13 @@ LEFT JOIN `tbl_autor`     ON `tbl_editor`.`autor_fk`          = `tbl_autor`.`ID`
 CREATE VIEW `vw_image` AS
 SELECT
   `tbl_erfindungsbild`.`IDurl_fk` AS `URL_Infix`
-, `tbl_image`.`filename`          AS `Filename`
-, `tbl_image`.`bildlegende`       AS `BildlegendeTitel`
-, `tbl_image`.`alt_text`          AS `alt`
-, `tbl_image`.`bildrechte`        AS `rechte`
+, `tbl_bild`.`filename`          AS `Filename`
+, `tbl_bild`.`bildlegende`       AS `BildlegendeTitel`
+, `tbl_bild`.`alt_text`          AS `alt`
+, `tbl_bild`.`bildrechte`        AS `rechte`
 , `tbl_erfindungsbild`.`ord`      AS `ord`
-FROM `tbl_image`
-JOIN `tbl_erfindungsbild` ON `tbl_erfindungsbild`.`image_fk` = `tbl_image`.`ID`;
+FROM `tbl_bild`
+JOIN `tbl_erfindungsbild` ON `tbl_erfindungsbild`.`image_fk` = `tbl_bild`.`ID`;
 
 -- Testabfragen:
 CREATE VIEW `TEST_VIEW_amphoreBilderTest` AS
@@ -492,3 +491,6 @@ SELECT * FROM `vw_image` WHERE `URL_Infix` = 'amphore' ORDER BY `ord`;
 
 CREATE VIEW `TEST_VIEW_abakusBilderTest` AS
 SELECT * FROM `vw_image` WHERE `URL_Infix` = 'abakus' ORDER BY `ord`;
+
+CREATE VIEW `TEST_VIEW_keywordsAbakus` AS
+SELECT `keyword` FROM `tbl_keyword` WHERE 'abakus' = `IDurl_fk`;

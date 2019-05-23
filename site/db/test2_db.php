@@ -13,7 +13,7 @@ echo "<h2>dao abakus: </h2>\n";
 
 $dao    = new DAO();
 
-$abakus = $dao->getErfindungsObjekt('abakus');
+$abakus = $dao->getErfindungsObjekt('abakus', 1);
 
 var_dump($abakus);
 

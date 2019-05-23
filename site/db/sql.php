@@ -30,7 +30,7 @@ class SQL {
 	 */
 	public static function getErfindungsRecord($siteURL, $kategorie) {
 		$SQL  = 'SELECT * FROM `vw_webseite` WHERE (`URL_Infix` = "' . $siteURL . '" AND `KategorieID` = "'.$kategorie.'")';
-		return DAO::fetchSingle($SQL);
+		return SQL::fetchSingle($SQL);
 	}
 
 	/**
@@ -38,7 +38,7 @@ class SQL {
 	 */
 	public static function getAlleWebseitenRecordset() {
 		$SQL  = 'SELECT * FROM `vw_webseite`';
-		return DAO::fetchRows($SQL);
+		return SQL::fetchRows($SQL);
 	}
 
 	/**
@@ -46,7 +46,7 @@ class SQL {
 	 */
 	public static function getAlleBilderZuWebseiteRecordset($siteUrl) {
 		$SQL = 'SELECT * FROM `vw_image` WHERE `URL_Infix` = \'' . $siteUrl . '\' ORDER BY `ord`';
-		return DAO::fetchRows($SQL);
+		return SQL::fetchRows($SQL);
 	}
 
 
@@ -55,7 +55,7 @@ class SQL {
 	 */
 	public static function getAlleExponateZuWebseiteRecordset($siteUrl) {
 		$SQL = 'SELECT * FROM `vw_exponat` WHERE `core` = \'' . $siteUrl . '\' ORDER BY `ord`';
-		return DAO::fetchRows($SQL);
+		return SQL::fetchRows($SQL);
 	}
 
 }

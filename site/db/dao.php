@@ -5,7 +5,8 @@
  * 2019-05-19
  * Data Access Object
  */
-require_once 'SQL.php';
+require_once 'sql.php';
+require_once '../domain/Erfindung.php';
 
 class DAO {
 	
@@ -19,7 +20,7 @@ class DAO {
 		$erfindung = new Erfindung();
 		$resultSet = SQL::getErfindungsRecord($siteURL, $kategorie);
 		
-		$erfindung->IDurl = $siteUrl;
+		$erfindung->IDurl = $siteURL;
 		$erfindung->titel = $resultSet['ErfindungsTitel'];
 		$erfindung->jahr  = $resultSet['ErfindungsJahrzahl'];
 
