@@ -1,7 +1,7 @@
 <?php
 
 //require_once 'db_connection.php';
-require_once '../dao.php';
+require_once 'inc/dao.php';
 
 $pdo = ConnectionSingleton::getThePDO();
 
