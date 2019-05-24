@@ -59,19 +59,19 @@ class SQL {
 	}
 
 
-	public static function getApplicationVariable($varName) {
-		$SQL = 'SELECT `value` FROM `tbl_program_parameters` WHERE `name` = "' . $varName . '"';
+	public static function getProgramParameters($varName) {
+		$SQL = 'SELECT `value` FROM `tbl_program_parameter` WHERE `name` = "' . $varName . '"';
 		$val = SQL::fetchSingle($SQL);
 		return $val['value'];
 	}
 
 
 	public static function getActBrowserPath() {
-		$isDevel = SQL::getApplicationVariable('isDevelop');
+		$isDevel = SQL::getProgramParameters('isDevelop');
 		if('true' == $isDevel) {
-			return SQL::getApplicationVariable('browser_path_develop');
+			return SQL::getProgramParameters('browser_path_develop');
 		} else {
-			return SQL::getApplicationVariable('browser_path');
+			return SQL::getProgramParameters('browser_path');
 		}
 	}	
 }

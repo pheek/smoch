@@ -16,13 +16,13 @@ GRANT SELECT ON `smoch`.* TO 'smoch'@'%' IDENTIFIED BY '123';
 -- --------------------------------------------------------------
 -- tables
 -- --------------------------------------------------------------
-CREATE TABLE `tbl_program_parameters` (
+CREATE TABLE `tbl_program_parameter` (
   `name`        varchar(20) PRIMARY KEY NOT NULL
 , `value`       text
 , `description` text
 );
 
-INSERT INTO `tbl_program_parameters`
+INSERT INTO `tbl_program_parameter`
 (`name`                , `value`                            , `description`) VALUES
 ('isDevelop'           , 'true'                             , 'false = scharf; true=localhost o. ä.'             ),
 ('browser_path'        , '/'                                , 'url after "host:port" entry on targed host'       ),
@@ -31,6 +31,16 @@ INSERT INTO `tbl_program_parameters`
 ('server_root_develop' , '/var/www/html/smoch'              , 'server root on localhost for development'         ),
 ('image_path'          , '/erfindungen/images/'             , 'path for Erfindungs Bilder'                       );
 
+
+CREATE TABLE `tbl_session_variable` (
+  `name`        varchar(20) PRIMARY KEY NOT NULL
+, `description` text
+);
+
+INSERT INTO `tbl_session_variable`
+(`name`             , `description`) VALUES
+('userID'           , 'Bei Login: ID des aktuellen Users (=Login-Name)'),
+('tourKategorie'    , 'In welcher Tour befindet sich der User gerade'  );
 
 -- --------------------------------------------------------------
 CREATE TABLE `tbl_kategorie` (
@@ -50,35 +60,37 @@ INSERT INTO `tbl_kategorie`
 -- Erfindungen
 --
 CREATE TABLE `tbl_erfindung` (
-  `IDurl`         varchar(200) NOT NULL PRIMARY KEY
+  `IDurl`            varchar(200) NOT NULL PRIMARY KEY
                                         COMMENT 'withount *.php without *http://" without path. Wird ebenfalls verwendet für das Freitext-Prefix'
-, `Titel`         varchar(30)  NOT NULL COMMENT 'visible title'
-, `Jahrzahl`      varchar(20)  NOT NULL COMMENT 'sometimes as text (eg. 900 - 1200)'
+, `Titel`            varchar(30)  NOT NULL COMMENT 'visible title'
+, `Jahrzahl`         varchar(20)  NOT NULL COMMENT 'sometimes as text (eg. 900 - 1200)'
+, `defaultKategorie` int          NOT NULL COMMENT 'Welche Kategorie ist Standard bei Verwendung mit QR Codes?'
+, FOREIGN KEY (`defaultKategorie`) REFERENCES `tbl_kategorie` (`ID`)
 );
 
 INSERT INTO `tbl_erfindung`
-(`IDurl`,          `Titel`                    , `Jahrzahl`        ) VALUES
+(`IDurl`,          `Titel`                    , `Jahrzahl`        , `defaultKategorie` ) VALUES
 -- rechnen
-('abakus'        , 'Abakus'                   , 'ca. 2500 v. Chr.'),
-('pascaline'     , 'Pascaline'                ,     '1642'        ),
-('zahlenschieber', 'Addiator'                 , 'ca. 1730'        ),
-('rechenschieber', 'Rechenschieber'           ,     '1632'        ),
-('computer'      , 'Computer'                 ,     '1937'        ),
+('abakus'        , 'Abakus'                   , 'ca. 2500 v. Chr.', 1                  ),
+('pascaline'     , 'Pascaline'                ,     '1642'        , 1                  ),
+('zahlenschieber', 'Addiator'                 , 'ca. 1730'        , 1                  ),
+('rechenschieber', 'Rechenschieber'           ,     '1632'        , 1                  ),
+('computer'      , 'Computer'                 ,     '1937'        , 1                  ),
 
 -- speichern
-('amphore'       , 'Amphore'                  ,  'ca. 500 v. Chr.'),
-('harddisk'      , 'Harddisk'                 ,     '1956'        ),
-('diskette'      , 'Diskette'                 ,     '1969'        ),
-('cd'            , 'CD - ROM'                 ,     '1977'        ),
+('amphore'       , 'Amphore'                  ,  'ca. 500 v. Chr.', 2                  ),
+('harddisk'      , 'Harddisk'                 ,     '1956'        , 2                  ),
+('diskette'      , 'Diskette'                 ,     '1969'        , 2                  ),
+('cd'            , 'CD - ROM'                 ,     '1977'        , 2                  ),
 
 -- kommunizieren
-('keilschrift'   , 'Babylonische Keilschrift' , 'ca. 3400 v. Chr.'),
-('morsetaste'    , 'Morsegerät/Relaisstation' ,     '1833'        ),
+('keilschrift'   , 'Babylonische Keilschrift' , 'ca. 3400 v. Chr.', 3                  ),
+('morsetaste'    , 'Morsegerät/Relaisstation' ,     '1833'        , 3                  ),
 
 
 -- diverse
-('smartphone'    , 'Smartphone'               ,     '1994'        ),
-('chip'          , 'Rechner- / Speicherchip'  , 'ca. 1950'        );
+('smartphone'    , 'Smartphone'               ,     '1994'        , 3                  ),
+('chip'          , 'Rechner- / Speicherchip'  , 'ca. 1950'        , 1                  );
 
 
 -- --------------------------------------------------------------
@@ -87,9 +99,10 @@ CREATE TABLE `tbl_reihenfolge` (
  `IDurl_fk`      varchar(200) NOT NULL
 ,`kategorie_fk`  int
 ,`ord`       int
-, PRIMARY KEY (`IDurl_fk`, `kategorie_fk`, `ord`)
-, FOREIGN KEY (`IDurl_fk`    ) REFERENCES `tbl_erfindung` (`IDurl`)
-, FOREIGN KEY (`kategorie_fk`) REFERENCES `tbl_kategorie` (`ID`   )
+, UNIQUE (`IDurl_fk`, `kategorie_fk`)
+, UNIQUE (`kategorie_fk`, `ord`)
+, FOREIGN KEY (`IDurl_fk`    ) REFERENCES `tbl_erfindung` (`IDurl`) -- Jede Erfindung nur einmal pro Tour
+, FOREIGN KEY (`kategorie_fk`) REFERENCES `tbl_kategorie` (`ID`   ) -- Jede `ordnungszahl` nur einmal pro Tour
 );
 
 
