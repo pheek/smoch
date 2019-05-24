@@ -40,4 +40,3 @@ class Erfindung {
 } // end class Erfindung
 
 ?>
-

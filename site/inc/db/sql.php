@@ -13,7 +13,7 @@ class SQL {
 		$pdo  = ConnectionSingleton::getThePDO();
 		$stmt = $pdo->query($SQL);
 		$row  = $stmt->fetch(PDO::FETCH_ASSOC);
-		return $row;		
+		return $row;
 	}
 
 	private static function fetchRows($SQL) {
@@ -21,7 +21,7 @@ class SQL {
 		$stmt = $pdo->query($SQL);
 		return $stmt;
 	}
-	
+
 	/**
 	 * Alle Informationen zu einer Erfindung = zu einer Webseite.
 	 * Achtung: Smartphone kommt mehrmals vor in verschiedenen Kategorien.
@@ -73,5 +73,5 @@ class SQL {
 		} else {
 			return SQL::getProgramParameters('browser_path');
 		}
-	}	
+	}
 }

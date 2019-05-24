@@ -11,5 +11,4 @@
 	<div class='erfindungsExponate'>
 			{{EXPONAT_GALERIE}}
 	</div>
-			
 </div>

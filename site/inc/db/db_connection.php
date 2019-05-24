@@ -20,16 +20,16 @@ class ConnectionSingleton {
 		global $_CREDENTIALS_DB_  ;
 		global $_CREDENTIALS_PASS_;
 
-        $PDOcharset = 'utf8mb4';
-        
-        //DSN = Data Source Name (https://en.wikipedia.org/wiki/Data_source_name)
-        $dsn = "mysql:host=$_CREDENTIALS_HOST_;dbname=$_CREDENTIALS_DB_;charset=$PDOcharset";
-        $opt = [
-            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_EMULATE_PREPARES   => true,
-        ];
-        $this->pdo_conn_obj = new PDO($dsn, $_CREDENTIALS_USER_, $_CREDENTIALS_PASS_, $opt);
+		$PDOcharset = 'utf8mb4';
+
+		//DSN = Data Source Name (https://en.wikipedia.org/wiki/Data_source_name)
+		$dsn = "mysql:host=$_CREDENTIALS_HOST_;dbname=$_CREDENTIALS_DB_;charset=$PDOcharset";
+		$opt = [
+			PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+			PDO::ATTR_EMULATE_PREPARES   => true,
+		];
+		$this->pdo_conn_obj = new PDO($dsn, $_CREDENTIALS_USER_, $_CREDENTIALS_PASS_, $opt);
 	}
 
 
@@ -47,7 +47,7 @@ class ConnectionSingleton {
 	 */
 	public static function getThePDO() {
 		// instantiate singleton:
-		$st = ConnectionSingleton::getInstance(); 
+		$st = ConnectionSingleton::getInstance();
 		return $st->pdo_conn_obj;
 	}
 

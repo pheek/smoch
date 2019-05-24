@@ -22,7 +22,7 @@
 <?php
  require_once __DIR__ . '/../inc/db/sql.php';
  $browserPath = SQL::getActBrowserPath();
-?>	                                
+?>
 		<link   rel     = "stylesheet"
 		        href    = "<?php echo $browserPath;?>layout/css/style.css" />
 		<script src     = "<?php echo $browserPath;?>js/dom/asyncLoader.js" async></script>
@@ -30,8 +30,8 @@
 
 	<body>
 		<div id='mainHeader'> SMOCH (header kommt hier)</div>
-<?php include 'main_content.php'; ?>
-	  <div id='mainFooter'>φ ⓒ</div>                              
+			<?php include 'main_content.php'; ?>
+		<div id='mainFooter'>φ ⓒ</div>
 	</body>
 
 </html>

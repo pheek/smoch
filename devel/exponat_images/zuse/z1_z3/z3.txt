@@ -22,6 +22,3 @@ Sie wurde 1943 bei einem Luftangriff beschädigt und 1944 zerstört.
 Die Z3 von 1941 ist der erste voll funktionsfähige,
 frei programmierbare, programmgesteuerte binäre Rechenautomat.
 Der Programmablauf erfolgte in <i>einer</i> Schleife.
-
-
-

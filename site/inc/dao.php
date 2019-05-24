@@ -10,7 +10,7 @@ require_once 'db/sql.php';
 require_once 'domain/Erfindung.php';
 
 class DAO {
-	
+
 	/**
 	 * Alle Informationen zu einer Erfindung = zu einer Webseite.
 	 * Achtung: Smartphone kommt mehrmals vor in verschiedenen Kategorien.
@@ -20,7 +20,7 @@ class DAO {
 	public static function getErfindungsObjekt($siteURL, $kategorie) {
 		$erfindung = new Erfindung();
 		$resultSet = SQL::getErfindungsRecord($siteURL, $kategorie);
-		
+
 		$erfindung->IDurl = $siteURL;
 		$erfindung->titel = $resultSet['ErfindungsTitel'];
 		$erfindung->jahr  = $resultSet['ErfindungsJahrzahl'];
@@ -51,6 +51,5 @@ class DAO {
 
 	}
 
-	
 
 }
