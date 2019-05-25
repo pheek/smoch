@@ -28,8 +28,17 @@
 		<script src     = "<?php echo $browserPath;?>js/dom/asyncLoader.js" async></script>
 	</head>
 
+<?php
+	require_once 'inc/db/sql.php';
+	$CLIENT_ROOT = SQL::getActBrowserPath();
+?>
+	 
 	<body>
-		<div id='mainHeader'> SMOCH </div>
+		<div id='mainHeader'>
+	 <div><a href='<?php echo $CLIENT_ROOT; ?>'><img src='<?php echo $CLIENT_ROOT; ?>layout/img/home.png' height="30" /></a></div>
+	   <div>SMOCH</div>
+	 <div><img src='<?php echo $CLIENT_ROOT; ?>layout/img/swiss-made.png' height="30" /></div>
+    </div>
 			<?php include 'main_content.php'; ?>
 		<div id='mainFooter'>φ ⓒ</div>
 	</body>

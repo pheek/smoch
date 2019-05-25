@@ -23,7 +23,7 @@ class DAO_Erfindung {
 	 *          Kategorie abängig!
 	 */
 	public static function getErfindungsObjekt($siteURL, $kategorie) {
-		if(! isset($siteURL)) {
+		if(! isset($siteURL) || strlen($siteURL) < 1) {
 			$siteURL   = 'abakus';
 			$kategorie =        1;
 		}

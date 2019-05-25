@@ -86,7 +86,6 @@ class SQL {
 		return $val['value'];
 	}
 
-
 	public static function getActBrowserPath() {
 		$isDevel = SQL::getProgramParameter('isDevelop');
 		if('true' == $isDevel) {

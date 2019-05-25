@@ -1,10 +1,9 @@
 <?php
+$CLIENT_ROOT = SQL::getActBrowserPath();
+
 $ERFINDUNG_PREFIX = "./";
 if(strpos($_SERVER['PHP_SELF'], 'ndex.php') > 0) {
-	$ERFINDUNG_PREFIX = './erfindung.php/';
-}
-if(strpos($_SERVER['PHP_SELF'], 'ndex.php/') > 0) {
-	$ERFINDUNG_PREFIX = '../erfindung.php/';
+	$ERFINDUNG_PREFIX = $CLIENT_ROOT . 'erfindung.php/';
 }
 
 ?>

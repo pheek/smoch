@@ -8,13 +8,21 @@ body {
 }
 
 #mainHeader, #mainFooter, #introSeite {
-	padding: 6px;
-	background-color: #f00;
-	color: white;
-	font-weight: bold;
-	font-size: 180%;
-	text-align: center;
+	padding         :    6px;
+	background-color: #fff  ;
+	color           : red   ;
+	font-weight     : bold  ;
+	font-size       : 180%  ;
+	text-align      : center;
 }
+
+#mainHeader {
+	display         : flex         ; /* establish flex container */
+	flex-direction  : row          ; /* default value; can be omitted */
+	flex-wrap       : nowrap       ; /* default value; can be omitted */
+	justify-content : space-between; /* switched from default (flex-start, see below) */
+}
+
 
 #introSeite {
 	font-size: 100%;

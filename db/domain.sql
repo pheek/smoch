@@ -18,8 +18,9 @@ INSERT INTO `tbl_program_parameter`
 ('browser_path_develop', '/smoch/'                          , 'same as browser_path, but on development machine.'),
 ('server_root'         , '/var/www/smoch'                   , 'server root for php includes or file readings.'   ),
 ('server_root_develop' , '/var/www/html/smoch'              , 'server root on localhost for development'         ),
-('image_path'          , '/erfindungen/images/'             , 'path for Erfindungs Bilder'                       );
-
+('erfindungen_pfad'    , 'erfindungen/'                     , 'Wo liegen die Artikel und die bilder?'            ),
+('artikel_dir'         , 'artikel/'                         , 'Innerhalb von «erfindungen_pfad»'                 ),
+('bilder_dir'          , 'bilder/'                          , 'Innerhalb von «erfindungen_pfad»'                 );
 
 -- --------------------------------------------------------------
 CREATE TABLE `tbl_session_variable` (
@@ -29,9 +30,9 @@ CREATE TABLE `tbl_session_variable` (
 
 
 INSERT INTO `tbl_session_variable`
-(`name`             , `description`) VALUES
-('userID'           , 'Bei Login: ID des aktuellen Users (=Login-Name)'),
-('tourKategorie'    , 'In welcher Tour befindet sich der User gerade'  );
+(`name`         , `description`) VALUES
+('userID'       , 'Bei Login: ID des aktuellen Users (=Login-Name)'),
+('kategorie_id' , 'In welcher Tour befindet sich der User gerade'  );
 
 
 -- --------------------------------------------------------------
