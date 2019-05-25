@@ -6,21 +6,34 @@
  * phi@smoch.ch
  */
 
+include_once 'inc/db/sql.php';
+include_once 'inc/dao/dao_bild.php';
 
 class BildImg {
 	
 	public function __construct() {
 	}
 
-	public $bild;
+	
+	public $bild; // domain Bild (nicht GUI-BildImg!)
 
-	public function createImgTag($imgPath, $width) {
+	
+	public static function readBildViaID($bild_id) {
+		$bildImg = new BildImg();
+		$bild    = DAO_Bild::getBildViaID($bild_id);
+		$bildImg->bild = $bild;
+		return $bildImg;
+	}
+	
+	public function createImgTag($CSS_class) {
+		$IMG_PATH = SQL::getBilderDir();
+//		var_dump($IMG_PATH);
 		$imgTag = "";
 		$imgTag .= '<img ';
-		$imgTag .= 'src="'  . $imgPath . $this->bild->filename . '" ';
-		$imgTag .= 'alt="'  . $this->bild->altText . '" ';
+		$imgTag .= 'src="'   . $IMG_PATH . $this->bild->filename . '" ';
+		$imgTag .= 'alt="'   . $this->bild->altText . '" ';
 		$imgTag .= 'title="' . $this->bild->bildlegende . '" ';
-		$imgTag .= 'width="' . $width . '" ';
+		$imgTag .= 'class="' . $CSS_class . '" ';
 		$imgTag .= ' />';
 		return $imgTag;
 	}

@@ -7,9 +7,17 @@ body {
 	font-family: verdana, arial, sans;
 }
 
-#mainHeader, #mainFooter {
-	color: red;
-	background-color: #fee;
+#mainHeader, #mainFooter, #introSeite {
+	padding: 6px;
+	background-color: #f00;
+	color: white;
+	font-weight: bold;
+	font-size: 180%;
+	text-align: center;
+}
+
+#introSeite {
+	font-size: 100%;
 }
 
 .mainTour {
@@ -33,13 +41,33 @@ body {
 
 .erfindung h1 {
 	font-style: italic;
-	font-size: 112%;
-	color: black;
+	font-size : 112%  ;
+	color     : black ;
 }
 
-.erfindungsHeader {
-	color: #8F0;
-	background-color: #efd;
+.erfindungHeader {
+	display         : flex         ; /* establish flex container */
+	flex-direction  : row          ; /* default value; can be omitted */
+	flex-wrap       : nowrap       ; /* default value; can be omitted */
+	justify-content : space-between; /* switched from default (flex-start, see below) */
+	background-color: lightyellow  ;
+
+	color           : #240         ;
+	background-color: #efd         ;
+	text-align      : center       ;
+	font-size       : 200%         ;
+	font-weigth     : bold         ;
+	font-variant    : small-caps   ;
+}
+
+.erfindungHeader > div {
+  width : 100px;
+  height: auto;
+	padding: 3px;
+}
+
+.erfindungHeader > div:nth-child(2) {
+	width: auto;
 }
 
 .erfindungsBilder {c
@@ -52,3 +80,6 @@ body {
 	background-color: #dfe;
 }
 
+.small_image {
+	width: 144px;
+}

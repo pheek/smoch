@@ -74,19 +74,38 @@ class SQL {
 		return SQL::fetchSingle($SQL);
 	}
 
-	public static function getProgramParameters($varName) {
+
+	public static function getProgramParameter($varName) {
 		$SQL = 'SELECT `value` FROM `tbl_program_parameter` WHERE `name` = "' . $varName . '"';
 		$val = SQL::fetchSingle($SQL);
+		if(!isset($val) || !isset($val['value'])) {
+			var_dump($val);
+			echo "ERROR in sql.php: Progarmm parameter " . $varName . " not found!";
+			return "ERROR in sql.php";
+		}
 		return $val['value'];
 	}
 
 
 	public static function getActBrowserPath() {
-		$isDevel = SQL::getProgramParameters('isDevelop');
+		$isDevel = SQL::getProgramParameter('isDevelop');
 		if('true' == $isDevel) {
-			return SQL::getProgramParameters('browser_path_develop');
+			return SQL::getProgramParameter('browser_path_develop');
 		} else {
-			return SQL::getProgramParameters('browser_path');
+			return SQL::getProgramParameter('browser_path'        );
 		}
 	}
+	
+	public static function getErfindungenPath() {
+		return SQL::getActBrowserPath() . SQL::getProgramParameter('erfindungen_pfad');
+	}
+		
+	
+	public static function getArtikelDir() {
+		return '' . SQL::getErfindungenPath() . SQL::getProgramParameter('artikel_dir');
+	}
+	public static function getBilderDir() {
+		return '' . SQL::getErfindungenPath() . SQL::getProgramParameter('bilder_dir');
+	}
+	
 }

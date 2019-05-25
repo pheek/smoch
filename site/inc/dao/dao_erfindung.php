@@ -23,6 +23,10 @@ class DAO_Erfindung {
 	 *          Kategorie abängig!
 	 */
 	public static function getErfindungsObjekt($siteURL, $kategorie) {
+		if(! isset($siteURL)) {
+			$siteURL   = 'abakus';
+			$kategorie =        1;
+		}
 		$erfindung = new Erfindung();
 		$resultSet = SQL::getErfindungsRecordDefault($siteURL);
 
@@ -33,35 +37,16 @@ class DAO_Erfindung {
 
 		// Mögliche Nachfolger bestimmen
 		$resultSetMitKat = SQL::getErfindungsRecordMitKategorie($siteURL, $kategorie);
-		foreach($resultSetMitKat as $entry) {
-			echo "DEBUG dao.php: " . $entry . "<br />\n";
+/*		var_dump($resultSetMitKat);
+		foreach($resultSetMitKat as $key => $value) {
+			echo "DEBUG dao.php: " . $key . '---' . $value . "<br />\n";
 		}
+*/
 		
 		// ...
 		return $erfindung;
 	}
 
-	/**
-	 * Liste aller Webseiten mit allen Infos (ohne Bilder und ohne Exponate).
-	 */
-	public function getAlleErfindungen() {
-
-	}
-
-	/**
-	 * Liefert alle Bilder zu einer gegebenen Erfindung
-	 */
-	public function getAlleBilderZuWebseite($siteUrl) {
-
-	}
-
-
-  /**
-	 * Liefert alle Exponate zu einer gegebenen Erfindung
-	 */
-	public function getAlleExponateZuErfindung($siteUrl) {
-
-	}
-
+	
 
 }

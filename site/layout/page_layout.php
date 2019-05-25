@@ -29,7 +29,7 @@
 	</head>
 
 	<body>
-		<div id='mainHeader'> SMOCH (header kommt hier)</div>
+		<div id='mainHeader'> SMOCH </div>
 			<?php include 'main_content.php'; ?>
 		<div id='mainFooter'>φ ⓒ</div>
 	</body>
