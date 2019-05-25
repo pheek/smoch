@@ -17,10 +17,10 @@ body {
 }
 
 #mainHeader {
-	display         : flex         ; /* establish flex container */
-	flex-direction  : row          ; /* default value; can be omitted */
-	flex-wrap       : nowrap       ; /* default value; can be omitted */
-	justify-content : space-between; /* switched from default (flex-start, see below) */
+	display         : flex         ;
+	flex-direction  : row          ;
+	flex-wrap       : nowrap       ;
+	justify-content : space-between;
 }
 
 
@@ -38,8 +38,27 @@ body {
 }
 
 .tourHeader {
-	color: blue;
-	background-color: #eef;
+	color           : red          ;
+	background-color: #fff         ;
+	display         : flex         ;
+	flex-direction  : row          ;
+	flex-wrap       : nowrap       ;
+	justify-content : space-between;
+	border          : red 1px solid;
+	padding         : 4px          ;
+	border-radius   : 4px          ;
+}
+
+.tourHeader > a {
+	text-decoration: none      ;
+	color          : red       ;
+	font-variant   : small-caps;
+	font-weight    : bold      ;
+}
+
+.tourHeader > a:hover {
+	color           : white;
+	background-color: red  ;
 }
 
 .erfindung {
