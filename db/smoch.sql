@@ -13,6 +13,7 @@ USE                       `smoch`  ;
 
 GRANT SELECT ON `smoch`.* TO 'smoch'@'%' IDENTIFIED BY '123';
 
+
 -- --------------------------------------------------------------
 -- tables
 -- --------------------------------------------------------------
@@ -22,8 +23,9 @@ CREATE TABLE `tbl_program_parameter` (
 , `description` text
 );
 
+
 INSERT INTO `tbl_program_parameter`
-(`name`                , `value`                            , `description`) VALUES
+(`name`                , `value`                            , `description`                                      ) VALUES
 ('isDevelop'           , 'true'                             , 'false = scharf; true=localhost o. ä.'             ),
 ('browser_path'        , '/'                                , 'url after "host:port" entry on targed host'       ),
 ('browser_path_develop', '/smoch/'                          , 'same as browser_path, but on development machine.'),
@@ -32,15 +34,18 @@ INSERT INTO `tbl_program_parameter`
 ('image_path'          , '/erfindungen/images/'             , 'path for Erfindungs Bilder'                       );
 
 
+-- --------------------------------------------------------------
 CREATE TABLE `tbl_session_variable` (
   `name`        varchar(20) PRIMARY KEY NOT NULL
 , `description` text
 );
 
+
 INSERT INTO `tbl_session_variable`
 (`name`             , `description`) VALUES
 ('userID'           , 'Bei Login: ID des aktuellen Users (=Login-Name)'),
 ('tourKategorie'    , 'In welcher Tour befindet sich der User gerade'  );
+
 
 -- --------------------------------------------------------------
 CREATE TABLE `tbl_kategorie` (
@@ -48,6 +53,7 @@ CREATE TABLE `tbl_kategorie` (
 , `titel` text
 , `beschreibung` text
 );
+
 
 INSERT INTO `tbl_kategorie`
 (`ID`, `titel`        , `beschreibung`                       )   VALUES
@@ -68,6 +74,7 @@ CREATE TABLE `tbl_erfindung` (
 , FOREIGN KEY (`defaultKategorie`) REFERENCES `tbl_kategorie` (`ID`)
 );
 
+
 INSERT INTO `tbl_erfindung`
 (`IDurl`,          `Titel`                    , `Jahrzahl`        , `defaultKategorie` ) VALUES
 -- rechnen
@@ -86,7 +93,6 @@ INSERT INTO `tbl_erfindung`
 -- kommunizieren
 ('keilschrift'   , 'Babylonische Keilschrift' , 'ca. 3400 v. Chr.', 3                  ),
 ('morsetaste'    , 'Morsegerät/Relaisstation' ,     '1833'        , 3                  ),
-
 
 -- diverse
 ('smartphone'    , 'Smartphone'               ,     '1994'        , 3                  ),
@@ -146,6 +152,7 @@ CREATE TABLE `tbl_exponat` (
 , `inventarNr`     varchar(50)   COMMENT 'Wie wird das Exponat gefunden, sortiert, ... Die Inventarnummer beginnt mit S: speichern, K: kommunizieren bzw. R: rechnen'
 );
 
+
 INSERT INTO `tbl_exponat`
 ( `ID`, `Exponat_Jahr` , `Exponat_Modell`                                     , `inventarNr`, `ausgestellt`) VALUES
 -- rechnen
@@ -177,6 +184,7 @@ CREATE TABLE `tbl_bild` (
 , `bildrechte`   text             COMMENT 'Wer hat das Bild gemacht? Ist es frei? wikimedia?...'
 , `alt_text`     text
 );
+
 
 INSERT INTO `tbl_bild`
 (`ID`   , `filename`                       , `bildrechte`   , `bildlegende`                     , `alt_text`									) VALUES
@@ -217,8 +225,6 @@ INSERT INTO `tbl_bild`
 -- -----------------------------------------------------
 -- Erfindungsbilder sind die Bilder auf der Webseite.
 -- Ein Bild kann theoretisch zu mehreren Erfindungen gehören, wie z.B. das Smartphone.
-
-
 CREATE TABLE `tbl_erfindungsbild` (
   `IDurl_fk`  varchar(200)
 , `ord`       int             COMMENT 'Bildreihenfolge auf der Webseite'
@@ -289,6 +295,7 @@ INSERT INTO `tbl_exponatbild`
 -- diverses
 (  9001       ,   9001    ,  1   ); -- smartphone
 
+
 -- ---------------------------------------------------
 -- Welche Exponate gehören zu welchen Erfindungen.
 -- Gewisse Exponate können zu mehreren Erfindungen gehören (Smartphone).
@@ -299,6 +306,7 @@ CREATE TABLE `tbl_erfindungsexponat` (
 , FOREIGN KEY (`IDurl_fk`  ) REFERENCES `tbl_erfindung` (`IDurl`)
 , FOREIGN KEY (`exponat_fk`) REFERENCES `tbl_exponat`   (`ID`   )
 );
+
 
 INSERT INTO `tbl_erfindungsexponat`
 (`IDurl_fk`      , `exponat_fk` , `ord`) VALUES
@@ -320,7 +328,6 @@ INSERT INTO `tbl_erfindungsexponat`
 
 -- diveses
 ('smartphone'    ,  9001        ,  1   );
-
 
 
 -- Mehrere Exponate zu einem Objekt sind möglich.
@@ -359,16 +366,19 @@ INSERT INTO `tbl_keyword`
 ('cd'            , 'Audio'               );
 
 
+-- --------------------------------------------------------------
 CREATE TABLE `tbl_autor` (
   `ID`        int PRIMARY KEY AUTO_INCREMENT
 , `name`     text
 );
+
 
 INSERT INTO `tbl_autor`
 (`name`) VALUES
 ('philipp gressly freimann (phi@smoch.ch)');
 
 
+-- --------------------------------------------------------------
 CREATE TABLE `tbl_editor` (
   `ID`        int PRIMARY KEY AUTO_INCREMENT
 , `IDurl_fk`  varchar(200) 
@@ -376,6 +386,7 @@ CREATE TABLE `tbl_editor` (
 , FOREIGN KEY (`IDurl_fk`  ) REFERENCES `tbl_erfindung` (`IDurl`)
 , FOREIGN KEY (`autor_fk`  ) REFERENCES `tbl_autor`     (`ID`   )
 );
+
 
 INSERT INTO `tbl_editor`
 (`IDurl_fk`      , `autor_fk`) VALUES
@@ -401,6 +412,7 @@ INSERT INTO `tbl_editor`
 ('smartphone'    , 1),
 ('chip'          , 1);
 
+
 -- --------------------------------------------------------
 -- views
 -- --------------------------------------------------------
@@ -420,7 +432,6 @@ INSERT INTO `tbl_editor`
 -- LEFT  JOIN `tbl_erfindung` ON `tbl_exponat`.`IDurl_fk`       = `tbl_erfindung`.`IDurl`
 -- INNER JOIN `tbl_bild`     ON `tbl_exponat`.`Exponat_img_fk` = `tbl_bild` .`ID`
 -- WHERE `ausgestellt` > 0;
-
 CREATE VIEW `vw_exponat` AS
 SELECT `tbl_erfindung`.`IDurl`          AS `core`
 ,      `tbl_erfindung`.`Titel`          AS `Erfindung`
@@ -433,6 +444,7 @@ SELECT `tbl_erfindung`.`IDurl`          AS `core`
 FROM `tbl_exponat`
 INNER  JOIN `tbl_erfindungsexponat` ON `tbl_exponat`  .`ID`    = `tbl_erfindungsexponat`.`exponat_fk`
 LEFT JOIN `tbl_erfindung`         ON `tbl_erfindung`.`IDurl` = `tbl_erfindungsexponat`.`IDurl_fk`;
+
 
 -- Synthetische Reihenfolge (nach tbl_reihenfolge)
 CREATE VIEW `tmp_vw_nachfolger` AS
@@ -458,6 +470,7 @@ LEFT JOIN `tbl_reihenfolge` AS `tbl_2`
 ON (`tbl_1`.`kategorie_fk` = `tbl_2`.`kategorie_fk`) AND
    (`tbl_1`.`ord`      = `tbl_2`.`ord` + 1 );
 
+
 CREATE VIEW `tmp_vw_reihenfolge` AS
 SELECT `core_vorgaenger`            AS `vor`
 ,      `tmp_vw_vorgaenger`.`core`   AS `core`
@@ -470,18 +483,17 @@ LEFT OUTER JOIN `tmp_vw_nachfolger` ON
 
 -- Im Gegensatz zum Exponat-View (wo die Exonate erscheinen), sind hier
 -- die Webseiten aufgelistet.
-
-CREATE VIEW `vw_webseite` AS
+CREATE VIEW `vw_erfindung` AS
 SELECT
-  `tmp_vw_reihenfolge`.`core`       AS `URL_Infix`
-,	`tbl_erfindung`.`Titel`           AS `ErfindungsTitel`
-, `tbl_erfindung`.`Jahrzahl`        AS `ErfindungsJahrzahl`
-, `tmp_vw_reihenfolge`.`vor`        AS `vorgaenger_URL_Infix`
-, `tmp_vw_reihenfolge`.`nach`       AS `nachfolger_URL_Infix`
-, `tmp_vw_reihenfolge`.`Kategorie`  AS `KategorieID`
-, `tbl_kategorie`.`titel`           AS `KategorieName`
-, `tbl_kategorie`.`beschreibung`    AS `KategorieBeschreibung`
-, CONCAT(`tmp_vw_reihenfolge`.`core` , '_', `tmp_vw_reihenfolge`.`Kategorie`) AS `EnrichedURLInfix`
+  `tmp_vw_reihenfolge`.`core`        AS `URL_Infix`
+,	`tbl_erfindung`.`Titel`            AS `ErfindungsTitel`
+, `tbl_erfindung`.`Jahrzahl`         AS `ErfindungsJahrzahl`
+, `tbl_erfindung`.`defaultKategorie` AS	`defaultKategorie`
+, `tmp_vw_reihenfolge`.`vor`         AS `vorgaenger_URL_Infix`
+, `tmp_vw_reihenfolge`.`nach`        AS `nachfolger_URL_Infix`
+, `tmp_vw_reihenfolge`.`Kategorie`   AS `KategorieID`
+, `tbl_kategorie`.`titel`            AS `KategorieName`
+, `tbl_kategorie`.`beschreibung`     AS `KategorieBeschreibung`
 , `tbl_autor`.`name` AS `Editor`
 FROM `tmp_vw_reihenfolge`
 LEFT JOIN `tbl_kategorie` ON `tmp_vw_reihenfolge`.`Kategorie` = `tbl_kategorie`.`ID`
@@ -501,11 +513,13 @@ SELECT
 FROM `tbl_bild`
 JOIN `tbl_erfindungsbild` ON `tbl_erfindungsbild`.`bild_fk` = `tbl_bild`.`ID`;
 
+
 CREATE VIEW `vw_exponatbilder` AS
 SELECT `tbl_exponat`.`id` AS `exponat_ID`, `ord`, `filename`, `bildrechte`, `bildlegende`, `alt_text`, `Exponat_Jahr`, `Exponat_Modell`, `ausgestellt`, `inventarNr`
 FROM `tbl_exponatbild`
 LEFT JOIN `tbl_exponat` ON `tbl_exponat`.`ID` = `tbl_exponatbild`.`exponat_fk`
 LEFT JOIN `tbl_bild`    ON `tbl_bild`.`ID` = `tbl_exponatbild`.`bild_fk`;
+
 
 -- Testabfragen:
 CREATE VIEW `TEST_VIEW_amphoreBilderTest` AS
