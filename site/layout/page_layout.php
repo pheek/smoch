@@ -35,11 +35,11 @@
 	 
 	<body>
 		<div id='mainHeader'>
-	 <div><a href='<?php echo $CLIENT_ROOT; ?>'><img src='<?php echo $CLIENT_ROOT; ?>layout/img/home.png' height="30" /></a></div>
+	 <div><a href='<?php echo $CLIENT_ROOT; ?>'><img src='<?php echo $CLIENT_ROOT; ?>layout/img/home.png' height="48" /></a></div>
 	   <div>SMOCH</div>
-	 <div><img src='<?php echo $CLIENT_ROOT; ?>layout/img/swiss-made.png' height="30" /></div>
+	 <div><img src='<?php echo $CLIENT_ROOT; ?>layout/img/swiss-made.png' height="48" /></div>
     </div>
-			<?php include 'main_content.php'; ?>
+			<?php include 'layout/main_content.php'; ?>
 		<div id='mainFooter'>φ ⓒ</div>
 	</body>
 

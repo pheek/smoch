@@ -1,5 +1,6 @@
 <?php
 //require_once 'db_connection.php';
+require_once 'inc/db/sql.php';
 require_once 'inc/dao/dao_erfindung.php';
 require_once 'inc/session.php';
 
@@ -15,14 +16,42 @@ if(sizeof($matches) >= 4) {
 $daoErfindung    = new DAO_Erfindung();
 $erfindung = $daoErfindung->getErfindungsObjekt($erfindungID, $_SESSION['kategorie_id']);
 
+
+function prevLink() {
+	global $erfindungID;
+	global $_SESSION;
+//	echo $_SESSION['kategorie_id'];
+	$vorg =  SQL::getVorgaenger($erfindungID, $_SESSION['kategorie_id']);
+
+	if(! isset($vorg) || strlen($vorg) < 1) {
+		return "";
+	}
+	$link = "<a href='./" . $vorg . "'>&lt;&lt</a>";
+	return $link;	
+}
+
+function nextLink() {
+	global $erfindungID;
+	global $_SESSION;
+//	echo $_SESSION['kategorie_id'];
+	$nachf =  SQL::getNachfolger($erfindungID, $_SESSION['kategorie_id']);
+
+	if(! isset($nachf) || strlen($nachf) < 1) {
+		return "";
+	}
+	$link = "<a href='./" . $nachf . "'>&gt;&gt</a>";
+	return $link;	
+}
+
+
 ?>
 
 
 <div class='erfindung'>
 	<div class='erfindungHeader'>
-		<div>PREV</div>
+	<div><?php echo prevLink(); ?></div>
 		<div><?php echo $erfindung->titel;?>&nbsp;(<?php echo $erfindung->jahr; ?>)</div>
-  	<div>NEXT</div>
+<div><?php echo nextLink(); ?></div>
 	</div>
 			                                    <div style='clear: both;' class='erfindungsBilder'>
 	<?php include 'bildergalerie.php' ?>

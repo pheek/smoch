@@ -98,13 +98,34 @@ class SQL {
 	public static function getErfindungenPath() {
 		return SQL::getActBrowserPath() . SQL::getProgramParameter('erfindungen_pfad');
 	}
-		
-	
+			
 	public static function getArtikelDir() {
 		return '' . SQL::getErfindungenPath() . SQL::getProgramParameter('artikel_dir');
 	}
 	public static function getBilderDir() {
 		return '' . SQL::getErfindungenPath() . SQL::getProgramParameter('bilder_dir');
 	}
+
+	public static function getKategorieName($kategorieNr) {
+		$SQL = 'SELECT `titel` FROM `tbl_kategorie` WHERE `ID` = "' . $kategorieNr . '"';
+		return SQL::fetchSingle($SQL)['titel'];
+	}
+
+	public static function getErsteErfindungUrlInKategorie($kategorieNr) {
+		$SQL = 'SELECT `IDurl_fk` FROM `tbl_reihenfolge` WHERE `kategorie_fk` = \'' . $kategorieNr . '\' AND `ord` = \'' . 1 . '\'';
+		return SQL::fetchSingle($SQL)['IDurl_fk'];
+	}
+
+	public static function getVorgaenger($idUrl, $kategorieNr) {
+		$SQL = "SELECT `vorgaenger_URL_Infix` FROM `vw_erfindung` WHERE `URL_Infix` = '$idUrl' AND `KategorieID` = $kategorieNr";
+		//echo $SQL;
+		return SQL::fetchSingle($SQL)['vorgaenger_URL_Infix'];
+	}
+
+	public static function getNachfolger($idUrl, $kategorieNr) {
+		$SQL = "SELECT `nachfolger_URL_Infix` FROM `vw_erfindung` WHERE `URL_Infix` = '$idUrl' AND `KategorieID` = $kategorieNr";
+		//echo $SQL;
+		return SQL::fetchSingle($SQL)['nachfolger_URL_Infix'];
+	}
 	
-}
+} // end static class SQL
