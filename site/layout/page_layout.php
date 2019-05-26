@@ -25,6 +25,8 @@
 ?>
 		<link   rel     = "stylesheet"
 		        href    = "<?php echo $browserPath;?>layout/css/style.css" />
+		<link   rel     = "stylesheet"
+		        href    = "<?php echo $browserPath;?>layout/css/artikel.css" />
 		<script src     = "<?php echo $browserPath;?>js/dom/asyncLoader.js" async></script>
 	</head>
 

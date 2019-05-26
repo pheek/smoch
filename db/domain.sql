@@ -67,9 +67,9 @@ INSERT INTO `tbl_erfindung`
 (`IDurl`,          `Titel`                    , `Jahrzahl`        , `defaultKategorie` ) VALUES
 -- rechnen
 ('abakus'        , 'Abakus'                   , 'ca. 2500 v. Chr.', 1                  ),
+('rechenschieber', 'Rechenschieber'           ,     '1632'        , 1                  ),
 ('pascaline'     , 'Pascaline'                ,     '1642'        , 1                  ),
 ('zahlenschieber', 'Addiator'                 , 'ca. 1730'        , 1                  ),
-('rechenschieber', 'Rechenschieber'           ,     '1632'        , 1                  ),
 ('computer'      , 'Computer'                 ,     '1937'        , 1                  ),
 
 -- speichern
@@ -82,7 +82,7 @@ INSERT INTO `tbl_erfindung`
 ('keilschrift'   , 'Babylonische Keilschrift' , 'ca. 3400 v. Chr.', 3                  ),
 ('morsetaste'    , 'Morsegerät/Relaisstation' ,     '1833'        , 3                  ),
 
--- diverse
+-- diverse Kategorien
 ('smartphone'    , 'Smartphone'               ,     '1994'        , 3                  ),
 ('chip'          , 'Rechner- / Speicherchip'  , 'ca. 1950'        , 1                  );
 
@@ -105,9 +105,9 @@ INSERT INTO `tbl_reihenfolge`
 
 -- rechnen
 ('abakus'        ,   1           ,   1      ),
-('zahlenschieber',   1           ,   2      ),
-('rechenschieber',   1           ,   3      ),
-('pascaline'     ,   1           ,   4      ),
+('rechenschieber',   1           ,   2      ),
+('pascaline'     ,   1           ,   3      ),
+('zahlenschieber',   1           ,   4      ),
 ('computer'      ,   1           ,   5      ),
 ('chip'          ,   1           ,   6      ),
 ('smartphone'    ,   1           ,   7      ),

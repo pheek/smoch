@@ -1,0 +1,38 @@
+/**
+ * phi@smoch.ch
+ * 2019-05-26
+ */
+
+
+.zitat { /* Z. B. Wikipedia*/
+	font-style   : oblique   ;
+	font-size    :        90%;
+	margin-left  :        3px;
+	margin-right :        3px;
+	padding      :        1px;
+	border-style : solid     ;
+	border-color :    #eaeaee;
+	border-size  :        1px;
+	background-color: #fafaff;
+}
+
+.zitat > p, .zitat > div {
+	margin-left  :        3em;
+	margin-right :        3em;
+	padding      :        1em;
+}
+
+.zitat.text::after {
+	content: '»';
+}
+.zitat.text::before {
+	content: '«';
+}
+
+.zitat.quelle {
+	margin-top      : 0px        ;
+	padding-top     : 0px        ;
+	background-color: transparent;
+	font-weight     : bold       ;
+	border          : none       ;
+}

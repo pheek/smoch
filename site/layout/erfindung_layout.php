@@ -57,7 +57,7 @@ function nextLink() {
 	<?php include 'bildergalerie.php' ?>
 	</div>
 	<div class='erfindungsText'>
-		<?php include 'erfindungen/artikel/_erfindung_template.php'; ?>
+		<?php include 'erfindungen/artikel/' . $erfindung->IDurl . '.php'; ?>
 	</div>
 	<div class='erfindungsExponate'>
 			{{EXPONAT_GALERIE}}
