@@ -148,6 +148,9 @@ INSERT INTO `tbl_exponat`
 (1002 , 'ca. 1975'     , 'Aristo 75 ...??'                                    , 'R_002_r'     , true       ),
 (1003 , 'ca. 1970'     , 'Zahlenschieber Adimult'                             , 'R_003_z'     , true       ),
 
+-- zuse test only
+(1050, 'ca 1940', 'ZUSE', 'R_XXX_z', true),
+
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
 (2002 , '2019'         , 'Nachbildung aus dem 3D-Drucker'                     , 'S_002_a'     , false      ),
@@ -317,6 +320,13 @@ INSERT INTO `tbl_exponatbild`
 (  1002       ,   1004    ,  1   ), -- rechenschieber
 (  1003       ,   1003    ,  1   ), -- zahlenschieber
 
+-- zuse test only
+
+( 1050        , 1005 , 1),
+( 1050        , 1006 , 2),
+( 1050        , 1007 , 3),
+( 1050        , 1008,  4),
+
 -- speichern
 (  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
 (  2002       ,   2002    ,  1   ), -- Amphore Bild aus dem 3DDrucker
@@ -350,6 +360,9 @@ INSERT INTO `tbl_erfindungsexponat`
 ('abakus'        ,  1001        ,  1   ),
 ('rechenschieber',  1002        ,  1   ),
 ('zahlenschieber',  1003        ,  1   ),
+
+-- zuse test only
+('computer', 1050, 1),
 
 -- speichern
 ('amphore'       ,  2001        ,  1   ),

@@ -59,7 +59,7 @@ class SQL {
 	 * Liefert alle Exponate zu einer gegebenen Erfindung
 	 */
 	public static function getAlleExponateZuErfindungRecordset($siteUrl) {
-		$SQL = 'SELECT * FROM `vw_exponat` WHERE `core` = \'' . $siteUrl . '\' ORDER BY `ord`';
+		$SQL = 'SELECT * FROM `vw_erfindungsexponat` WHERE `core` = \'' . $siteUrl . '\' ORDER BY `ord`';
 		return SQL::fetchRows($SQL);
 	}
 

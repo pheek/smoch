@@ -60,6 +60,6 @@ function nextLink() {
 		<?php include 'erfindungen/artikel/' . $erfindung->IDurl . '.php'; ?>
 	</div>
 	<div class='erfindungsExponate'>
-			{{EXPONAT_GALERIE}}
+<?php include 'exponat_liste.php'; ?>
 	</div>
 </div>

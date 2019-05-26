@@ -19,17 +19,18 @@ USE `smoch`;
 -- LEFT  JOIN `tbl_erfindung` ON `tbl_exponat`.`IDurl_fk`       = `tbl_erfindung`.`IDurl`
 -- INNER JOIN `tbl_bild`     ON `tbl_exponat`.`Exponat_img_fk` = `tbl_bild` .`ID`
 -- WHERE `ausgestellt` > 0;
-CREATE VIEW `vw_exponat` AS
+CREATE VIEW `vw_erfindungsexponat` AS
 SELECT `tbl_erfindung`.`IDurl`          AS `core`
 ,      `tbl_erfindung`.`Titel`          AS `Erfindung`
 ,      `tbl_erfindung`.`Jahrzahl`       AS `Erfindungsjahr`
+,      `tbl_exponat`  .`ID`             AS `ExponatID`
 ,      `tbl_exponat`  .`Exponat_Jahr`   AS `Modelljahr`
 ,      `tbl_exponat`  .`Exponat_Modell` AS `Modell`
-,      `tbl_exponat`  .`inventarNr`     AS `InvetarNummer`
+,      `tbl_exponat`  .`inventarNr`     AS `InventarNummer`
 ,      `tbl_exponat`  .`ausgestellt`    AS `ausgestelltBOOL`
 ,      `tbl_erfindungsexponat`.`ord`    AS `ord`
 FROM `tbl_exponat`
-INNER  JOIN `tbl_erfindungsexponat` ON `tbl_exponat`  .`ID`    = `tbl_erfindungsexponat`.`exponat_fk`
+LEFT  JOIN `tbl_erfindungsexponat` ON `tbl_exponat`  .`ID`    = `tbl_erfindungsexponat`.`exponat_fk`
 LEFT JOIN `tbl_erfindung`         ON `tbl_erfindung`.`IDurl` = `tbl_erfindungsexponat`.`IDurl_fk`;
 
 
@@ -102,11 +103,40 @@ FROM `tbl_bild`
 JOIN `tbl_erfindungsbild` ON `tbl_erfindungsbild`.`bild_fk` = `tbl_bild`.`ID`;
 
 
-CREATE VIEW `vw_exponatbilder` AS
-SELECT `tbl_exponat`.`id` AS `exponat_ID`, `ord`, `filename`, `bildrechte`, `bildlegende`, `alt_text`, `Exponat_Jahr`, `Exponat_Modell`, `ausgestellt`, `inventarNr`
+CREATE VIEW `vw_exponatbild` AS
+SELECT
+  `tbl_exponat`.`id` AS `exponat_ID`
+, `ord`
+, `filename`
+, `bildrechte`
+, `bildlegende`
+, `alt_text`
+, `Exponat_Jahr`
+, `Exponat_Modell`
+, `ausgestellt`
+, `inventarNr`
 FROM `tbl_exponatbild`
 LEFT JOIN `tbl_exponat` ON `tbl_exponat`.`ID` = `tbl_exponatbild`.`exponat_fk`
 LEFT JOIN `tbl_bild`    ON `tbl_bild`.`ID` = `tbl_exponatbild`.`bild_fk`;
+
+
+-- Alle Bilder zu allen Expoaten zu einer Erfindung
+CREATE VIEW `vw_erfindungsexponatsbilder` AS
+SELECT
+  `vw_erfindungsexponat`.`core`            AS `IDurl`
+, `vw_erfindungsexponat`.`exponatID`       AS `exponatID`
+, `vw_erfindungsexponat`.`Modelljahr`      AS `ExponatJahr`
+, `vw_erfindungsexponat`.`Modell`          AS `ExponatModellbezeichnung`
+, `vw_erfindungsexponat`.`InventarNummer`  AS `InventarNr`
+, `vw_erfindungsexponat`.`ausgestelltBOOL` AS `ausgestellt`
+, `vw_erfindungsexponat`.`ord`             AS `Exponatreihenfolge`
+, `vw_exponatbild`.`ord`                   AS `BildreihenfolgeProExponat`
+, `vw_exponatbild`.`filename`              AS `IMG_Filename`
+, `vw_exponatbild`.`alt_text`              AS `IMG_AltText`
+, `vw_exponatbild`.`bildlegende`           AS `bildlegende`
+, `vw_exponatbild`.`bildrechte`            AS `bildrechte`
+FROM `vw_erfindungsexponat`
+LEFT JOIN `vw_exponatbild` ON `vw_exponatbild`.`exponat_ID` = `vw_erfindungsexponat`.`ExponatID`;
 
 
 -- Testabfragen:
