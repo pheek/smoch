@@ -154,7 +154,7 @@ INSERT INTO `tbl_exponat`
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
 (2002 , '2019'         , 'Nachbildung aus dem 3D-Drucker'                     , 'S_002_a'     , false      ),
-(2003 , '????'         , 'Harddisk offen'                                     , 'S_003_h'     , true       ),
+(2003 , 'ca. 2000'     , 'Harddisk offen'                                     , 'S_003_h'     , true       ),
 (2004 , '1997'         , '3.5 Zoll Boot-Diskette S.U.s.E. Linux Kernel 2.0.3x', 'S_004_d'     , true       ),
 (2005 , '2008'         , 'Ubuntu OS 8.10'                                     , 'S_005_u'     , true       ),
 (2006 , '2004'         , 'Vince Ebers Ur-Knaller'                             , 'S_006_c'     , true       ),
@@ -243,6 +243,8 @@ VALUES
 																															
 (  2009 , 'bitTransistorNachbau_schema.png', 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Transistoren'                                              ,
                                                               'Schema um ein Bit mittels Transistoren zu speichern'                                                    ),
+(  2010 , 'harddisk.png'                                    , 'phi@smoch.ch' , 'Harddisk offen'                                                                         ,
+                                                              'Harddisk geöffnet (Speicherkapazität unbekannt)'                                                        ),
 
 -- kommunizieren
 (  3001 , 'keilschrift.png'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
@@ -293,7 +295,7 @@ INSERT INTO `tbl_erfindungsbild`
 ('diskette'      ,  1   ,   2004    ),  -- Diskette S.U.s.E
 ('cd'            ,  1   ,   2005    ),  -- Ubuntu CD
 ('cd'            ,  2   ,   2006    ),  -- Vince Eberts CD "ur Knaller"
-
+('harddisk'      ,  1   ,   2010    ),  -- Harddisk
 -- kommunizieren
 ('keilschrift'   ,  1   ,   3001    ),  -- bild von eigenen schriftZeichnen
 
@@ -330,7 +332,7 @@ INSERT INTO `tbl_exponatbild`
 -- speichern
 (  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
 (  2002       ,   2002    ,  1   ), -- Amphore Bild aus dem 3DDrucker
--- ( 2003     ,  not yet  ,  1   ), -- Harddisk offen
+(  2003       ,   2010    ,  1   ), -- Harddisk offen
 (  2004       ,   2004    ,  1   ), -- Diskette S.U.s.E.
 (  2005       ,   2005    ,  1   ), -- CD (Ubuntu OS 2008 Oktober (10)
 (  2006       ,   2006    ,  1   ), -- CD (Audio : "Vince Eberts Ur-Knaller")
