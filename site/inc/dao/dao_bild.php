@@ -19,8 +19,7 @@ class DAO_Bild {
 	/**
 	 * Alle Informationen zu einer Erfindung = zu einer Webseite.
 	 * Achtung: Smartphone kommt mehrmals vor in verschiedenen Kategorien.
-	 *          Dabei ist alles gleich, aber Vorgänger und Nachfolger sind von der 
-	 *          Kategorie abängig!
+	 *          Dabei ist alles gleich, aber Vorgänger und Nachfolger sind von der Kategorie abängig!
 	 */
 	public static function getBildViaID($bildID) {
 		$bild = new Bild();
@@ -36,4 +35,28 @@ class DAO_Bild {
 		return $bild;
 	}
 
+	private static function enrichErfindungsBild($eb, $b) {
+		$eb->dbID = $b->dbID;
+		$eb->filename = $b->filename;
+		$eb->bildlegende = $b->bildlegende;
+		$eb->bildrechte = $b->bildrechte;
+		$eb->altText = $b->altText;
+	}
+	
+	public static function getAlleBilderZuErfindung($erfindungID) {
+		$alleErfindungsBilder = array();
+		
+		$alleBilderResultSet = SQL::getAlleBilderZuErfindungRecordset($erfindungID);
+		
+		while ($bildRecord = $alleBilderResultSet->fetch(PDO::FETCH_ASSOC))   { 
+			$bildID = $bildRecord['BildID'];
+			$bildInfo = DAO_Bild::getBildViaID($bildID);
+			$erfindungsBild = new ErfindungsBild();
+			DAO_Bild::enrichErfindungsBild($erfindungsBild, $bildInfo);
+			$erfindungsBild->ord = $bildRecord['ord'];
+			$alleErfindungsBilder[$bildID] = $erfindungsBild;
+		} // end while
+		return $alleErfindungsBilder;	
+	}
+	
 } // end class DAO_Bild

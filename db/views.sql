@@ -89,13 +89,14 @@ LEFT OUTER JOIN `tbl_editor`    ON `tmp_vw_reihenfolge`.`core`      = `tbl_edito
 LEFT JOIN `tbl_autor`     ON `tbl_editor`.`autor_fk`          = `tbl_autor`.`ID`;
 
 
-CREATE VIEW `vw_image` AS
+CREATE VIEW `vw_erfindungsbild` AS
 SELECT
   `tbl_erfindungsbild`.`IDurl_fk` AS `URL_Infix`
-, `tbl_bild`.`filename`          AS `Filename`
-, `tbl_bild`.`bildlegende`       AS `BildlegendeTitel`
-, `tbl_bild`.`alt_text`          AS `alt`
-, `tbl_bild`.`bildrechte`        AS `rechte`
+, `tbl_bild`.`ID`                 AS `BildID`
+, `tbl_bild`.`filename`           AS `Filename`
+, `tbl_bild`.`bildlegende`        AS `BildlegendeTitel`
+, `tbl_bild`.`alt_text`           AS `alt`
+, `tbl_bild`.`bildrechte`         AS `rechte`
 , `tbl_erfindungsbild`.`ord`      AS `ord`
 FROM `tbl_bild`
 JOIN `tbl_erfindungsbild` ON `tbl_erfindungsbild`.`bild_fk` = `tbl_bild`.`ID`;
@@ -109,11 +110,6 @@ LEFT JOIN `tbl_bild`    ON `tbl_bild`.`ID` = `tbl_exponatbild`.`bild_fk`;
 
 
 -- Testabfragen:
-CREATE VIEW `TEST_VIEW_amphoreBilderTest` AS
-SELECT * FROM `vw_image` WHERE `URL_Infix` = 'amphore' ORDER BY `ord`;
-
-CREATE VIEW `TEST_VIEW_abakusBilderTest` AS
-SELECT * FROM `vw_image` WHERE `URL_Infix` = 'abakus' ORDER BY `ord`;
 
 CREATE VIEW `TEST_VIEW_keywordsAbakus` AS
 SELECT `keyword` FROM `tbl_keyword` WHERE 'abakus' = `IDurl_fk`;

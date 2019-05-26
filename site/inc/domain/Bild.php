@@ -19,4 +19,8 @@ class Bild {
 
 } // end class Bild
 
+
+class ErfindungsBild extends Bild {
+	public $ord;
+}
 ?>

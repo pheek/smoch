@@ -18,7 +18,7 @@ class BildImg {
 	public $bild; // domain Bild (nicht GUI-BildImg!)
 
 	
-	public static function readBildViaID($bild_id) {
+	public static function readBildImgViaID($bild_id) {
 		$bildImg = new BildImg();
 		$bild    = DAO_Bild::getBildViaID($bild_id);
 		$bildImg->bild = $bild;

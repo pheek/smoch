@@ -55,7 +55,7 @@ INSERT INTO `tbl_kategorie`
 --
 CREATE TABLE `tbl_erfindung` (
   `IDurl`            varchar(200) NOT NULL PRIMARY KEY
-                                        COMMENT 'withount *.php without *http://" without path. Wird ebenfalls verwendet für das Freitext-Prefix'
+                                           COMMENT 'withount *.php without *http://" without path. Wird ebenfalls verwendet für das Freitext-Prefix'
 , `Titel`            varchar(30)  NOT NULL COMMENT 'visible title'
 , `Jahrzahl`         varchar(20)  NOT NULL COMMENT 'sometimes as text (eg. 900 - 1200)'
 , `defaultKategorie` int          NOT NULL COMMENT 'Welche Kategorie ist Standard bei Verwendung mit QR Codes?'
@@ -175,39 +175,87 @@ CREATE TABLE `tbl_bild` (
 
 
 INSERT INTO `tbl_bild`
-(`ID`   , `filename`                       , `bildrechte`   , `bildlegende`                     , `alt_text`									) VALUES
+(`ID`   , `filename`                       , `bildrechte`   , `alt_text`                                                                                                ,
+                                                              `bildlegende`                                                                                            )
+VALUES
 -- RECHNEN
-(  1001 , 'abakus.png'                     , 'phi@smoch.ch' , 'Chinesischen Abakus'             , 'Zählrahmen aus Holz'      ),
-(  1002 , 'pascaline.jpg'                  , 'phi@smoch.ch' , 'Pascaline'                       , 'Pascaline'                ) ,
-(  1003 , 'zahlenschieber.png'             , 'phi@smoch.ch' , 'Zahlenschieber Addimult'         , 'Zahlenschieber Addimult'   ),
-(  1004 , 'rechenschieber.png'             , 'phi@smoch.ch' , 'Rechenschieber'                  , 'Rechenschieber'           ),
-(  1005 , 'zuse_z3_a.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3 Deutsches Museum'        , 'Zuse Z3'                   ),
-(  1006 , 'zuse_z3_b.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3 Deutsches Museum'        , 'Zuse Z3'                   ),
-(  1007 , 'zuse_z4.jpg'                    , 'phi@smoch.ch' , 'Zuse Z4 Deutsches Museum'        , 'Zuse Z4'                   ),
-(  1008 , 'zuse_z4_eingabetastatur.jpg'    , 'phi@smoch.ch' , 'Zuse Z4 Deutsches Museum'        , 'Zuse Z4'                   ),
-(  1009 , 'notRelaisNachbau_schema.png'    , 'phi@smoch.ch' , 'Schema, für das NOT-Gatter mit Relais', 'Schema (elektronisch), für ein NOT-Gatter mittels Relais'),
-(  1010 , 'notTransistorNachbau_schema.png', 'phi@smoch.ch' ,  'Schema, um ein NOT-Gatter mit Transistoren zu bauen', 'Schema (elektronisch), um ein NOT-Gatter mittels Tranistoren zu bauen.'),
-(  1011 , 'differenzenmaschine.png'        , 'phi@smoch.ch' , 'Ch. Babbage: Differenzenmaschine im Da Vinci Museum in Mailand', 'Foto: Differenzenmaschine'),
-(  1012 , 'volladdiererNachbau_schema.png ', 'phi@smoch.ch' , 'Schema, um einen Volladdierer zu bauen', 'Schema, um einen Volladdierer zu bauen.'),
+(  1001 , 'abakus.png'                     , 'phi@smoch.ch' , 'Abakus (Zählrahmen aus Holz)'                                                                            ,
+                                                              'Chinesischen Abakus neu'                                                                                ),
+
+(  1002 , 'pascaline.jpg'                  , 'phi@smoch.ch' , 'Pascaline'                                                                                               ,
+                                                              'Pascaline: Diese Rechenmaschine nach Blaise Pascal steht im Deutschen Museum in München (Foto 2018)'    ),
+
+(  1003 , 'zahlenschieber.png'             , 'phi@smoch.ch' , 'Zahlenschieber Addimult'                                                                                 ,
+                                                              'Mechanischer Zahlenschieber "Addimult" aus Metall'                                                      ),
+
+(  1004 , 'rechenschieber.png'             , 'phi@smoch.ch' , 'Rechenschieber'                                                                                          ,
+                                                              ' Logarithmischer Rechenschieber (Aristo Nr. 69)'                                                        ),
+
+(  1005 , 'zuse_z3_a.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3'                                                                                                 ,
+                                                              'Zuse Z3 Deutsches Museum (Foto 2018)'                                                                   ),
+																															
+(  1006 , 'zuse_z3_b.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3'                                                                                                 ,
+                                                              'Zuse Z3 Deutsches Museum (Foto 2018)'                                                                   ),
+
+(  1007 , 'zuse_z4.jpg'                    , 'phi@smoch.ch' , 'Zuse Z4'                                                                                                 ,
+                                                              'Zuse Z4 Deutsches Museum (Foto 2018)'                                                                   ),
+																															
+(  1008 , 'zuse_z4_eingabetastatur.jpg'    , 'phi@smoch.ch' , 'Zuse Z4 Eingabetastatur'                                                                                 ,
+                                                              'Zuse Z4 Eingabetastatur (Deutsches Museum in München / Foto 2018)'                                      ),
+																															
+(  1009 , 'notRelaisNachbau_schema.png'    , 'phi@smoch.ch' , 'Schema (elektronisch) für das NOT-Gatter mit Relais'                                                     ,
+                                                              'Schema für ein NOT-Gatter mittels Relais'                                                               ),
+																															
+(  1010 , 'notTransistorNachbau_schema.png', 'phi@smoch.ch' , 'Schema (elektronisch) für das NOT-Gatter mit Transistoren'                                               ,
+                                                              'Schema (elektronisch), um ein NOT-Gatter mittels Tranistoren zu bauen.'                                 ),
+
+(  1011 , 'differenzenmaschine.png'        , 'phi@smoch.ch' , 'Foto Differenzenmaschine'                                                                                ,
+                                                              'Ch. Babbage: Differenzenmaschine im Da Vinci Museum in Mailand'                                         ),
+																															
+(  1012 , 'volladdiererNachbau_schema.png ', 'phi@smoch.ch' , 'Schema (elektronisch) für den Volladdierer'                                                              ,
+                                                              'Schema, um einen Volladdierer zu bauen.'                                                                ),
+																															
 
 -- speichern
-(  2001 , 'amphore_etruskisch.png'         , 'phi@smoch.ch' , 'Etruskische Amphore: Nachbildung aus Popolonio', 'Amphore aus Ton'          ),
-(  2002 , 'amphore_3d_druck.png'           , 'phi@smoch.ch' , 'Amphore aus dem 3D-Drucker'      , 'Amphore aus Plastik'      ),
-(  2003 , 'amphoren_wiki.png'              , 'http://www.wikimedia.org' , 'Amphoren antik (Bild Wikimedia)' , 'Antike Amphoren Wikimedia'),
-(  2004 , 'diskette35.png'                 , 'phi@smoch.ch' , 'Diskette 3.5 Zoll'               , 'Diskette 3.5 Zoll'        ),
-(  2005 , 'cd-ubuntu.png'                  , 'phi@smoch.ch' , 'Compct Disk (CD)'                , 'Compact Disk (Daten)'     ),
-(  2006 , 'cd-vince.png'                   , 'phi@smoch.ch' , 'Compct Disk (CD)'                , 'Audio CD'                 ),
-(  2008 , 'bitRelaisNachbau_schema.png'    , 'phi@smoch.ch' , 'Schema, um ein Bit mit Relais zu speichern',  'Schema (elektronisch), um ein Bit mittels Relais zu speichern'),
-(  2009 , 'bitTransistorNachbau_schema.png', 'phi@smoch.ch' , 'Schema, um ein Bit mittels Transistoren zu speichern', 'Schema (elektronisch), um ein Bit mittels Relais zu speichern'),
+(  2001 , 'amphore_etruskisch.png'         , 'phi@smoch.ch' , 'Amphore aus Ton'                                                                                         ,
+                                                              'Etruskische Amphore: Nachbildung aus Popolonio'                                                         ),
+																															
+(  2002 , 'amphore_3d_druck.png'           , 'phi@smoch.ch' , 'Amphore aus Plastik'                                                                                     ,
+                                                              'Amphore dem 3D-Drucker (Prusa)'                                                                         ),
+																															
+(  2003 , 'amphoren_wiki.png'              , 'http://www.wikimedia.org' , 'Amphoren antik'                                                                              ,
+                                                              'Antike Amphoren (Bild Wikimedia)'                                                                       ),
+																															
+(  2004 , 'diskette35.png'                 , 'phi@smoch.ch' , 'Diskette 3.5 Zoll'                                                                                       ,
+                                                              'Diskette 3.5 Zoll (S.u.S.E Linux Install Disk)'                                                         ),
+																															
+(  2005 , 'cd-ubuntu.png'                  , 'phi@smoch.ch' , 'Compct Disk (CD)'                                                                                        ,
+                                                              'Compact Disk (Daten: Ubuntu V8.10 Install CD)'                                                          ),
+																															
+(  2006 , 'cd-vince.png'                   , 'phi@smoch.ch' , 'Compct Disk (CD)'                                                                                        ,
+                                                              'Audio CD (Vince Eberts: Ur-Knaller)'                                                                    ),
+																															
+(  2008 , 'bitRelaisNachbau_schema.png'    , 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Relais'                                                    ,
+                                                              'Schema  um ein Bit mittels Relais zu speichern'                                                         ),
+																															
+(  2009 , 'bitTransistorNachbau_schema.png', 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Transistoren'                                              ,
+                                                              'Schema um ein Bit mittels Transistoren zu speichern'                                                    ),
 
 -- kommunizieren
-(  3001 , 'keilschrift.png'                , 'phi@smoch.ch' , 'Keilschrift selbst gebannt'      , 'Keilschrift auf Ton'      ),
+(  3001 , 'keilschrift.png'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
+                                                              'Keilschrift auf Ton (selbst geformt aus Ton/Plastilin)'                                                 ),
 
 -- diverse
-(  9001 , 'smartphone_htc_desire.jpg'      , 'phi@smoch.ch' , 'Smartphone HTC Desire'           , 'Smartphone'                ),
-(  9002 , 'halbleiter.png'                 , 'phi@smoch.ch' , 'Silizium, eines der häufigsten Elemente: Daraus werden die meisten Halbleiter gebaut.', 'Siliziumkristall'),
-(  9003 , 'wafer.png'                      , 'phi@smoch.ch' , 'Wafer'                           , 'Waferplatte'               ),
-(  9004 , 'wafer_mikroskop.jpg'            , 'phi@smoch.ch' , 'Wafer Mikroskopausschnitt'       , 'Mikroskopier eines Wafers (Ausschnitt)' );
+(  9001 , 'smartphone_htc_desire.jpg'      , 'phi@smoch.ch' , 'Smartphone'                                                                                              ,
+                                                              'Smartphone HTC Desire'                                                                                  ),
+(  9002 , 'halbleiter.png'                 , 'phi@smoch.ch' , 'Siliziumkristall'                                                                                        ,
+                                                              'Silizium: Eines der häufigsten Elemente: Daraus werden die meisten Halbleiter gebaut.'                  ),
+																															
+(  9003 , 'wafer.png'                      , 'phi@smoch.ch' , 'Waferplatte'                                                                                             ,
+                                                              'Waferplatte, wie sie für die Chip Herstellung verwendet wird.'                                          ),
+																															
+(  9004 , 'wafer_mikroskop.jpg'            , 'phi@smoch.ch' , 'Mikroskopie eines Wafers (Ausschnitt)'                                                                  ,
+                                                              'Auschnitt Mikroskopier (Wafer)'                                                                         );
 
 
 -- -----------------------------------------------------

@@ -31,10 +31,8 @@ body {
 .mainTour {
 	color: green;
 	background-color: #efe;
-	border-style: solid;
-	border-color: blue;
-	border-size: 2px;
 	padding: 3px;
+	margin: 1px;
 }
 
 .tourHeader {
@@ -111,6 +109,10 @@ body {
 	background-color: #def;
 }
 
+.erfindungsText {
+	clear: both;
+}
+
 .erfindungsExponate {
 	color: #0F8;
 	background-color: #dfe;
@@ -118,4 +120,20 @@ body {
 
 .small_image {
 	width: 144px;
+}
+
+.normal_image {
+	margin: 5px;
+	padding: 5px;
+	width: 500px;
+}
+div.erfindungsBilder{
+	clear: both;
+}
+div.erfindung_image {
+	margin-top: 4px;
+	padding: 2px;
+	magin-bottom: 2px;
+	border: solid black 1px;
+	float: left;
 }

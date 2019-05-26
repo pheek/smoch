@@ -53,9 +53,9 @@ function nextLink() {
 		<div><?php echo $erfindung->titel;?>&nbsp;(<?php echo $erfindung->jahr; ?>)</div>
 <div><?php echo nextLink(); ?></div>
 	</div>
-			                                    <div style='clear: both;' class='erfindungsBilder'>
-	<?php include 'bildergalerie.php' ?>
-	</div>
+
+<?php include 'bildergalerie.php' ?>
+
 	<div class='erfindungsText'>
 		<?php include 'erfindungen/artikel/' . $erfindung->IDurl . '.php'; ?>
 	</div>

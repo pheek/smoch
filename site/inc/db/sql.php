@@ -55,17 +55,21 @@ class SQL {
 		return SQL::fetchRows($SQL);
 	}
 
-
   /**
 	 * Liefert alle Exponate zu einer gegebenen Erfindung
 	 */
-	public static function getAlleExponateZuWebseiteRecordset($siteUrl) {
+	public static function getAlleExponateZuErfindungRecordset($siteUrl) {
 		$SQL = 'SELECT * FROM `vw_exponat` WHERE `core` = \'' . $siteUrl . '\' ORDER BY `ord`';
 		return SQL::fetchRows($SQL);
 	}
 
 	public static function getAlleBilderZuExponat($exponatID) {
 		$SQL = 'SELECT * FROM `vw_exponatbilder` WHERE `exponat_ID` = "' . $exponatID . '"';
+		return SQL::fetchRows($SQL);
+	}
+
+	public static function getAlleBilderZuErfindungRecordset($idUrl) {
+		$SQL = "SELECT * FROM `vw_erfindungsbild` WHERE `URL_Infix` = '" . $idUrl . "' ORDER BY `ord`";
 		return SQL::fetchRows($SQL);
 	}
 
@@ -127,5 +131,5 @@ class SQL {
 		//echo $SQL;
 		return SQL::fetchSingle($SQL)['nachfolger_URL_Infix'];
 	}
-	
+
 } // end static class SQL
