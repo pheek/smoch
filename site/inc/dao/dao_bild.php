@@ -31,7 +31,6 @@ class DAO_Bild {
 		$bild->bildrechte  = $resultSet['bildrechte' ];
 		$bild->altText     = $resultSet['alt_text'   ];
 
-		//var_dump ($bild);
 		return $bild;
 	}
 

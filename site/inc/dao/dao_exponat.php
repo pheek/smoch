@@ -11,18 +11,13 @@
   chdir('..');
   }*/
 
-require_once 'inc/db/sql.php';
+require_once 'inc/db/sql.php'        ;
 require_once 'inc/domain/Exponat.php';
+require_once 'inc/domain/Bild.php'   ;
 
 class DAO_Exponat {
 
 	
-	public static function getExponatViaID($exponatID) {
-		$exponat = new Exponat();
-		//...
-		return $erfindung;
-	}
-
 	public static function getAlleExponateZuErfindung($erfindungsID) {
 		$exponatListe = array();
 		
@@ -43,7 +38,11 @@ class DAO_Exponat {
 
 	public static function getAlleBilderZuExponat($exponatID) {
 		$bildListe = array();
-		// ...
+		$bildListeRecordSet = SQL::getAlleBilderZuExponat($exponatID);
+		foreach($bildListeRecordSet as $bildListeRecord) {
+			$bild = DAO_Bild::getBildViaID($bildListeRecord['bildID']);
+			$bildListe[$bild->dbID] = $bild;
+		}
 		return $bildListe;
 	} // end fct getAlleBilder Zu Exponat
 }

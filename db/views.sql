@@ -106,6 +106,7 @@ JOIN `tbl_erfindungsbild` ON `tbl_erfindungsbild`.`bild_fk` = `tbl_bild`.`ID`;
 CREATE VIEW `vw_exponatbild` AS
 SELECT
   `tbl_exponat`.`id` AS `exponat_ID`
+, `tbl_bild`.`ID` AS `bildID`
 , `ord`
 , `filename`
 , `bildrechte`

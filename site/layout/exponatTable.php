@@ -3,11 +3,14 @@
 require_once 'inc/dao/dao_exponat.php';
 
 function printAlleExponatBilder($exponat) {
-	echo "BILEDR HIER (später)\n";
+	$bilder = DAO_Exponat::getAlleBilderZuExponat($exponat->DBId);
+	foreach($bilder as $bild) {
+		echo "BILD: " . $bild->filename . ", " . $bild->altText . "<br />";
+	}
 }
 
 function createExponatTableRow($exponat) {
-	echo "<tr>\n";
+	echo "<tr style='vertical-align: top;'>\n";
 	echo "<td>" . $exponat->Modellbezeichnung . "</td>\n";
 	echo "<td>" . $exponat->Jahr              . "</td>\n";
 	echo "<td>" . $exponat->inventarNummer    . "</td>\n";

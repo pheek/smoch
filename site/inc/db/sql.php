@@ -64,7 +64,7 @@ class SQL {
 	}
 
 	public static function getAlleBilderZuExponat($exponatID) {
-		$SQL = 'SELECT * FROM `vw_exponatbilder` WHERE `exponat_ID` = "' . $exponatID . '"';
+		$SQL = 'SELECT * FROM `vw_exponatbild` WHERE `exponat_ID` = "' . $exponatID . '"';
 		return SQL::fetchRows($SQL);
 	}
 
@@ -74,6 +74,7 @@ class SQL {
 	}
 
 	public static function getBildInfo($bildID) {
+		//var_dump($bildID);
 		$SQL = 'SELECT * FROM `tbl_bild` WHERE `ID` = "' . $bildID . '"';
 		return SQL::fetchSingle($SQL);
 	}

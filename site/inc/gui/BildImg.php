@@ -27,7 +27,6 @@ class BildImg {
 	
 	public function createImgTag($CSS_class) {
 		$IMG_PATH = SQL::getBilderDir();
-//		var_dump($IMG_PATH);
 		$imgTag = "";
 		$imgTag .= '<img ';
 		$imgTag .= 'src="'   . $IMG_PATH . $this->bild->filename . '" ';
