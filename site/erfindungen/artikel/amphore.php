@@ -3,20 +3,26 @@
 <div class='erfindung'>
 
 	<h1>Geschichte</h1>
-	<p> .... geschichte comming soon .... </p>
-  <p class='zitat text'>ein Zitat</p>
-	<p class='zitat quelle'>Quelle des Zitats</p>
+	<p>Amphoren wurden seit der Antike für diverse Aufbewahrung verwendet. Meist waren die Gefäße aus Ton.</p>
 	 
 	<h1>Verwendung und Nutzen</h1>
-	<p> .... verwendung comming soon .... </p>
-	<p>Nun <span class='zitat text'>ein Zitat im Fließtext</span> <span class='zitat quelle'>Quelle des Zitates im Fließtext</span>. Weiter im text ...</p>
+	<p>Die meist Zweihenkligen Gefäße wurden zur Aufbewahrung oder zum Transport von Waren verwendet.</p>
 
 	<h1>Funktionsweise und Aufbau</h1>
-	<p> .... funktionsweise comming soon .... </p>
+	<p>Durch einen Verschluss konnte die Ware vor dem Verderben bewahrt werden. Dieses Vorgehen entspricht in der Informationstechnik wohl am ehesten dem «Backup».</p>
 
 	<h1>Fun-Facts</h1>
-	<p> .... fun-facts comming soon .... </p>
+	<p>Die zweite Abbildung zeigt eine Nachbildung einer Amphore aus dem 3D-Drucker. Diese wurde zunächst mit dem Programm <a href='https://www.blender.org'>Blender</a> modelliert und danach mit dem Drucker "Prusa" ausgedruckt.<p>
+	 
+<p>Amphoren waren häufig auch beschritftet. Die Aufschriften geben
+	heutigen Archäologen häufig Datierungsmöglichkeiten und Indizien
+	zu vielfältigen Einsatzbereichen.
+	Da bei verschließbaren Amphoren nicht gesehen werden konnte, was darin enthalten war, mussten die Amphoren irgendwie
+	bezeichnet werden; und ... ohne Symbole und Schriften, wären heutige Computer undenkbar.
+	Somit ist die Amphore ein mehrfacher Speicher: Inhalt und Beschriftung.
+	</p>
+
 
 	<h1>Quellenangaben</h1>
-	<p> .... Quellenangaben .... </p>
+	 <p><a href='https://de.wikipedia.org/wiki/Amphore'>Amphore (Wikipedia)</a></p>
 </div>

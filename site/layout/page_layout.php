@@ -42,7 +42,7 @@
 	 <div><img src='<?php echo $CLIENT_ROOT; ?>layout/img/swiss-made.png' height="48" /></div>
     </div>
 			<?php include 'layout/main_content.php'; ?>
-		<div id='mainFooter'>φ ⓒ</div>
+		<div id='mainFooter'>ⓒ φ</div>
 	</body>
 
 </html>

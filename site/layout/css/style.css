@@ -93,6 +93,7 @@ body {
 	font-size       : 200%         ;
 	font-weigth     : bold         ;
 	font-variant    : small-caps   ;
+	padding-top     : 5px          ;
 }
 
 .erfindungHeader > div {
@@ -107,7 +108,7 @@ body {
 
 .erfindungsBilder {c
 	color           : #08F;
-	background-color: #def;
+	background-color: #fff;
 }
 
 .erfindungsText {
@@ -140,18 +141,24 @@ div.small_image_rahmen {
 }
 
 .normal_image {
-	margin: 5px;
-	padding: 5px;
-	width: 500px;
+	margin :   1px;
+	padding:   5px;
+	width  : 500px;
 }
 
 div.erfindungsBilder{
-	clear: both;
+/*	clear     :   both; */
+	text-align: center;
 }
-div.erfindung_image {
-	margin-top  : 4px;
-	padding     : 2px;
-	magin-bottom: 2px;
-	border      : solid #f008 1px;
-	float       : left;
+
+div.erfindungsBild {
+	margin-top      : 4px            ;
+	padding         : 5px            ;
+	margin          : 5px            ; 
+	margin-bottom   : 2px            ;
+	border          : solid #630  2px;
+	background-color: #210           ;
+	color           : #b86           ;
+	font-weight     : bold           ;
+	font-size       : 120%           ;
 }

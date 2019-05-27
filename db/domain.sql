@@ -144,12 +144,9 @@ CREATE TABLE `tbl_exponat` (
 INSERT INTO `tbl_exponat`
 ( `ID`, `Exponat_Jahr` , `Exponat_Modell`                                     , `inventarNr`, `ausgestellt`) VALUES
 -- rechnen
-(1001 , 'ca. 1960'     , 'Chinesischen Abakus'                                , 'R_001_a'     , true       ),
+(1001 , 'ca. 1960'     , 'Chinesischer Abakus'                                , 'R_001_a'     , true       ),
 (1002 , 'ca. 1960'     , 'Aristo Nr. 89 '                                     , 'R_002_r'     , true       ),
 (1003 , 'ca. 1970'     , 'Zahlenschieber Adimult'                             , 'R_003_z'     , true       ),
-
--- zuse test only
-(1050, 'ca 1940', 'ZUSE', 'R_XXX_z', true),
 
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
@@ -183,7 +180,7 @@ INSERT INTO `tbl_bild`
 VALUES
 -- RECHNEN
 (  1001 , 'abakus.png'                     , 'phi@smoch.ch' , 'Abakus (Zählrahmen aus Holz)'                                                                            ,
-                                                              'Chinesischen Abakus neu'                                                                                ),
+                                                              'Chinesischer Abakus neu'                                                                                ),
 
 (  1002 , 'pascaline.jpg'                  , 'phi@smoch.ch' , 'Pascaline'                                                                                               ,
                                                               'Pascaline: Diese Rechenmaschine nach Blaise Pascal steht im Deutschen Museum in München (Foto 2018)'    ),
@@ -226,8 +223,8 @@ VALUES
 (  2002 , 'amphore_3d_druck.png'           , 'phi@smoch.ch' , 'Amphore aus Plastik'                                                                                     ,
                                                               'Amphore dem 3D-Drucker (Prusa)'                                                                         ),
 																															
-(  2003 , 'amphoren_wiki.png'              , 'http://www.wikimedia.org' , 'Amphoren antik'                                                                              ,
-                                                              'Antike Amphoren (Bild Wikimedia)'                                                                       ),
+(  2003 , 'Athena_Herakles_Staatliche_Antikensammlungen_2301.jpg', 'http://www.wikimedia.org' , 'Athena Herakles Staatliche Antikensammlungen'                                                                               ,
+                                                              'Athena Herakles Staatliche Antikensammlungen (Bild wikimedia.org)'                                      ),
 																															
 (  2004 , 'diskette35.png'                 , 'phi@smoch.ch' , 'Diskette 3.5 Zoll'                                                                                       ,
                                                               'Diskette 3.5 Zoll (S.u.S.E Linux Install Disk)'                                                         ),
@@ -322,13 +319,6 @@ INSERT INTO `tbl_exponatbild`
 (  1002       ,   1004    ,  1   ), -- rechenschieber
 (  1003       ,   1003    ,  1   ), -- zahlenschieber
 
--- zuse test only
-
-( 1050        , 1005 , 1),
-( 1050        , 1006 , 2),
-( 1050        , 1007 , 3),
-( 1050        , 1008,  4),
-
 -- speichern
 (  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
 (  2002       ,   2002    ,  1   ), -- Amphore Bild aus dem 3DDrucker
@@ -362,9 +352,6 @@ INSERT INTO `tbl_erfindungsexponat`
 ('abakus'        ,  1001        ,  1   ),
 ('rechenschieber',  1002        ,  1   ),
 ('zahlenschieber',  1003        ,  1   ),
-
--- zuse test only
-('computer', 1050, 1),
 
 -- speichern
 ('amphore'       ,  2001        ,  1   ),

@@ -10,7 +10,8 @@ function createAlleBilder() {
 
 	foreach($alleBilder as $bild) {
 		$bildImg = BildImg::readBildImgViaID($bild->dbID);
-		echo "<div class='erfindung_image'>" . $bildImg->createImgTag('normal_image') . "<br/>" . $bildImg->bild->bildlegende . " &nbsp; (" . $bildImg->bild->bildrechte . ")</div>\n";
+		echo "<div class='erfindungsBild'>" . $bildImg->createImgTag('normal_image') . "<br/>"
+			   . $bildImg->bild->bildlegende . " &nbsp; (" . $bildImg->bild->bildrechte . ")</div>\n";
 	} // end foreach
 } // end function createAlleBilder
 

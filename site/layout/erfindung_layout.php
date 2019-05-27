@@ -26,7 +26,7 @@ function prevLink() {
 	if(! isset($vorg) || strlen($vorg) < 1) {
 		return "";
 	}
-	$link = "<a href='./" . $vorg . "'>&lt;&lt</a>";
+	$link = "<a href='./" . $vorg . "'><img src='../layout/img/back.png' alt='Pfeil nach links' title='vorganger'/></a>";
 	return $link;	
 }
 
@@ -39,7 +39,7 @@ function nextLink() {
 	if(! isset($nachf) || strlen($nachf) < 1) {
 		return "";
 	}
-	$link = "<a href='./" . $nachf . "'>&gt;&gt</a>";
+	$link = "<a href='./" . $nachf . "'><img src='../layout/img/for.png' alt='Pfeil nach rechts' title='Nachfolger'/></a>";
 	return $link;	
 }
 
