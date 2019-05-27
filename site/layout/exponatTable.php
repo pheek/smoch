@@ -1,16 +1,27 @@
 <?php
+/**
+ * phi@smoch.ch
+ * 2019-05-27
+ *
+ * Zeigt alle Infos zu einem Exponat inkl. eine Liste aller zugehörigen Bilder.
+ */
 
 require_once 'inc/dao/dao_exponat.php';
+require_once 'inc/gui/BildImg.php'    ;
 
 function printAlleExponatBilder($exponat) {
 	$bilder = DAO_Exponat::getAlleBilderZuExponat($exponat->DBId);
 	foreach($bilder as $bild) {
-		echo "BILD: " . $bild->filename . ", " . $bild->altText . "<br />";
+		$bildImg = BildImg::readBildImgViaID($bild->dbID);
+		echo "<div class='small_image_rahmen'>"    .
+			   $bildImg->createImgTag('small_image') .
+			   "</div>";
 	}
 }
 
+
 function createExponatTableRow($exponat) {
-	echo "<tr style='vertical-align: top;'>\n";
+	echo "<tr class='exponatTabelle'>\n";
 	echo "<td>" . $exponat->Modellbezeichnung . "</td>\n";
 	echo "<td>" . $exponat->Jahr              . "</td>\n";
 	echo "<td>" . $exponat->inventarNummer    . "</td>\n";
@@ -35,9 +46,9 @@ function createExponatTableRows() {
 }
 
 ?>
-<div class='exonatTable'>
+<div>
 	<table>
-	<tr><td>Modell</td><td>Jahr</td><td>Inventar Nr.</td><td>Ausgestellt?</td><td>Bilder</td></tr>
+	<tr class='erfindungsExponat'><td>Modell</td><td>Jahr</td><td>Inventar Nr.</td><td>Ausgestellt?</td><td>Bilder</td></tr>
 <?php createExponatTableRows(); ?>
 	</table>
 </div>

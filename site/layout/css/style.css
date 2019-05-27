@@ -69,8 +69,9 @@ body {
 }
 
 .erfindung {
-	color: #f80;
-	background-color: #fed;
+	color           : #400;
+	background-color: #fff;
+	margin-left     :  2px;
 }
 
 .erfindung h1 {
@@ -86,8 +87,8 @@ body {
 	justify-content : space-between; /* switched from default (flex-start, see below) */
 	background-color: lightyellow  ;
 
-	color           : #240         ;
-	background-color: #efd         ;
+	color           : #c00         ;
+	background-color: #fff         ;
 	text-align      : center       ;
 	font-size       : 200%         ;
 	font-weigth     : bold         ;
@@ -95,9 +96,9 @@ body {
 }
 
 .erfindungHeader > div {
-  width : 100px;
-  height: auto;
-	padding: 3px;
+  width  : 100px;
+  height : auto ;
+	padding: 3px  ;
 }
 
 .erfindungHeader > div:nth-child(2) {
@@ -105,7 +106,7 @@ body {
 }
 
 .erfindungsBilder {c
-	color: #08F;
+	color           : #08F;
 	background-color: #def;
 }
 
@@ -113,13 +114,29 @@ body {
 	clear: both;
 }
 
-.erfindungsExponate {
-	color: #0F8;
-	background-color: #dfe;
+.erfindungsExponat {
+	color           : #c00;
+	background-color: #fee; 
+}
+
+tr.erfindungsExponatTitle > td {
+	background-color: #eee;
+	border: 2px #f008 solid;
+}
+
+tr.exponatTabelle > td {
+	background-color: #fffc;
+	vertical-align  : top  ;
 }
 
 .small_image {
 	width: 144px;
+}
+
+div.small_image_rahmen {
+	padding: 2px;
+	margin : 1px;
+	border : solid 1px #f004;
 }
 
 .normal_image {
@@ -127,13 +144,14 @@ body {
 	padding: 5px;
 	width: 500px;
 }
+
 div.erfindungsBilder{
 	clear: both;
 }
 div.erfindung_image {
-	margin-top: 4px;
-	padding: 2px;
+	margin-top  : 4px;
+	padding     : 2px;
 	magin-bottom: 2px;
-	border: solid black 1px;
-	float: left;
+	border      : solid #f008 1px;
+	float       : left;
 }

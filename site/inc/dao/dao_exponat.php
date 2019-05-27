@@ -17,7 +17,6 @@ require_once 'inc/domain/Bild.php'   ;
 
 class DAO_Exponat {
 
-	
 	public static function getAlleExponateZuErfindung($erfindungsID) {
 		$exponatListe = array();
 		
@@ -36,6 +35,7 @@ class DAO_Exponat {
 		return $exponatListe;
 	} // 
 
+
 	public static function getAlleBilderZuExponat($exponatID) {
 		$bildListe = array();
 		$bildListeRecordSet = SQL::getAlleBilderZuExponat($exponatID);
@@ -45,4 +45,5 @@ class DAO_Exponat {
 		}
 		return $bildListe;
 	} // end fct getAlleBilder Zu Exponat
+
 }
