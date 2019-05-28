@@ -160,7 +160,7 @@ INSERT INTO `tbl_exponat`
 (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
 
 -- diverse
-(9001 , 'ca 2004?'     , 'HTC Desire'                                         , 'K_002_s'     , true       );
+(9001 , '2010'         , 'HTC Desire'                                         , 'K_002_s'     , true       );
 
 
 -- --------------------------------------------------------------
@@ -248,7 +248,7 @@ VALUES
                                                               'Keilschrift auf Ton (selbst geformt aus Ton/Plastilin)'                                                 ),
 
 -- diverse
-(  9001 , 'smartphone_htc_desire.jpg'      , 'phi@smoch.ch' , 'Smartphone'                                                                                              ,
+(  9001 , 'smartphone_htc_desire.png'      , 'phi@smoch.ch' , 'Smartphone'                                                                                              ,
                                                               'Smartphone HTC Desire'                                                                                  ),
 (  9002 , 'halbleiter.png'                 , 'phi@smoch.ch' , 'Siliziumkristall'                                                                                        ,
                                                               'Silizium: Eines der häufigsten Elemente: Daraus werden die meisten Halbleiter gebaut.'                  ),
