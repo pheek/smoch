@@ -6,7 +6,7 @@ require_once 'inc/session.php';
 
 
 $url = $_SERVER['PHP_SELF'];
-preg_match('/(.*)(\.php\/)([a-z]*)(.*)/', $url, $matches, PREG_OFFSET_CAPTURE);
+preg_match('/(.*)(\.php\/)([a-z_http://localhost/smoch/erfindung.php/amphore?kategorie=2 ]*)(.*)/', $url, $matches, PREG_OFFSET_CAPTURE);
 if(sizeof($matches) >= 4) {
 	$erfindungID = $matches[3][0];
 } else {
@@ -15,7 +15,6 @@ if(sizeof($matches) >= 4) {
  
 $daoErfindung    = new DAO_Erfindung();
 $erfindung = $daoErfindung->getErfindungsObjekt($erfindungID, $_SESSION['kategorie_id']);
-
 
 function prevLink() {
 	global $erfindungID;

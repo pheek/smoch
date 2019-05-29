@@ -71,12 +71,21 @@ INSERT INTO `tbl_erfindung`
 ('pascaline'     , 'Pascaline'                ,     '1642'        , 1                  ),
 ('zahlenschieber', 'Addiator'                 , 'ca. 1730'        , 1                  ),
 ('computer'      , 'Computer'                 ,     '1937'        , 1                  ),
+('differenzenmaschine', 'Differenzenmaschine' , '????'            , 1                  ),
+('halbleiter'    , 'Halbleiter (Silicium)'    , '-0'              , 1                  ),               
+('not_relais'    , 'Not realisiert mit Relais', '????'            , 1                  ),
+('not_transistor', 'Not realisiert mit Transistror', '????'       , 1                  ),
+('volladdierer'  , 'Volladdierer'             ,  '????'           , 1                  ),
 
 -- speichern
 ('amphore'       , 'Amphore'                  ,  'ca. 500 v. Chr.', 2                  ),
 ('harddisk'      , 'Harddisk'                 ,     '1956'        , 2                  ),
 ('diskette'      , 'Diskette'                 ,     '1969'        , 2                  ),
 ('cd'            , 'CD - ROM'                 ,     '1977'        , 2                  ),
+('bit_relais'    , 'Bit realisiert mit Relais',     '????'        , 2                  ),
+('bit_transistor', 'Bit realisiert mit Transistor', '????'        , 2                  ),
+('lochkarte'     , 'Lochkarte'                ,     '????'        , 2                  ),
+
 
 -- kommunizieren
 ('keilschrift'   , 'Babylonische Keilschrift' , 'ca. 3400 v. Chr.', 3                  ),
@@ -84,7 +93,8 @@ INSERT INTO `tbl_erfindung`
 
 -- diverse Kategorien
 ('smartphone'    , 'Smartphone'               ,     '1994'        , 3                  ),
-('chip'          , 'Rechner- / Speicherchip'  , 'ca. 1950'        , 1                  );
+('chip'          , 'Rechner- / Speicherchip'  , 'ca. 1950'        , 1                  ),
+('wafer'         , 'Wafer'                    , '????'            , 2                  );
 
 
 -- --------------------------------------------------------------
@@ -108,17 +118,28 @@ INSERT INTO `tbl_reihenfolge`
 ('rechenschieber',   1           ,   2      ),
 ('pascaline'     ,   1           ,   3      ),
 ('zahlenschieber',   1           ,   4      ),
-('computer'      ,   1           ,   5      ),
-('chip'          ,   1           ,   6      ),
-('smartphone'    ,   1           ,   7      ),
+('differenzenmaschine', 1        ,   5      ),
+('not_relais'    ,   1           ,   6      ),
+('volladdierer'  ,   1           ,   7      ),
+('computer'      ,   1           ,   8      ),
+('halbleiter'    ,   1           ,   9      ),
+('not_transistor',   1           ,  10      ),
+('chip'          ,   1           ,  11      ),
+('wafer'         ,   1           ,  12      ),
+('smartphone'    ,   1           ,  13      ),
 
 -- speichern
 ('amphore'       ,   2           ,   1      ),
-('chip'          ,   2           ,   2      ),
-('harddisk'      ,   2           ,   3      ),
-('diskette'      ,   2           ,   4      ),
-('cd'            ,   2           ,   5      ),
-('smartphone'    ,   2           ,   6      ),
+('bit_relais'    ,   2           ,   2      ),
+('lochkarte'     ,   2           ,   3      ),
+('halbleiter'    ,   2           ,   4      ),
+('bit_transistor',   2           ,   5      ),
+('chip'          ,   2           ,   6      ),
+('wafer'         ,   2           ,   7      ),
+('harddisk'      ,   2           ,   8      ),
+('diskette'      ,   2           ,   9      ),
+('cd'            ,   2           ,  10      ),
+('smartphone'    ,   2           ,  11      ),
 
 -- kommunizieren
 ('keilschrift'   ,   3           ,   1      ),
@@ -449,4 +470,3 @@ INSERT INTO `tbl_editor`
 -- diverse
 ('smartphone'    , 1),
 ('chip'          , 1);
-
