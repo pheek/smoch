@@ -5,7 +5,9 @@
 <?php include 'layout/navigation.php'; ?>
 
 	<p>In wenigen Exponaten die ganze Geschichte des Tablets oder der Smartwatch erfahren?<br />
-	Starten Sie die <a href='erfindung.php/abakus?kategorie=1'>Tour</a>!</p>
+	Starten Sie die</p>
+
+<div class='tourStartButton'><a href='erfindung.php/abakus?kategorie=1' class='tourStartButton'>Tour</a></div>
 
 <div style='font-size: 80%;'>
 	 <p>Dieses Museum ist nicht vollgestopft mit Exponaten. Daher der Name</p>

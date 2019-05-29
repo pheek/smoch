@@ -28,6 +28,19 @@ body {
 	font-size: 100%;
 }
 
+div.tourStartButton {
+	margin: 32px;
+}
+a.tourStartButton {
+	text-decoration:none;
+	background-color: #fcc;
+	color: red;
+	font-size: 200%;
+	padding: 15px;
+	border-radius: 4px;
+	border: 1px solid red;
+}
+
 .mainTour {
 	color: green;
 	background-color: #efe;

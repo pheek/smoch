@@ -64,37 +64,37 @@ CREATE TABLE `tbl_erfindung` (
 
 
 INSERT INTO `tbl_erfindung`
-(`IDurl`,          `Titel`                    , `Jahrzahl`        , `defaultKategorie` ) VALUES
+(`IDurl`,          `Titel`                         , `Jahrzahl`        , `defaultKategorie` ) VALUES
 -- rechnen
-('abakus'        , 'Abakus'                   , 'ca. 2500 v. Chr.', 1                  ),
-('rechenschieber', 'Rechenschieber'           ,     '1632'        , 1                  ),
-('pascaline'     , 'Pascaline'                ,     '1642'        , 1                  ),
-('zahlenschieber', 'Addiator'                 , 'ca. 1730'        , 1                  ),
-('computer'      , 'Computer'                 ,     '1937'        , 1                  ),
-('differenzenmaschine', 'Differenzenmaschine' , '????'            , 1                  ),
-('halbleiter'    , 'Halbleiter (Silicium)'    , '-0'              , 1                  ),               
-('not_relais'    , 'Not realisiert mit Relais', '????'            , 1                  ),
-('not_transistor', 'Not realisiert mit Transistror', '????'       , 1                  ),
-('volladdierer'  , 'Volladdierer'             ,  '????'           , 1                  ),
+('abakus'        , 'Abakus'                        , 'ca. 2500 v. Chr.', 1                  ),
+('rechenschieber', 'Rechenschieber'                ,     '1632'        , 1                  ),
+('pascaline'     , 'Pascaline'                     ,     '1642'        , 1                  ),
+('zahlenschieber', 'Addiator'                      , 'ca. 1730'        , 1                  ),
+('computer'      , 'Computer'                      ,     '1937'        , 1                  ),
+('differenzenmaschine', 'Differenzenmaschine'      , '????'            , 1                  ),
+('not_relais'    , 'Not realisiert mit Relais'     , '????'            , 1                  ),
+('not_transistor', 'Not realisiert mit Transistror', '????'            , 1                  ),
+('volladdierer'  , 'Volladdierer'                  ,  '????'           , 1                  ),
 
 -- speichern
-('amphore'       , 'Amphore'                  ,  'ca. 500 v. Chr.', 2                  ),
-('harddisk'      , 'Harddisk'                 ,     '1956'        , 2                  ),
-('diskette'      , 'Diskette'                 ,     '1969'        , 2                  ),
-('cd'            , 'CD - ROM'                 ,     '1977'        , 2                  ),
-('bit_relais'    , 'Bit realisiert mit Relais',     '????'        , 2                  ),
-('bit_transistor', 'Bit realisiert mit Transistor', '????'        , 2                  ),
-('lochkarte'     , 'Lochkarte'                ,     '????'        , 2                  ),
+('amphore'       , 'Amphore'                       ,  'ca. 500 v. Chr.', 2                  ),
+('harddisk'      , 'Harddisk'                      ,     '1956'        , 2                  ),
+('diskette'      , 'Diskette'                      ,     '1969'        , 2                  ),
+('cd'            , 'CD - ROM'                      ,     '1977'        , 2                  ),
+('bit_relais'    , 'Bit realisiert mit Relais'     ,     '????'        , 2                  ),
+('bit_transistor', 'Bit realisiert mit Transistor' , '????'            , 2                  ),
+('lochkarte'     , 'Lochkarte'                     ,     '????'        , 2                  ),
 
 
 -- kommunizieren
-('keilschrift'   , 'Babylonische Keilschrift' , 'ca. 3400 v. Chr.', 3                  ),
-('morsetaste'    , 'Morsegerät/Relaisstation' ,     '1833'        , 3                  ),
+('keilschrift'   , 'Babylonische Keilschrift'      , 'ca. 3400 v. Chr.', 3                  ),
+('morsetaste'    , 'Morsegerät/Relaisstation'      ,     '1833'        , 3                  ),
 
 -- diverse Kategorien
-('smartphone'    , 'Smartphone'               ,     '1994'        , 3                  ),
-('chip'          , 'Rechner- / Speicherchip'  , 'ca. 1950'        , 1                  ),
-('wafer'         , 'Wafer'                    , '????'            , 2                  );
+('smartphone'    , 'Smartphone'                    ,     '1994'        , 3                  ),
+('chip'          , 'Rechner- / Speicherchip'       , 'ca. 1950'        , 1                  ),
+('wafer'         , 'Wafer'                         , '????'            , 2                  ),
+('halbleiter'    , 'Halbleiter (Silicium)'         , '-0'              , 1                  );               
 
 
 -- --------------------------------------------------------------
@@ -176,13 +176,15 @@ INSERT INTO `tbl_exponat`
 (2004 , '1997'         , '3.5 Zoll Boot-Diskette S.U.s.E. Linux Kernel 2.0.3x', 'S_004_d'     , true       ),
 (2005 , '2008'         , 'Ubuntu OS 8.10'                                     , 'S_005_u'     , true       ),
 (2006 , '2004'         , 'Vince Ebers Ur-Knaller'                             , 'S_006_c'     , true       ),
+(2007 , '????'         , 'Lochkarte (ungelocht)'                              , 'S_007_l'     , true       ),
 
 -- kommunizieren
 (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
 
 -- diverse
-(9001 , '2010'         , 'HTC Desire'                                         , 'K_002_s'     , true       );
-
+(9001 , '2010'         , 'HTC Desire'                                         , 'D_001_s'     , true       ),
+(9002 , 'xxxx'         , 'Halbleiter Silicium'                                , 'D_002_h'     , true       ),
+(9003 , '????'         , 'Wafer'                                              , 'D_003_w'     , true       );
 
 -- --------------------------------------------------------------
 -- Fotos in der Datenbank.
@@ -261,8 +263,11 @@ VALUES
 																															
 (  2009 , 'bitTransistorNachbau_schema.png', 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Transistoren'                                              ,
                                                               'Schema um ein Bit mittels Transistoren zu speichern'                                                    ),
-(  2010 , 'harddisk.png'                                    , 'phi@smoch.ch' , 'Harddisk offen'                                                                         ,
+(  2010 , 'harddisk.png'                   , 'phi@smoch.ch' , 'Harddisk offen'                                                                                          ,
                                                               'Harddisk geöffnet (Speicherkapazität unbekannt)'                                                        ),
+(  2011 , 'lochkarte.png'                  , 'phi@smoch.ch' , 'Lochkarte'                                                                                               ,
+                                                              'Lochkarte'                                                                                              ),
+
 
 -- kommunizieren
 (  3001 , 'keilschrift.png'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
@@ -305,7 +310,8 @@ INSERT INTO `tbl_erfindungsbild`
 ('computer'      ,  2   ,   1006    ),  -- Zuse
 ('computer'      ,  3   ,   1007    ),  -- Zuse 
 ('computer'      ,  4   ,   1008    ),  -- Zuse Eingabegerät
-
+('differenzenmaschine', 1,  1011    ), -- Differenzenmaschine
+('volladdierer'  ,  1   ,   1012    ), -- Volladdierer Schema
 -- spechern
 ('amphore'       ,  1   ,   2001    ),  -- Amphora Etruskisch Popolonio
 -- ('amphore'       ,  2   ,   2002    ),  -- 3D-Drucker Amhpore
@@ -314,11 +320,15 @@ INSERT INTO `tbl_erfindungsbild`
 ('cd'            ,  1   ,   2005    ),  -- Ubuntu CD
 ('cd'            ,  2   ,   2006    ),  -- Vince Eberts CD "ur Knaller"
 ('harddisk'      ,  1   ,   2010    ),  -- Harddisk
+('lochkarte'     ,  1   ,   2011    ),
+
 -- kommunizieren
 ('keilschrift'   ,  1   ,   3001    ),  -- bild von eigenen schriftZeichnen
 
 -- diverse
-('smartphone'    ,  1   ,   9001    );  -- htc desire smartphone
+('smartphone'    ,  1   ,   9001    ),  -- htc desire smartphone
+('halbleiter'    ,  1   ,   9002    ),  -- halbleiter
+('wafer'         ,  1   ,   9003    );  -- Wafer
 
 
 -- ---------------------------------------------------
@@ -347,13 +357,15 @@ INSERT INTO `tbl_exponatbild`
 (  2004       ,   2004    ,  1   ), -- Diskette S.U.s.E.
 (  2005       ,   2005    ,  1   ), -- CD (Ubuntu OS 2008 Oktober (10)
 (  2006       ,   2006    ,  1   ), -- CD (Audio : "Vince Eberts Ur-Knaller")
+(  2007       ,   2011    ,  1   ), -- Lochkarte
 
 -- kommunizieren
 (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
 
 -- diverses
-(  9001       ,   9001    ,  1   ); -- smartphone
-
+(  9001       ,   9001    ,  1   ), -- smartphone
+(  9002       ,   9002    ,  1   ), -- halbleiter Silicium
+(  9003       ,   9003    ,  1   ); -- Wafer
 
 -- ---------------------------------------------------
 -- Welche Exponate gehören zu welchen Erfindungen.
@@ -381,12 +393,14 @@ INSERT INTO `tbl_erfindungsexponat`
 ('diskette'      ,  2004        ,  1   ),
 ('cd'            ,  2005        ,  1   ),
 ('cd'            ,  2006        ,  2   ),
-
+('lochkarte'     ,  2007        ,  1   ),
 -- kommunizieren
 ('keilschrift'   ,  3001        ,  1   ),
 
 -- diveses
-('smartphone'    ,  9001        ,  1   );
+('smartphone'    ,  9001        ,  1   ),
+('halbleiter'    ,  9002        ,  1   ),
+('wafer'         ,  9003        ,  1   );
 
 
 -- Mehrere Exponate zu einem Objekt sind möglich.
