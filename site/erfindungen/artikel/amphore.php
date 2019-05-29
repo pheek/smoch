@@ -12,7 +12,7 @@
 	<p>Durch einen Verschluss konnte die Ware vor dem Verderben bewahrt werden. Dieses Vorgehen entspricht in der Informationstechnik wohl am ehesten dem «Backup».</p>
 
 	<h1>Fun-Facts</h1>
-	<p>Die zweite Abbildung zeigt eine Nachbildung einer Amphore aus dem 3D-Drucker. Diese wurde zunächst mit dem Programm <a href='https://www.blender.org'>Blender</a> modelliert und danach mit dem Drucker "Prusa" ausgedruckt.<p>
+	<p>Ein Exponat zeigt eine Nachbildung einer Amphore aus dem 3D-Drucker. Diese wurde zunächst mit dem Programm <a href='https://www.blender.org'>Blender</a> modelliert und danach mit dem Drucker <a href='http://www.prusa3d.com'>Prusa</a> ausgedruckt.<p>
 	 
 <p>Amphoren waren häufig auch beschritftet. Die Aufschriften geben
 	heutigen Archäologen häufig Datierungsmöglichkeiten und Indizien

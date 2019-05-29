@@ -312,6 +312,10 @@ INSERT INTO `tbl_erfindungsbild`
 ('computer'      ,  4   ,   1008    ),  -- Zuse Eingabegerät
 ('differenzenmaschine', 1,  1011    ), -- Differenzenmaschine
 ('volladdierer'  ,  1   ,   1012    ), -- Volladdierer Schema
+('not_relais'    ,  1   ,   1009    ), -- NOT mit Relais
+('not_transistor',  1   ,   1010    ),
+
+
 -- spechern
 ('amphore'       ,  1   ,   2001    ),  -- Amphora Etruskisch Popolonio
 -- ('amphore'       ,  2   ,   2002    ),  -- 3D-Drucker Amhpore
@@ -320,15 +324,17 @@ INSERT INTO `tbl_erfindungsbild`
 ('cd'            ,  1   ,   2005    ),  -- Ubuntu CD
 ('cd'            ,  2   ,   2006    ),  -- Vince Eberts CD "ur Knaller"
 ('harddisk'      ,  1   ,   2010    ),  -- Harddisk
-('lochkarte'     ,  1   ,   2011    ),
-
+('lochkarte'     ,  1   ,   2011    ),  -- Lochkarte blau
+('bit_relais'    ,  1   ,   2008    ),  -- Bit mit Relais Latch
+('bit_transistor',  1   ,   2009    ),  -- Bit mit Transitor nachgebaut
 -- kommunizieren
 ('keilschrift'   ,  1   ,   3001    ),  -- bild von eigenen schriftZeichnen
 
 -- diverse
 ('smartphone'    ,  1   ,   9001    ),  -- htc desire smartphone
 ('halbleiter'    ,  1   ,   9002    ),  -- halbleiter
-('wafer'         ,  1   ,   9003    );  -- Wafer
+('wafer'         ,  1   ,   9003    ),  -- Wafer
+('wafer'         ,  2   ,   9004    );  -- Wafer unter dem Mikroskop
 
 
 -- ---------------------------------------------------

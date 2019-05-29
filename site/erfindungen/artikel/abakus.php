@@ -1,7 +1,6 @@
 <!-- Erfindung -->
 
 <div class='erfindung'>
-
 	<h1>Geschichte</h1>
 	<p>Der Abakus ist definitiv mehr als 2300 Jahre alt. <span class='zitat text'>Die geläufigsten Formen sind [...], das chinesische Suanpan [...]</span><span class='zitat quelle'><a href='https://de.wikipedia.org/wiki/Abakus_(Rechenhilfsmittel)'>Wikipedia Abakus</a></span></p>
 
