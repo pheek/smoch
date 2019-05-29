@@ -287,7 +287,7 @@ INSERT INTO `tbl_erfindungsbild`
 
 -- spechern
 ('amphore'       ,  1   ,   2001    ),  -- Amphora Etruskisch Popolonio
-('amphore'       ,  2   ,   2002    ),  -- 3D-Drucker Amhpore
+-- ('amphore'       ,  2   ,   2002    ),  -- 3D-Drucker Amhpore
 ('amphore'       ,  3   ,   2003    ),  -- Bild Wikipedia von Amphoren
 ('diskette'      ,  1   ,   2004    ),  -- Diskette S.U.s.E
 ('cd'            ,  1   ,   2005    ),  -- Ubuntu CD

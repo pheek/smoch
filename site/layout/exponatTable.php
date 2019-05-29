@@ -46,8 +46,11 @@ function createExponatTableRows() {
 }
 
 ?>
+
 <div>
 	<table>
+	<tr class='exponatListeTitel'><td colspan='5'><h1 class='exponatListeTitel'>Exponate</h1>
+</td></tr>
 	<tr class='erfindungsExponat'><td>Modell</td><td>Jahr</td><td>Inventar Nr.</td><td>Ausgestellt?</td><td>Bilder</td></tr>
 <?php createExponatTableRows(); ?>
 	</table>

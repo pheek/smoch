@@ -52,6 +52,7 @@ body {
 	color          : red       ;
 	font-variant   : small-caps;
 	font-weight    : bold      ;
+
 }
 
 .tourHeader > a:hover {
@@ -63,9 +64,13 @@ body {
  * the user is already on thay page
  */
 .unLink {
-	color           : red   ;
-	font-style      : italic;
-	background-color: #fee  ;
+	color           : red       ;
+	font-style      : italic    ;
+	background-color: #fee      ;
+	font-weight     : extra-bold;
+	font-size       :  164%     ;
+	border: 1px red solid;
+	border-radius: 4px;
 }
 
 .erfindung {
@@ -106,13 +111,30 @@ body {
 	width: auto;
 }
 
-.erfindungsBilder {c
+/*
+.erfindungsBilder {
 	color           : #08F;
 	background-color: #fff;
-}
+}*/
 
 .erfindungsText {
 	clear: both;
+}
+
+
+/** TODO: Color als Konstante fixieren **/
+h1.exponatListeTitel  {
+	margin-top      : 28px     ;
+	color           : red      ;
+	width           : 100%     ;
+	background-color: brown    ;
+	color           : #08F     ;
+	font-variant    : normal   ;
+	border-color    : #210     ;
+	border          : 2px solid;
+	text-align      : center   ;
+ 	background-color: #210     ;
+	color           : #b86     ;
 }
 
 .erfindungsExponat {
@@ -120,13 +142,17 @@ body {
 	background-color: #fee; 
 }
 
-tr.erfindungsExponatTitle > td {
+tr.erfindungsExponat > td {
 	background-color: #eee;
-	border: 2px #f008 solid;
+	padding-left    : 15px;
+	padding-right   : 15px;
+	border          : 1px #f002 solid;
 }
 
 tr.exponatTabelle > td {
 	background-color: #fffc;
+	padding-left    : 15px ;
+	padding-right   : 15px ;
 	vertical-align  : top  ;
 }
 
@@ -157,7 +183,7 @@ div.erfindungsBild {
 	margin          : 5px            ; 
 	margin-bottom   : 2px            ;
 	border          : solid #630  2px;
-	background-color: #210           ;
+ 	background-color: #210           ;
 	color           : #b86           ;
 	font-weight     : bold           ;
 	font-size       : 120%           ;
