@@ -36,3 +36,21 @@
 	font-weight     : bold       ;
 	border          : none       ;
 }
+
+
+
+/** 
+ *  Tabellen innerhalb der Artikel. "class = 'tabelle'".
+ */
+.tabelle tr:first-child td {
+	font-weight     : bold;
+	background-color: #eef;
+}
+
+.tabelle tr:nth-child(odd) {
+	background-color: #ccf;
+}
+
+.tabelle tr:nth-child(even) {
+	background-color: #aad;
+}
