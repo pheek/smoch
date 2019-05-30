@@ -1,10 +1,11 @@
 <?php
 //require_once 'db_connection.php';
-require_once 'inc/db/sql.php';
+require_once 'inc/preRequisites.php'    ;
+require_once 'inc/db/sql.php'           ;
 require_once 'inc/dao/dao_erfindung.php';
-require_once 'inc/session.php';
+//require_once 'inc/session.php'          ;
 
-
+/*
 $url = $_SERVER['PHP_SELF'];
 preg_match('/(.*)(\.php\/)([a-z_]*)(.*)/', $url, $matches, PREG_OFFSET_CAPTURE);
 if(sizeof($matches) >= 4) {
@@ -12,15 +13,15 @@ if(sizeof($matches) >= 4) {
 } else {
 	$erfindungID = 'abakus'; // default get from DB the FIRST TODO
 }
+*/
  
 $daoErfindung    = new DAO_Erfindung();
-$erfindung = $daoErfindung->getErfindungsObjekt($erfindungID, $_SESSION['kategorie_id']);
+$erfindung = $daoErfindung->getErfindungsObjekt(getErfindungsID(), $_SESSION['kategorie_id']);
 
 function prevLink() {
-	global $erfindungID;
 	global $_SESSION;
 //	echo $_SESSION['kategorie_id'];
-	$vorg =  SQL::getVorgaenger($erfindungID, $_SESSION['kategorie_id']);
+	$vorg =  SQL::getVorgaenger(getErfindungsID(), $_SESSION['kategorie_id']);
 
 	if(! isset($vorg) || strlen($vorg) < 1) {
 		return "";
@@ -30,10 +31,9 @@ function prevLink() {
 }
 
 function nextLink() {
-	global $erfindungID;
 	global $_SESSION;
 //	echo $_SESSION['kategorie_id'];
-	$nachf =  SQL::getNachfolger($erfindungID, $_SESSION['kategorie_id']);
+	$nachf =  SQL::getNachfolger(getErfindungsID(), $_SESSION['kategorie_id']);
 
 	if(! isset($nachf) || strlen($nachf) < 1) {
 		return "";

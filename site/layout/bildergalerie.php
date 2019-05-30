@@ -1,12 +1,12 @@
 <?php
-include_once 'inc/db/sql.php';
-include_once 'inc/gui/BildImg.php';
-include_once 'inc/dao/dao_bild.php';
+include_once 'inc/preRequisites.php';
+include_once 'inc/db/sql.php'       ;
+include_once 'inc/gui/BildImg.php'  ;
+include_once 'inc/dao/dao_bild.php' ;
 
 
 function createAlleBilder() {
-	global $erfindungID;
-	$alleBilder = DAO_Bild::getAlleBilderZuErfindung($erfindungID);
+	$alleBilder = DAO_Bild::getAlleBilderZuErfindung(getErfindungsID());
 
 	foreach($alleBilder as $bild) {
 		$bildImg = BildImg::readBildImgViaID($bild->dbID);
@@ -15,7 +15,7 @@ function createAlleBilder() {
 	} // end foreach
 } // end function createAlleBilder
 
-if(sizeof(DAO_Bild::getAlleBilderZuErfindung($erfindungID)) >=1) {
+if(sizeof(DAO_Bild::getAlleBilderZuErfindung(getErfindungsID())) >=1) {
 	echo "<div class='erfindungsBilder'>";
 	createAlleBilder();
 	echo "</div>";

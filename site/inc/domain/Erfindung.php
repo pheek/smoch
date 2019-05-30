@@ -14,10 +14,11 @@ class Erfindung {
 	public function __construct() {
 	}
 
-	public $IDurl;
-	public $titel;
-	public $jahr;
+	public $IDurl     ;
+	public $titel     ;
+	public $jahr      ;
 	public $defaultKat;
+	public $keywords  ;   // array()
 
 	/**
 	 * Alle möglichen Nachfolger pro Tour
@@ -57,6 +58,10 @@ class Erfindung {
 	}
 	*/
 
+	public function addKeyword($keyword) {
+		$this->keywords[] = $keyword;
+	}
+	
 } // end class Erfindung
 
 ?>

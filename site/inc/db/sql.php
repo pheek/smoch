@@ -133,4 +133,9 @@ class SQL {
 		return SQL::fetchSingle($SQL)['nachfolger_URL_Infix'];
 	}
 
+	public static function getErfindungsKeywords($idUrl) {
+		$SQL = 'SELECT `keyword` FROM `tbl_keyword` WHERE "' . $idUrl .'" = `IDurl_fk`';
+		return SQL::fetchRows($SQL);
+	}
+	
 } // end static class SQL

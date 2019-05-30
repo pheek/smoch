@@ -93,7 +93,7 @@ INSERT INTO `tbl_erfindung`
 -- diverse Kategorien
 ('smartphone'    , 'Smartphone'                    ,     '1994'        , 3                  ),
 ('chip'          , 'Rechner- / Speicherchip'       , 'ca. 1950'        , 1                  ),
-('wafer'         , 'Wafer'                         , '????'            , 2                  ),
+('wafer'         , 'Wafer'                         ,     '1960'        , 2                  ),
 ('halbleiter'    , 'Halbleiter (Silicium)'         , '-0'              , 1                  );               
 
 
@@ -135,8 +135,8 @@ INSERT INTO `tbl_reihenfolge`
 ('halbleiter'    ,   2           ,   4      ),
 ('bit_transistor',   2           ,   5      ),
 ('chip'          ,   2           ,   6      ),
-('wafer'         ,   2           ,   7      ),
-('harddisk'      ,   2           ,   8      ),
+('harddisk'      ,   2           ,   7      ),
+('wafer'         ,   2           ,   8      ),
 ('diskette'      ,   2           ,   9      ),
 ('cd'            ,   2           ,  10      ),
 ('smartphone'    ,   2           ,  11      ),

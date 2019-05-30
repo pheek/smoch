@@ -36,7 +36,7 @@ class DAO_Erfindung {
 		$erfindung->defaultKat = $resultSet['defaultKategorie'  ];
 
 		// Mögliche Nachfolger bestimmen
-		$resultSetMitKat = SQL::getErfindungsRecordMitKategorie($siteURL, $kategorie);
+//		$resultSetMitKat = SQL::getErfindungsRecordMitKategorie($siteURL, $kategorie);
 /*		var_dump($resultSetMitKat);
 		foreach($resultSetMitKat as $key => $value) {
 			echo "DEBUG dao.php: " . $key . '---' . $value . "<br />\n";
@@ -44,6 +44,12 @@ class DAO_Erfindung {
 */
 		
 		// ...
+
+		$keyWordResultSet = SQL::getErfindungsKeywords($siteURL);
+		while($keyWord = $keyWordResultSet->fetch(PDO::FETCH_ASSOC)) {
+			$erfindung->addKeyword($keyWord['keyword']);
+		}
+		
 		return $erfindung;
 	}
 

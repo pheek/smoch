@@ -18,9 +18,9 @@
 		<meta   name    = "description"
 		        content = "<?php echo $_PRE_DESCRIPTION;?>" />
 		<meta   name    = "keywords"
-		        content = "computing history, computing, history, museum, swiss, small, <?php echo $_PRE_KEYWORDS; ?>" />
+		        content = "computing history, computing, history, museum, swiss, small<?php echo $_PRE_KEYWORDS; ?>" />
 <?php
- require_once __DIR__ . '/../inc/db/sql.php';
+ require_once 'inc/db/sql.php';
  $browserPath = SQL::getActBrowserPath();
 ?>
 		<link   rel     = "stylesheet"
