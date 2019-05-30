@@ -11,9 +11,9 @@
 	margin-right :        3px;
 	padding      :        1px;
 	border-style : solid     ;
-	border-color :    #eaeaee;
+	border-color : var(--default-foreground);
 	border-size  :        1px;
-	background-color: #fafaff;
+	background-color: var(--default-background);
 }
 
 .zitat > p, .zitat > div {
@@ -44,13 +44,81 @@
  */
 .tabelle tr:first-child td {
 	font-weight     : bold;
-	background-color: #eef;
+	color: var(--default-background);
+	background-color: var(--default-foreground);
 }
 
 .tabelle tr:nth-child(odd) {
-	background-color: #ccf;
+	color: var(--default-background);
+	background-color: var(--default-foreground);
 }
 
 .tabelle tr:nth-child(even) {
-	background-color: #aad;
+	color: var(--default-foreground);
+	background-color: var(--default-background);
+
+}
+
+
+
+
+
+div.tourHeader {
+	border          : var(--default-foreground) 1px solid;
+	padding         : 4px          ;
+	border-radius   : 4px          ;
+	background-color: #f00;
+	color: white;
+}
+
+
+.tourHeader ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #F00;
+}
+
+.tourHeader li {
+  float: left;
+}
+
+.tourHeader li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+
+	text-decoration: none      ;
+	color          : var(--default-foreground)       ;
+	font-variant   : small-caps;
+	font-weight    : bold      ;
+  background-color: #f00;
+	color: var(--default-background);
+
+}
+
+/* Change the link color to #111 (black) on hover */
+.tourHeader li a:hover {
+  background-color: var(--default-foreground);
+	color: var(--default-background);
+
+	/* color           : white;
+	background-color: var(--default-foreground)  ; */
+}
+
+
+/* A link which is disabled, because
+ * the user is already on thay page
+ */
+.tourHeader > .unLink {
+	color           : #fff       ;
+	background-color: #f0f      ;
+/*	font-style: italic;
+	font-weight     : extra-bold;
+	font-size       :  164%     ;
+	border-radius: 4px;*/
 }

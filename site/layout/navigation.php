@@ -29,11 +29,13 @@ function navLinkToKategorie($linkKategorieNr) {
 ?>
 
 <div class='tourHeader'>
+	<ul>
 <?php
 $katNr = 1;
 while($katNr <= 3) {
-	echo navLinkToKategorie($katNr) . "\n";
+	echo "<li>" . navLinkToKategorie($katNr) . "</li>\n";
 	$katNr = $katNr + 1;
 }
 ?>
+	</ul>
 </div>

@@ -2,9 +2,9 @@
 
 <div class='erfindung'>
 	<h1>Geschichte</h1>
-	<p>Der Abakus ist definitiv mehr als 2300 Jahre alt. <span class='zitat text'>Die geläufigsten Formen sind [...], das chinesische Suanpan [...]</span><span class='zitat quelle'><a href='https://de.wikipedia.org/wiki/Abakus_(Rechenhilfsmittel)'>Wikipedia Abakus</a></span></p>
+	 <p>Der Abakus ist definitiv mehr als 2300 Jahre alt. <span class='zitat text'>Die geläufigsten Formen sind [...], das chinesische Suanpan [...] und [...]</span><span class='zitat quelle'><a href='https://de.wikipedia.org/wiki/Abakus_(Rechenhilfsmittel)'>Wikipedia Abakus</a></span></p>
 
-	<p class='zitat text'>Der erste Abakus tauchte etwa zwischen 2700 und 2300 v. Chr. auf und war eine Holz- oder Tontafel, die in Spalten unterteilt war [...]</p><p class='zitat quelle'><a href='https://de.wikipedia.org/wiki/Abakus_(Rechenhilfsmittel)'>Wikipedia: Abakus</a></p>
+	<p><span class='zitat text'>Der erste Abakus tauchte etwa zwischen 2700 und 2300 v. Chr. auf und war eine Holz- oder Tontafel, die in Spalten unterteilt war [...] </span><span class='zitat quelle'><a href='https://de.wikipedia.org/wiki/Abakus_(Rechenhilfsmittel)'>Wikipedia: Abakus</a></span></p>
 
 	 
 	<h1>Verwendung und Nutzen</h1>

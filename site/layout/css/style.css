@@ -3,14 +3,26 @@
  * 2019-05-23
  */
 
+/* Variables
+ * Thanks Nathan for the tip
+ */
+:root {
+	--default-foreground: #d30;
+	--default-background: #def;
+	--default-textcolor : #333;
+	--exponat-background: #210;
+	--exponat-foreground-text: #b86;
+}
+
+
 body {
 	font-family: verdana, arial, sans;
 }
 
 #mainHeader, #mainFooter, #introSeite {
 	padding         :    6px;
-	background-color: #fff  ;
-	color           : red   ;
+	background-color: var(--default-background)  ;
+	color           : var(--default-foreground)   ;
 	font-weight     : bold  ;
 	font-size       : 220%  ;
 	text-align      : center;
@@ -33,8 +45,8 @@ div.tourStartButton {
 }
 a.tourStartButton {
 	text-decoration:none;
-	background-color: #fcc;
-	color: red;
+	background-color: var(--default-background);
+	color: var(--default-foreground);
 	font-size: 200%;
 	padding: 15px;
 	border-radius: 4px;
@@ -42,60 +54,22 @@ a.tourStartButton {
 }
 
 .mainTour {
-	color: green;
-	background-color: #efe;
+	color: var(--default-foreground);
+	background-color: var(--default-background);
 	padding: 3px;
 	margin: 1px;
 }
 
-.tourHeader {
-	color           : red          ;
-	background-color: #fff         ;
-	display         : flex         ;
-	flex-direction  : row          ;
-	flex-wrap       : nowrap       ;
-	justify-content : space-between;
-	border          : red 1px solid;
-	padding         : 4px          ;
-	border-radius   : 4px          ;
-}
-
-.tourHeader > a {
-	text-decoration: none      ;
-	color          : red       ;
-	font-variant   : small-caps;
-	font-weight    : bold      ;
-
-}
-
-.tourHeader > a:hover {
-	color           : white;
-	background-color: red  ;
-}
-
-/* A link which is disabled, because
- * the user is already on thay page
- */
-.unLink {
-	color           : red       ;
-	font-style      : italic    ;
-	background-color: #fee      ;
-	font-weight     : extra-bold;
-	font-size       :  164%     ;
-	border: 1px red solid;
-	border-radius: 4px;
-}
-
 .erfindung {
-	color           : #400;
-	background-color: #fff;
+	color           : var(--default-foreground);
+	background-color: var(--default-background);
 	margin-left     :  2px;
 }
 
 .erfindung h1 {
 	font-style: italic;
 	font-size : 112%  ;
-	color     : black ;
+	color     : var(--default-textcolor) ;
 }
 
 .erfindungHeader {
@@ -103,10 +77,9 @@ a.tourStartButton {
 	flex-direction  : row          ; /* default value; can be omitted */
 	flex-wrap       : nowrap       ; /* default value; can be omitted */
 	justify-content : space-between; /* switched from default (flex-start, see below) */
-	background-color: lightyellow  ;
 
-	color           : #c00         ;
-	background-color: #fff         ;
+	color           : var(--default-foreground)         ;
+	background-color: var(--default-background)         ;
 	text-align      : center       ;
 	font-size       : 200%         ;
 	font-weigth     : bold         ;
@@ -138,36 +111,37 @@ a.tourStartButton {
 /** TODO: Color als Konstante fixieren **/
 h1.exponatListeTitel  {
 	margin-top      : 28px     ;
-	color           : red      ;
+	color           : var(--default-foreground)      ;
 	width           : 100%     ;
-	background-color: brown    ;
-	color           : #08F     ;
+	background-color: var(--exponat-background)    ;
+	color           : var(--exponat-foreground-text)     ;
 	font-variant    : normal   ;
-	border-color    : #210     ;
+	border-color    : var(--exponat-foreground-text)     ;
 	border          : 2px solid;
 	text-align      : center   ;
- 	background-color: #210     ;
-	color           : #b86     ;
 }
 
+
+												
 .erfindungsExponat {
-	color           : #c00;
-	background-color: #fee; 
+	color           : var(--default-foreground);
+	background-color: var(--default-background); 
 }
 
 tr.erfindungsExponat > td {
-	background-color: #eee;
+	background-color: var(--default-background);
 	padding-left    : 15px;
 	padding-right   : 15px;
 	border          : 1px #f002 solid;
 }
 
 tr.exponatTabelle > td {
-	background-color: #fffc;
+	background-color: var(--default-background);
 	padding-left    : 15px ;
 	padding-right   : 15px ;
 	vertical-align  : top  ;
 }
+
 
 .small_image {
 	width: 144px;
@@ -196,8 +170,8 @@ div.erfindungsBild {
 	margin          : 5px            ; 
 	margin-bottom   : 2px            ;
 	border          : solid #630  2px;
- 	background-color: #210           ;
-	color           : #b86           ;
+ 	background-color: var(--exponat-background)           ;
+	color           : var(--exponat-foreground-text)           ;
 	font-weight     : bold           ;
 	font-size       : 120%           ;
 }
