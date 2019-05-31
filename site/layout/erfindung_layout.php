@@ -27,7 +27,7 @@ function prevLink() {
 		return "";
 	}
 	$link = "<a href='./" . $vorg . "'><img src='../layout/img/back.png' alt='Pfeil nach links' title='vorganger'/></a>";
-	return $link;	
+	return $link;
 }
 
 function nextLink() {
@@ -39,7 +39,7 @@ function nextLink() {
 		return "";
 	}
 	$link = "<a href='./" . $nachf . "'><img src='../layout/img/for.png' alt='Pfeil nach rechts' title='Nachfolger'/></a>";
-	return $link;	
+	return $link;
 }
 
 
@@ -48,17 +48,18 @@ function nextLink() {
 
 <div class='erfindung'>
 	<div class='erfindungHeader'>
-	<div><?php echo prevLink(); ?></div>
+		<div><?php echo prevLink(); ?></div>
 		<div><?php echo $erfindung->titel;?>&nbsp;(<?php echo $erfindung->jahr; ?>)</div>
-<div><?php echo nextLink(); ?></div>
+		<div><?php echo nextLink(); ?></div>
 	</div>
 
-<?php include 'bildergalerie.php' ?>
+	<?php include 'bildergalerie.php' ?>
 
 	<div class='erfindungsText'>
 		<?php include 'erfindungen/artikel/' . $erfindung->IDurl . '.php'; ?>
 	</div>
+
 	<div class='erfindungsExponate'>
-<?php include 'exponat_liste.php'; ?>
+		<?php include 'exponat_liste.php'; ?>
 	</div>
 </div>
