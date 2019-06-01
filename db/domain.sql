@@ -72,7 +72,7 @@ INSERT INTO `tbl_erfindung`
 ('zahlenschieber', 'Zahlenschieber (Addiator)'     , 'ca. 1700'        , 1                  ),
 ('computer'      , 'Computer'                      ,     '1937'        , 1                  ),
 ('differenzenmaschine', 'Differenzenmaschine'      ,     '1822'        , 1                  ),
-('not_relais'    , 'Not realisiert mit Relais'     , '????'            , 1                  ),
+('not_relais'    , 'Not realisiert mit Relais'     ,     '1941'        , 1                  ),
 ('not_transistor', 'Not realisiert mit Transistror', '????'            , 1                  ),
 ('volladdierer'  , 'Volladdierer'                  ,  '????'           , 1                  ),
 

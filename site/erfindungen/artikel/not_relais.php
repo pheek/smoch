@@ -3,20 +3,18 @@
 <div class='erfindung'>
 
 	<h1>Geschichte</h1>
-	<p> .... geschichte comming soon .... </p>
-  <p class='zitat text'>ein Zitat</p>
-	<p class='zitat quelle'>Quelle des Zitats</p>
+	 <p>Der erste funktionsfähige Computer mit Relais Technik war die Z3 (von Konrad Zuse), welche 1941 fertiggestellt wurde. Ich würde wetten, dass darin das NOT auch vorkommt.<br />
+
+	 Dass es für die Erfindung eines NOT (= Komplement) mit Relais keinen Spezialisten braucht, zeigten mir jahrelang 16-18jährige Informatiklernende, denen ich den Auftrag gab, mittels Relais eine NOT Schaltung zu bauen. Normalerweise bringt das ca. eine/r von zehn Lernenden ohne weiteren Zustupf hin.</p>
 	 
 	<h1>Verwendung und Nutzen</h1>
-	<p> .... verwendung comming soon .... </p>
-	<p>Nun <span class='zitat text'>ein Zitat im Fließtext</span> <span class='zitat quelle'>Quelle des Zitates im Fließtext</span>. Weiter im text ...</p>
+	 <p>Um eine Aussage im Computerprogramm zu verneinen, aber auch um negative Zahlen darzustellen und vieles mehr, muss oft ein Wahrheitswert (true/false) oder ein Bit (1/0) negiert werden. Dies kann einfach mit der Umkehrung von Strom zu Kein-Strom bzw. von Kein-Strom zu Strom realisiert werden.</p>
 
 	<h1>Funktionsweise und Aufbau</h1>
-	<p> .... funktionsweise comming soon .... </p>
+	 <p>Zwei unabhängige Stromkreise sind vorhanden. Fließt im ersten Stromkreis Stom, so wird der zweite Stromkreis unterbrochen. Fließt hingegen im ersten Stromkreis kein Strom, so bleibt der zweite Stromkreis geschlossen.</p>
 
 	<h1>Fun-Facts</h1>
-	<p> .... fun-facts comming soon .... </p>
+	 <p>Der Autor hat sich jahrelang gefragt, wie denn ein NOT überhaupt realisiert werden könne. Fließt nämlich im Input Stom, so kann man sich leicht vorstellen, wie dann im Outupt der Strom auf 0V zurückgesetzt werden kann. Hingegen wenn am Input kein Strom ist, woher um Himmels Willen kommt dann der Strom für den Output? <br />
+	 Erst nachdem ein NOT-Chip komplett beschriftet war, war die Erklärung klar: Der NOT-Strom kommt von einer permanenten Versorgung des NOT-Bauteils. Jeder Rechner-Chip hat nämlich typischerweise ein 5V und ein 0V Anschluss, um das Bauteil mit permanentem Strom zu unterhalten.</p>
 
-	<h1>Quellenangaben</h1>
-	<p> .... Quellenangaben .... </p>
 </div>
