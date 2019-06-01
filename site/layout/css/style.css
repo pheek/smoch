@@ -61,7 +61,7 @@ a.tourStartButton {
 }
 
 .erfindung {
-	color           : var(--default-foreground);
+	color           : var(--default-textcolor );
 	background-color: var(--default-background);
 	margin-left     :  2px;
 }
