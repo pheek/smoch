@@ -3,7 +3,6 @@
  * 2019-05-26
  */
 
-
 .zitat { /* Z. B. Wikipedia*/
 	font-style   : oblique   ;
 	font-size    :        90%;
@@ -11,15 +10,14 @@
 	margin-right :        3px;
 	padding      :        1px;
 	border-style : solid     ;
-	border-color : var(--default-foreground);
+	border-color : #ccc8;
 	border-size  :        1px;
-	background-color: var(--default-background);
 }
 
 .zitat > p, .zitat > div {
-	margin-left  :        3em;
-	margin-right :        3em;
-	padding      :        1em;
+	margin-left  : 3em;
+	margin-right : 3em;
+	padding      : 1em;
 }
 
 .zitat.text::after {
@@ -36,8 +34,6 @@
 	font-weight     : bold       ;
 	border          : none       ;
 }
-
-
 
 /** 
  *  Tabellen innerhalb der Artikel. "class = 'tabelle'".
@@ -60,24 +56,20 @@
 }
 
 
-
-
-
 div.tourHeader {
 	border          : var(--default-foreground) 1px solid;
 	padding         : 4px          ;
 	border-radius   : 4px          ;
 	background-color: #f00;
-	color: white;
+	color           : white        ;
 }
 
-
 .tourHeader ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #F00;
+  list-style-type : none  ;
+  margin          : 0     ;
+  padding         : 0     ;
+  overflow        : hidden;
+  background-color: #F00  ;
 }
 
 .tourHeader li {
@@ -85,19 +77,17 @@ div.tourHeader {
 }
 
 .tourHeader li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-
-
-	text-decoration: none      ;
-	color          : var(--default-foreground)       ;
-	font-variant   : small-caps;
-	font-weight    : bold      ;
+  display         : block;
+  color           : white;
+  text-align      : center;
+  padding         : 14px 16px;
+  text-decoration : none;
+	text-decoration : none      ;
+	color           : var(--default-foreground)       ;
+	font-variant    : small-caps;
+	font-weight     : bold      ;
   background-color: #f00;
-	color: var(--default-background);
+	color           : var(--default-background);
 
 }
 

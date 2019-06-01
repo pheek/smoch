@@ -78,12 +78,12 @@ INSERT INTO `tbl_erfindung`
 
 -- speichern
 ('amphore'       , 'Amphore'                       ,  'ca. 500 v. Chr.', 2                  ),
+('lochkarte'     , 'Lochkarte'                     , '18. Jahrhundert' , 2                  ),
 ('harddisk'      , 'Harddisk'                      ,     '1956'        , 2                  ),
 ('diskette'      , 'Diskette'                      ,     '1969'        , 2                  ),
 ('cd'            , 'CD - ROM'                      ,     '1977'        , 2                  ),
 ('bit_relais'    , 'Bit realisiert mit Relais'     ,     '????'        , 2                  ),
 ('bit_transistor', 'Bit realisiert mit Transistor' , '????'            , 2                  ),
-('lochkarte'     , 'Lochkarte'                     ,     '????'        , 2                  ),
 
 
 -- kommunizieren
@@ -130,8 +130,8 @@ INSERT INTO `tbl_reihenfolge`
 
 -- speichern
 ('amphore'       ,   2           ,   1      ),
-('bit_relais'    ,   2           ,   2      ),
-('lochkarte'     ,   2           ,   3      ),
+('lochkarte'     ,   2           ,   2      ),
+('bit_relais'    ,   2           ,   3      ),
 ('halbleiter'    ,   2           ,   4      ),
 ('bit_transistor',   2           ,   5      ),
 ('chip'          ,   2           ,   6      ),
@@ -176,7 +176,7 @@ INSERT INTO `tbl_exponat`
 (2004 , '1997'         , '3.5 Zoll Boot-Diskette S.U.s.E. Linux Kernel 2.0.3x', 'S_004_d'     , true       ),
 (2005 , '2008'         , 'Ubuntu OS 8.10'                                     , 'S_005_u'     , true       ),
 (2006 , '2004'         , 'Vince Ebers Ur-Knaller'                             , 'S_006_c'     , true       ),
-(2007 , '????'         , 'Lochkarte (ungelocht)'                              , 'S_007_l'     , true       ),
+(2007 , '1964'         , 'Lochkarte 80-Spalten f. EBCDIC (ungelocht)'         , 'S_007_l'     , true       ),
 
 -- kommunizieren
 (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
