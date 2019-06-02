@@ -79,6 +79,7 @@ INSERT INTO `tbl_erfindung`
 -- speichern
 ('amphore'       , 'Amphore'                       ,  'ca. 500 v. Chr.', 2                  ),
 ('lochkarte'     , 'Lochkarte'                     , '18. Jahrhundert' , 2                  ),
+('kernspeicher'  , 'Kernspeicher'                  ,     '1949'        , 2                  ),
 ('harddisk'      , 'Harddisk'                      ,     '1956'        , 2                  ),
 ('diskette'      , 'Diskette'                      ,     '1969'        , 2                  ),
 ('cd'            , 'CD - ROM'                      ,     '1977'        , 2                  ),
@@ -135,11 +136,12 @@ INSERT INTO `tbl_reihenfolge`
 ('halbleiter'    ,   2           ,   4      ),
 ('bit_transistor',   2           ,   5      ),
 ('chip'          ,   2           ,   6      ),
-('harddisk'      ,   2           ,   7      ),
-('wafer'         ,   2           ,   8      ),
-('diskette'      ,   2           ,   9      ),
-('cd'            ,   2           ,  10      ),
-('smartphone'    ,   2           ,  11      ),
+('kernspeicher'  ,   2           ,   7      ),
+('harddisk'      ,   2           ,   8      ),
+('wafer'         ,   2           ,   9      ),
+('diskette'      ,   2           ,  10      ),
+('cd'            ,   2           ,  11      ),
+('smartphone'    ,   2           ,  12      ),
 
 -- kommunizieren
 ('keilschrift'   ,   3           ,   1      ),
