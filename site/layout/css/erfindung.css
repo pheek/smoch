@@ -20,7 +20,6 @@
 	flex-direction  : row          ; /* default value; can be omitted */
 	flex-wrap       : nowrap       ; /* default value; can be omitted */
 	justify-content : space-between; /* switched from default (flex-start, see below) */
-
 	color           : var(--default-foreground)         ;
 	background-color: var(--default-background)         ;
 	text-align      : center       ;
@@ -110,8 +109,6 @@ div.small_image_rahmen {
 	}
 	
 }
-
-
 
 div.erfindungsBilder{
 /*	clear     :   both; */

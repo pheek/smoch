@@ -7,11 +7,12 @@
  * Thanks Nathan for the tip
  */
 :root {
-	--default-foreground: #f20;
-	--default-background: #eee;
-	--default-textcolor : #211;
-	--exponat-background: #210;
-	--exponat-foreground-text: #b86;
+	--default-foreground     : #39a537;
+	--default-background     : #efe   ;
+	--middle-background      : #bfb   ;
+	--default-textcolor      : #121   ;
+	--exponat-background     : #120   ;
+	--exponat-foreground-text: #8b6   ;
 }
 
 
@@ -45,10 +46,10 @@ div.tourStartButton {
 }
 a.tourStartButton {
 	text-decoration:none;
-	background-color: var(--default-background);
+	background-color: var(--middle-background);
 	color: var(--default-foreground);
 	font-size: 200%;
 	padding: 15px;
 	border-radius: 4px;
-	border: 1px solid red;
+	border: 1px solid var(--default-foreground);
 }

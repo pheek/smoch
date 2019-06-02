@@ -22,13 +22,13 @@ function printAlleExponatBilder($exponat) {
 
 function createExponatTableRow($exponat) {
 	echo "<tr class='exponatTabelle'>\n";
-	echo "<td>" . $exponat->Modellbezeichnung . "</td>\n";
-	echo "<td>" . $exponat->Jahr              . "</td>\n";
-	echo "<td>" . $exponat->inventarNummer    . "</td>\n";
+	echo "<td>" . $exponat->Modellbezeichnung . "<br/>\n";
+	echo "(" . $exponat->Jahr              . ")</td>\n";
+	echo "<td>" . $exponat->inventarNummer    . "<br />\n";
 	if(0 != $exponat->ausgestellt) {
-			echo "<td>Ja</td>\n";
+			echo "(Ja)</td>\n";
 	} else {
-			echo "<td> - </td>\n";
+			echo "  </td>\n";
 	}
 	echo "<td>";
 	printAlleExponatBilder($exponat);
@@ -51,7 +51,7 @@ function createExponatTableRows() {
 	<table>
 	<tr class='exponatListeTitel'><td colspan='5'><h1 class='exponatListeTitel'>Exponate im «SMOCH»</h1>
 </td></tr>
-	<tr class='erfindungsExponat'><td>Modell</td><td>Jahr</td><td>Inventar Nr.</td><td>Ausgestellt?</td><td>Bilder</td></tr>
+	<tr class='erfindungsExponat'><td>Modell<br />(Jahr)</td><td>Inventar Nr.<br />(Ausgestellt)</td><td>Bilder</td></tr>
 <?php createExponatTableRows(); ?>
 	</table>
 </div>

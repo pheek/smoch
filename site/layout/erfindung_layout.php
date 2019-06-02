@@ -21,13 +21,15 @@ $erfindung = $daoErfindung->getErfindungsObjekt(getErfindungsID(), $_SESSION['ka
 function prevLink() {
 	global $_SESSION;
 //	echo $_SESSION['kategorie_id'];
+	$first = SQL::getErsteErfindungUrlInKategorie($_SESSION['kategorie_id']);
 	$vorg =  SQL::getVorgaenger(getErfindungsID(), $_SESSION['kategorie_id']);
 
 	if(! isset($vorg) || strlen($vorg) < 1) {
 		return "";
 	}
-	$link = "<a href='./" . $vorg . "'><img src='../layout/img/back.png' alt='Pfeil nach links' title='vorganger'/></a>";
-	return $link;
+	$linkFirst = "<a href='./" . $first . "'><img src='../layout/img/first.png'    alt='Doppelpfeil nach links' title='Erste Erfindung dieser Kategorie'/></a>";
+	$linkNext  = "<a href='./" . $vorg  . "'><img src='../layout/img/previous.png' alt='Pfeil nach links'       title='Vorgänger'/></a>";
+	return $linkFirst . $linkNext;
 }
 
 function nextLink() {
@@ -38,7 +40,7 @@ function nextLink() {
 	if(! isset($nachf) || strlen($nachf) < 1) {
 		return "";
 	}
-	$link = "<a href='./" . $nachf . "'><img src='../layout/img/for.png' alt='Pfeil nach rechts' title='Nachfolger'/></a>";
+	$link = "<a href='./" . $nachf . "'><img src='../layout/img/next.png' alt='Pfeil nach rechts' title='Nachfolger'/></a>";
 	return $link;
 }
 

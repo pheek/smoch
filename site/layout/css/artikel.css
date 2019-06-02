@@ -66,7 +66,7 @@ div.tourHeader {
 	border          : var(--default-foreground) 1px solid;
 	padding         : 4px          ;
 	border-radius   : 4px          ;
-	background-color: #f00;
+	background-color: var(--default-foreground);
 	color           : white        ;
 }
 
@@ -75,7 +75,7 @@ div.tourHeader {
   margin          : 0     ;
   padding         : 0     ;
   overflow        : hidden;
-  background-color: #F00;
+  background-color: var(--default-foreground);
 }
 
 .tourHeader ul li {
@@ -91,10 +91,9 @@ div.tourHeader {
   padding         : 14px 16px;
   text-decoration : none;
 	text-decoration : none      ;
-	color           : var(--default-foreground)       ;
 	font-variant    : small-caps;
 	font-weight     : bold      ;
-  background-color: #f00;
+  background-color: var(--default-foreground);
 	color           : var(--default-background);
 
 }
@@ -105,6 +104,14 @@ div.tourHeader {
 	color           : var(--default-background);
 }
 
+div.forfor a img , div.backback a img {
+	width : 50px;
+	height: 50px;
+}
+
+div.backback {
+	text-align: left;
+}
 
 /* A link which is disabled, because
  * the user is already on thay page
@@ -129,4 +136,10 @@ div.tourHeader {
 		clear: both;
 		width: 100%;
 	}
+	div.forfor {
+		position: absolute;
+		right: 5px;
+	}
 }
+
+
