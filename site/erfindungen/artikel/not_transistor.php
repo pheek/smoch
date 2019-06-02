@@ -3,11 +3,11 @@
 <div class='erfindung'>
 
 	<h1>Geschichte</h1>
-	 <p>???? Wann das erste Komplement (NOT-Gatter) mit Transistoren gebaut wurde, ist mir nicht bekannt.</p>
+	 <p>Wann das erste Komplement (NOT-Gatter) mit Transistoren gebaut wurde, ist mir nicht bekannt. Wahrscheinlich war das NOT bereits mit Röhren realisiert worden, denn der Schaltungsaufbau ist im Grundprinzip obiger Schaltung identisch. (Hinweise gerne an phi@smoch.ch)</p>
 
 	 
 	<h1>Verwendung und Nutzen</h1>
-	 <p>Analog zum Komplement mit Relais, wird auch hier ein BIT umgekehrt. Aus true wird false, aus 1 wird 0 und jeweils umgekehrt. </p>
+	 <p>Analog zum Komplement mit Relais, wird auch hier ein <b>Bit</b> umgekehrt. Aus true wird false, aus 1 wird 0 und jeweils umgekehrt. Dies wird für die Einfache Negation in Bedingungen, aber auch für Umschalter, für das Darstellen von Negativen Zahlen und vielem mehr benötigt.</p>
 
 	 
 	<h1>Funktionsweise und Aufbau</h1>
