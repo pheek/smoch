@@ -13,14 +13,14 @@ CREATE TABLE `tbl_program_parameter` (
 
 INSERT INTO `tbl_program_parameter`
 (`name`                , `value`                            , `description`                                      ) VALUES
-('isDevelop'           , 'true'                             , 'false = scharf; true=localhost o. ä.'             ),
-('browser_path'        , '/'                                , 'url after "host:port" entry on targed host'       ),
-('browser_path_develop', '/smoch/'                          , 'same as browser_path, but on development machine.'),
-('server_root'         , '/var/www/smoch'                   , 'server root for php includes or file readings.'   ),
-('server_root_develop' , '/var/www/html/smoch'              , 'server root on localhost for development'         ),
-('erfindungen_pfad'    , 'erfindungen/'                     , 'Wo liegen die Artikel und die bilder?'            ),
-('artikel_dir'         , 'artikel/'                         , 'Innerhalb von «erfindungen_pfad»'                 ),
-('bilder_dir'          , 'bilder/'                          , 'Innerhalb von «erfindungen_pfad»'                 );
+('isDevelop'           , 'true'                , 'false = scharf; true=localhost o. ä.'             ),
+('browser_path'        , '/'                   , 'url after "host:port" entry on targed host'       ),
+('browser_path_develop', '/smoch/'             , 'same as browser_path, but on development machine.'),
+('server_root'         , '/var/www/smoch'      , 'server root for php includes or file readings.'   ),
+('server_root_develop' , '/var/www/html/smoch' , 'server root on localhost for development'         ),
+('erfindungen_pfad'    , 'erfindungen/'        , 'Wo liegen die Artikel und die bilder?'            ),
+('artikel_dir'         , 'artikel/'            , 'Innerhalb von «erfindungen_pfad»'                 ),
+('bilder_dir'          , 'bilder/'             , 'Innerhalb von «erfindungen_pfad»'                 );
 
 -- --------------------------------------------------------------
 CREATE TABLE `tbl_session_variable` (
@@ -70,9 +70,10 @@ INSERT INTO `tbl_erfindung`
 ('rechenschieber', 'Rechenschieber'                ,     '1632'        , 1                  ),
 ('pascaline'     , 'Pascaline'                     ,     '1642'        , 1                  ),
 ('zahlenschieber', 'Zahlenschieber (Addiator)'     , 'ca. 1700'        , 1                  ),
-('computer'      , 'Computer'                      ,     '1937'        , 1                  ),
 ('differenzenmaschine', 'Differenzenmaschine'      ,     '1822'        , 1                  ),
+('computer'      , 'Computer'                      ,     '1937'        , 1                  ),
 ('not_relais'    , 'Not realisiert mit Relais'     ,     '1941'        , 1                  ),
+('roehren'       , 'Röhrenrechner'                 ,     '1942'        , 1                  ),
 ('not_transistor', 'Not realisiert mit Transistror', '????'            , 1                  ),
 ('volladdierer'  , 'Volladdierer'                  ,  '????'           , 1                  ),
 
@@ -89,7 +90,9 @@ INSERT INTO `tbl_erfindung`
 
 -- kommunizieren
 ('keilschrift'   , 'Babylonische Keilschrift'      , 'ca. 3400 v. Chr.', 3                  ),
+('buchdruck'     , 'Chinesischer Holztafeldruck'   ,      '868'        , 3                  ),
 ('morsetaste'    , 'Morsegerät/Relaisstation'      ,     '1833'        , 3                  ),
+('glasfaser'     , 'Lichtwellenleiter'             ,     '1960'        , 3                  ),
 
 -- diverse Kategorien
 ('smartphone'    , 'Smartphone'                    ,     '1994'        , 3                  ),
@@ -121,32 +124,36 @@ INSERT INTO `tbl_reihenfolge`
 ('zahlenschieber',   1           ,   4      ),
 ('differenzenmaschine', 1        ,   5      ),
 ('not_relais'    ,   1           ,   6      ),
-('volladdierer'  ,   1           ,   7      ),
-('computer'      ,   1           ,   8      ),
-('halbleiter'    ,   1           ,   9      ),
-('not_transistor',   1           ,  10      ),
-('chip'          ,   1           ,  11      ),
-('wafer'         ,   1           ,  12      ),
-('smartphone'    ,   1           ,  13      ),
+('computer'      ,   1           ,   7      ),
+('roehren'       ,   1           ,   8      ),
+('volladdierer'  ,   1           ,   9      ),
+('halbleiter'    ,   1           ,  10      ),
+('not_transistor',   1           ,  11      ),
+('chip'          ,   1           ,  12      ),
+('wafer'         ,   1           ,  13      ),
+('smartphone'    ,   1           ,  14      ),
 
 -- speichern
 ('amphore'       ,   2           ,   1      ),
-('lochkarte'     ,   2           ,   2      ),
-('bit_relais'    ,   2           ,   3      ),
-('halbleiter'    ,   2           ,   4      ),
-('bit_transistor',   2           ,   5      ),
-('chip'          ,   2           ,   6      ),
-('kernspeicher'  ,   2           ,   7      ),
-('harddisk'      ,   2           ,   8      ),
-('wafer'         ,   2           ,   9      ),
-('diskette'      ,   2           ,  10      ),
-('cd'            ,   2           ,  11      ),
-('smartphone'    ,   2           ,  12      ),
+('buchdruck'     ,   2           ,   2      ),
+('lochkarte'     ,   2           ,   3      ),
+('bit_relais'    ,   2           ,   4      ),
+('halbleiter'    ,   2           ,   5      ),
+('bit_transistor',   2           ,   6      ),
+('chip'          ,   2           ,   7      ),
+('kernspeicher'  ,   2           ,   8      ),
+('harddisk'      ,   2           ,   9      ),
+('wafer'         ,   2           ,  10      ),
+('diskette'      ,   2           ,  12      ),
+('cd'            ,   2           ,  13      ),
+('smartphone'    ,   2           ,  14      ),
 
 -- kommunizieren
 ('keilschrift'   ,   3           ,   1      ),
-('morsetaste'    ,   3           ,   2      ),
-('smartphone'    ,   3           ,   3      );
+('buchdruck'     ,   3           ,   2      ),
+('morsetaste'    ,   3           ,   3      ),
+('glasfaser'     ,   3           ,   4      ),
+('smartphone'    ,   3           ,   5      );
 
 
 -- Mehrere Exponate zu einem Objekt sind möglich.
