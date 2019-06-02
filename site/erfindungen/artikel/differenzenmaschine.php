@@ -3,7 +3,7 @@
 <div class='erfindung'>
 
 	<h1>Geschichte</h1>
-	<p>Die erste funktionsfähige Differenzenmaschine stammt von <a href='https://de.wikipedia.org/wiki/Charles_Babbage'>Charles Babbage</a>. Die obigen abgebildete Differenzenmaschine ist eine Nachbildung aus den 1970er Jahren und steht im <i>Da Vinci Museum</i> in Mailand.</p>
+	 <p>Die erste funktionsfähige Differenzenmaschine stammt von <a href='https://de.wikipedia.org/wiki/Charles_Babbage'>Charles Babbage</a> aus den Jahren 1820 (Baubeginn) bis 1822 (Fertigstellung). Die obigen abgebildete Differenzenmaschine ist eine Nachbildung aus den 1970er Jahren und steht im <i>Da Vinci Museum</i> in Mailand.</p>
 	 
 	<h1>Verwendung und Nutzen</h1>
 	 <p>Die häufigste Nutzung der Differenzmaschinen war die Interpolation von Werten zwischen bekannten Stützstellen. Aber auch z. B. der Sinus konnte damit berechnet werden.</p>

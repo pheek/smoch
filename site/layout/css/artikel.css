@@ -38,21 +38,20 @@
 /** 
  *  Tabellen innerhalb der Artikel. "class = 'tabelle'".
  */
-.tabelle tr:first-child td {
-	font-weight     : bold;
-	color: var(--default-background);
-	background-color: var(--default-foreground);
+.tabelle, .tabelle tr:first-child td {
+	font-weight     : bold ;
+	padding-left    : 3px  ;
+	padding-right   : 2px  ;
+	color           : #300 ;
+	background-color: #cce ;
 }
 
 .tabelle tr:nth-child(odd) {
-	color: var(--default-background);
-	background-color: var(--default-foreground);
+	background-color: #eef;
 }
 
 .tabelle tr:nth-child(even) {
-	color: var(--default-foreground);
-	background-color: var(--default-background);
-
+	background-color: #ddf;
 }
 
 
