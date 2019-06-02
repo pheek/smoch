@@ -89,7 +89,7 @@ INSERT INTO `tbl_erfindung`
 
 
 -- kommunizieren
-('keilschrift'   , 'Babylonische Keilschrift'      , 'ca. 3400 v. Chr.', 3                  ),
+('schrift'       , 'Schriften'                     , 'ca. 4000 v. Chr.', 3                  ),
 ('buchdruck'     , 'Chinesischer Holztafeldruck'   ,      '868'        , 3                  ),
 ('morsetaste'    , 'Morsegerät/Relaisstation'      ,     '1833'        , 3                  ),
 ('glasfaser'     , 'Lichtwellenleiter'             ,     '1960'        , 3                  ),
@@ -149,7 +149,7 @@ INSERT INTO `tbl_reihenfolge`
 ('smartphone'    ,   2           ,  14      ),
 
 -- kommunizieren
-('keilschrift'   ,   3           ,   1      ),
+('schrift'       ,   3           ,   1      ),
 ('buchdruck'     ,   3           ,   2      ),
 ('morsetaste'    ,   3           ,   3      ),
 ('glasfaser'     ,   3           ,   4      ),
@@ -188,7 +188,7 @@ INSERT INTO `tbl_exponat`
 (2007 , '1964'         , 'Lochkarte 80-Spalten f. EBCDIC (ungelocht)'         , 'S_007_l'     , true       ),
 
 -- kommunizieren
-(3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
+-- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
 
 -- diverse
 (9001 , '2010'         , 'HTC Desire'                                         , 'D_001_s'     , true       ),
@@ -279,8 +279,9 @@ VALUES
 
 
 -- kommunizieren
-(  3001 , 'keilschrift.png'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
-                                                              'Keilschrift auf Ton (selbst geformt aus Ton/Plastilin)'                                                 ),
+(  3001 , 'keilschrift.jpg'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
+                                                              'Keilschrift auf Ton; Auszug Gesetzbuch Hammurabis (Bild: Erik Nitsche «In Wort und Bild»)'              ),
+
 
 -- diverse
 (  9001 , 'smartphone_htc_desire.png'      , 'phi@smoch.ch' , 'Smartphone'                                                                                              ,
@@ -336,8 +337,9 @@ INSERT INTO `tbl_erfindungsbild`
 ('lochkarte'     ,  1   ,   2011    ),  -- Lochkarte blau
 ('bit_relais'    ,  1   ,   2008    ),  -- Bit mit Relais Latch
 ('bit_transistor',  1   ,   2009    ),  -- Bit mit Transitor nachgebaut
+
 -- kommunizieren
-('keilschrift'   ,  1   ,   3001    ),  -- bild von eigenen schriftZeichnen
+('schrift'       ,  1   ,   3001    ),  -- bild der Babylonischen Keilschritf (Hammurabi)
 
 -- diverse
 ('smartphone'    ,  1   ,   9001    ),  -- htc desire smartphone
@@ -375,7 +377,7 @@ INSERT INTO `tbl_exponatbild`
 (  2007       ,   2011    ,  1   ), -- Lochkarte
 
 -- kommunizieren
-(  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
+-- (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
 
 -- diverses
 (  9001       ,   9001    ,  1   ), -- smartphone
@@ -410,7 +412,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('cd'            ,  2006        ,  2   ),
 ('lochkarte'     ,  2007        ,  1   ),
 -- kommunizieren
-('keilschrift'   ,  3001        ,  1   ),
+-- ('schrift'       ,  3001        ,  1   ),
 
 -- diveses
 ('smartphone'    ,  9001        ,  1   ),
@@ -493,7 +495,7 @@ INSERT INTO `tbl_editor`
 ('cd'            , 1),
 
 -- kommmunizieren
-('keilschrift'   , 1),
+('schrift'       , 1),
 ('morsetaste'    , 1),
 
 -- diverse

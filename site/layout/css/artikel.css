@@ -54,7 +54,14 @@
 	background-color: #ddf;
 }
 
+/* ******************** TOUR **************************** */
+/* S. tour_layout.php */
+.mainTour {
+	padding: 3px;
+	margin: 1px;
+}
 
+/* s. navigation.php */
 div.tourHeader {
 	border          : var(--default-foreground) 1px solid;
 	padding         : 4px          ;
@@ -68,14 +75,16 @@ div.tourHeader {
   margin          : 0     ;
   padding         : 0     ;
   overflow        : hidden;
-  background-color: #F00  ;
+  background-color: #F00;
 }
 
-.tourHeader li {
+.tourHeader ul li {
   float: left;
+	text-align:center;
+ 	width: 33%;
 }
 
-.tourHeader li a {
+.tourHeader li a, .tourHeader li span {
   display         : block;
   color           : white;
   text-align      : center;
@@ -93,21 +102,31 @@ div.tourHeader {
 /* Change the link color to #111 (black) on hover */
 .tourHeader li a:hover {
   background-color: var(--default-foreground);
-	color: var(--default-background);
-
-	/* color           : white;
-	background-color: var(--default-foreground)  ; */
+	color           : var(--default-background);
 }
 
 
 /* A link which is disabled, because
  * the user is already on thay page
  */
-.tourHeader > .unLink {
-	color           : #fff       ;
-	background-color: #f0f      ;
-/*	font-style: italic;
-	font-weight     : extra-bold;
-	font-size       :  164%     ;
-	border-radius: 4px;*/
+.tourHeader ul li span.unLink {
+	color           : var(--default-textcolor );
+	background-color: var(--default-foreground);
+	font-size: 155%;
+	border-radius: 6px;
+	border-color: white;
+	border-style: solid;
+	border-width: 5px;
+  padding-top: 2px;
+	margin-top: 2px;
+	padding-bottom: 2px;
+	margin-bottom: 2px;
+}
+
+
+@media screen and (max-width: 510px) {
+	.tourHeader ul li {
+		clear: both;
+		width: 100%;
+	}
 }

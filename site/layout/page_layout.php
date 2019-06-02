@@ -27,6 +27,8 @@
 		        href    = "<?php echo $browserPath;?>layout/css/style.css" />
 		<link   rel     = "stylesheet"
 		        href    = "<?php echo $browserPath;?>layout/css/artikel.css" />
+		<link   rel     = "stylesheet"
+		        href    = "<?php echo $browserPath;?>layout/css/erfindung.css" />
 		<script src     = "<?php echo $browserPath;?>js/dom/asyncLoader.js" async></script>
 	</head>
 

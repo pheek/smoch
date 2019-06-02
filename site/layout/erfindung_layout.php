@@ -48,9 +48,9 @@ function nextLink() {
 
 <div class='erfindung'>
 	<div class='erfindungHeader'>
-		<div><?php echo prevLink(); ?></div>
-		<div><?php echo $erfindung->titel;?>&nbsp;(<?php echo $erfindung->jahr; ?>)</div>
-		<div><?php echo nextLink(); ?></div>
+		<div class='backback'><?php echo prevLink(); ?></div>
+		<div><?php echo $erfindung->titel;?> (<?php echo $erfindung->jahr; ?>)</div>
+		<div class='forfor'><?php echo nextLink(); ?></div>
 	</div>
 
 	<?php include 'bildergalerie.php' ?>
