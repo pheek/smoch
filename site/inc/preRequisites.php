@@ -34,7 +34,11 @@ $_PRE_DATE        = '2019-05-23';
 
 if(isErfindungsSeite()) {
 	$tmpDaoErfindung    = new DAO_Erfindung();
-	$erfindung = $tmpDaoErfindung->getErfindungsObjekt(getErfindungsID(), $_SESSION['kategorie_id']);
+	$tmpKategorie       = 1;
+	if(array_key_exists($_SESSION['kategorie_id'])) {
+		$tmpKategorie = $_SESSION['kategorie_id'];
+	}
+	$erfindung = $tmpDaoErfindung->getErfindungsObjekt(getErfindungsID(), $tmpKategorie);
 	$keywordsString = "";
 	foreach($erfindung->keywords AS $kw => $ww) {
 		$keywordsString = $keywordsString . ', ' . $ww;
