@@ -100,15 +100,15 @@ div.small_image_rahmen {
 	width  : 500px;
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 90ex) {
 	.mainTour .normal_image {
 		width: 200px;
 	}
 	.erfindungHeader  {
 		flex-direction: column;
-	}
-	
+	}	
 }
+
 
 div.erfindungsBilder{
 /*	clear     :   both; */

@@ -18,6 +18,26 @@
 
 body {
 	font-family: verdana, arial, sans;
+	font-size  : 13pt;
+}
+
+/* Minimum Font size */
+@media screen and (min-resolution: 100dpi) {
+	body {
+		font-size: 30pt ;
+	}
+}
+
+@media screen and (min-resolution: 200dpi) {
+	body {
+		font-size: 60pt ;
+	}
+}
+
+@media screen and (min-resolution: 300dpi) {
+	body {
+		font-size: 90pt ;
+	}
 }
 
 #mainHeader, #mainFooter, #introSeite {
