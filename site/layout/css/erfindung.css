@@ -108,6 +108,16 @@ div.small_image_rahmen {
 		flex-direction: column;
 	}	
 }
+@media screen and (min-resolution: 150dpi) and (max-width: 500em) {
+	.mainTour .normal_image {
+		width: 450px;
+	}
+	.erfindungHeader  {
+		display: block;
+		/*flex-direction: column; */
+		flex-wrap: wrap;
+	}	
+}
 
 
 div.erfindungsBilder{

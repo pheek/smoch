@@ -16,29 +16,14 @@
 }
 
 
-body {
+
+html {
 	font-family: verdana, arial, sans;
-	font-size  : 13pt;
+	font-size  : 3.6mm;
 }
 
-/* Minimum Font size */
-@media screen and (min-resolution: 100dpi) {
-	body {
-		font-size: 30pt ;
-	}
-}
-
-@media screen and (min-resolution: 200dpi) {
-	body {
-		font-size: 60pt ;
-	}
-}
-
-@media screen and (min-resolution: 300dpi) {
-	body {
-		font-size: 90pt ;
-	}
-}
+@media screen and (min-width     :  60em ) {body{font-size:  90%;}}
+@media screen and (min-resolution: 150dpi) {body{font-size: 220%;}}
 
 #mainHeader, #mainFooter, #introSeite {
 	padding         :    6px;
@@ -72,4 +57,10 @@ a.tourStartButton {
 	padding: 15px;
 	border-radius: 4px;
 	border: 1px solid var(--default-foreground);
+}
+
+a {
+	text-decoration: none;
+	font-weight: normal;
+	color: var(--default-foreground);
 }
