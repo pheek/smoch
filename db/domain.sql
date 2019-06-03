@@ -177,6 +177,7 @@ INSERT INTO `tbl_exponat`
 (1001 , 'ca. 1960'     , 'Chinesischer Abakus'                                , 'R_001_a'     , true       ),
 (1002 , 'ca. 1960'     , 'Aristo Nr. 89 '                                     , 'R_002_r'     , true       ),
 (1003 , 'ca. 1970'     , 'Zahlenschieber Adimult'                             , 'R_003_z'     , true       ),
+(1004 , 'ca. 2010'     , 'C074HCT68E: Rechnerchip XOR'                        , 'R_004_c'     , true       ), 
 
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
@@ -186,7 +187,7 @@ INSERT INTO `tbl_exponat`
 (2005 , '2008'         , 'Ubuntu OS 8.10'                                     , 'S_005_u'     , true       ),
 (2006 , '2004'         , 'Vince Ebers Ur-Knaller'                             , 'S_006_c'     , true       ),
 (2007 , '1964'         , 'Lochkarte 80-Spalten f. EBCDIC (ungelocht)'         , 'S_007_l'     , true       ),
-
+(2008 , 'ca. 2010'     , 'Speicherchip C04040BE: Flip Flop'                   , 'S_008_c'     , true       ),
 -- kommunizieren
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
 
@@ -246,8 +247,6 @@ VALUES
 																															
 (  1012 , 'volladdiererNachbau_schema.png ', 'phi@smoch.ch' , 'Schema (elektronisch) für den Volladdierer'                                                              ,
                                                               'Schema, um einen Volladdierer zu bauen.'                                                                ),
-(  1013 , 'rechnerchip_xor.png'            , 'phi@smoch.ch' , 'Rechnerchip XOR: C074HCJ68E'                                                                             ,
-                                                              'Rechnerchip XOR: C074HCJ68E'                                                                            ),
 																															
 -- speichern
 (  2001 , 'amphore_etruskisch.png'         , 'phi@smoch.ch' , 'Amphore aus Ton'                                                                                         ,
@@ -277,8 +276,6 @@ VALUES
                                                               'Harddisk geöffnet (Speicherkapazität unbekannt)'                                                        ),
 (  2011 , 'lochkarte.png'                  , 'phi@smoch.ch' , 'Lochkarte'                                                                                               ,
                                                               'Lochkarte'                                                                                              ),
-(  2012 , 'speicherchip.png'               , 'phi@smoch.ch' , 'Speicherchip: Flip Flop: CD4040BE (Counter)'                                                             ,
-                                                              'Speicherchip: FlipFlop: CD4040BE (Counter)'                                                             ),
 
 -- kommunizieren
 (  3001 , 'keilschrift.jpg'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
@@ -358,7 +355,7 @@ CREATE TABLE `tbl_exponatbild` (
 , `bild_fk`     int
 , `ord`         int  DEFAULT 1 COMMENT 'Reihenfolge der Bilder der Exponate (Nur, falls einmal ein Exponat mehrere Fotos in der DB haben sollte)'
 , FOREIGN KEY (`exponat_fk`) REFERENCES `tbl_exponat` (`ID`)
-, FOREIGN KEY (`bild_fk`  ) REFERENCES `tbl_bild`   (`ID`)
+, FOREIGN KEY (`bild_fk`   ) REFERENCES `tbl_bild`    (`ID`)
 );
 
 
@@ -404,7 +401,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('abakus'        ,  1001        ,  1   ),
 ('rechenschieber',  1002        ,  1   ),
 ('zahlenschieber',  1003        ,  1   ),
-('chip'          ,  1013        ,  1   ),
+('chip'          ,  1004        ,  1   ),
 
 -- speichern
 ('amphore'       ,  2001        ,  1   ),
@@ -414,7 +411,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('cd'            ,  2005        ,  1   ),
 ('cd'            ,  2006        ,  2   ),
 ('lochkarte'     ,  2007        ,  1   ),
-('chip'          ,  2012        ,  1   ),
+('chip'          ,  2008        ,  1   ),
 -- kommunizieren
 -- ('schrift'       ,  3001        ,  1   ),
 
