@@ -246,8 +246,9 @@ VALUES
 																															
 (  1012 , 'volladdiererNachbau_schema.png ', 'phi@smoch.ch' , 'Schema (elektronisch) für den Volladdierer'                                                              ,
                                                               'Schema, um einen Volladdierer zu bauen.'                                                                ),
+(  1013 , 'rechnerchip_xor.png'            , 'phi@smoch.ch' , 'Rechnerchip XOR: C074HCJ68E'                                                                             ,
+                                                              'Rechnerchip XOR: C074HCJ68E'                                                                            ),
 																															
-
 -- speichern
 (  2001 , 'amphore_etruskisch.png'         , 'phi@smoch.ch' , 'Amphore aus Ton'                                                                                         ,
                                                               'Etruskische Amphore: Nachbildung aus Popolonio'                                                         ),
@@ -276,7 +277,8 @@ VALUES
                                                               'Harddisk geöffnet (Speicherkapazität unbekannt)'                                                        ),
 (  2011 , 'lochkarte.png'                  , 'phi@smoch.ch' , 'Lochkarte'                                                                                               ,
                                                               'Lochkarte'                                                                                              ),
-
+(  2012 , 'speicherchip.png'               , 'phi@smoch.ch' , 'Speicherchip: Flip Flop: CD4040BE (Counter)'                                                             ,
+                                                              'Speicherchip: FlipFlop: CD4040BE (Counter)'                                                             ),
 
 -- kommunizieren
 (  3001 , 'keilschrift.jpg'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
@@ -402,6 +404,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('abakus'        ,  1001        ,  1   ),
 ('rechenschieber',  1002        ,  1   ),
 ('zahlenschieber',  1003        ,  1   ),
+('chip'          ,  1013        ,  1   ),
 
 -- speichern
 ('amphore'       ,  2001        ,  1   ),
@@ -411,6 +414,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('cd'            ,  2005        ,  1   ),
 ('cd'            ,  2006        ,  2   ),
 ('lochkarte'     ,  2007        ,  1   ),
+('chip'          ,  2012        ,  1   ),
 -- kommunizieren
 -- ('schrift'       ,  3001        ,  1   ),
 
