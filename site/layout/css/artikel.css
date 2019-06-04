@@ -123,10 +123,13 @@ div.backback {
 }
 
 
-@media screen and (max-width: 90ex){
+@media screen and (max-width: 42em){
 	.tourHeader ul li {
 		clear: both;
 		width: 100%;
+	}
+	div.erfindungHeader {
+		position: relative;
 	}
 	div.forfor {
 		position: absolute;

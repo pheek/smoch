@@ -100,22 +100,12 @@ div.small_image_rahmen {
 	width  : 500px;
 }
 
-@media screen and (max-width: 90ex) {
+@media screen and (max-width: 42em) {
 	.mainTour .normal_image {
-		width: 200px;
+		width: 220px;
 	}
 	.erfindungHeader  {
 		flex-direction: column;
-	}	
-}
-@media screen and (min-resolution: 150dpi) and (max-width: 500em) {
-	.mainTour .normal_image {
-		width: 450px;
-	}
-	.erfindungHeader  {
-		display: block;
-		/*flex-direction: column; */
-		flex-wrap: wrap;
 	}	
 }
 
