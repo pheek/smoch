@@ -98,7 +98,7 @@ INSERT INTO `tbl_erfindung`
 ('smartphone'    , 'Smartphone'                    ,     '1994'        , 3                  ),
 ('chip'          , 'Rechner- / Speicherchip'       , 'ca. 1950'        , 1                  ),
 ('wafer'         , 'Wafer'                         ,     '1960'        , 2                  ),
-('halbleiter'    , 'Halbleiter (Silicium)'         , '-0'              , 1                  );               
+('halbleiter'    , 'Halbleiter (Silicium)'         ,     '1874'        , 1                  );               
 
 
 -- --------------------------------------------------------------
@@ -123,11 +123,11 @@ INSERT INTO `tbl_reihenfolge`
 ('pascaline'     ,   1           ,   3      ),
 ('zahlenschieber',   1           ,   4      ),
 ('differenzenmaschine', 1        ,   5      ),
-('not_relais'    ,   1           ,   6      ),
-('computer'      ,   1           ,   7      ),
-('roehren'       ,   1           ,   8      ),
-('volladdierer'  ,   1           ,   9      ),
-('halbleiter'    ,   1           ,  10      ),
+('halbleiter'    ,   1           ,   6      ),
+('not_relais'    ,   1           ,   7      ),
+('computer'      ,   1           ,   8      ),
+('roehren'       ,   1           ,   9      ),
+('volladdierer'  ,   1           ,  10      ),
 ('not_transistor',   1           ,  11      ),
 ('chip'          ,   1           ,  12      ),
 ('wafer'         ,   1           ,  13      ),
@@ -140,8 +140,8 @@ INSERT INTO `tbl_reihenfolge`
 ('bit_relais'    ,   2           ,   4      ),
 ('halbleiter'    ,   2           ,   5      ),
 ('bit_transistor',   2           ,   6      ),
-('chip'          ,   2           ,   7      ),
-('kernspeicher'  ,   2           ,   8      ),
+('kernspeicher'  ,   2           ,   7      ),
+('chip'          ,   2           ,   8      ),
 ('harddisk'      ,   2           ,   9      ),
 ('wafer'         ,   2           ,  10      ),
 ('diskette'      ,   2           ,  12      ),
@@ -193,8 +193,8 @@ INSERT INTO `tbl_exponat`
 
 -- diverse
 (9001 , '2010'         , 'HTC Desire'                                         , 'D_001_s'     , true       ),
-(9002 , 'xxxx'         , 'Halbleiter Silicium'                                , 'D_002_h'     , true       ),
-(9003 , '????'         , 'Wafer'                                              , 'D_003_w'     , true       );
+(9002 , '-0'           , 'Halbleiter Silicium'                                , 'D_002_h'     , true       ),
+(9003 , 'unbekannt'    , 'Wafer'                               , 'D_003_w'     , true       );
 
 -- --------------------------------------------------------------
 -- Fotos in der Datenbank.
