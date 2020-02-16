@@ -93,6 +93,7 @@ INSERT INTO `tbl_erfindung`
 ('buchdruck'     , 'Chinesischer Holztafeldruck'   ,      '868'        , 3                  ),
 ('morsetaste'    , 'Morsegerät/Relaisstation'      ,     '1833'        , 3                  ),
 ('glasfaser'     , 'Lichtwellenleiter'             ,     '1960'        , 3                  ),
+('telephon'      , 'Telefon'                       ,     '1861'        , 3                  ),
 
 -- diverse Kategorien
 ('smartphone'    , 'Smartphone'                    ,     '1994'        , 3                  ),
@@ -152,8 +153,9 @@ INSERT INTO `tbl_reihenfolge`
 ('schrift'       ,   3           ,   1      ),
 ('buchdruck'     ,   3           ,   2      ),
 ('morsetaste'    ,   3           ,   3      ),
-('glasfaser'     ,   3           ,   4      ),
-('smartphone'    ,   3           ,   5      );
+('telephon'      ,   3           ,   4      ),
+('glasfaser'     ,   3           ,   5      ),
+('smartphone'    ,   3           ,   6      );
 
 
 -- Mehrere Exponate zu einem Objekt sind möglich.
@@ -190,6 +192,7 @@ INSERT INTO `tbl_exponat`
 (2008 , 'ca. 2010'     , 'Speicherchip C04040BE: Flip Flop'                   , 'S_008_c'     , true       ),
 -- kommunizieren
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
+(3002 , '1940'         , 'Kurbeltelephon 30er Jahre'                          , 'K_002_t'     , true       ),
 
 -- diverse
 (9001 , '2010'         , 'HTC Desire'                                         , 'D_001_s'     , true       ),
