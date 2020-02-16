@@ -12,7 +12,7 @@ CREATE TABLE `tbl_program_parameter` (
 
 
 INSERT INTO `tbl_program_parameter`
-(`name`                , `value`                            , `description`                                      ) VALUES
+(`name`                , `value`               , `description`                                      ) VALUES
 ('isDevelop'           , 'true'                , 'false = scharf; true=localhost o. ä.'             ),
 ('browser_path'        , '/'                   , 'url after "host:port" entry on targed host'       ),
 ('browser_path_develop', '/smoch/'             , 'same as browser_path, but on development machine.'),
@@ -193,7 +193,7 @@ INSERT INTO `tbl_exponat`
 -- kommunizieren
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
 (3002 , '1940'         , 'Kurbeltelephon 30er Jahre'                          , 'K_002_t'     , true       ),
-
+(3003 , '????'         , 'Morsetaste'                                         , 'K_003_m'     , true       ),
 -- diverse
 (9001 , '2010'         , 'HTC Desire'                                         , 'D_001_s'     , true       ),
 (9002 , '-0'           , 'Halbleiter Silicium'                                , 'D_002_h'     , true       ),
@@ -283,7 +283,8 @@ VALUES
 -- kommunizieren
 (  3001 , 'keilschrift.jpg'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
                                                               'Keilschrift auf Ton; Auszug Gesetzbuch Hammurabis (Bild: Erik Nitsche «In Wort und Bild»)'              ),
-
+(  3003 , 'morsetaste.png'                 , 'phi@smoch.ch' , 'Morsetaste'                                                                                              ,
+                                                              'Morsetaste'                                                                                             ),
 
 -- diverse
 (  9001 , 'smartphone_htc_desire.png'      , 'phi@smoch.ch' , 'Smartphone'                                                                                              ,
@@ -342,6 +343,7 @@ INSERT INTO `tbl_erfindungsbild`
 
 -- kommunizieren
 ('schrift'       ,  1   ,   3001    ),  -- bild der Babylonischen Keilschritf (Hammurabi)
+('morsetaste'    ,  1   ,   3003    ),  -- Morsetaste
 
 -- diverse
 ('smartphone'    ,  1   ,   9001    ),  -- htc desire smartphone
@@ -380,6 +382,7 @@ INSERT INTO `tbl_exponatbild`
 
 -- kommunizieren
 -- (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
+(  3003       ,   3003    ,  1   ), -- Morsetaste
 
 -- diverses
 (  9001       ,   9001    ,  1   ), -- smartphone
@@ -415,8 +418,10 @@ INSERT INTO `tbl_erfindungsexponat`
 ('cd'            ,  2006        ,  2   ),
 ('lochkarte'     ,  2007        ,  1   ),
 ('chip'          ,  2008        ,  1   ),
+
 -- kommunizieren
 -- ('schrift'       ,  3001        ,  1   ),
+('morsetaste'    ,  3003        ,  1   ),
 
 -- diveses
 ('smartphone'    ,  9001        ,  1   ),
