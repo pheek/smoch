@@ -194,6 +194,7 @@ INSERT INTO `tbl_exponat`
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
 (3002 , '1940'         , 'Kurbeltelephon 30er Jahre'                          , 'K_002_t'     , true       ),
 (3003 , '????'         , 'Morsetaste'                                         , 'K_003_m'     , true       ),
+(3004 , 'ca. 1930/40'     , 'Telephon'                                           , 'K_004_t'     , true       ),
 -- diverse
 (9001 , '2010'         , 'HTC Desire'                                         , 'D_001_s'     , true       ),
 (9002 , '-0'           , 'Halbleiter Silicium'                                , 'D_002_h'     , true       ),
@@ -285,6 +286,8 @@ VALUES
                                                               'Keilschrift auf Ton; Auszug Gesetzbuch Hammurabis (Bild: Erik Nitsche «In Wort und Bild»)'              ),
 (  3003 , 'morsetaste.png'                 , 'phi@smoch.ch' , 'Morsetaste'                                                                                              ,
                                                               'Morsetaste'                                                                                             ),
+(  3004 , 'telephon.png'                   , 'phi@smoch.ch' , 'Telephon'                                                                                              ,
+                                                              'Kurbeltelephon'                                                                                         ),
 
 -- diverse
 (  9001 , 'smartphone_htc_desire.png'      , 'phi@smoch.ch' , 'Smartphone'                                                                                              ,
@@ -344,6 +347,7 @@ INSERT INTO `tbl_erfindungsbild`
 -- kommunizieren
 ('schrift'       ,  1   ,   3001    ),  -- bild der Babylonischen Keilschritf (Hammurabi)
 ('morsetaste'    ,  1   ,   3003    ),  -- Morsetaste
+('telephon'      ,  1   ,   3004    ),  -- Telephon
 
 -- diverse
 ('smartphone'    ,  1   ,   9001    ),  -- htc desire smartphone
@@ -383,7 +387,7 @@ INSERT INTO `tbl_exponatbild`
 -- kommunizieren
 -- (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
 (  3003       ,   3003    ,  1   ), -- Morsetaste
-
+(  3004       ,   3004    ,  1   ), -- Telephon
 -- diverses
 (  9001       ,   9001    ,  1   ), -- smartphone
 (  9002       ,   9002    ,  1   ), -- halbleiter Silicium
@@ -422,7 +426,7 @@ INSERT INTO `tbl_erfindungsexponat`
 -- kommunizieren
 -- ('schrift'       ,  3001        ,  1   ),
 ('morsetaste'    ,  3003        ,  1   ),
-
+('telephon'      ,  3004        ,  1   ),
 -- diveses
 ('smartphone'    ,  9001        ,  1   ),
 ('halbleiter'    ,  9002        ,  1   ),
@@ -506,6 +510,7 @@ INSERT INTO `tbl_editor`
 -- kommmunizieren
 ('schrift'       , 1),
 ('morsetaste'    , 1),
+('telephon'      , 1),
 
 -- diverse
 ('smartphone'    , 1),
