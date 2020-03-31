@@ -12,5 +12,3 @@ ALTER  DATABASE           `smoch`
 USE                       `smoch`  ;
 
 GRANT SELECT ON `smoch`.* TO 'smoch'@'%' IDENTIFIED BY '123';
-
-

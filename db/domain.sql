@@ -12,7 +12,7 @@ CREATE TABLE `tbl_program_parameter` (
 
 
 INSERT INTO `tbl_program_parameter`
-(`name`                , `value`                            , `description`                                      ) VALUES
+(`name`                , `value`               , `description`                                      ) VALUES
 ('isDevelop'           , 'true'                , 'false = scharf; true=localhost o. ä.'             ),
 ('browser_path'        , '/'                   , 'url after "host:port" entry on targed host'       ),
 ('browser_path_develop', '/smoch/'             , 'same as browser_path, but on development machine.'),
@@ -93,12 +93,13 @@ INSERT INTO `tbl_erfindung`
 ('buchdruck'     , 'Chinesischer Holztafeldruck'   ,      '868'        , 3                  ),
 ('morsetaste'    , 'Morsegerät/Relaisstation'      ,     '1833'        , 3                  ),
 ('glasfaser'     , 'Lichtwellenleiter'             ,     '1960'        , 3                  ),
+('telephon'      , 'Telefon'                       ,     '1861'        , 3                  ),
 
 -- diverse Kategorien
 ('smartphone'    , 'Smartphone'                    ,     '1994'        , 3                  ),
 ('chip'          , 'Rechner- / Speicherchip'       , 'ca. 1950'        , 1                  ),
 ('wafer'         , 'Wafer'                         ,     '1960'        , 2                  ),
-('halbleiter'    , 'Halbleiter (Silicium)'         , '-0'              , 1                  );               
+('halbleiter'    , 'Halbleiter (Silicium)'         ,     '1874'        , 1                  );               
 
 
 -- --------------------------------------------------------------
@@ -123,11 +124,11 @@ INSERT INTO `tbl_reihenfolge`
 ('pascaline'     ,   1           ,   3      ),
 ('zahlenschieber',   1           ,   4      ),
 ('differenzenmaschine', 1        ,   5      ),
-('not_relais'    ,   1           ,   6      ),
-('computer'      ,   1           ,   7      ),
-('roehren'       ,   1           ,   8      ),
-('volladdierer'  ,   1           ,   9      ),
-('halbleiter'    ,   1           ,  10      ),
+('halbleiter'    ,   1           ,   6      ),
+('not_relais'    ,   1           ,   7      ),
+('computer'      ,   1           ,   8      ),
+('roehren'       ,   1           ,   9      ),
+('volladdierer'  ,   1           ,  10      ),
 ('not_transistor',   1           ,  11      ),
 ('chip'          ,   1           ,  12      ),
 ('wafer'         ,   1           ,  13      ),
@@ -140,8 +141,8 @@ INSERT INTO `tbl_reihenfolge`
 ('bit_relais'    ,   2           ,   4      ),
 ('halbleiter'    ,   2           ,   5      ),
 ('bit_transistor',   2           ,   6      ),
-('chip'          ,   2           ,   7      ),
-('kernspeicher'  ,   2           ,   8      ),
+('kernspeicher'  ,   2           ,   7      ),
+('chip'          ,   2           ,   8      ),
 ('harddisk'      ,   2           ,   9      ),
 ('wafer'         ,   2           ,  10      ),
 ('diskette'      ,   2           ,  12      ),
@@ -152,8 +153,9 @@ INSERT INTO `tbl_reihenfolge`
 ('schrift'       ,   3           ,   1      ),
 ('buchdruck'     ,   3           ,   2      ),
 ('morsetaste'    ,   3           ,   3      ),
-('glasfaser'     ,   3           ,   4      ),
-('smartphone'    ,   3           ,   5      );
+('telephon'      ,   3           ,   4      ),
+('glasfaser'     ,   3           ,   5      ),
+('smartphone'    ,   3           ,   6      );
 
 
 -- Mehrere Exponate zu einem Objekt sind möglich.
@@ -190,11 +192,13 @@ INSERT INTO `tbl_exponat`
 (2008 , 'ca. 2010'     , 'Speicherchip C04040BE: Flip Flop'                   , 'S_008_c'     , true       ),
 -- kommunizieren
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
-
+(3002 , '1940'         , 'Kurbeltelephon 30er Jahre'                          , 'K_002_t'     , true       ),
+(3003 , '????'         , 'Morsetaste'                                         , 'K_003_m'     , true       ),
+(3004 , 'ca. 1930/40'     , 'Telephon'                                           , 'K_004_t'     , true       ),
 -- diverse
 (9001 , '2010'         , 'HTC Desire'                                         , 'D_001_s'     , true       ),
-(9002 , 'xxxx'         , 'Halbleiter Silicium'                                , 'D_002_h'     , true       ),
-(9003 , '????'         , 'Wafer'                                              , 'D_003_w'     , true       );
+(9002 , '-0'           , 'Halbleiter Silicium'                                , 'D_002_h'     , true       ),
+(9003 , 'unbekannt'    , 'Wafer'                               , 'D_003_w'     , true       );
 
 -- --------------------------------------------------------------
 -- Fotos in der Datenbank.
@@ -280,7 +284,10 @@ VALUES
 -- kommunizieren
 (  3001 , 'keilschrift.jpg'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
                                                               'Keilschrift auf Ton; Auszug Gesetzbuch Hammurabis (Bild: Erik Nitsche «In Wort und Bild»)'              ),
-
+(  3003 , 'morsetaste.png'                 , 'phi@smoch.ch' , 'Morsetaste'                                                                                              ,
+                                                              'Morsetaste'                                                                                             ),
+(  3004 , 'telephon.png'                   , 'phi@smoch.ch' , 'Telephon'                                                                                              ,
+                                                              'Kurbeltelephon'                                                                                         ),
 
 -- diverse
 (  9001 , 'smartphone_htc_desire.png'      , 'phi@smoch.ch' , 'Smartphone'                                                                                              ,
@@ -339,6 +346,8 @@ INSERT INTO `tbl_erfindungsbild`
 
 -- kommunizieren
 ('schrift'       ,  1   ,   3001    ),  -- bild der Babylonischen Keilschritf (Hammurabi)
+('morsetaste'    ,  1   ,   3003    ),  -- Morsetaste
+('telephon'      ,  1   ,   3004    ),  -- Telephon
 
 -- diverse
 ('smartphone'    ,  1   ,   9001    ),  -- htc desire smartphone
@@ -377,7 +386,8 @@ INSERT INTO `tbl_exponatbild`
 
 -- kommunizieren
 -- (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
-
+(  3003       ,   3003    ,  1   ), -- Morsetaste
+(  3004       ,   3004    ,  1   ), -- Telephon
 -- diverses
 (  9001       ,   9001    ,  1   ), -- smartphone
 (  9002       ,   9002    ,  1   ), -- halbleiter Silicium
@@ -412,9 +422,11 @@ INSERT INTO `tbl_erfindungsexponat`
 ('cd'            ,  2006        ,  2   ),
 ('lochkarte'     ,  2007        ,  1   ),
 ('chip'          ,  2008        ,  1   ),
+
 -- kommunizieren
 -- ('schrift'       ,  3001        ,  1   ),
-
+('morsetaste'    ,  3003        ,  1   ),
+('telephon'      ,  3004        ,  1   ),
 -- diveses
 ('smartphone'    ,  9001        ,  1   ),
 ('halbleiter'    ,  9002        ,  1   ),
@@ -498,6 +510,7 @@ INSERT INTO `tbl_editor`
 -- kommmunizieren
 ('schrift'       , 1),
 ('morsetaste'    , 1),
+('telephon'      , 1),
 
 -- diverse
 ('smartphone'    , 1),
