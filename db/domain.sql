@@ -190,6 +190,7 @@ INSERT INTO `tbl_exponat`
 (2006 , '2004'         , 'Vince Ebers Ur-Knaller'                             , 'S_006_c'     , true       ),
 (2007 , '1964'         , 'Lochkarte 80-Spalten f. EBCDIC (ungelocht)'         , 'S_007_l'     , true       ),
 (2008 , 'ca. 2010'     , 'Speicherchip C04040BE: Flip Flop'                   , 'S_008_c'     , true       ),
+(2009 , 'ca 1970'      , 'Kernspeicher DELL'                                  , 'S_009_a'     , true       ),
 -- kommunizieren
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
 (3002 , '1940'         , 'Kurbeltelephon 30er Jahre'                          , 'K_002_t'     , true       ),
@@ -280,6 +281,12 @@ VALUES
                                                               'Harddisk geöffnet (Speicherkapazität unbekannt)'                                                        ),
 (  2011 , 'lochkarte.png'                  , 'phi@smoch.ch' , 'Lochkarte'                                                                                               ,
                                                               'Lochkarte'                                                                                              ),
+(  2012 , 'kernspeicher/kernspeicher_ringe.jpg'                  , 'phi@smoch.ch' , 'Kernspeicher Ringe'                                                                                               ,
+                                                              'Ringe eines Kenrspeichers'                                                                                              ),
+(  2013 , 'kernspeicher/kernspeicher_modul.png'                  , 'phi@smoch.ch' , 'Kernspeichermodul'                                                                                               ,
+                                                              'Kernspeichermodul'                                                                                              ),
+(  2014 , 'kernspeicher/kernspeicher_seitenansicht.jpg'                  , 'phi@smoch.ch' , 'Kernspeicher'                                                                                               ,
+                                                              'Kernspeicher'                                                                                              ),
 
 -- kommunizieren
 (  3001 , 'keilschrift.jpg'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
@@ -343,6 +350,9 @@ INSERT INTO `tbl_erfindungsbild`
 ('lochkarte'     ,  1   ,   2011    ),  -- Lochkarte blau
 ('bit_relais'    ,  1   ,   2008    ),  -- Bit mit Relais Latch
 ('bit_transistor',  1   ,   2009    ),  -- Bit mit Transitor nachgebaut
+('kernspeicher'  ,  1   ,   2012    ),  -- Kernspeicher Ringe
+('kernspeicher'  ,  2   ,   2013    ),  -- Kernspeicher Modul
+('kernspeicher'  ,  3   ,   2014    ),  -- Kernspeicher Seitenansicht
 
 -- kommunizieren
 ('schrift'       ,  1   ,   3001    ),  -- bild der Babylonischen Keilschritf (Hammurabi)
@@ -383,6 +393,9 @@ INSERT INTO `tbl_exponatbild`
 (  2005       ,   2005    ,  1   ), -- CD (Ubuntu OS 2008 Oktober (10)
 (  2006       ,   2006    ,  1   ), -- CD (Audio : "Vince Eberts Ur-Knaller")
 (  2007       ,   2011    ,  1   ), -- Lochkarte
+(  2009       ,   2012    ,  1   ), -- Kernspeicher ringe
+(  2009       ,   2013    ,  2   ), -- Kernspeicher Modul
+(  2009       ,   2014    ,  3   ), -- Kernspeicher Seitenansicht
 
 -- kommunizieren
 -- (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
@@ -422,6 +435,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('cd'            ,  2006        ,  2   ),
 ('lochkarte'     ,  2007        ,  1   ),
 ('chip'          ,  2008        ,  1   ),
+('kernspeicher'  ,  2009        ,  1   ),
 
 -- kommunizieren
 -- ('schrift'       ,  3001        ,  1   ),
