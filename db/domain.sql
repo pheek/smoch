@@ -285,10 +285,10 @@ VALUES
 (  2006 , 'cd-vince.png'                   , 'phi@smoch.ch' , 'Compct Disk (CD)'                                                                                        ,
                                                               'Audio CD (Vince Eberts: Ur-Knaller)'                                                                    ),
 																															
-(  2008 , 'bitRelaisNachbau_schema.png'    , 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Relais'                                                    ,
+(  2008 , 'bit/relais_nachbau_schema.png'    , 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Relais'                                                    ,
                                                               'Schema  um ein Bit mittels Relais zu speichern'                                                         ),
 																															
-(  2009 , 'bitTransistorNachbau_schema.png', 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Transistoren'                                              ,
+(  2009 , 'bit/transistor_nachbau_schema.png', 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Transistoren'                                              ,
                                                               'Schema um ein Bit mittels Transistoren zu speichern'                                                    ),
 (  2010 , 'harddisk.png'                   , 'phi@smoch.ch' , 'Harddisk offen'                                                                                          ,
                                                               'Harddisk geöffnet (Speicherkapazität unbekannt)'                                                        ),
