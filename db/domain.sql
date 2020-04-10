@@ -72,6 +72,7 @@ INSERT INTO `tbl_erfindung`
 ('binaersystem'  , 'Binärsystem'                   ,     '1692'        , 1                  ),
 ('zahlenschieber', 'Zahlenschieber (Addiator)'     , 'ca. 1700'        , 1                  ),
 ('differenzenmaschine', 'Differenzenmaschine'      ,     '1822'        , 1                  ),
+('monkey'        , 'Educated Monkey'               ,     '1916'        , 1                  ),
 ('computer'      , 'Computer'                      ,     '1937'        , 1                  ),
 ('not_relais'    , 'Not realisiert mit Relais'     ,     '1941'        , 1                  ),
 ('roehren'       , 'Röhrenrechner'                 ,     '1942'        , 1                  ),
@@ -128,16 +129,17 @@ INSERT INTO `tbl_reihenfolge`
 ('binaersystem'  ,   1           ,   4      ),
 ('zahlenschieber',   1           ,   5      ),
 ('differenzenmaschine', 1        ,   6      ),
-('halbleiter'    ,   1           ,   7      ),
-('not_relais'    ,   1           ,   8      ),
-('computer'      ,   1           ,   9      ),
-('roehren'       ,   1           ,  10      ),
-('volladdierer'  ,   1           ,  11      ),
-('transistor'    ,   1           ,  12      ),
-('not_transistor',   1           ,  13      ),
-('chip'          ,   1           ,  14      ),
-('wafer'         ,   1           ,  15      ),
-('smartphone'    ,   1           ,  16      ),
+('monkey'        ,   1           ,   7      ),
+('halbleiter'    ,   1           ,   8      ),
+('not_relais'    ,   1           ,   9      ),
+('computer'      ,   1           ,  10      ),
+('roehren'       ,   1           ,  11      ),
+('volladdierer'  ,   1           ,  12      ),
+('transistor'    ,   1           ,  13      ),
+('not_transistor',   1           ,  14      ),
+('chip'          ,   1           ,  15      ),
+('wafer'         ,   1           ,  16      ),
+('smartphone'    ,   1           ,  17      ),
 
 -- speichern
 ('amphore'       ,   2           ,   1      ),
@@ -188,6 +190,7 @@ INSERT INTO `tbl_exponat`
 (1003 , 'ca. 1970'     , 'Zahlenschieber Adimult'                             , 'R_003_z'     , true       ),
 (1004 , 'ca. 2010'     , 'C074HCT68E: Rechnerchip XOR'                        , 'R_004_c'     , true       ), 
 (1005 , '2020'         , 'NOT Realais Nachbau Omron-Relais 8V'                , 'R_005_r'     , true       ),
+(1006 , 'ca. 2005'     , 'Educated Monkey (Barcelona)'                        , 'R_006_m'     , true       ),
 
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
@@ -206,6 +209,7 @@ INSERT INTO `tbl_exponat`
 (3002 , '1940'         , 'Kurbeltelephon 30er Jahre'                          , 'K_002_t'     , true       ),
 (3003 , '????'         , 'Morsetaste'                                         , 'K_003_m'     , true       ),
 (3004 , 'ca. 1930/40'     , 'Telephon'                                           , 'K_004_t'     , true       ),
+
 -- diverse
 (9001 , '2010'         , 'HTC Desire'                                         , 'D_001_s'     , true       ),
 (9002 , '-0'           , 'Halbleiter Silicium'                                , 'D_002_h'     , true       ),
@@ -268,6 +272,8 @@ VALUES
                                                               'Transistoren'                                                                ),
 (  1014 , 'not/relais_nachbau.png ',    'phi@smoch.ch' , 'NOT Nachbau mit Relais'                                                              ,
                                                               'Not Nachbau mit Relais'                                                                ),
+(  1015 , 'monkey.png ',    'phi@smoch.ch' , 'The educated Monkey'                                                              ,
+                                                              'The educated Monkey'                                                                ),
 
 
 -- speichern
@@ -370,6 +376,7 @@ INSERT INTO `tbl_erfindungsbild`
 ('not_relais'    ,  2   ,   1014    ), -- NOT Realais Nachbau
 ('not_transistor',  1   ,   1010    ), -- NOT mit Transistoren
 ('transistor'    ,  1   ,   1013    ), -- Transistor
+('monkey'        ,  1   ,   1015    ), -- Educated Monkey
 
 -- spechern
 ('amphore'       ,  1   ,   2001    ),  -- Amphora Etruskisch Popolonio
@@ -418,6 +425,7 @@ INSERT INTO `tbl_exponatbild`
 (  1002       ,   1004    ,  1   ), -- rechenschieber
 (  1003       ,   1003    ,  1   ), -- zahlenschieber
 (  1005       ,   1014    ,  1   ), -- Relais Nachbau: NOT
+(  1006       ,   1015    ,  1   ), -- The educated Monkey
 
 -- speichern
 (  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
@@ -431,7 +439,6 @@ INSERT INTO `tbl_exponatbild`
 (  2009       ,   2013    ,  2   ), -- Kernspeicher Modul
 (  2009       ,   2014    ,  3   ), -- Kernspeicher Seitenansicht
 (  2010       ,   2015    ,  1   ), -- Magnetband ...
-
 
 -- kommunizieren
 -- (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
@@ -463,6 +470,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('zahlenschieber',  1003        ,  1   ),
 ('chip'          ,  1004        ,  1   ),
 ('not_relais'    ,  1005        ,  1   ),
+('monkey'        ,  1006        ,  1   ),
 
 -- speichern
 ('amphore'       ,  2001        ,  1   ),
