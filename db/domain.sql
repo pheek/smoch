@@ -74,12 +74,14 @@ INSERT INTO `tbl_erfindung`
 ('computer'      , 'Computer'                      ,     '1937'        , 1                  ),
 ('not_relais'    , 'Not realisiert mit Relais'     ,     '1941'        , 1                  ),
 ('roehren'       , 'Röhrenrechner'                 ,     '1942'        , 1                  ),
+('transistor'    , 'Bipolartransistor'             ,     '1948'        , 1                  ),
 ('not_transistor', 'Not realisiert mit Transistror', '????'            , 1                  ),
 ('volladdierer'  , 'Volladdierer'                  ,  '????'           , 1                  ),
 
 -- speichern
 ('amphore'       , 'Amphore'                       ,  'ca. 500 v. Chr.', 2                  ),
 ('lochkarte'     , 'Lochkarte'                     , '18. Jahrhundert' , 2                  ),
+('magnetband'    , 'Magnetband'                    ,     '1898'        , 2                  ),
 ('kernspeicher'  , 'Kernspeicher'                  ,     '1949'        , 2                  ),
 ('harddisk'      , 'Harddisk'                      ,     '1956'        , 2                  ),
 ('diskette'      , 'Diskette'                      ,     '1969'        , 2                  ),
@@ -129,22 +131,24 @@ INSERT INTO `tbl_reihenfolge`
 ('computer'      ,   1           ,   8      ),
 ('roehren'       ,   1           ,   9      ),
 ('volladdierer'  ,   1           ,  10      ),
-('not_transistor',   1           ,  11      ),
-('chip'          ,   1           ,  12      ),
-('wafer'         ,   1           ,  13      ),
-('smartphone'    ,   1           ,  14      ),
+('transistor'    ,   1           ,  11      ),
+('not_transistor',   1           ,  12      ),
+('chip'          ,   1           ,  13      ),
+('wafer'         ,   1           ,  14      ),
+('smartphone'    ,   1           ,  15      ),
 
 -- speichern
 ('amphore'       ,   2           ,   1      ),
 ('buchdruck'     ,   2           ,   2      ),
 ('lochkarte'     ,   2           ,   3      ),
-('bit_relais'    ,   2           ,   4      ),
-('halbleiter'    ,   2           ,   5      ),
-('bit_transistor',   2           ,   6      ),
-('kernspeicher'  ,   2           ,   7      ),
-('chip'          ,   2           ,   8      ),
-('harddisk'      ,   2           ,   9      ),
-('wafer'         ,   2           ,  10      ),
+('halbleiter'    ,   2           ,   4      ),
+('magnetband'    ,   2           ,   5      ),
+('bit_relais'    ,   2           ,   6      ),
+('bit_transistor',   2           ,   7      ),
+('kernspeicher'  ,   2           ,   8      ),
+('chip'          ,   2           ,   9      ),
+('harddisk'      ,   2           ,  10      ),
+('wafer'         ,   2           ,  11      ),
 ('diskette'      ,   2           ,  12      ),
 ('cd'            ,   2           ,  13      ),
 ('smartphone'    ,   2           ,  14      ),
@@ -180,7 +184,7 @@ INSERT INTO `tbl_exponat`
 (1002 , 'ca. 1960'     , 'Aristo Nr. 89 '                                     , 'R_002_r'     , true       ),
 (1003 , 'ca. 1970'     , 'Zahlenschieber Adimult'                             , 'R_003_z'     , true       ),
 (1004 , 'ca. 2010'     , 'C074HCT68E: Rechnerchip XOR'                        , 'R_004_c'     , true       ), 
-
+(1005 , '2020'         , 'NOT Realais Nachbau Omron-Relais 8V'                , 'R_005_r'     , true       ),
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
 (2002 , '2019'         , 'Nachbildung aus dem 3D-Drucker'                     , 'S_002_a'     , false      ),
@@ -191,6 +195,8 @@ INSERT INTO `tbl_exponat`
 (2007 , '1964'         , 'Lochkarte 80-Spalten f. EBCDIC (ungelocht)'         , 'S_007_l'     , true       ),
 (2008 , 'ca. 2010'     , 'Speicherchip C04040BE: Flip Flop'                   , 'S_008_c'     , true       ),
 (2009 , 'ca 1970'      , 'Kernspeicher DELL'                                  , 'S_009_a'     , true       ),
+(2010 , 'ca. 1970'     , 'Magnetband Storage-Master'                          , 'S_010_a'     , true       ),
+
 -- kommunizieren
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
 (3002 , '1940'         , 'Kurbeltelephon 30er Jahre'                          , 'K_002_t'     , true       ),
@@ -199,7 +205,9 @@ INSERT INTO `tbl_exponat`
 -- diverse
 (9001 , '2010'         , 'HTC Desire'                                         , 'D_001_s'     , true       ),
 (9002 , '-0'           , 'Halbleiter Silicium'                                , 'D_002_h'     , true       ),
-(9003 , 'unbekannt'    , 'Wafer'                               , 'D_003_w'     , true       );
+(9003 , 'unbekannt'    , 'Wafer'                                              , 'D_003_w'     , true       ),
+(9004 , 'ca 2006'      , 'BC 548C, bipolar Transistor'                        , 'D_003_a'     , true       );
+
 
 -- --------------------------------------------------------------
 -- Fotos in der Datenbank.
@@ -229,22 +237,22 @@ VALUES
 (  1004 , 'rechenschieber.png'             , 'phi@smoch.ch' , 'Rechenschieber'                                                                                          ,
                                                               ' Logarithmischer Rechenschieber (Aristo Nr. 69)'                                                        ),
 
-(  1005 , 'zuse_z3_a.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3'                                                                                                 ,
+(  1005 , 'zuse/zuse_z3_a.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3'                                                                                                 ,
                                                               'Zuse Z3 Deutsches Museum (Foto 2018)'                                                                   ),
 																															
-(  1006 , 'zuse_z3_b.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3'                                                                                                 ,
+(  1006 , 'zuse/zuse_z3_b.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3'                                                                                                 ,
                                                               'Zuse Z3 Deutsches Museum (Foto 2018)'                                                                   ),
 
-(  1007 , 'zuse_z4.jpg'                    , 'phi@smoch.ch' , 'Zuse Z4'                                                                                                 ,
+(  1007 , 'zuse/zuse_z4.jpg'                    , 'phi@smoch.ch' , 'Zuse Z4'                                                                                                 ,
                                                               'Zuse Z4 Deutsches Museum (Foto 2018)'                                                                   ),
 																															
-(  1008 , 'zuse_z4_eingabetastatur.jpg'    , 'phi@smoch.ch' , 'Zuse Z4 Eingabetastatur'                                                                                 ,
+(  1008 , 'zuse/zuse_z4_eingabetastatur.jpg'    , 'phi@smoch.ch' , 'Zuse Z4 Eingabetastatur'                                                                                 ,
                                                               'Zuse Z4 Eingabetastatur (Deutsches Museum in München / Foto 2018)'                                      ),
 																															
-(  1009 , 'notRelaisNachbau_schema.png'    , 'phi@smoch.ch' , 'Schema (elektronisch) für das NOT-Gatter mit Relais'                                                     ,
+(  1009 , 'not/relais_nachbau_schema.png'    , 'phi@smoch.ch' , 'Schema (elektronisch) für das NOT-Gatter mit Relais'                                                     ,
                                                               'Schema für ein NOT-Gatter mittels Relais'                                                               ),
 																															
-(  1010 , 'notTransistorNachbau_schema.png', 'phi@smoch.ch' , 'Schema (elektronisch) für das NOT-Gatter mit Transistoren'                                               ,
+(  1010 , 'not/transistor_nachbau_schema.png', 'phi@smoch.ch' , 'Schema (elektronisch) für das NOT-Gatter mit Transistoren'                                               ,
                                                               'Schema (elektronisch), um ein NOT-Gatter mittels Tranistoren zu bauen.'                                 ),
 
 (  1011 , 'differenzenmaschine.png'        , 'phi@smoch.ch' , 'Foto Differenzenmaschine'                                                                                ,
@@ -252,15 +260,20 @@ VALUES
 																															
 (  1012 , 'volladdiererNachbau_schema.png ', 'phi@smoch.ch' , 'Schema (elektronisch) für den Volladdierer'                                                              ,
                                                               'Schema, um einen Volladdierer zu bauen.'                                                                ),
-																															
+(  1013 , 'transistor.png ',    'phi@smoch.ch' , 'Transistoren'                                                              ,
+                                                              'Transistoren'                                                                ),
+(  1014 , 'not/relais_nachbau.png ',    'phi@smoch.ch' , 'NOT Nachbau mit Relais'                                                              ,
+                                                              'Not Nachbau mit Relais'                                                                ),
+
+
 -- speichern
-(  2001 , 'amphore_etruskisch.png'         , 'phi@smoch.ch' , 'Amphore aus Ton'                                                                                         ,
+(  2001 , 'amphora/amphore_etruskisch.png'         , 'phi@smoch.ch' , 'Amphore aus Ton'                                                                                         ,
                                                               'Etruskische Amphore: Nachbildung aus Popolonio'                                                         ),
 																															
-(  2002 , 'amphore_3d_druck.png'           , 'phi@smoch.ch' , 'Amphore aus Plastik'                                                                                     ,
+(  2002 , 'amphora/amphore_3d_druck.png'           , 'phi@smoch.ch' , 'Amphore aus Plastik'                                                                                     ,
                                                               'Amphore dem 3D-Drucker (Prusa)'                                                                         ),
 																															
-(  2003 , 'Athena_Herakles_Staatliche_Antikensammlungen_2301.jpg', 'http://www.wikimedia.org' , 'Athena Herakles Staatliche Antikensammlungen'                                                                               ,
+(  2003 , 'amphora/Athena_Herakles_Staatliche_Antikensammlungen_2301.jpg', 'http://www.wikimedia.org' , 'Athena Herakles Staatliche Antikensammlungen'                                                                               ,
                                                               'Athena Herakles Staatliche Antikensammlungen (Bild wikimedia.org)'                                      ),
 																															
 (  2004 , 'diskette35.png'                 , 'phi@smoch.ch' , 'Diskette 3.5 Zoll'                                                                                       ,
@@ -287,6 +300,8 @@ VALUES
                                                               'Kernspeichermodul'                                                                                              ),
 (  2014 , 'kernspeicher/kernspeicher_seitenansicht.jpg'                  , 'phi@smoch.ch' , 'Kernspeicher'                                                                                               ,
                                                               'Kernspeicher'                                                                                              ),
+(  2015 , 'magnetband.png'                  , 'phi@smoch.ch' , 'Magnetband'                                                                                               ,
+                                                              'Magentband'                                                                                              ),
 
 -- kommunizieren
 (  3001 , 'keilschrift.jpg'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
@@ -302,15 +317,15 @@ VALUES
 (  9002 , 'halbleiter.png'                 , 'phi@smoch.ch' , 'Siliziumkristall'                                                                                        ,
                                                               'Silizium: Eines der häufigsten Elemente: Daraus werden die meisten Halbleiter gebaut.'                  ),
 																															
-(  9003 , 'wafer.png'                      , 'phi@smoch.ch' , 'Waferplatte'                                                                                             ,
+(  9003 , 'wafer/wafer.png'                      , 'phi@smoch.ch' , 'Waferplatte'                                                                                             ,
                                                               'Waferplatte, wie sie für die Chip Herstellung verwendet wird.'                                          ),
 																															
-(  9004 , 'wafer_mikroskop.jpg'            , 'phi@smoch.ch' , 'Mikroskopie eines Wafers (Ausschnitt)'                                                                  ,
+(  9004 , 'wafer/wafer_mikroskop.jpg'            , 'phi@smoch.ch' , 'Mikroskopie eines Wafers (Ausschnitt)'                                                                  ,
                                                               'Auschnitt Mikroskopier (Wafer)'                                                                         );
 
 
 -- -----------------------------------------------------
--- Erfindungsbilder sind die Bilder auf der Webseite.
+-- Erfindungsbilder sind die Bilder auf der Webseite, die zu einer Erfindung gehören.
 -- Ein Bild kann theoretisch zu mehreren Erfindungen gehören, wie z.B. das Smartphone.
 CREATE TABLE `tbl_erfindungsbild` (
   `IDurl_fk`  varchar(200)
@@ -335,9 +350,10 @@ INSERT INTO `tbl_erfindungsbild`
 ('computer'      ,  4   ,   1008    ),  -- Zuse Eingabegerät
 ('differenzenmaschine', 1,  1011    ), -- Differenzenmaschine
 ('volladdierer'  ,  1   ,   1012    ), -- Volladdierer Schema
-('not_relais'    ,  1   ,   1009    ), -- NOT mit Relais
-('not_transistor',  1   ,   1010    ),
-
+('not_relais'    ,  1   ,   1009    ), -- NOT mit Relais (schema)
+('not_relais'    ,  2   ,   1014    ), -- NOT Realais Nachbau
+('not_transistor',  1   ,   1010    ), -- NOT mit Transistoren
+('transistor'    ,  1   ,   1013    ), -- Transistor
 
 -- spechern
 ('amphore'       ,  1   ,   2001    ),  -- Amphora Etruskisch Popolonio
@@ -353,6 +369,7 @@ INSERT INTO `tbl_erfindungsbild`
 ('kernspeicher'  ,  1   ,   2012    ),  -- Kernspeicher Ringe
 ('kernspeicher'  ,  2   ,   2013    ),  -- Kernspeicher Modul
 ('kernspeicher'  ,  3   ,   2014    ),  -- Kernspeicher Seitenansicht
+('magnetband'    ,  1   ,   2015    ),  -- Magnetband
 
 -- kommunizieren
 ('schrift'       ,  1   ,   3001    ),  -- bild der Babylonischen Keilschritf (Hammurabi)
@@ -384,6 +401,7 @@ INSERT INTO `tbl_exponatbild`
 (  1001       ,   1001    ,  1   ), -- abakus
 (  1002       ,   1004    ,  1   ), -- rechenschieber
 (  1003       ,   1003    ,  1   ), -- zahlenschieber
+(  1005       ,   1014    ,  1   ), -- Relais Nachbau: NOT
 
 -- speichern
 (  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
@@ -396,6 +414,8 @@ INSERT INTO `tbl_exponatbild`
 (  2009       ,   2012    ,  1   ), -- Kernspeicher ringe
 (  2009       ,   2013    ,  2   ), -- Kernspeicher Modul
 (  2009       ,   2014    ,  3   ), -- Kernspeicher Seitenansicht
+(  2010       ,   2015    ,  1   ), -- Magnetband ...
+
 
 -- kommunizieren
 -- (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
@@ -404,7 +424,8 @@ INSERT INTO `tbl_exponatbild`
 -- diverses
 (  9001       ,   9001    ,  1   ), -- smartphone
 (  9002       ,   9002    ,  1   ), -- halbleiter Silicium
-(  9003       ,   9003    ,  1   ); -- Wafer
+(  9003       ,   9003    ,  1   ), -- Wafer
+(  9004       ,   1010    ,  1   ); -- Transistor
 
 -- ---------------------------------------------------
 -- Welche Exponate gehören zu welchen Erfindungen.
@@ -425,6 +446,8 @@ INSERT INTO `tbl_erfindungsexponat`
 ('rechenschieber',  1002        ,  1   ),
 ('zahlenschieber',  1003        ,  1   ),
 ('chip'          ,  1004        ,  1   ),
+('transistor'    ,  9004        ,  1   ),
+('not_relais'    ,  1005        ,  1   ),
 
 -- speichern
 ('amphore'       ,  2001        ,  1   ),
@@ -436,6 +459,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('lochkarte'     ,  2007        ,  1   ),
 ('chip'          ,  2008        ,  1   ),
 ('kernspeicher'  ,  2009        ,  1   ),
+('magnetband'    ,  2010        ,  1   ),
 
 -- kommunizieren
 -- ('schrift'       ,  3001        ,  1   ),
@@ -496,6 +520,7 @@ INSERT INTO `tbl_autor`
 
 
 -- --------------------------------------------------------------
+-- Wer ist der Autor des Textes
 CREATE TABLE `tbl_editor` (
   `ID`        int PRIMARY KEY AUTO_INCREMENT
 , `IDurl_fk`  varchar(200) 
@@ -520,6 +545,7 @@ INSERT INTO `tbl_editor`
 ('harddisk'      , 1),
 ('diskette'      , 1),
 ('cd'            , 1),
+('magnetband'    , 1),
 
 -- kommmunizieren
 ('schrift'       , 1),
