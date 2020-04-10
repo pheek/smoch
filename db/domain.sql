@@ -69,6 +69,7 @@ INSERT INTO `tbl_erfindung`
 ('abakus'        , 'Abakus'                        , 'ca. 2500 v. Chr.', 1                  ),
 ('rechenschieber', 'Rechenschieber'                ,     '1632'        , 1                  ),
 ('pascaline'     , 'Pascaline'                     ,     '1642'        , 1                  ),
+('binaersystem'  , 'Binärsystem'                   ,     '1692'        , 1                  ),
 ('zahlenschieber', 'Zahlenschieber (Addiator)'     , 'ca. 1700'        , 1                  ),
 ('differenzenmaschine', 'Differenzenmaschine'      ,     '1822'        , 1                  ),
 ('computer'      , 'Computer'                      ,     '1937'        , 1                  ),
@@ -124,18 +125,19 @@ INSERT INTO `tbl_reihenfolge`
 ('abakus'        ,   1           ,   1      ),
 ('rechenschieber',   1           ,   2      ),
 ('pascaline'     ,   1           ,   3      ),
-('zahlenschieber',   1           ,   4      ),
-('differenzenmaschine', 1        ,   5      ),
-('halbleiter'    ,   1           ,   6      ),
-('not_relais'    ,   1           ,   7      ),
-('computer'      ,   1           ,   8      ),
-('roehren'       ,   1           ,   9      ),
-('volladdierer'  ,   1           ,  10      ),
-('transistor'    ,   1           ,  11      ),
-('not_transistor',   1           ,  12      ),
-('chip'          ,   1           ,  13      ),
-('wafer'         ,   1           ,  14      ),
-('smartphone'    ,   1           ,  15      ),
+('binaersystem'  ,   1           ,   4      ),
+('zahlenschieber',   1           ,   5      ),
+('differenzenmaschine', 1        ,   6      ),
+('halbleiter'    ,   1           ,   7      ),
+('not_relais'    ,   1           ,   8      ),
+('computer'      ,   1           ,   9      ),
+('roehren'       ,   1           ,  10      ),
+('volladdierer'  ,   1           ,  11      ),
+('transistor'    ,   1           ,  12      ),
+('not_transistor',   1           ,  13      ),
+('chip'          ,   1           ,  14      ),
+('wafer'         ,   1           ,  15      ),
+('smartphone'    ,   1           ,  16      ),
 
 -- speichern
 ('amphore'       ,   2           ,   1      ),
@@ -179,12 +181,14 @@ CREATE TABLE `tbl_exponat` (
 
 INSERT INTO `tbl_exponat`
 ( `ID`, `Exponat_Jahr` , `Exponat_Modell`                                     , `inventarNr`, `ausgestellt`) VALUES
+
 -- rechnen
 (1001 , 'ca. 1960'     , 'Chinesischer Abakus'                                , 'R_001_a'     , true       ),
 (1002 , 'ca. 1960'     , 'Aristo Nr. 89 '                                     , 'R_002_r'     , true       ),
 (1003 , 'ca. 1970'     , 'Zahlenschieber Adimult'                             , 'R_003_z'     , true       ),
 (1004 , 'ca. 2010'     , 'C074HCT68E: Rechnerchip XOR'                        , 'R_004_c'     , true       ), 
 (1005 , '2020'         , 'NOT Realais Nachbau Omron-Relais 8V'                , 'R_005_r'     , true       ),
+
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
 (2002 , '2019'         , 'Nachbildung aus dem 3D-Drucker'                     , 'S_002_a'     , false      ),
@@ -239,25 +243,25 @@ VALUES
 
 (  1005 , 'zuse/zuse_z3_a.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3'                                                                                                 ,
                                                               'Zuse Z3 Deutsches Museum (Foto 2018)'                                                                   ),
-																															
+
 (  1006 , 'zuse/zuse_z3_b.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3'                                                                                                 ,
                                                               'Zuse Z3 Deutsches Museum (Foto 2018)'                                                                   ),
 
 (  1007 , 'zuse/zuse_z4.jpg'                    , 'phi@smoch.ch' , 'Zuse Z4'                                                                                                 ,
                                                               'Zuse Z4 Deutsches Museum (Foto 2018)'                                                                   ),
-																															
+
 (  1008 , 'zuse/zuse_z4_eingabetastatur.jpg'    , 'phi@smoch.ch' , 'Zuse Z4 Eingabetastatur'                                                                                 ,
                                                               'Zuse Z4 Eingabetastatur (Deutsches Museum in München / Foto 2018)'                                      ),
-																															
+
 (  1009 , 'not/relais_nachbau_schema.png'    , 'phi@smoch.ch' , 'Schema (elektronisch) für das NOT-Gatter mit Relais'                                                     ,
                                                               'Schema für ein NOT-Gatter mittels Relais'                                                               ),
-																															
+
 (  1010 , 'not/transistor_nachbau_schema.png', 'phi@smoch.ch' , 'Schema (elektronisch) für das NOT-Gatter mit Transistoren'                                               ,
                                                               'Schema (elektronisch), um ein NOT-Gatter mittels Tranistoren zu bauen.'                                 ),
 
 (  1011 , 'differenzenmaschine.png'        , 'phi@smoch.ch' , 'Foto Differenzenmaschine'                                                                                ,
                                                               'Ch. Babbage: Differenzenmaschine im Da Vinci Museum in Mailand'                                         ),
-																															
+
 (  1012 , 'volladdiererNachbau_schema.png ', 'phi@smoch.ch' , 'Schema (elektronisch) für den Volladdierer'                                                              ,
                                                               'Schema, um einen Volladdierer zu bauen.'                                                                ),
 (  1013 , 'transistor.png ',    'phi@smoch.ch' , 'Transistoren'                                                              ,
@@ -269,57 +273,69 @@ VALUES
 -- speichern
 (  2001 , 'amphora/amphore_etruskisch.png'         , 'phi@smoch.ch' , 'Amphore aus Ton'                                                                                         ,
                                                               'Etruskische Amphore: Nachbildung aus Popolonio'                                                         ),
-																															
+
 (  2002 , 'amphora/amphore_3d_druck.png'           , 'phi@smoch.ch' , 'Amphore aus Plastik'                                                                                     ,
                                                               'Amphore dem 3D-Drucker (Prusa)'                                                                         ),
-																															
+
 (  2003 , 'amphora/Athena_Herakles_Staatliche_Antikensammlungen_2301.jpg', 'http://www.wikimedia.org' , 'Athena Herakles Staatliche Antikensammlungen'                                                                               ,
                                                               'Athena Herakles Staatliche Antikensammlungen (Bild wikimedia.org)'                                      ),
-																															
+
 (  2004 , 'diskette35.png'                 , 'phi@smoch.ch' , 'Diskette 3.5 Zoll'                                                                                       ,
                                                               'Diskette 3.5 Zoll (S.u.S.E Linux Install Disk)'                                                         ),
-																															
+
+
 (  2005 , 'cd-ubuntu.png'                  , 'phi@smoch.ch' , 'Compct Disk (CD)'                                                                                        ,
                                                               'Compact Disk (Daten: Ubuntu V8.10 Install CD)'                                                          ),
-																															
+
 (  2006 , 'cd-vince.png'                   , 'phi@smoch.ch' , 'Compct Disk (CD)'                                                                                        ,
                                                               'Audio CD (Vince Eberts: Ur-Knaller)'                                                                    ),
-																															
+
 (  2008 , 'bit/relais_nachbau_schema.png'    , 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Relais'                                                    ,
                                                               'Schema  um ein Bit mittels Relais zu speichern'                                                         ),
-																															
+
 (  2009 , 'bit/transistor_nachbau_schema.png', 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Transistoren'                                              ,
                                                               'Schema um ein Bit mittels Transistoren zu speichern'                                                    ),
+
 (  2010 , 'harddisk.png'                   , 'phi@smoch.ch' , 'Harddisk offen'                                                                                          ,
                                                               'Harddisk geöffnet (Speicherkapazität unbekannt)'                                                        ),
+
 (  2011 , 'lochkarte.png'                  , 'phi@smoch.ch' , 'Lochkarte'                                                                                               ,
                                                               'Lochkarte'                                                                                              ),
+
 (  2012 , 'kernspeicher/kernspeicher_ringe.jpg'                  , 'phi@smoch.ch' , 'Kernspeicher Ringe'                                                                                               ,
                                                               'Ringe eines Kenrspeichers'                                                                                              ),
+
 (  2013 , 'kernspeicher/kernspeicher_modul.png'                  , 'phi@smoch.ch' , 'Kernspeichermodul'                                                                                               ,
                                                               'Kernspeichermodul'                                                                                              ),
+
 (  2014 , 'kernspeicher/kernspeicher_seitenansicht.jpg'                  , 'phi@smoch.ch' , 'Kernspeicher'                                                                                               ,
                                                               'Kernspeicher'                                                                                              ),
+
 (  2015 , 'magnetband.png'                  , 'phi@smoch.ch' , 'Magnetband'                                                                                               ,
                                                               'Magentband'                                                                                              ),
+
 
 -- kommunizieren
 (  3001 , 'keilschrift.jpg'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
                                                               'Keilschrift auf Ton; Auszug Gesetzbuch Hammurabis (Bild: Erik Nitsche «In Wort und Bild»)'              ),
+
 (  3003 , 'morsetaste.png'                 , 'phi@smoch.ch' , 'Morsetaste'                                                                                              ,
                                                               'Morsetaste'                                                                                             ),
+
 (  3004 , 'telephon.png'                   , 'phi@smoch.ch' , 'Telephon'                                                                                              ,
                                                               'Kurbeltelephon'                                                                                         ),
+
 
 -- diverse
 (  9001 , 'smartphone_htc_desire.png'      , 'phi@smoch.ch' , 'Smartphone'                                                                                              ,
                                                               'Smartphone HTC Desire'                                                                                  ),
+
 (  9002 , 'halbleiter.png'                 , 'phi@smoch.ch' , 'Siliziumkristall'                                                                                        ,
                                                               'Silizium: Eines der häufigsten Elemente: Daraus werden die meisten Halbleiter gebaut.'                  ),
-																															
+
 (  9003 , 'wafer/wafer.png'                      , 'phi@smoch.ch' , 'Waferplatte'                                                                                             ,
                                                               'Waferplatte, wie sie für die Chip Herstellung verwendet wird.'                                          ),
-																															
+
 (  9004 , 'wafer/wafer_mikroskop.jpg'            , 'phi@smoch.ch' , 'Mikroskopie eines Wafers (Ausschnitt)'                                                                  ,
                                                               'Auschnitt Mikroskopier (Wafer)'                                                                         );
 
@@ -372,7 +388,7 @@ INSERT INTO `tbl_erfindungsbild`
 ('magnetband'    ,  1   ,   2015    ),  -- Magnetband
 
 -- kommunizieren
-('schrift'       ,  1   ,   3001    ),  -- bild der Babylonischen Keilschritf (Hammurabi)
+('schrift'       ,  1   ,   3001    ),  -- Bild der Babylonischen Keilschritf (Hammurabi)
 ('morsetaste'    ,  1   ,   3003    ),  -- Morsetaste
 ('telephon'      ,  1   ,   3004    ),  -- Telephon
 
@@ -425,7 +441,7 @@ INSERT INTO `tbl_exponatbild`
 (  9001       ,   9001    ,  1   ), -- smartphone
 (  9002       ,   9002    ,  1   ), -- halbleiter Silicium
 (  9003       ,   9003    ,  1   ), -- Wafer
-(  9004       ,   1010    ,  1   ); -- Transistor
+(  9004       ,   1013    ,  1   ); -- Transistor
 
 -- ---------------------------------------------------
 -- Welche Exponate gehören zu welchen Erfindungen.
@@ -446,7 +462,6 @@ INSERT INTO `tbl_erfindungsexponat`
 ('rechenschieber',  1002        ,  1   ),
 ('zahlenschieber',  1003        ,  1   ),
 ('chip'          ,  1004        ,  1   ),
-('transistor'    ,  9004        ,  1   ),
 ('not_relais'    ,  1005        ,  1   ),
 
 -- speichern
@@ -465,10 +480,12 @@ INSERT INTO `tbl_erfindungsexponat`
 -- ('schrift'       ,  3001        ,  1   ),
 ('morsetaste'    ,  3003        ,  1   ),
 ('telephon'      ,  3004        ,  1   ),
+
 -- diveses
 ('smartphone'    ,  9001        ,  1   ),
 ('halbleiter'    ,  9002        ,  1   ),
-('wafer'         ,  9003        ,  1   );
+('wafer'         ,  9003        ,  1   ),
+('transistor'    ,  9004        ,  1   );
 
 
 -- Mehrere Exponate zu einem Objekt sind möglich.
