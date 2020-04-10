@@ -8,7 +8,7 @@
 // leave the "/site/"-folderfor security reason.
 // Otherwise a false push to the server from github password "123" will
 // make the site crash.
-require_once  __DIR__ . '/../../../credentials/credentials.php';
+require_once  __DIR__ . '/../../../credentials_smoch/credentials.php';
 
 class ConnectionSingleton {
 	private static $connectionSingleton;
