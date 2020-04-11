@@ -1,10 +1,6 @@
 <!-- Erfindung -->
 
 <div class='erfindung'>
-	 <h1>Chip (IC): Im Aufbau</h1>
-	<p>Die Seite zu dieser Erfindung ist im Aufbau.</p>
-	<img src='../layout/img/uc.png' />
-
 		                	<h1>Geschichte</h1>
   <p>1949 erfand Werner Jocob einen Halbleiterverstärker mit fünf Transistoren auf einem Halbleiter als Trägermaterial</p>
 	<p class='zitat quelle'><a href='https://de.wikipedia.org/wiki/Integrierter_Schaltkreis#Geschichte'>wikipedia Integrierter Schaltkreis</a></p>
@@ -21,7 +17,7 @@
 		                <p>Genau genommen handelt es sich bei den Abbildungen um Chip-Gehäuse. Chips sind typischrweise flach und nur wenige Quadratmillimeter groß. Die Gehäuse sind da, damit die Chips angenehm in Schaltungen verbaut werden können.</p>
 
 	<h1>Quellenangaben</h1>
-		                <p>Datasheets: <a href='www.digikey.com'>digikey.com</a><br />
+		                <p>Datasheets: <a href='https://www.digikey.com'>digikey.com</a><br />
 		                <a href='https://de.wikipedia.org/wiki/Chipgeh%C3%A4use'>Wikipedia</a></p>
 
 </div>

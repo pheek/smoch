@@ -208,13 +208,13 @@ INSERT INTO `tbl_exponat`
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
 (3002 , '1940'         , 'Kurbeltelephon 30er Jahre'                          , 'K_002_t'     , true       ),
 (3003 , '????'         , 'Morsetaste'                                         , 'K_003_m'     , true       ),
-(3004 , 'ca. 1930/40'     , 'Telephon'                                           , 'K_004_t'     , true       ),
+(3004 , 'ca. 1930/40'  , 'Telephon'                                           , 'K_004_t'     , true       ),
 
 -- diverse
 (9001 , '2010'         , 'HTC Desire'                                         , 'D_001_s'     , true       ),
 (9002 , '-0'           , 'Halbleiter Silicium'                                , 'D_002_h'     , true       ),
 (9003 , 'unbekannt'    , 'Wafer'                                              , 'D_003_w'     , true       ),
-(9004 , 'ca 2006'      , 'BC 548C, bipolar Transistor'                        , 'D_003_a'     , true       );
+(9004 , 'ca 2005'      , 'BC 548C, bipolar Transistor'                        , 'D_005_a'     , true       );
 
 
 -- --------------------------------------------------------------
@@ -274,6 +274,8 @@ VALUES
                                                               'Not Nachbau mit Relais'                                                                ),
 (  1015 , 'monkey.png ',    'phi@smoch.ch' , 'The educated Monkey'                                                              ,
                                                               'The educated Monkey'                                                                ),
+(  1016 , 'rechnerchip.png'            , 'phi@smoch.ch' , 'Rechnerchip CD74HCT86E (xor)'                                                                  ,
+                                                              'Computerchip im Gehäuse'                                                                         ),
 
 
 -- speichern
@@ -319,6 +321,8 @@ VALUES
 
 (  2015 , 'magnetband.png'                  , 'phi@smoch.ch' , 'Magnetband'                                                                                               ,
                                                               'Magentband'                                                                                              ),
+(  2016 , 'speicherchip.png'            , 'phi@smoch.ch' , 'Speicherchip C04040BE (Flip-Flop)'                                                                  ,
+                                                              'Speicherchip im Gehäuse'                                                                         ),
 
 
 -- kommunizieren
@@ -377,6 +381,7 @@ INSERT INTO `tbl_erfindungsbild`
 ('not_transistor',  1   ,   1010    ), -- NOT mit Transistoren
 ('transistor'    ,  1   ,   1013    ), -- Transistor
 ('monkey'        ,  1   ,   1015    ), -- Educated Monkey
+('chip'          ,  1   ,   1016    ), -- Rechnerchip
 
 -- spechern
 ('amphore'       ,  1   ,   2001    ),  -- Amphora Etruskisch Popolonio
@@ -393,6 +398,7 @@ INSERT INTO `tbl_erfindungsbild`
 ('kernspeicher'  ,  2   ,   2013    ),  -- Kernspeicher Modul
 ('kernspeicher'  ,  3   ,   2014    ),  -- Kernspeicher Seitenansicht
 ('magnetband'    ,  1   ,   2015    ),  -- Magnetband
+('chip'          ,  2   ,   2016    ),  -- Speicherchip
 
 -- kommunizieren
 ('schrift'       ,  1   ,   3001    ),  -- Bild der Babylonischen Keilschritf (Hammurabi)
@@ -424,6 +430,7 @@ INSERT INTO `tbl_exponatbild`
 (  1001       ,   1001    ,  1   ), -- abakus
 (  1002       ,   1004    ,  1   ), -- rechenschieber
 (  1003       ,   1003    ,  1   ), -- zahlenschieber
+(  1004       ,   1016    ,  1   ), -- Rechnerchip (XOR)
 (  1005       ,   1014    ,  1   ), -- Relais Nachbau: NOT
 (  1006       ,   1015    ,  1   ), -- The educated Monkey
 
@@ -439,6 +446,7 @@ INSERT INTO `tbl_exponatbild`
 (  2009       ,   2013    ,  2   ), -- Kernspeicher Modul
 (  2009       ,   2014    ,  3   ), -- Kernspeicher Seitenansicht
 (  2010       ,   2015    ,  1   ), -- Magnetband ...
+(  2008       ,   2016    ,  1   ), -- Speicherchip (XOR)
 
 -- kommunizieren
 -- (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
@@ -468,9 +476,9 @@ INSERT INTO `tbl_erfindungsexponat`
 ('abakus'        ,  1001        ,  1   ),
 ('rechenschieber',  1002        ,  1   ),
 ('zahlenschieber',  1003        ,  1   ),
-('chip'          ,  1004        ,  1   ),
 ('not_relais'    ,  1005        ,  1   ),
 ('monkey'        ,  1006        ,  1   ),
+('chip'          ,  1004        ,  1   ),
 
 -- speichern
 ('amphore'       ,  2001        ,  1   ),
@@ -480,7 +488,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('cd'            ,  2005        ,  1   ),
 ('cd'            ,  2006        ,  2   ),
 ('lochkarte'     ,  2007        ,  1   ),
-('chip'          ,  2008        ,  1   ),
+('chip'          ,  2008        ,  2   ),
 ('kernspeicher'  ,  2009        ,  1   ),
 ('magnetband'    ,  2010        ,  1   ),
 
