@@ -69,6 +69,7 @@ INSERT INTO `tbl_erfindung`
 ('abakus'        , 'Abakus'                        , 'ca. 2500 v. Chr.', 1                  ),
 ('rechenschieber', 'Rechenschieber'                ,     '1632'        , 1                  ),
 ('pascaline'     , 'Pascaline'                     ,     '1642'        , 1                  ),
+('neperstaebchen', 'Neperstäbchen'                 ,     '17. Jh.'     , 1                  ),
 ('binaersystem'  , 'Binärsystem'                   ,     '1692'        , 1                  ),
 ('zahlenschieber', 'Zahlenschieber (Addiator)'     , 'ca. 1700'        , 1                  ),
 ('differenzenmaschine', 'Differenzenmaschine'      ,     '1822'        , 1                  ),
@@ -126,20 +127,21 @@ INSERT INTO `tbl_reihenfolge`
 ('abakus'        ,   1           ,   1      ),
 ('rechenschieber',   1           ,   2      ),
 ('pascaline'     ,   1           ,   3      ),
-('binaersystem'  ,   1           ,   4      ),
-('zahlenschieber',   1           ,   5      ),
-('differenzenmaschine', 1        ,   6      ),
-('halbleiter'    ,   1           ,   7      ),
-('monkey'        ,   1           ,   8      ),
-('not_relais'    ,   1           ,   9      ),
-('computer'      ,   1           ,  10      ),
-('roehren'       ,   1           ,  11      ),
-('volladdierer'  ,   1           ,  12      ),
-('transistor'    ,   1           ,  13      ),
-('not_transistor',   1           ,  14      ),
-('chip'          ,   1           ,  15      ),
-('wafer'         ,   1           ,  16      ),
-('smartphone'    ,   1           ,  17      ),
+('neperstaebchen',   1           ,   4      ),
+('binaersystem'  ,   1           ,   5      ),
+('zahlenschieber',   1           ,   6      ),
+('differenzenmaschine', 1        ,   7      ),
+('halbleiter'    ,   1           ,   8      ),
+('monkey'        ,   1           ,   9      ),
+('not_relais'    ,   1           ,  10      ),
+('computer'      ,   1           ,  11      ),
+('roehren'       ,   1           ,  12      ),
+('volladdierer'  ,   1           ,  13      ),
+('transistor'    ,   1           ,  14      ),
+('not_transistor',   1           ,  15      ),
+('chip'          ,   1           ,  16      ),
+('wafer'         ,   1           ,  17      ),
+('smartphone'    ,   1           ,  18      ),
 
 -- speichern
 ('amphore'       ,   2           ,   1      ),
@@ -191,6 +193,8 @@ INSERT INTO `tbl_exponat`
 (1004 , 'ca. 2010'     , 'C074HCT68E: Rechnerchip XOR'                        , 'R_004_c'     , true       ), 
 (1005 , '2020'         , 'NOT Realais Nachbau Omron-Relais 8V'                , 'R_005_r'     , true       ),
 (1006 , 'ca. 2005'     , 'Educated Monkey (Barcelona)'                        , 'R_006_m'     , true       ),
+(1007 , 'ca. 2010'     , 'Verstärkerröhre'                                    , 'R_007_r'     , true       ),
+(1008 , '2020'         , 'Not nachgebaut mit Transistoren'                    , 'R_008_n'     , true       ),
 
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
@@ -276,7 +280,12 @@ VALUES
                                                               'The educated Monkey'                                                                ),
 (  1016 , 'rechnerchip.png'            , 'phi@smoch.ch' , 'Rechnerchip CD74HCT86E (xor)'                                                                  ,
                                                               'Computerchip im Gehäuse'                                                                         ),
-
+(  1017 , 'roehre.png'                 , 'phi@smoch.ch' , 'Verstärkerröhre'                                                                  ,
+                                                              'Verstärkerröhre'                                                                         ),
+(  1018 , 'not/transistor_nachbau.png'                 , 'phi@smoch.ch' , 'elektronische Schaltung (NOT)'                                                                  ,
+                                                              'Nachbau einer NOT-Schaltung mit Transistoren'                                                                         ),
+(  1019 , 'neperstaebchen.png'                 , 'phi@smoch.ch' , 'Holzstäbe mit Zahlen'                                                                  ,
+                                                              'Neperstäbchen (Foto aus dem Deutschen Museum)'                                                                         ),
 
 -- speichern
 (  2001 , 'amphora/amphore_etruskisch.png'         , 'phi@smoch.ch' , 'Amphore aus Ton'                                                                                         ,
@@ -378,12 +387,15 @@ INSERT INTO `tbl_erfindungsbild`
 ('volladdierer'  ,  1   ,   1012    ), -- Volladdierer Schema
 ('not_relais'    ,  1   ,   1009    ), -- NOT mit Relais (schema)
 ('not_relais'    ,  2   ,   1014    ), -- NOT Realais Nachbau
-('not_transistor',  1   ,   1010    ), -- NOT mit Transistoren
+('not_transistor',  1   ,   1010    ), -- NOT mit Transistoren (Schaltplan)
+('not_transistor',  2   ,   1018    ), -- NOT mit Transistoren (Breadboard)
 ('transistor'    ,  1   ,   1013    ), -- Transistor
 ('monkey'        ,  1   ,   1015    ), -- Educated Monkey
 ('chip'          ,  1   ,   1016    ), -- Rechnerchip
+('roehren'       ,  1   ,   1017    ), -- Verstärkerröhre
+('neperstaebchen',  1   ,   1019    ), -- Neperstäbchen
 
--- spechern
+-- speichern
 ('amphore'       ,  1   ,   2001    ),  -- Amphora Etruskisch Popolonio
 -- ('amphore'       ,  2   ,   2002    ),  -- 3D-Drucker Amhpore
 ('amphore'       ,  3   ,   2003    ),  -- Bild Wikipedia von Amphoren
@@ -433,6 +445,8 @@ INSERT INTO `tbl_exponatbild`
 (  1004       ,   1016    ,  1   ), -- Rechnerchip (XOR)
 (  1005       ,   1014    ,  1   ), -- Relais Nachbau: NOT
 (  1006       ,   1015    ,  1   ), -- The educated Monkey
+(  1007       ,   1017    ,  1   ), -- Verstärkerröhre
+(  1008       ,   1018    ,  1   ), -- not mit Transistoren
 
 -- speichern
 (  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
@@ -479,6 +493,8 @@ INSERT INTO `tbl_erfindungsexponat`
 ('not_relais'    ,  1005        ,  1   ),
 ('monkey'        ,  1006        ,  1   ),
 ('chip'          ,  1004        ,  1   ),
+('roehren'       ,  1007        ,  1   ),
+('not_transistor',  1008        ,  1   ),
 
 -- speichern
 ('amphore'       ,  2001        ,  1   ),

@@ -18,5 +18,5 @@
 	 <p>Die oben abgebildete Schaltung funktioniert tatsächlich und wurde mehrfach getestet. Obschon die Schaltung erst mit einem Schaltstrom im Transitor von 0.7V komplett schalten sollte, so ergibt sich die Rechnung, dass der Schaltstrom für einen 0-Eingang (0V am IN) tatsächlich 0.65V an die Basis liefert. Anscheinend scheint bereits 0.55V für den verwendeten Transistor BC548C auszureichen, um ihn «einzuschalten» (<a href='https://www.mouser.ch/datasheet/2/308/bc546-d-1190617.pdf'>S. DATASHEET</a>).</p>
 
 	 <h1>Quellenangaben</h1>
-	<p> .... Quellenangaben .... </p>
+	<p>Dieses Exponat wurde vom Kurator persönlich gebaut. Der Schaltplat stimmt mit der Schaltung überein.</p>
 </div>
