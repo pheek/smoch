@@ -80,10 +80,10 @@ INSERT INTO `tbl_erfindung`
 ('differenzenmaschine', 'Differenzenmaschine'      ,     '1822'        , 1                  ),
 ('monkey'        , 'Educated Monkey'               ,     '1916'        , 1                  ),
 ('computer'      , 'Computer'                      ,     '1937'        , 1                  ),
-('not_relais'    , 'Not realisiert mit Relais'     ,     '1941'        , 1                  ),
+('not_relais'    , 'NOT realisiert mit Relais'     ,     '1941'        , 1                  ),
 ('roehren'       , 'Röhrenrechner'                 ,     '1942'        , 1                  ),
 ('transistor'    , 'Bipolartransistor'             ,     '1948'        , 1                  ),
-('not_transistor', 'Not realisiert mit Transistror', '????'            , 1                  ),
+('not_transistor', 'NOT realisiert mit Transistror', '????'            , 1                  ),
 ('volladdierer'  , 'Volladdierer'                  , '????'            , 1                  ),
 
 -- speichern
@@ -204,7 +204,7 @@ INSERT INTO `tbl_exponat`
 (1005 , '2020'         , 'NOT Realais Nachbau Omron-Relais 8V'                , 'R_005_r'     , true       ),
 (1006 , 'ca. 2005'     , 'Educated Monkey (Barcelona)'                        , 'R_006_m'     , true       ),
 (1007 , 'ca. 2010'     , 'Verstärkerröhre'                                    , 'R_007_r'     , true       ),
-(1008 , '2020'         , 'Not nachgebaut mit Transistoren'                    , 'R_008_n'     , true       ),
+(1008 , '2020'         , 'NOT nachgebaut mit Transistoren'                    , 'R_008_n'     , true       ),
 
 
 -- speichern
@@ -283,14 +283,14 @@ VALUES
 (  1011 , 'differenzenmaschine.png'        , 'phi@smoch.ch' , 'Foto Differenzenmaschine'                                                                                ,
                                                               'Ch. Babbage: Differenzenmaschine im Da Vinci Museum in Mailand'                                         ),
 
-(  1012 , 'volladdiererNachbau_schema.png ', 'phi@smoch.ch' , 'Schema (elektronisch) für den Volladdierer'                                                              ,
+(  1012 , 'volladdierer/schema.png '       , 'phi@smoch.ch' , 'Schema (elektronisch) für den Volladdierer'                                                              ,
                                                               'Schema, um einen Volladdierer zu bauen.'                                                                ),
 
 (  1013 , 'transistor.png ',    'phi@smoch.ch' , 'Transistoren'                                                                                                         ,
                                                               'Transistoren'                                                                                           ),
 
 (  1014 , 'not/relais_nachbau.png ',    'phi@smoch.ch' , 'NOT Nachbau mit Relais'                                                                                       ,
-                                                              'Not Nachbau mit Relais'                                                                                 ),
+                                                              'NOT Nachbau mit Relais'                                                                                 ),
 
 (  1015 , 'monkey.png ',    'phi@smoch.ch' , 'The educated Monkey'                                                                                                      ,
                                                               'The educated Monkey'                                                                                    ),
@@ -309,6 +309,9 @@ VALUES
 
 (  1020 , 'binaer.png'                          , 'phi@smoch.ch' , 'Nullen und Einsen'                                                                                  ,
                                                               'Binäre Darstellung von Zahlen und Zeichen'                                                              ),
+
+(  1021 , 'volladdierer/transistor_nachbau.png'                          , 'phi@smoch.ch' , 'Schlatung'                                                                                  ,
+                                                              'Volladdierer mit Transistoren nachgebaut'                                                              ),
 
 
 -- speichern
@@ -416,6 +419,7 @@ INSERT INTO `tbl_erfindungsbild`
 ('computer'      ,  4   ,   1008    ),  -- Zuse Eingabegerät
 ('differenzenmaschine', 1,  1011    ),  -- Differenzenmaschine
 ('volladdierer'  ,  1   ,   1012    ),  -- Volladdierer Schema
+('volladdierer'  ,  2   ,   1021    ),  -- Volladdierer mit Transistoren
 ('not_relais'    ,  1   ,   1009    ),  -- NOT mit Relais (schema)
 ('not_relais'    ,  2   ,   1014    ),  -- NOT Realais Nachbau
 ('not_transistor',  1   ,   1010    ),  -- NOT mit Transistoren (Schaltplan)

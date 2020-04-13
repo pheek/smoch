@@ -51,7 +51,7 @@ function nextLink() {
 <div class='erfindung'>
 	<div class='erfindungHeader'>
 		<div class='backback'><?php echo prevLink(); ?></div>
-		<div><?php echo $erfindung->titel;?> (<?php echo $erfindung->jahr; ?>)</div>
+<div><?php echo $erfindung->titel;?> (<?php if("????" == $erfindung->jahr) {echo 'Erfindungsdatum unbekannt';} else {echo $erfindung->jahr;} ?>)</div>
 		<div class='forfor'><?php echo nextLink(); ?></div>
 	</div>
 
