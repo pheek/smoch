@@ -102,6 +102,7 @@ INSERT INTO `tbl_erfindung`
 ('schrift'       , 'Schriften'                     , 'ca. 4000 v. Chr.', 3                  ),
 ('buchdruck'     , 'Chinesischer Holztafeldruck'   ,      '868'        , 3                  ),
 ('morsetaste'    , 'Morsegerät/Relaisstation'      ,     '1833'        , 3                  ),
+('enigma'        , 'Enigma'                        ,     '1918'        , 3                  ),
 ('glasfaser'     , 'Lichtwellenleiter'             ,     '1960'        , 3                  ),
 ('telephon'      , 'Telefon'                       ,     '1861'        , 3                  ),
 
@@ -170,8 +171,9 @@ INSERT INTO `tbl_reihenfolge`
 ('buchdruck'     ,   3           ,   2      ),
 ('morsetaste'    ,   3           ,   3      ),
 ('telephon'      ,   3           ,   4      ),
-('glasfaser'     ,   3           ,   5      ),
-('smartphone'    ,   3           ,   6      );
+('enigma'        ,   3           ,   5      ),
+('glasfaser'     ,   3           ,   6      ),
+('smartphone'    ,   3           ,   7      );
 
 
 
@@ -367,6 +369,11 @@ VALUES
 (  3004 , 'telephon.png'                   , 'phi@smoch.ch' , 'Telephon'                                                                                              ,
                                                               'Kurbeltelephon'                                                                                         ),
 
+(  3005 , 'enigma1.png'                    , 'phi@smoch.ch' , 'Rotor-Schlüsselmaschine'                                                                                              ,
+                                                              'Enigma'                                                                                                 ),
+(  3006 , 'enigma2.png'                    , 'phi@smoch.ch' , 'Walzen zur Rotor-Schlüsselmaschine'                                                                                              ,
+                                                              'Enigma'                                                                                                 ),
+
 
 -- diverse
 (  9001 , 'smartphone_htc_desire.png'      , 'phi@smoch.ch' , 'Smartphone'                                                                                              ,
@@ -441,6 +448,8 @@ INSERT INTO `tbl_erfindungsbild`
 ('schrift'       ,  1   ,   3001    ),  -- Bild der Babylonischen Keilschritf (Hammurabi)
 ('morsetaste'    ,  1   ,   3003    ),  -- Morsetaste
 ('telephon'      ,  1   ,   3004    ),  -- Telephon
+('enigma'        ,  1   ,   3005    ),  -- Enigma
+('enigma'        ,  2   ,   3006    ),  -- Walzen der Enigma
 
 -- diverse
 ('smartphone'    ,  1   ,   9001    ),  -- htc desire smartphone
