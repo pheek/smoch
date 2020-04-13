@@ -30,8 +30,8 @@
 }
 
 .erfindungHeader > div {
-  width  : 100px;
-  height : auto ;
+	width  : 100px;
+	height : auto ;
 	padding: 3px  ;
 }
 
@@ -63,10 +63,9 @@ h1.exponatListeTitel  {
 	text-align      : center   ;
 }
 
-											
 .erfindungsExponat {
 	color           : var(--default-foreground);
-	background-color: var(--default-background); 
+	background-color: var(--default-background);
 }
 
 tr.erfindungsExponat > td {
@@ -106,7 +105,7 @@ div.small_image_rahmen {
 	}
 	.erfindungHeader  {
 		flex-direction: column;
-	}	
+	}
 }
 
 
@@ -118,10 +117,10 @@ div.erfindungsBilder{
 div.erfindungsBild {
 	margin-top      : 4px            ;
 	padding         : 5px            ;
-	margin          : 5px            ; 
+	margin          : 5px            ;
 	margin-bottom   : 2px            ;
 	border          : solid #630  2px;
- 	background-color: var(--exponat-background)           ;
+	background-color: var(--exponat-background)           ;
 	color           : var(--exponat-foreground-text)           ;
 	font-weight     : bold           ;
 	font-size       : 120%           ;

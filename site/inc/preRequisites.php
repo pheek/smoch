@@ -1,4 +1,5 @@
 <?php
+
 // TODO: Set the Prerequisites to include into the <head> from the request into the following variable:
 require_once 'inc/session.php'          ;
 require_once 'inc/dao/dao_erfindung.php';
@@ -8,7 +9,7 @@ function isErfindungsSeite() {
 	return strpos($_SERVER['PHP_SELF'], 'erfindung.php') > 0;
 }
 
-/** 
+/**
  * Es wird hier davon ausgegangen, dass es sich um eine Erfindungsseite handelt.
  * S. isErfindungsSeite();
  */
@@ -25,26 +26,29 @@ function getErfindungsID() {
 }
 
 
-$_PRE_KEYWORDS    = "key1, key2";
-$_PRE_AUTHOR      = 'phi@smoch.ch';
-$_PRE_TITLE       = 'Small Museum of Computing History';
+$_PRE_KEYWORDS    = "museum, computing, history, smoch"  ;
+$_PRE_AUTHOR      = 'phi@smoch.ch'                       ;
+$_PRE_TITLE       = 'Small Museum of Computing History'  ;
 $_PRE_DESCRIPTION = 'a small museum of computing history';
-$_PRE_DATE        = '2019-05-23';
+$_PRE_DATE        = '2020-04-13'                         ;
 
 
 if(isErfindungsSeite()) {
 	$tmpDaoErfindung    = new DAO_Erfindung();
 	$tmpKategorie       = 1;
-	if(array_key_exists($_SESSION['kategorie_id'])) {
-		$tmpKategorie = $_SESSION['kategorie_id'];
+	if(null != $_SESSION) {
+		if(array_key_exists('kategorie_id', $_SESSION)) {
+			$tmpKategorie = $_SESSION['kategorie_id'];
+		}
 	}
 	$erfindung = $tmpDaoErfindung->getErfindungsObjekt(getErfindungsID(), $tmpKategorie);
 	$keywordsString = "";
-	foreach($erfindung->keywords AS $kw => $ww) {
-		$keywordsString = $keywordsString . ', ' . $ww;
+	if(null != $erfindung->keywords) {
+		foreach($erfindung->keywords AS $kw => $ww) {
+			$keywordsString = $keywordsString . ', ' . $ww;
+		}
 	}
 	$_PRE_KEYWORDS = $keywordsString;
 }
-
 
 ?>

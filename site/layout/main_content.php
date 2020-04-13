@@ -5,5 +5,5 @@ if(isErfindungsSeite()) {
 } else {
 	include 'introseite.php';
 }
-	
+
 ?>

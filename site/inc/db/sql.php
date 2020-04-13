@@ -25,7 +25,7 @@ class SQL {
 	/**
 	 * Alle Informationen zu einer Erfindung = zu einer Webseite.
 	 * Achtung: Smartphone kommt mehrmals vor in verschiedenen Kategorien.
-	 *          Dabei ist alles gleich, aber Vorgänger und Nachfolger sind von der 
+	 *          Dabei ist alles gleich, aber Vorgänger und Nachfolger sind von der
 	 *          Kategorie abängig!
 	 */
 	public static function getErfindungsRecordMitKategorie($siteURL, $kategorie) {
@@ -99,11 +99,12 @@ class SQL {
 			return SQL::getProgramParameter('browser_path'        );
 		}
 	}
-	
+
+
 	public static function getErfindungenPath() {
 		return SQL::getActBrowserPath() . SQL::getProgramParameter('erfindungen_pfad');
 	}
-			
+
 	public static function getArtikelDir() {
 		return '' . SQL::getErfindungenPath() . SQL::getProgramParameter('artikel_dir');
 	}
@@ -137,5 +138,5 @@ class SQL {
 		$SQL = 'SELECT `keyword` FROM `tbl_keyword` WHERE "' . $idUrl .'" = `IDurl_fk`';
 		return SQL::fetchRows($SQL);
 	}
-	
+
 } // end static class SQL

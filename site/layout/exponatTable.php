@@ -33,9 +33,8 @@ function createExponatTableRow($exponat) {
 	echo "<td>";
 	printAlleExponatBilder($exponat);
 	echo "</td>\n";
-	
+
 	echo "</tr>\n";
-		
 }
 
 function createExponatTableRows() {
@@ -55,4 +54,3 @@ function createExponatTableRows() {
 <?php createExponatTableRows(); ?>
 	</table>
 </div>
-	

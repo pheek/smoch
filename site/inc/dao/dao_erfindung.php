@@ -19,7 +19,7 @@ class DAO_Erfindung {
 	/**
 	 * Alle Informationen zu einer Erfindung = zu einer Webseite.
 	 * Achtung: Smartphone kommt mehrmals vor in verschiedenen Kategorien.
-	 *          Dabei ist alles gleich, aber Vorgänger und Nachfolger sind von der 
+	 *          Dabei ist alles gleich, aber Vorgänger und Nachfolger sind von der
 	 *          Kategorie abängig!
 	 */
 	public static function getErfindungsObjekt($siteURL, $kategorie) {
@@ -42,17 +42,16 @@ class DAO_Erfindung {
 			echo "DEBUG dao.php: " . $key . '---' . $value . "<br />\n";
 		}
 */
-		
+
 		// ...
 
 		$keyWordResultSet = SQL::getErfindungsKeywords($siteURL);
 		while($keyWord = $keyWordResultSet->fetch(PDO::FETCH_ASSOC)) {
 			$erfindung->addKeyword($keyWord['keyword']);
 		}
-		
+
 		return $erfindung;
 	}
 
-	
 
 }

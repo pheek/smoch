@@ -20,7 +20,7 @@ function navLinkToKategorie($linkKategorieNr) {
 	if(($actKat == $linkKategorieNr) && (strpos($_SERVER['PHP_SELF'], 'rfindung.php') > 0)) {
 		return "<span class='unLink'>" . $kategorieName . "</span>";
 	}
-	
+
 	$ersteErfindungInTourID = SQL::getErsteErfindungUrlInKategorie($linkKategorieNr);
 	$katLink = "<a href='" . $ERFINDUNG_PREFIX . $ersteErfindungInTourID . '?kategorie=' . $linkKategorieNr . "' > " . $kategorieName . "</a>";
 	return $katLink;

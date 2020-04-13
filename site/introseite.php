@@ -14,7 +14,9 @@
 
 	 <p style='font-style:italic; '><b style='font-size:110%; font-variant: small-caps;'>Small</b> Museum of computing history.</p>
 
-	 <p>Vielmehr zeigt SMOCH nur ein bis zwei Vertreter von jedem Entwicklungsschritt. Es soll dennoch einen möglichst lückenlosen Überblick über die ganze Geschichte der Informatonstechnologie geben. So sind von allen Schritten, welche die Informatik rasch vorangetrieben haben, spannende Objekte zu finden.</p>
+	 <p>Vielmehr zeigt SMOCH nur ein bis zwei Vertreter von jedem Entwicklungsschritt.
+	    Es soll dennoch einen möglichst lückenlosen Überblick über die ganze Geschichte der Informatonstechnologie geben.
+	    So sind von allen Schritten, welche die Informatik rasch vorangetrieben haben, spannende Objekte zu finden.</p>
 
 	 </div>
 	 <p>Danke Luca für den Domainnamen</p>

@@ -8,8 +8,8 @@
 
 /* Just in case the includes are not found...*/
 /*while (! file_exists('inc/domain') ) {
-  chdir('..');
-  }*/
+	chdir('..');
+}*/
 
 require_once 'inc/db/sql.php'        ;
 require_once 'inc/domain/Exponat.php';
@@ -19,7 +19,7 @@ class DAO_Exponat {
 
 	public static function getAlleExponateZuErfindung($erfindungsID) {
 		$exponatListe = array();
-		
+
 		$exponateRecordset = SQL::getAlleExponateZuErfindungRecordset($erfindungsID);
 
 		while($exponatRecord = $exponateRecordset->fetch(PDO::FETCH_ASSOC)) {
@@ -33,7 +33,7 @@ class DAO_Exponat {
 			$exponatListe[$exponat->DBId] = $exponat;
 		} // end while
 		return $exponatListe;
-	} // 
+	} //
 
 
 	public static function getAlleBilderZuExponat($exponatID) {

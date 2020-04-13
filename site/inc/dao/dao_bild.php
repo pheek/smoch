@@ -41,13 +41,13 @@ class DAO_Bild {
 		$eb->bildrechte = $b->bildrechte;
 		$eb->altText = $b->altText;
 	}
-	
+
 	public static function getAlleBilderZuErfindung($erfindungID) {
 		$alleErfindungsBilder = array();
-		
+
 		$alleBilderResultSet = SQL::getAlleBilderZuErfindungRecordset($erfindungID);
-		
-		while ($bildRecord = $alleBilderResultSet->fetch(PDO::FETCH_ASSOC))   { 
+
+		while ($bildRecord = $alleBilderResultSet->fetch(PDO::FETCH_ASSOC))   {
 			$bildID = $bildRecord['BildID'];
 			$bildInfo = DAO_Bild::getBildViaID($bildID);
 			$erfindungsBild = new ErfindungsBild();
@@ -55,7 +55,7 @@ class DAO_Bild {
 			$erfindungsBild->ord = $bildRecord['ord'];
 			$alleErfindungsBilder[$bildID] = $erfindungsBild;
 		} // end while
-		return $alleErfindungsBilder;	
+		return $alleErfindungsBilder;
 	}
-	
+
 } // end class DAO_Bild

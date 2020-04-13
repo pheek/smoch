@@ -68,36 +68,36 @@ div.tourHeader {
 }
 
 .tourHeader ul {
-  list-style-type : none  ;
-  margin          : 0     ;
-  padding         : 0     ;
-  overflow        : hidden;
-  background-color: var(--default-foreground);
+	list-style-type : none  ;
+	margin          : 0     ;
+	padding         : 0     ;
+	overflow        : hidden;
+	background-color: var(--default-foreground);
 }
 
 .tourHeader ul li {
-  float: left;
+	float: left;
 	text-align:center;
- 	width: 33%;
+	width: 33%;
 }
 
 .tourHeader li a, .tourHeader li span {
-  display         : block     ;
-  color           : white     ;
-  text-align      : center    ;
-  padding         : 14px 16px ;
-  text-decoration : none      ;
+	display         : block     ;
+	color           : white     ;
+	text-align      : center    ;
+	padding         : 14px 16px ;
+	text-decoration : none      ;
 	text-decoration : none      ;
 	font-variant    : small-caps;
 	font-weight     : bold      ;
-  background-color: var(--default-foreground);
+	background-color: var(--default-foreground);
 	color           : var(--default-background);
 
 }
 
 /* Change the link color to #111 (black) on hover */
 .tourHeader li a:hover {
-  background-color: var(--default-foreground);
+	background-color: var(--default-foreground);
 	color           : var(--default-background);
 }
 
@@ -117,7 +117,7 @@ div.backback {
 	color           : black;
 	background-color: var(--default-foreground);
 	border-radius   : 6px  ;
-  padding         : 14px 16px;
+	padding         : 14px 16px;
 	margin-top      : 2px  ;
 	margin-bottom   : 2px  ;
 }
@@ -136,5 +136,3 @@ div.backback {
 		right: 5px;
 	}
 }
-
-

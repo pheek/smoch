@@ -9,5 +9,4 @@ include 'layout/page_layout.php';
 $erfindung = 'abakus';
 
 
-
 ?>

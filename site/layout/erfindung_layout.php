@@ -14,7 +14,7 @@ if(sizeof($matches) >= 4) {
 	$erfindungID = 'abakus'; // default get from DB the FIRST TODO
 }
 */
- 
+
 $daoErfindung    = new DAO_Erfindung();
 $erfindung = $daoErfindung->getErfindungsObjekt(getErfindungsID(), $_SESSION['kategorie_id']);
 

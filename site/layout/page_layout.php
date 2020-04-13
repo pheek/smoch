@@ -36,7 +36,7 @@
 	require_once 'inc/db/sql.php';
 	$CLIENT_ROOT = SQL::getActBrowserPath();
 ?>
-	 
+
 	<body>
 		<div id='mainHeader'>
 	 <div><a href='<?php echo $CLIENT_ROOT; ?>'><img src='<?php echo $CLIENT_ROOT; ?>layout/img/home.png' height="48" /></a></div>

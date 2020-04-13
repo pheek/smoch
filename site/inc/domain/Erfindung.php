@@ -28,7 +28,7 @@ class Erfindung {
 	 *
 	 * Beispiel $smartphone->nachfolgerArray[1] == NULL
 	 *          $abakus->nachfolger[2] == 'rechenschieber'
-	 */ 
+	 */
 	public $nachfolgerArray; // Alle nachfolger
 
 
@@ -61,7 +61,7 @@ class Erfindung {
 	public function addKeyword($keyword) {
 		$this->keywords[] = $keyword;
 	}
-	
+
 } // end class Erfindung
 
 ?>
