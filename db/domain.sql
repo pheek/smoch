@@ -105,6 +105,7 @@ INSERT INTO `tbl_erfindung`
 ('enigma'        , 'Enigma'                        ,     '1918'        , 3                  ),
 ('glasfaser'     , 'Lichtwellenleiter'             ,     '1960'        , 3                  ),
 ('telephon'      , 'Telefon'                       ,     '1861'        , 3                  ),
+('ascii'         , 'ASCII'                         ,     '1963'        , 3                  ),
 
 -- diverse Kategorien
 ('smartphone'    , 'Smartphone'                    ,     '1994'        , 3                  ),
@@ -173,7 +174,8 @@ INSERT INTO `tbl_reihenfolge`
 ('telephon'      ,   3           ,   4      ),
 ('enigma'        ,   3           ,   5      ),
 ('glasfaser'     ,   3           ,   6      ),
-('smartphone'    ,   3           ,   7      );
+('ascii'         ,   3           ,   7      ),
+('smartphone'    ,   3           ,   8      );
 
 
 
