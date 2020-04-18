@@ -218,22 +218,21 @@ INSERT INTO `tbl_exponat`
 (2006 , '2004'         , 'Vince Ebers Ur-Knaller'                             , 'S_006_c'     , true       ),
 (2007 , '1964'         , 'Lochkarte 80-Spalten f. EBCDIC (ungelocht)'         , 'S_007_l'     , true       ),
 (2008 , 'ca. 2010'     , 'Speicherchip C04040BE: Flip Flop'                   , 'S_008_c'     , true       ),
-(2009 , 'ca 1970'      , 'Kernspeicher DELL'                                  , 'S_009_a'     , true       ),
-(2010 , 'ca. 1970'     , 'Magnetband Storage-Master'                          , 'S_010_a'     , true       ),
+(2009 , 'ca 1970'      , 'Kernspeicher DELL'                                  , 'S_009_k'     , true       ),
+(2010 , 'ca. 1970'     , 'Magnetband Storage-Master'                          , 'S_010_m'     , true       ),
 (2011 , '2020'         , 'Bit nachgebaut mit Transitoren'                     , 'S_011_b'     , true       ),
 
 -- kommunizieren
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
-(3002 , '1940'         , 'Kurbeltelephon 30er Jahre'                          , 'K_002_t'     , true       ),
+(3002 , 'ca. 1930/40'  , 'Kurbeltelephon 30er Jahre'                          , 'K_002_t'     , true       ),
 (3003 , '????'         , 'Morsetaste'                                         , 'K_003_m'     , true       ),
-(3004 , 'ca. 1930/40'  , 'Telephon'                                           , 'K_004_t'     , true       ),
 
 -- diverse
 (9001 , '2010'         , 'HTC Desire'                                         , 'D_001_s'     , true       ),
 (9002 , '-0'           , 'Halbleiter Silicium'                                , 'D_002_h'     , true       ),
 (9003 , 'unbekannt'    , 'Wafer'                                              , 'D_003_w'     , true       ),
-(9004 , 'ca 2005'      , 'BC 548C, bipolar Transistor'                        , 'D_005_a'     , true       );
-
+(9004 , 'ca 2005'      , 'BC 548C, bipolar Transistor'                        , 'D_005_a'     , true       ),
+(9005 , '1997'         , 'Easy Driver CD-ROM'                                 , 'D_006_e'     , true       );
 
 
 -- --------------------------------------------------------------
@@ -371,14 +370,15 @@ VALUES
 (  3001 , 'keilschrift.jpg'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
                                                               'Keilschrift auf Ton; Auszug Gesetzbuch Hammurabis (Bild: Erik Nitsche «In Wort und Bild»)'              ),
 
+(  3002 , 'telephon.png'                   , 'phi@smoch.ch' , 'Telephon'                                                                                              ,
+                                                              'Kurbeltelephon'                                                                                         ),
+
 (  3003 , 'morsetaste.png'                 , 'phi@smoch.ch' , 'Morsetaste'                                                                                              ,
                                                               'Morsetaste'                                                                                             ),
 
-(  3004 , 'telephon.png'                   , 'phi@smoch.ch' , 'Telephon'                                                                                              ,
-                                                              'Kurbeltelephon'                                                                                         ),
-
 (  3005 , 'enigma1.png'                    , 'phi@smoch.ch' , 'Rotor-Schlüsselmaschine'                                                                                              ,
                                                               'Enigma'                                                                                                 ),
+
 (  3006 , 'enigma2.png'                    , 'phi@smoch.ch' , 'Walzen zur Rotor-Schlüsselmaschine'                                                                                              ,
                                                               'Enigma'                                                                                                 ),
 
@@ -457,7 +457,7 @@ INSERT INTO `tbl_erfindungsbild`
 -- kommunizieren
 ('schrift'       ,  1   ,   3001    ),  -- Bild der Babylonischen Keilschritf (Hammurabi)
 ('morsetaste'    ,  1   ,   3003    ),  -- Morsetaste
-('telephon'      ,  1   ,   3004    ),  -- Telephon
+('telephon'      ,  1   ,   3002    ),  -- Telephon
 ('enigma'        ,  1   ,   3005    ),  -- Enigma
 ('enigma'        ,  2   ,   3006    ),  -- Walzen der Enigma
 
@@ -511,7 +511,7 @@ INSERT INTO `tbl_exponatbild`
 -- kommunizieren
 -- (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
 (  3003       ,   3003    ,  1   ), -- Morsetaste
-(  3004       ,   3004    ,  1   ), -- Telephon
+(  3002       ,   3002    ,  1   ), -- Telephon
 -- diverses
 (  9001       ,   9001    ,  1   ), -- smartphone
 (  9002       ,   9002    ,  1   ), -- halbleiter Silicium
@@ -560,7 +560,7 @@ INSERT INTO `tbl_erfindungsexponat`
 -- kommunizieren
 -- ('schrift'       ,  3001        ,  1   ),
 ('morsetaste'    ,  3003        ,  1   ),
-('telephon'      ,  3004        ,  1   ),
+('telephon'      ,  3002        ,  1   ),
 
 -- diveses
 ('smartphone'    ,  9001        ,  1   ),
