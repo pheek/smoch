@@ -95,7 +95,7 @@ INSERT INTO `tbl_erfindung`
 ('diskette'      , 'Diskette'                      ,     '1969'        , 2                  ),
 ('cd'            , 'CD - ROM'                      ,     '1977'        , 2                  ),
 ('bit_relais'    , 'Bit realisiert mit Relais'     ,     '????'        , 2                  ),
-('bit_transistor', 'Bit realisiert mit Transistor' , '????'            , 2                  ),
+('bit_transistor', 'Bit realisiert mit Transistor' ,     '????'        , 2                  ),
 
 
 -- kommunizieren
@@ -220,7 +220,7 @@ INSERT INTO `tbl_exponat`
 (2008 , 'ca. 2010'     , 'Speicherchip C04040BE: Flip Flop'                   , 'S_008_c'     , true       ),
 (2009 , 'ca 1970'      , 'Kernspeicher DELL'                                  , 'S_009_a'     , true       ),
 (2010 , 'ca. 1970'     , 'Magnetband Storage-Master'                          , 'S_010_a'     , true       ),
-
+(2011 , '2020'         , 'Bit nachgebaut mit Transitoren'                     , 'S_011_b'     , true       ),
 
 -- kommunizieren
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
@@ -363,6 +363,9 @@ VALUES
 (  2016 , 'speicherchip.png'            , 'phi@smoch.ch' , 'Speicherchip C04040BE (Flip-Flop)'                                                                          ,
                                                               'Speicherchip im Gehäuse'                                                                                ),
 
+(  2017 , 'bit/transistor_nachbau.png'                 , 'phi@smoch.ch' , 'Elektronische Schaltung'                                                                     ,
+                                                              'Bit nachgebaut mittels Transistoner (Flip-Flop)'                                                        ),
+
 
 -- kommunizieren
 (  3001 , 'keilschrift.jpg'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
@@ -444,6 +447,7 @@ INSERT INTO `tbl_erfindungsbild`
 ('lochkarte'     ,  1   ,   2011    ),  -- Lochkarte blau
 ('bit_relais'    ,  1   ,   2008    ),  -- Bit mit Relais Latch
 ('bit_transistor',  1   ,   2009    ),  -- Bit mit Transitor nachgebaut
+('bit_transistor',  2   ,   2017    ),  -- Bit Nachbau mit Flip-Flop (Transistoner)
 ('kernspeicher'  ,  1   ,   2012    ),  -- Kernspeicher Ringe
 ('kernspeicher'  ,  2   ,   2013    ),  -- Kernspeicher Modul
 ('kernspeicher'  ,  3   ,   2014    ),  -- Kernspeicher Seitenansicht
@@ -502,6 +506,7 @@ INSERT INTO `tbl_exponatbild`
 (  2009       ,   2014    ,  3   ), -- Kernspeicher Seitenansicht
 (  2010       ,   2015    ,  1   ), -- Magnetband ...
 (  2008       ,   2016    ,  1   ), -- Speicherchip (XOR)
+(  2011       ,   2017    ,  1   ), -- Bit nachgebaut mit Transistoren (Flip-Flop)
 
 -- kommunizieren
 -- (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
@@ -550,6 +555,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('chip'          ,  2008        ,  2   ),
 ('kernspeicher'  ,  2009        ,  1   ),
 ('magnetband'    ,  2010        ,  1   ),
+('bit_transistor',  2011        ,  1   ),
 
 -- kommunizieren
 -- ('schrift'       ,  3001        ,  1   ),
