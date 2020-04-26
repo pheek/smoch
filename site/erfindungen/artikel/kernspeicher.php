@@ -19,8 +19,9 @@
 		<p>Auf die Kernspeicher wurde ich erst aufmerksam, da ich im Keller meines ehemaligen Arbeitgebers im Nachlass eines Mitarbeiters zwei
  		   Kernspeicher gefunden hatte. Der im SMOCH ausgestellte Kernspeicher ist hingegen auf ricardo.ch gekauft worden.</p>
 		<p>Der Begriff «core dump» (Speicherauszug) geht noch auf die alten "cores" (Kerne) zurück.</p>
+		<p>Noch ein Wort zu Festwertspeichern: ...<span class='zitat text'>Der raumfahrttaugliche, stabile und vergleichsweise schnelle Festwertspeicher der Wahl war damals </span>[1965]<span class='zitat text'> der von Textilarbeiterinnen "genähte" Fädelspeicher (Core Rope Memory).</span>... <span class='zitat quelle'>c't 2019, Retro-Ausgabe</span></p>
 
 	<h1>Quellenangaben</h1>
-		<p>Wikipedia 2020</p>
+		<p>Wikipedia 2020</p><p>c't 2019, Retro-Ausgabe</p>
 
 </div>
