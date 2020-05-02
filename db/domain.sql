@@ -83,6 +83,7 @@ INSERT INTO `tbl_erfindung`
 ('not_relais'    , 'NOT realisiert mit Relais'     ,     '1941'        , 1                  ),
 ('roehren'       , 'Röhrenrechner'                 ,     '1942'        , 1                  ),
 ('transistor'    , 'Bipolartransistor'             ,     '1948'        , 1                  ),
+('taschenrechner', 'Taschenrechner'                ,     '1967'        , 1                  ),
 ('not_transistor', 'NOT realisiert mit Transistror', '????'            , 1                  ),
 ('volladdierer'  , 'Volladdierer'                  , '????'            , 1                  ),
 
@@ -149,33 +150,34 @@ INSERT INTO `tbl_reihenfolge`
 ('not_transistor',      1           ,  15      ),
 ('chip'          ,      1           ,  16      ),
 ('wafer'         ,      1           ,  17      ),
-('smartphone'    ,      1           ,  18      ),
+('taschenrechner',      1           ,  18      ),
+('smartphone'    ,      1           ,  19      ),
 
 -- speichern
-('amphore'       ,   2           ,   1      ),
-('buchdruck'     ,   2           ,   2      ),
-('lochkarte'     ,   2           ,   3      ),
-('halbleiter'    ,   2           ,   4      ),
-('magnetband'    ,   2           ,   5      ),
-('bit_relais'    ,   2           ,   6      ),
-('bit_transistor',   2           ,   7      ),
-('kernspeicher'  ,   2           ,   8      ),
-('chip'          ,   2           ,   9      ),
-('harddisk'      ,   2           ,  10      ),
-('wafer'         ,   2           ,  11      ),
-('diskette'      ,   2           ,  12      ),
-('cd'            ,   2           ,  13      ),
-('smartphone'    ,   2           ,  14      ),
+('amphore'       ,   2              ,   1      ),
+('buchdruck'     ,   2              ,   2      ),
+('lochkarte'     ,   2              ,   3      ),
+('halbleiter'    ,   2              ,   4      ),
+('magnetband'    ,   2              ,   5      ),
+('bit_relais'    ,   2              ,   6      ),
+('bit_transistor',   2              ,   7      ),
+('kernspeicher'  ,   2              ,   8      ),
+('chip'          ,   2              ,   9      ),
+('harddisk'      ,   2              ,  10      ),
+('wafer'         ,   2              ,  11      ),
+('diskette'      ,   2              ,  12      ),
+('cd'            ,   2              ,  13      ),
+('smartphone'    ,   2              ,  14      ),
 
 -- kommunizieren
-('schrift'       ,   3           ,   1      ),
-('buchdruck'     ,   3           ,   2      ),
-('morsetaste'    ,   3           ,   3      ),
-('telephon'      ,   3           ,   4      ),
-('enigma'        ,   3           ,   5      ),
-('glasfaser'     ,   3           ,   6      ),
-('ascii'         ,   3           ,   7      ),
-('smartphone'    ,   3           ,   8      );
+('schrift'       ,   3              ,   1      ),
+('buchdruck'     ,   3              ,   2      ),
+('morsetaste'    ,   3              ,   3      ),
+('telephon'      ,   3              ,   4      ),
+('enigma'        ,   3              ,   5      ),
+('glasfaser'     ,   3              ,   6      ),
+('ascii'         ,   3              ,   7      ),
+('smartphone'    ,   3              ,   8      );
 
 
 
@@ -207,7 +209,7 @@ INSERT INTO `tbl_exponat`
 (1006 , 'ca. 2005'     , 'Educated Monkey (Barcelona)'                        , 'R_006_m'     , true       ),
 (1007 , 'ca. 2010'     , 'Verstärkerröhre'                                    , 'R_007_r'     , true       ),
 (1008 , '2020'         , 'NOT nachgebaut mit Transistoren'                    , 'R_008_n'     , true       ),
-
+(1009 , '1975'         , 'Taschenrechner Privileg 853 M'                      , 'R_009_t'     , true       ),
 
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
@@ -312,7 +314,9 @@ VALUES
                                                               'Binäre Darstellung von Zahlen und Zeichen'                                                              ),
 
 (  1021 , 'volladdierer/transistor_nachbau.png'                          , 'phi@smoch.ch' , 'Schlatung'                                                                                  ,
-                                                              'Volladdierer mit Transistoren nachgebaut'                                                              ),
+                                                              'Volladdierer mit Transistoren nachgebaut'                                                               ),
+(  1022 , 'taschenrechner.png'                          , 'phi@smoch.ch' , 'Taschenrechner'                                                                             ,
+                                                              'Taschenrechner'                                                                                         ),
 
 
 -- speichern
@@ -435,6 +439,7 @@ INSERT INTO `tbl_erfindungsbild`
 ('roehren'       ,  1   ,   1017    ),  -- Verstärkerröhre
 ('neperstaebchen',  1   ,   1019    ),  -- Neperstäbchen
 ('binaersystem'  ,  1   ,   1020    ),  -- Nullen und Einsen
+('taschenrechner',  1   ,   1022    ),  -- Taschenrechner
 
 -- speichern
 ('amphore'       ,  1   ,   2001    ),  -- Amphora Etruskisch Popolonio
@@ -492,6 +497,7 @@ INSERT INTO `tbl_exponatbild`
 (  1006       ,   1015    ,  1   ), -- The educated Monkey
 (  1007       ,   1017    ,  1   ), -- Verstärkerröhre
 (  1008       ,   1018    ,  1   ), -- not mit Transistoren
+(  1009       ,   1022    ,  1   ), -- Taschenrechner privileg 853M
 
 -- speichern
 (  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
@@ -543,6 +549,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('chip'          ,  1004        ,  1   ),
 ('roehren'       ,  1007        ,  1   ),
 ('not_transistor',  1008        ,  1   ),
+('taschenrechner',  1009        ,  1   ),
 
 -- speichern
 ('amphore'       ,  2001        ,  1   ),
