@@ -14,7 +14,7 @@
                              <p>Ursprünglich wurden zwei Endgeräte mittels Kabel direkt miteinander verbunden. Dazu musste man sich zunächst bei der Zentrale melden und angeben, mit wem man Telephonieren wollte. Später wurden Automaten eingeführt, die eine physische Verbindung nach eingegebenenr Nummer (ein Puls-Verfahren)
 selbständig herstellen konnten. Neuerdings werden die Verbindungen meist nur noch vituell hergestellt und im Hintergund läuft ein Paket-Dienst (Voice over IP).</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	<p> .... fun-facts comming soon .... </p>
 
 	<h1>Quellenangaben</h1>

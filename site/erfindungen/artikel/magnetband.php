@@ -20,7 +20,7 @@
 	   unterschiedlicher Frequenzen für Null- bwz. Eins-Bit (wie im Sharp
 	   PC-1500 verwendet).</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	 <p> Das im SMOCH ausgestellte Magnetband ist ein 0.5 Zoll
 	Magnetband aus einem Nachlass.</p>
 

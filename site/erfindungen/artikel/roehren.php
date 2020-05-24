@@ -16,7 +16,7 @@
 	(AND, NOT, OR, XOR, ...) durchzuführen. </p>
 
 
-		<h1>Fun-Facts</h1>
+		<h1>Trivia</h1>
 		<p>Die abgebildete Röhre stammt aus einem Röhrenverstärker und hat
 		direkt nichts mit einem Röhrencomputer zu tun. Einzig die
 		Tatsache, das die Röhre, analog zum Transistor, wie ein Verstärker

@@ -13,7 +13,7 @@
 	<h1>Funktionsweise und Aufbau</h1>
 	 <p>Zwei unabhängige Stromkreise sind vorhanden. Fließt im ersten Stromkreis Stom, so wird der zweite Stromkreis unterbrochen. Fließt hingegen im ersten Stromkreis kein Strom, so bleibt der zweite Stromkreis geschlossen.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	 <p>Der Autor hat sich jahrelang gefragt, wie denn ein NOT überhaupt realisiert werden könne. Fließt nämlich im Input Stom, so kann man sich leicht vorstellen, wie dann im Outupt der Strom auf 0V zurückgesetzt werden kann. Hingegen wenn am Input kein Strom ist, woher um Himmels Willen kommt dann der Strom für den Output? <br />
 	 Erst nachdem ein NOT-Chip komplett beschriftet war, war die Erklärung klar: Der NOT-Strom kommt von einer permanenten Versorgung des NOT-Bauteils. Jeder Rechner-Chip hat nämlich typischerweise ein 5V und ein 0V Anschluss, um das Bauteil mit permanentem Strom zu unterhalten.</p>
 

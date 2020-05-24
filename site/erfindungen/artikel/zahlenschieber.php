@@ -11,7 +11,7 @@
 	<h1>Funktionsweise und Aufbau</h1>
 	 <p>Die Ziffernstäbchen enthalten für den Anwender unsichtbare Zähnchen, welche beim Zehnerübertrag eine Stelle im nächsthöheren Stellenwert verschieben.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	 <p>Für den Übertrag werden Zahlen nach oben verschoben. Es ist sogar möglich, über mehrer Stellen zu Addieren; zum Beispiel 999 + 2 ergibt 1001; dazu ist jedoch händischer Eingriff nötig, der aber beim ADDIMULT SUPRA schön mit einem roten Pfleil in Erinnerung gerufen wird.</p>
 				      <p>Ein "RESET"-Bügel setzt alle Werte wieder auf Null.</p>
 

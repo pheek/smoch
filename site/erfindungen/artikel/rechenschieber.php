@@ -11,7 +11,7 @@
 	<h1>Funktionsweise und Aufbau</h1>
 	 <p>Indem die Logarithmen addiert werden, multiplizieren sich die zugehörigen Basiszahlen. Dazu sind die Zahlen in sich logarithmisch verkleinernden Abständen angeordnet; durch die Verschiebung der "Lineale" werden die Logarithmen addiert.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	 <p>Unter <a href="https://rechenschieber.kesto.de/">https://rechenschieber.kesto.de/</a> kann der Rechenschieber online untersucht werden, ohne dass man im Besitze eines Exponats ist.</p>
 
 	<h1>Quellenangaben</h1>

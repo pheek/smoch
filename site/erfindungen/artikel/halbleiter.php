@@ -34,7 +34,7 @@
 				Youtube: <a href='https://www.youtube.com/watch?v=660G24GbdvM'>Diode Aufbau und Funktionsweise</a>.
 </p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 		                <p>Die Halbleiter-Diode wurde 1874 von Ferdinand Braun entdeckt. Auch wenn die quantenphysikalischen Grundlagen, welche zu dem Dioden-Effekt führen, noch nicht gelegt waren. <span class='zitat quelle'>Quelle: <a href='https://de.wikipedia.org/wiki/Ferdinand_Braun'>Wikipedia</a></span></p>
 
 </div>

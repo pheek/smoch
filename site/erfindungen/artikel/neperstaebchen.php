@@ -14,7 +14,7 @@
 	<h1>Funktionsweise und Aufbau</h1>
 	<p>Es handelt sich um einfache Holzstäbchen, welche das kleine "Einmaleins" enthalten und welche zum Multiplizieren nebeneinander gelegt werden.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	<p>John Napier gilt auch als einer der Erfinder der Logarithmentafeln.</p>
 
 	<h1>Quellenangaben</h1>

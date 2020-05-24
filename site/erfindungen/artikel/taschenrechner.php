@@ -17,7 +17,7 @@
 	<p>Ein <a href='https://smoch.ch/erfindung.php/chip'>Rechnerchip</a> sorgt für Addition, Subtraktion, Multiplikation
 	und Division.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
        <p><tt>LESE ESEL</tt>, waren die ersten Spielchen, die wir mit
        dem Taschenrechner in der Sekundaschule ca. 1980 anstelle von
        Kurznachrichten verwendet hatten. Da nur die Ziffern 0-9 und

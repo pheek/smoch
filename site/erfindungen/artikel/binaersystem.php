@@ -33,7 +33,7 @@
 	1000, ... sondern mit den Stellenwerten 1, 2, 4, 8, 16, 32, 64, ....</p>
 	
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
        <p>Obschon das Binärsystem nur aus zwei Zuständen (für jede Ziffer) besteht, gibt es dennoch viele weitere Wörter und Vorsilben für die Zahl Zwei: bi-, di-, zwie-, doppel, binär, duo, dual, Boole'sch, paar, stereo, sekund-, ...</p>
 
 	<h1>Quellenangaben</h1>

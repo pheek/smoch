@@ -14,7 +14,7 @@
 	<h1>Funktionsweise und Aufbau</h1>
 	<p> .... funktionsweise comming soon .... </p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	<p> .... fun-facts comming soon .... </p>
 
 	<h1>Quellenangaben</h1>

@@ -13,7 +13,7 @@
 	<h1>Funktionsweise und Aufbau</h1>
 	<p>Analog zu Magnetbändern besteht die Diskette aus einer magnetisierbaren Oberfläche. Im Gegensatzt zum Magnetband sind die Daten jedoch auf konzentrischen Kreisbahnen angeordnet.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
   <p>Obschon Disketten weitgehend verschwunden sind, so werden sie weiterhin als Symbol für <i>SPEICHERN</i> in Taskleisten verwendet.</p>
 
 	<h1>Quellenangaben</h1>

@@ -11,7 +11,7 @@
 	<h1>Funktionsweise und Aufbau</h1>
 	 <p>Die Löcher werden in Karton, dickes Papier oder in dünne Metallplatten gestanzt. Danach werden z. B. mit Stiften, aber auch mit Luftdruck die Position der Löcher wieder in Erfahrung gebracht. Je nach Interpretation der Daten, kann eine andere Information daraus gelesen werden. Zum Beispiel kann die Länge eines Lochs die Tondauer bestimmen, wohingegen der Abstand des Lochs zur Kante die Tonhöhe angibt. In der Informationstechnik werden verschiedene Codierungen für Zeichen (Buchstaben, Ziffern, Sonderzeichen, ...) verwendet, wie z. B. der EBCDIC (Extended Binary Coded Decimal Interchange Code) auf der 80-Spalten Lochkarte.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	 <p>Typisch amerikanisch: Obschon die Lochkarten, aber auch Lochscheiben (z. B. zur Musikerzeugung oder Webstuhlsteuerung) schon über hundert Jahre lang im Betrieb waren, gelingt es einem Amerikaner, die Lochkarte neu zu erfinden und sogar ein Patent darauf zu erhalten (genau genommen hat er das System patentiert, wo er die Löcher machte).</p>
 
 	<h1>Quellenangaben</h1>

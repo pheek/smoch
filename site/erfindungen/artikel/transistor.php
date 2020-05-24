@@ -12,7 +12,7 @@
 	<h1>Funktionsweise und Aufbau</h1>
                              <p>Werden Halbleiter (typischerweise Silizium oder Germanium) mit Fremdatomen versetzt, welche die selbe Gitterstruktur, jedoch andere Valenzelektronenzahlen aufweisen versetzt, so entstehen aus den Halbleitern Leiter. Der Strom kann darin quasi Verlustfrei fließen. Wo diese positiv bzw. Negativ dottierten (dottiert, weil nur wenige Fremdatome reichen) Schichten aufeinander treffen, entsteht je nach Stromrichtung eine Sperrschicht bzw. eine stromdurchlässige Schicht. Drei solche Schichten werden übereinander gebracht und als pnp bzw. npn-Transistor bezeichnet (Positiv-Negativ-Positiv bzw. Negativ-Positiv-Negativ).</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	<p>Wie mit Transistoren ein Bit gespeichert werden kann sehen Sie <a href='https://smoch.ch/erfindung.php/bit_transistor'>hier</a>.</p>
   <p>Wie mit Transistoren eine NOT-Schaltung gebaut werden kann, erfahren Sie <a href='https://smoch.ch/erfindung.php/not_transistor'>hier</a>.</p>
 

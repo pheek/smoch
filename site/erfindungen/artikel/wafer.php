@@ -11,7 +11,7 @@
 	<h1>Funktionsweise und Aufbau</h1>
 	 <p>Bei Wafern handelt es sich um beschichtete Platten, welche meist aus Silicium bestehen und je nach Verwendungszweck verschieden beschichtet werden.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	 <p>Vom abgebildeten Wafer (welcher auch im SMOCH ausgestellt ist) ist nicht bekannt, ob es sich um eine Speicher- oder um eine Recheneinheit handelt. Wafer werden nicht nur für die Computer-Technik hergestellt: Auch Solarzellen werden z. B. als Wafer gefertigt.</p>
 
 	<h1>Quellenangaben</h1>

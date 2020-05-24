@@ -13,7 +13,7 @@
 	<h1>Funktionsweise und Aufbau</h1>
 	<p>Im Wesentlichen werden die Chips aus den Wafern ausgesägt und in die Chipgehäuse maschinell eingelötet.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 		                <p>Genau genommen handelt es sich bei den Abbildungen um Chip-Gehäuse. Chips sind typischrweise flach und nur wenige Quadratmillimeter groß. Die Gehäuse sind da, damit die Chips angenehm in Schaltungen verbaut werden können.</p>
 
 	<h1>Quellenangaben</h1>

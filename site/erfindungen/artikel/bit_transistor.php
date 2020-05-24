@@ -38,7 +38,7 @@
 
 	
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	 <p>Die obige Schaltung wurde einen <a href='https://www.smoch.ch/skript/Grundlagen_Digitaltechnik_2020_04_18_V1.19.pdf'>Kurs</a>
 	 entwickelt. Die Widerstände sind nicht diejenigen, welche meistens
 	 zusammen mit dem BC548C verwendet werden. Die Widerstände wurden so

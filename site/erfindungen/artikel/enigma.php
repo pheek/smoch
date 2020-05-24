@@ -22,7 +22,7 @@ x<!-- Erfindung -->
 	eigentliche Schlüssel), gab es unzählige Varianten, die Walzen
 	einzustellen und ein "Knacken" des Codes schien lange Zeit unmöglich.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	<p>Dass jeder Buchstabe niemals mit sich selbst verschlüsselt wurde,
 	aber auch die Tatsache, dass gewisse Texte (Wetterberichte,
 	Schlussfloskeln) immer wieder angewendet wurden, machten Alan Turing

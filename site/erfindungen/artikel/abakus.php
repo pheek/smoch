@@ -14,7 +14,7 @@
 	<h1>Funktionsweise und Aufbau</h1>
 	<p>Auf Schnüren, Holzstäbchen, Drähten o. ä. werden Kugeln oder Plättchen aufgefädelt. Diese können nach unten und oben (bzw. links und rechts) verschoben werden. Die Anzahl der verschobenen Kugeln werden zusammengezählt und repräsentieren je nach Stellenwert eine ander Zahl.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 					                                                                 <p>Einfache bunte Zählrahmen sind in Kinderzimmern anzutreffen. Stellen wir uns jede der zehn Zeilen mit Kugeln als weitere Zehnerpotenz vor, so können wir mit Kinderzählrahmen in der Regel bis 10&nbsp;000&nbsp;000&nbsp;000 «rechnen».</p>
 
 	<h1>Quellenangaben</h1>

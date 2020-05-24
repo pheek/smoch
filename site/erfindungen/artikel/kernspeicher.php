@@ -15,7 +15,7 @@
 		<p>Kleine Ferritringe können durch einen Stromfluss magnetisiert werden. Diese Magnetisierung verändert einen weiteren Stromfluss
 		   und damit kann ausgesagt werden, ob der ring "ein"- oder "aus"geschaltet ist.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 		<p>Auf die Kernspeicher wurde ich erst aufmerksam, da ich im Keller meines ehemaligen Arbeitgebers im Nachlass eines Mitarbeiters zwei
  		   Kernspeicher gefunden hatte. Der im SMOCH ausgestellte Kernspeicher ist hingegen auf ricardo.ch gekauft worden.</p>
 		<p>Der Begriff «core dump» (Speicherauszug) geht noch auf die alten "cores" (Kerne) zurück.</p>

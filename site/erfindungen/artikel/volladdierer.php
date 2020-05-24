@@ -37,7 +37,7 @@ Ziffer könnte ja einen Übertrag liefern.</p>
 	Achterziffer (Analog B1 bis B4). C1 bis C5 werden zur Summe der
 	beiden Zahlen A und B.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	<p>Der 4-Bit-Addierer mit Relais nachgebaut ist eine schöne
 	Demonstration, wie ein Computer im innersten zwei Zahlen miteinander
 	addieren kann. Die Umsetzung mit Transistoren (Bild) ist durchaus

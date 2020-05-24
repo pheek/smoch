@@ -11,7 +11,7 @@
 	<h1>Funktionsweise und Aufbau</h1>
 	<p>Der Monkey funktioniert ähnlich wie ein <a href='https://de.wikipedia.org/wiki/Pantograph'>Pantograph</a>. Da die beiden Zeiger nicht auf die selbe Zahl gestellt werden können, steht eine Extra-Tabelle für die Quadratzahlen zur Verfügung.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	<p>Das Exponat im SMOCH stammt aus dem Museumsladen des <i>Haus' Milà</i> von Gaudí in Barcelona. Die beiden haben nichts gemeinsam, außer, dass sie zur selben Zeit am selben Ort waren (Jugendstil).</p>
 
 </div>

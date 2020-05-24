@@ -95,7 +95,7 @@ Adreßumrechnung.
 	<h1>Funktionsweise und Aufbau</h1>
 	<p>Die Von Neumann Architektur zeigt den Aufbau und die Funktionsweise wohl am besten: Link <a href='https://de.wikipedia.org/wiki/Von-Neumann-Architektur'>Von Neumann Architektur</a>.</p>
 
-	<h1>Fun-Facts</h1>
+	<h1>Trivia</h1>
 	 <p>Als Computer für Laien erschwinglich wurden, hat sich der Autor 1987 einen <i>Commodore Amiga 1000</i> gekauft. Da er in der Gemeinde (neben der Gemeindeverwaltung) einer der ersten Computerbesitzer war, fragte seine Mutter erstaunt: «Was willst Du mit so einem Riesenmöbel, wozu ist das überhaupt gut?» (Heute ist ebendiese Mutter im Besitze eines <i>Apple Powerbooks</i> mit über tausendfacher Leistung des damaligen <i>Amiga 1000</i>). Die ersten Computerspiele, welche er schrieb sind <a href='http://zarkonnen.github.io/SwissGamesShowcase/pamehta.html'>Pamehta</a> und <a href='https://www.gameculture.ch/2011/01/zuri-revisited-oder-schweizer-game-design-im-20-jh/'>Züri</a>.</p>
 
 		               
