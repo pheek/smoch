@@ -101,7 +101,7 @@ INSERT INTO `tbl_erfindung`
 
 -- kommunizieren
 ('schrift'       , 'Schriften'                     , 'ca. 4000 v. Chr.', 3                  ),
-('buchdruck'     , 'Chinesischer Holztafeldruck'   ,      '868'        , 3                  ),
+('buchdruck'     , 'Buchdruck'                     ,      '868'        , 3                  ),
 ('morsetaste'    , 'Morsegerät/Relaisstation'      ,     '1833'        , 3                  ),
 ('enigma'        , 'Enigma'                        ,     '1918'        , 3                  ),
 ('glasfaser'     , 'Lichtwellenleiter'             ,     '1960'        , 3                  ),
@@ -398,7 +398,9 @@ VALUES
                                                               'Waferplatte, wie sie für die Chip Herstellung verwendet wird.'                                          ),
 
 (  9004 , 'wafer/wafer_mikroskop.jpg'            , 'phi@smoch.ch' , 'Mikroskopie eines Wafers (Ausschnitt)'                                                             ,
-                                                              'Auschnitt Mikroskopier (Wafer)'                                                                         );
+                                                              'Auschnitt Mikroskopier (Wafer)'                                                                         ),
+(  9005 , 'gutenbergBibel.jpg'            , 'Gedruckte Buchseite'                                                             ,
+                                                              'Quelle: Wikimedia.org (2020)' , 'Auschnitt aus der Gutenberg-Bibel (Quelle: Wikimedia.org 2020)'                                                                         );
 
 
 
@@ -470,8 +472,8 @@ INSERT INTO `tbl_erfindungsbild`
 ('smartphone'    ,  1   ,   9001    ),  -- htc desire smartphone
 ('halbleiter'    ,  1   ,   9002    ),  -- halbleiter
 ('wafer'         ,  1   ,   9003    ),  -- Wafer
-('wafer'         ,  2   ,   9004    );  -- Wafer unter dem Mikroskop
-
+('wafer'         ,  2   ,   9004    ),  -- Wafer unter dem Mikroskop
+('buchdruck'     ,  1   ,   9005    );  -- Auschnitt Gutenberg-Bibel von Wikimedia (2020)
 
 
 -- ---------------------------------------------------
