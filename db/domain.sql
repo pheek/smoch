@@ -234,7 +234,8 @@ INSERT INTO `tbl_exponat`
 (9002 , '-0'           , 'Halbleiter Silicium'                                , 'D_002_h'     , true       ),
 (9003 , 'unbekannt'    , 'Wafer'                                              , 'D_003_w'     , true       ),
 (9004 , 'ca 2005'      , 'BC 548C, bipolar Transistor'                        , 'D_005_a'     , true       ),
-(9005 , '1997'         , 'Easy Driver CD-ROM'                                 , 'D_006_e'     , true       );
+(9005 , '1997'         , 'Easy Driver CD-ROM'                                 , 'D_006_e'     , true       ),
+(9006 , '1998'         , 'Nokia Smartphone (Modell 6150 SAT)'                 , 'D_007_s'     , true       );
 
 
 -- --------------------------------------------------------------
@@ -380,27 +381,29 @@ VALUES
 (  3003 , 'morsetaste.png'                 , 'phi@smoch.ch' , 'Morsetaste'                                                                                              ,
                                                               'Morsetaste'                                                                                             ),
 
-(  3005 , 'enigma1.png'                    , 'phi@smoch.ch' , 'Rotor-Schlüsselmaschine'                                                                                              ,
+(  3005 , 'enigma1.png'                    , 'phi@smoch.ch' , 'Rotor-Schlüsselmaschine'                                                                                 ,
                                                               'Enigma'                                                                                                 ),
 
-(  3006 , 'enigma2.png'                    , 'phi@smoch.ch' , 'Walzen zur Rotor-Schlüsselmaschine'                                                                                              ,
+(  3006 , 'enigma2.png'                    , 'phi@smoch.ch' , 'Walzen zur Rotor-Schlüsselmaschine'                                                                      ,
                                                               'Enigma'                                                                                                 ),
 
 
 -- diverse
-(  9001 , 'smartphone_htc_desire.png'      , 'phi@smoch.ch' , 'Smartphone'                                                                                              ,
+(  9001 , 'smartphone/smartphone_htc_desire.png'      , 'phi@smoch.ch' , 'Smartphone'                                                                                    ,
                                                               'Smartphone HTC Desire'                                                                                  ),
 
 (  9002 , 'halbleiter.png'                 , 'phi@smoch.ch' , 'Siliziumkristall'                                                                                        ,
                                                               'Silizium: Eines der häufigsten Elemente: Daraus werden die meisten Halbleiter gebaut.'                  ),
 
-(  9003 , 'wafer/wafer.png'                      , 'phi@smoch.ch' , 'Waferplatte'                                                                                       ,
+(  9003 , 'wafer/wafer.png'                , 'phi@smoch.ch' , 'Waferplatte'                                                                                             ,
                                                               'Waferplatte, wie sie für die Chip Herstellung verwendet wird.'                                          ),
 
-(  9004 , 'wafer/wafer_mikroskop.jpg'            , 'phi@smoch.ch' , 'Mikroskopie eines Wafers (Ausschnitt)'                                                             ,
+(  9004 , 'wafer/wafer_mikroskop.jpg'      , 'phi@smoch.ch' , 'Mikroskopie eines Wafers (Ausschnitt)'                                                                   ,
                                                               'Auschnitt Mikroskopier (Wafer)'                                                                         ),
-(  9005 , 'gutenbergBibel.jpg'            , 'Gedruckte Buchseite'                                                             ,
-                                                              'Quelle: Wikimedia.org (2020)' , 'Auschnitt aus der Gutenberg-Bibel (Quelle: Wikimedia.org 2020)'                                                                         );
+(  9005 , 'gutenbergBibel.jpg'             , 'wikimedia.org (2020)', 'Gedruckte Buchseite'                                                                              ,
+                                                              'Auschnitt aus der Gutenberg-Bibel (Quelle: Wikimedia.org 2020)'                                         ),
+(  9006 , 'smartphone/nokia.png'           , 'phi@smoch.ch' , 'Smartphone'                                                                                              ,
+                                                              'Nokia 6150 SAT Smartphone'                                                                              );
 
 
 
@@ -469,7 +472,8 @@ INSERT INTO `tbl_erfindungsbild`
 ('enigma'        ,  2   ,   3006    ),  -- Walzen der Enigma
 
 -- diverse
-('smartphone'    ,  1   ,   9001    ),  -- htc desire smartphone
+('smartphone'    ,  1   ,   9006    ),  -- NOKIA Smarphone 1998
+('smartphone'    ,  2   ,   9001    ),  -- htc desire smartphone
 ('halbleiter'    ,  1   ,   9002    ),  -- halbleiter
 ('wafer'         ,  1   ,   9003    ),  -- Wafer
 ('wafer'         ,  2   ,   9004    ),  -- Wafer unter dem Mikroskop
@@ -524,8 +528,8 @@ INSERT INTO `tbl_exponatbild`
 (  9001       ,   9001    ,  1   ), -- smartphone
 (  9002       ,   9002    ,  1   ), -- halbleiter Silicium
 (  9003       ,   9003    ,  1   ), -- Wafer
-(  9004       ,   1013    ,  1   ); -- Transistor
-
+(  9004       ,   1013    ,  1   ), -- Transistor
+(  9006       ,   9006    ,  1   ); -- NOKIA 6150 SATA (1998)
 
 
 -- ---------------------------------------------------
@@ -573,6 +577,7 @@ INSERT INTO `tbl_erfindungsexponat`
 
 -- diveses
 ('smartphone'    ,  9001        ,  1   ),
+('smartphone'    ,  9006        ,  2   ),
 ('halbleiter'    ,  9002        ,  1   ),
 ('wafer'         ,  9003        ,  1   ),
 ('transistor'    ,  9004        ,  1   );
