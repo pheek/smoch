@@ -14,7 +14,7 @@
 
 	<h1>Funktionsweise und Aufbau</h1>
 <p>Auszug aus der ASCII Tabelle</p>
-  <table>                             .__               .__     
+  <table>
      <tr><td>Wert</td><td>HEX</td><td>Binär    </td><td>Zeichen</td><td>Beschreibung                                                               </td></tr>
           
      <tr><td>   0</td><td>  0</td><td>0000 0000</td><td>       </td><td>Null-Zeichen; typischerweise zur STRING-Begrenzung in C-Programmiersprachen</td></tr>
