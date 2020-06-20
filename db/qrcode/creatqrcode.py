@@ -18,10 +18,10 @@ import mysql.connector as mariadb;
 ## python -m pip install opencv-python qrcode
 import qrcode;
 
-## Test create a QR-Code
+## Create a QR-Code PNG in /img/ folder.
 ##
 def create_temp_qrCode(id):
-	url = "https://www.smoch.ch/";
+	url = "https://www.smoch.ch/erfindung.php/";
 	filename = "img/" + id + ".png";
 	qr = qrcode.QRCode(
     version=1,
@@ -36,6 +36,7 @@ def create_temp_qrCode(id):
 
 
 ## Test PDF
+## Create the pdf
 pdf = FPDF();
 
 
@@ -52,25 +53,26 @@ def handle_single_exponat(x):
 	pdf.set_font("Courier", size=10);
 	##print(">>>>" + x[0] + "<<<");
 	pdf.cell(43);
-	text = "https://www.smoch.ch/" + x[0];
-	pdf.cell(200, 5, txt=text, ln=1, align="L");
+	text = "https://www.smoch.ch/erfindung.php/" + x[0];
+	pdf.cell(200, 6, txt=text, ln=1, align="L");
+
+	pdf.set_font("times", size=12);
+	pdf.cell(43);
+	text = "Erfindung: " + x[1] + " (" + x[2] + ")";
+	pdf.cell(200, 6, txt=text, ln=1, align="L");
+
+	pdf.set_font("times", size=11);
+	pdf.cell(43);
+	text = "Exponat: " + x[5] + " (" + x[4] + ")";
+	pdf.cell(200, 6, txt=text, ln=1, align="L");
 
 	pdf.set_font("times", size=10);
 	pdf.cell(43);
-	text = "Erfindung: " + x[1] + " --- " + x[2];
-	pdf.cell(200, 5, txt=text, ln=1, align="L");
-
-	pdf.cell(43);
-	text = "Exponat: " + x[5] + " --- " + x[4];
-	pdf.cell(200, 5, txt=text, ln=1, align="L");
-
-	pdf.cell(43);
 	text = "Inventar Nr: " + x[6];
-	pdf.cell(200, 5, txt=text, ln=1, align="L");
+	pdf.cell(200, 6, txt=text, ln=1, align="L");
 
-	##print(x[0]);
 	
-## Test DB
+## DB Connection
 
 mydb = mariadb.connect(
   host    ="localhost",
@@ -86,7 +88,8 @@ mycursor.execute("SELECT * FROM `vw_erfindungsexponat`");
 myresult = mycursor.fetchall();
 
 for ex in myresult:
-	##print (ex);
   handle_single_exponat(ex);
-  
+
+
+#STORE the PDF at the end
 pdf.output("qr-codes.pdf");
