@@ -564,6 +564,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('diskette'      ,  2004        ,  1   ),
 ('cd'            ,  2005        ,  1   ),
 ('cd'            ,  2006        ,  2   ),
+('cd'            ,  9005        ,  3   ),
 ('lochkarte'     ,  2007        ,  1   ),
 ('chip'          ,  2008        ,  2   ),
 ('kernspeicher'  ,  2009        ,  1   ),
