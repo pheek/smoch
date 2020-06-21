@@ -29,9 +29,11 @@ SELECT `tbl_erfindung`.`IDurl`          AS `core`
 ,      `tbl_exponat`  .`inventarNr`     AS `InventarNummer`
 ,      `tbl_exponat`  .`ausgestellt`    AS `ausgestelltBOOL`
 ,      `tbl_erfindungsexponat`.`ord`    AS `ord`
+,      `tbl_kategorie`.`titel`          AS `kategorie`
 FROM `tbl_exponat`
 LEFT  JOIN `tbl_erfindungsexponat` ON `tbl_exponat`  .`ID`    = `tbl_erfindungsexponat`.`exponat_fk`
-LEFT JOIN `tbl_erfindung`         ON `tbl_erfindung`.`IDurl` = `tbl_erfindungsexponat`.`IDurl_fk`;
+LEFT  JOIN `tbl_erfindung`         ON `tbl_erfindung`.`IDurl` = `tbl_erfindungsexponat`.`IDurl_fk`
+LEFT JOIN `tbl_kategorie`          ON `tbl_erfindung`.`defaultKategorie` = `tbl_kategorie`.`ID`;
 
 
 -- Synthetische Reihenfolge (nach tbl_reihenfolge)
@@ -44,7 +46,7 @@ SELECT DISTINCT
 FROM `tbl_reihenfolge` AS `tbl_1`
 LEFT JOIN `tbl_reihenfolge` AS `tbl_2`
 ON (`tbl_1`.`kategorie_fk` = `tbl_2`.`kategorie_fk`) AND
-   (`tbl_1`.`ord`      = `tbl_2`.`ord` - 1 );
+   (`tbl_1`.`ord`          = `tbl_2`.`ord` - 1 );
 
 
 CREATE VIEW `tmp_vw_vorgaenger` AS
@@ -56,7 +58,7 @@ SELECT DISTINCT
 FROM `tbl_reihenfolge` AS `tbl_1`
 LEFT JOIN `tbl_reihenfolge` AS `tbl_2`
 ON (`tbl_1`.`kategorie_fk` = `tbl_2`.`kategorie_fk`) AND
-   (`tbl_1`.`ord`      = `tbl_2`.`ord` + 1 );
+   (`tbl_1`.`ord`          = `tbl_2`.`ord` + 1 );
 
 
 CREATE VIEW `tmp_vw_reihenfolge` AS
@@ -65,8 +67,9 @@ SELECT `core_vorgaenger`            AS `vor`
 ,			 `core_nachfolger`            AS `nach`
 ,      `tmp_vw_vorgaenger`.`kat`    AS `Kategorie`
 FROM `tmp_vw_vorgaenger`
-LEFT OUTER JOIN `tmp_vw_nachfolger` ON
-(`tmp_vw_vorgaenger`.`core` = `tmp_vw_nachfolger`.`core`) AND (`tmp_vw_vorgaenger`.`kat` = `tmp_vw_nachfolger`.`kat`);
+LEFT OUTER JOIN `tmp_vw_nachfolger`
+ON  (`tmp_vw_vorgaenger`.`core` = `tmp_vw_nachfolger`.`core`) AND
+    (`tmp_vw_vorgaenger`.`kat`  = `tmp_vw_nachfolger`.`kat` );
 
 
 -- Im Gegensatz zum Exponat-View (wo die Exonate erscheinen), sind hier
@@ -84,10 +87,10 @@ SELECT
 , `tbl_kategorie`.`beschreibung`     AS `KategorieBeschreibung`
 , `tbl_autor`.`name` AS `Editor`
 FROM `tmp_vw_reihenfolge`
-LEFT JOIN `tbl_kategorie` ON `tmp_vw_reihenfolge`.`Kategorie` = `tbl_kategorie`.`ID`
-LEFT JOIN `tbl_erfindung` ON `tmp_vw_reihenfolge`.`core`      = `tbl_erfindung`.`IDurl`
+LEFT JOIN       `tbl_kategorie` ON `tmp_vw_reihenfolge`.`Kategorie` = `tbl_kategorie`.`ID`
+LEFT JOIN       `tbl_erfindung` ON `tmp_vw_reihenfolge`.`core`      = `tbl_erfindung`.`IDurl`
 LEFT OUTER JOIN `tbl_editor`    ON `tmp_vw_reihenfolge`.`core`      = `tbl_editor`.`IDurl_fk`
-LEFT JOIN `tbl_autor`     ON `tbl_editor`.`autor_fk`          = `tbl_autor`.`ID`;
+LEFT JOIN       `tbl_autor`     ON `tbl_editor`.`autor_fk`          = `tbl_autor`.`ID`;
 
 
 CREATE VIEW `vw_erfindungsbild` AS
@@ -118,7 +121,7 @@ SELECT
 , `inventarNr`
 FROM `tbl_exponatbild`
 LEFT JOIN `tbl_exponat` ON `tbl_exponat`.`ID` = `tbl_exponatbild`.`exponat_fk`
-LEFT JOIN `tbl_bild`    ON `tbl_bild`.`ID` = `tbl_exponatbild`.`bild_fk`;
+LEFT JOIN `tbl_bild`    ON `tbl_bild`.`ID`    = `tbl_exponatbild`.`bild_fk`;
 
 
 -- Alle Bilder zu allen Expoaten zu einer Erfindung
