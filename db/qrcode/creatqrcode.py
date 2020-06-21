@@ -60,10 +60,11 @@ def print_single_exponat(exp, nrOnPage):
 
 	pdf.set_font("times", size=12);
 	pdf.cell(43);
-##	pdf.foreground("#333"); ????
+	pdf.set_text_color(80, 100, 0);
 	text = "Erfindung: " + exp[1] + " (" + exp[2] + ")";
 	pdf.cell(200, 6, txt=text, ln=1, align="L");
-
+	pdf.set_text_color(0, 0, 0);
+	
 	pdf.set_font("times", size=11);
 	pdf.cell(43);
 	text = "Exponat: " + exp[5] + " (" + exp[4] + ")";
