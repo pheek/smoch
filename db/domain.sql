@@ -210,6 +210,7 @@ INSERT INTO `tbl_exponat`
 (1007 , 'ca. 2010'     , 'Verstärkerröhre'                                    , 'R_007_r'     , true       ),
 (1008 , '2020'         , 'NOT nachgebaut mit Transistoren'                    , 'R_008_n'     , true       ),
 (1009 , '1975'         , 'Taschenrechner Privileg 853 M'                      , 'R_009_t'     , true       ),
+(1010 , '1981'         , 'Pocket Computer (PC)'                               , 'R_010_s'     , true       ),
 
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
@@ -316,8 +317,12 @@ VALUES
 
 (  1021 , 'volladdierer/transistor_nachbau.png'                          , 'phi@smoch.ch' , 'Schlatung'                                                                                  ,
                                                               'Volladdierer mit Transistoren nachgebaut'                                                               ),
+
 (  1022 , 'taschenrechner.png'                          , 'phi@smoch.ch' , 'Taschenrechner'                                                                             ,
                                                               'Taschenrechner'                                                                                         ),
+
+(  1023 , 'pc1500.png'                            , 'phi@smoch.ch' , 'Pocket Computer'                                                                             ,
+                                                              'PC 1500 (Sharp): Pocket Computer'                                                                                         ),
 
 
 -- speichern
@@ -431,6 +436,7 @@ INSERT INTO `tbl_erfindungsbild`
 ('computer'      ,  2   ,   1006    ),  -- Zuse
 ('computer'      ,  3   ,   1007    ),  -- Zuse 
 ('computer'      ,  4   ,   1008    ),  -- Zuse Eingabegerät
+('computer'      ,  5   ,   1023    ),  -- PC 1500 (Pocket Computer)
 ('differenzenmaschine', 1,  1011    ),  -- Differenzenmaschine
 ('volladdierer'  ,  1   ,   1012    ),  -- Volladdierer Schema
 ('volladdierer'  ,  2   ,   1021    ),  -- Volladdierer mit Transistoren
@@ -504,6 +510,7 @@ INSERT INTO `tbl_exponatbild`
 (  1007       ,   1017    ,  1   ), -- Verstärkerröhre
 (  1008       ,   1018    ,  1   ), -- not mit Transistoren
 (  1009       ,   1022    ,  1   ), -- Taschenrechner privileg 853M
+(  1010       ,   1023    ,  1   ), -- PC 1500 Sharp
 
 -- speichern
 (  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
@@ -556,6 +563,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('roehren'       ,  1007        ,  1   ),
 ('not_transistor',  1008        ,  1   ),
 ('taschenrechner',  1009        ,  1   ),
+('computer'      ,  1010        ,  1   ),
 
 -- speichern
 ('amphore'       ,  2001        ,  1   ),
