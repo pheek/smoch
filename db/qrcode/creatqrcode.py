@@ -22,7 +22,7 @@ import qrcode;
 ## Create a temporary QR-Code PNG in /img/ folder.
 ##
 def create_temp_qrCode(id):
-	url = "https://www.smoch.ch/erfindung.php/";
+	url = "https://bms.smoch.ch/erfindung.php/";
 	filename = "img/" + id + ".png";
 	qr = qrcode.QRCode(
     version=1,
@@ -32,9 +32,10 @@ def create_temp_qrCode(id):
 	)
 	qr.add_data(url + id);
 	qr.make(fit=True);
-	img = qr.make_image(fill_color="#000", back_color="#bf0");
+	img = qr.make_image(fill_color="#000", back_color="#cf0");
 	img.save(filename);
 
+X_INDENT = 41;
 	
 ## Handle a single "Exponat"
 def print_single_exponat(exp, nrOnPage):
@@ -52,31 +53,31 @@ def print_single_exponat(exp, nrOnPage):
 	#pdf.cell(200, 36, txt="", ln=1, align="L");
 
   #texte
-	pdf.set_font("Courier", size=10);
+	pdf.set_font("Courier", size=9);
 	##print(">>>>" + x[0] + "<<<");
-	pdf.cell(43);
-	text = "https://www.smoch.ch/erfindung.php/" + exp[0];
+	pdf.cell(X_INDENT);
+	text = "bms.smoch.ch/erfindung.php/" + exp[0];
 	pdf.cell(200, 6, txt=text, ln=1, align="L");
 
 	pdf.set_font("times", size=12);
-	pdf.cell(43);
+	pdf.cell(X_INDENT);
 	pdf.set_text_color(80, 100, 0);
 	text = "Erfindung: " + exp[1] + " (" + exp[2] + ")";
 	pdf.cell(200, 6, txt=text, ln=1, align="L");
 	pdf.set_text_color(0, 0, 0);
 	
 	pdf.set_font("times", size=11);
-	pdf.cell(43);
+	pdf.cell(X_INDENT);
 	text = "Exponat: " + exp[5] + " (" + exp[4] + ")";
 	pdf.cell(200, 6, txt=text, ln=1, align="L");
 
 	pdf.set_font("times", size=10);
-	pdf.cell(43);
+	pdf.cell(X_INDENT);
 	text = "Kategorie: " + exp[9];
 	pdf.cell(200, 6, txt=text, ln=1, align="L");
 
 	pdf.set_font("times", size=9);
-	pdf.cell(43);
+	pdf.cell(X_INDENT);
 	text = "Inventar Nr: " + exp[6];
 	pdf.cell(200, 6, txt=text, ln=1, align="L");
 
