@@ -95,6 +95,7 @@ INSERT INTO `tbl_erfindung`
 ('harddisk'      , 'Harddisk'                      ,     '1956'        , 2                  ),
 ('diskette'      , 'Diskette'                      ,     '1969'        , 2                  ),
 ('cd'            , 'CD - ROM'                      ,     '1977'        , 2                  ),
+('flash'         , 'Flash Speicher'                ,     'ca. 1985'    , 2                  ),
 ('bit_relais'    , 'Bit realisiert mit Relais'     ,     '????'        , 2                  ),
 ('bit_transistor', 'Bit realisiert mit Transistor' ,     '????'        , 2                  ),
 
@@ -164,10 +165,11 @@ INSERT INTO `tbl_reihenfolge`
 ('kernspeicher'  ,   2              ,   8      ),
 ('chip'          ,   2              ,   9      ),
 ('harddisk'      ,   2              ,  10      ),
-('wafer'         ,   2              ,  11      ),
-('diskette'      ,   2              ,  12      ),
-('cd'            ,   2              ,  13      ),
-('smartphone'    ,   2              ,  14      ),
+('flash'         ,   2              ,  11      ),
+('wafer'         ,   2              ,  12      ),
+('diskette'      ,   2              ,  13      ),
+('cd'            ,   2              ,  14      ),
+('smartphone'    ,   2              ,  15      ),
 
 -- kommunizieren
 ('schrift'       ,   3              ,   1      ),
@@ -224,6 +226,7 @@ INSERT INTO `tbl_exponat`
 (2009 , 'ca 1970'      , 'Kernspeicher DELL'                                  , 'S_009_k'     , true       ),
 (2010 , 'ca. 1970'     , 'Magnetband Storage-Master'                          , 'S_010_m'     , true       ),
 (2011 , '2020'         , 'Bit nachgebaut mit Transitoren'                     , 'S_011_b'     , true       ),
+(2012 , '1999'         , 'Compact Flash SanDisk 8MB'                          , 'S_012_f'     , true       ),
 
 -- kommunizieren
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
@@ -366,21 +369,25 @@ VALUES
 (  2014 , 'kernspeicher/kernspeicher_seitenansicht.jpg'                  , 'phi@smoch.ch' , 'Kernspeicher'                                                              ,
                                                               'Kernspeicher'                                                                                           ),
 
-(  2015 , 'magnetband.png'                  , 'phi@smoch.ch' , 'Magnetband'                                                                                             ,
+(  2015 , 'magnetband.png'                 , 'phi@smoch.ch' , 'Magnetband'                                                                                             ,
                                                               'Magentband'                                                                                             ),
 
-(  2016 , 'speicherchip.png'            , 'phi@smoch.ch' , 'Speicherchip C04040BE (Flip-Flop)'                                                                          ,
+(  2016 , 'speicherchip.png'               , 'phi@smoch.ch' , 'Speicherchip C04040BE (Flip-Flop)'                                                                       ,
                                                               'Speicherchip im Gehäuse'                                                                                ),
 
-(  2017 , 'bit/transistor_nachbau.png'                 , 'phi@smoch.ch' , 'Elektronische Schaltung'                                                                     ,
+(  2017 , 'bit/transistor_nachbau.png'     , 'phi@smoch.ch' , 'Elektronische Schaltung'                                                                                 ,
                                                               'Bit nachgebaut mittels Transistoner (Flip-Flop)'                                                        ),
 
+(  2018 , 'flash/compactFlash8mb.png'      , 'phi@smoch.ch' , 'Compact Flash 8MB'                                                                                       ,
+                                                              'Flash Speicherkarte'                                                                                    ),
+(  2019 , 'flash/compactFlash8mbTop.png'   , 'phi@smoch.ch' , 'Compact Flash 8MB'                                                                                       ,
+                                                              'Flash Speicherkarte'                                                                                    ),
 
 -- kommunizieren
 (  3001 , 'keilschrift.jpg'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
                                                               'Keilschrift auf Ton; Auszug Gesetzbuch Hammurabis (Bild: Erik Nitsche «In Wort und Bild»)'              ),
 
-(  3002 , 'telephon.png'                   , 'phi@smoch.ch' , 'Telephon'                                                                                              ,
+(  3002 , 'telephon.png'                   , 'phi@smoch.ch' , 'Telephon'                                                                                                ,
                                                               'Kurbeltelephon'                                                                                         ),
 
 (  3003 , 'morsetaste.png'                 , 'phi@smoch.ch' , 'Morsetaste'                                                                                              ,
@@ -394,7 +401,7 @@ VALUES
 
 
 -- diverse
-(  9001 , 'smartphone/smartphone_htc_desire.png'      , 'phi@smoch.ch' , 'Smartphone'                                                                                    ,
+(  9001 , 'smartphone/smartphone_htc_desire.png'      , 'phi@smoch.ch' , 'Smartphone'                                                                                   ,
                                                               'Smartphone HTC Desire'                                                                                  ),
 
 (  9002 , 'halbleiter.png'                 , 'phi@smoch.ch' , 'Siliziumkristall'                                                                                        ,
@@ -469,7 +476,8 @@ INSERT INTO `tbl_erfindungsbild`
 ('kernspeicher'  ,  3   ,   2014    ),  -- Kernspeicher Seitenansicht
 ('magnetband'    ,  1   ,   2015    ),  -- Magnetband
 ('chip'          ,  2   ,   2016    ),  -- Speicherchip
-
+('flash'         ,  1   ,   2018    ),  -- Flash Speicherchip
+('flash'         ,  2   ,   2019    ),  -- Flash Speicherchip
 -- kommunizieren
 ('schrift'       ,  1   ,   3001    ),  -- Bild der Babylonischen Keilschritf (Hammurabi)
 ('morsetaste'    ,  1   ,   3003    ),  -- Morsetaste
@@ -526,7 +534,8 @@ INSERT INTO `tbl_exponatbild`
 (  2010       ,   2015    ,  1   ), -- Magnetband ...
 (  2008       ,   2016    ,  1   ), -- Speicherchip (XOR)
 (  2011       ,   2017    ,  1   ), -- Bit nachgebaut mit Transistoren (Flip-Flop)
-
+(  2012       ,   2018    ,  1   ), -- Flash Speicherkarte Compact Flash
+(  2012       ,   2019    ,  2   ), -- Flash Speicherkarte Compact Flash
 -- kommunizieren
 -- (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
 (  3003       ,   3003    ,  1   ), -- Morsetaste
@@ -578,6 +587,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('kernspeicher'  ,  2009        ,  1   ),
 ('magnetband'    ,  2010        ,  1   ),
 ('bit_transistor',  2011        ,  1   ),
+('flash'         ,  2012        ,  1   ),
 
 -- kommunizieren
 -- ('schrift'       ,  3001        ,  1   ),
@@ -624,6 +634,7 @@ INSERT INTO `tbl_keyword`
 ('diskette'      , 'Diskette'            ),
 ('diskette'      , 'Magnetspeicher'      ),
 ('diskette'      , 'Wechseldatenträger'  ),
+('flash'         , 'Flash'               ),
 ('cd'            , 'cd'                  ),
 ('cd'            , 'Compact Disk'        ),
 ('cd'            , 'Audio'               );
@@ -669,6 +680,7 @@ INSERT INTO `tbl_editor`
 ('diskette'      , 1),
 ('cd'            , 1),
 ('magnetband'    , 1),
+('flash'         , 1),
 
 -- kommmunizieren
 ('schrift'       , 1),

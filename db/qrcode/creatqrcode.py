@@ -36,7 +36,9 @@ def create_temp_qrCode(id):
 	img.save(filename);
 
 X_INDENT = 41;
-	
+
+global pdf;
+
 ## Handle a single "Exponat"
 def print_single_exponat(exp, nrOnPage):
 	ydelta = 80*(nrOnPage - 1);
@@ -105,11 +107,13 @@ print("DB read done");
 print("Creating PDF...");
 pdf = FPDF();
 
+global qr_number;
 qr_number = 1;
+
 pdf.add_page();
 for ex in myresult:
-	global qr_number;
-	global pdf;
+	qr_number;
+	pdf;
 	qr_codes_per_page = 3;
 	qr_nr_on_actualPage = 1 + ((qr_number-1) % qr_codes_per_page);
 	print_single_exponat(ex, qr_nr_on_actualPage);
