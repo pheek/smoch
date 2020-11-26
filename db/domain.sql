@@ -165,10 +165,10 @@ INSERT INTO `tbl_reihenfolge`
 ('kernspeicher'  ,   2              ,   8      ),
 ('chip'          ,   2              ,   9      ),
 ('harddisk'      ,   2              ,  10      ),
-('flash'         ,   2              ,  11      ),
-('wafer'         ,   2              ,  12      ),
-('diskette'      ,   2              ,  13      ),
-('cd'            ,   2              ,  14      ),
+('wafer'         ,   2              ,  11      ),
+('diskette'      ,   2              ,  12      ),
+('cd'            ,   2              ,  13      ),
+('flash'         ,   2              ,  14      ),
 ('smartphone'    ,   2              ,  15      ),
 
 -- kommunizieren
