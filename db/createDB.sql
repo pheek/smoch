@@ -9,6 +9,10 @@ CREATE DATABASE           `smoch`  ;
 ALTER  DATABASE           `smoch`
   DEFAULT CHARACTER SET 'utf8'
 	DEFAULT COLLATE 'utf8_general_ci';
-USE                       `smoch`  ;
 
-GRANT SELECT ON `smoch`.* TO 'smoch'@'%' IDENTIFIED BY '123';
+USE                      `smoch`  ;
+
+-- USER SMOCH
+DROP   USER 'smoch';
+CREATE USER 'smoch' IDENTIFIED BY '123';
+GRANT SELECT  ON `smoch`.* TO 'smoch'@'%';
