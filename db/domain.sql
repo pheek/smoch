@@ -370,6 +370,9 @@ VALUES
 (  2017 , 'bit/transistor_nachbau.png'                 , 'phi@smoch.ch' , 'Elektronische Schaltung'                                                                     ,
                                                               'Bit nachgebaut mittels Transistoner (Flip-Flop)'                                                        ),
 
+(  2018 , 'kernspeicher/kernspeicher_ringe2.jpg'                 , 'phi@smoch.ch' , 'Kernspeicher'                                                                     ,
+                                                              'Kernspeicher'                                                        ),
+
 
 -- kommunizieren
 (  3001 , 'keilschrift.jpg'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
@@ -461,6 +464,7 @@ INSERT INTO `tbl_erfindungsbild`
 ('kernspeicher'  ,  1   ,   2012    ),  -- Kernspeicher Ringe
 ('kernspeicher'  ,  2   ,   2013    ),  -- Kernspeicher Modul
 ('kernspeicher'  ,  3   ,   2014    ),  -- Kernspeicher Seitenansicht
+('kernspeicher'  ,  4   ,   2018    ),  -- Kernspeicher Foto von Berts Rothmans Kernspeicher
 ('magnetband'    ,  1   ,   2015    ),  -- Magnetband
 ('chip'          ,  2   ,   2016    ),  -- Speicherchip
 
@@ -516,6 +520,7 @@ INSERT INTO `tbl_exponatbild`
 (  2009       ,   2012    ,  1   ), -- Kernspeicher ringe
 (  2009       ,   2013    ,  2   ), -- Kernspeicher Modul
 (  2009       ,   2014    ,  3   ), -- Kernspeicher Seitenansicht
+(  2009       ,   2018    ,  4   ), -- Kernspeicher von Bert
 (  2010       ,   2015    ,  1   ), -- Magnetband ...
 (  2008       ,   2016    ,  1   ), -- Speicherchip (XOR)
 (  2011       ,   2017    ,  1   ), -- Bit nachgebaut mit Transistoren (Flip-Flop)
