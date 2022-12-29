@@ -213,11 +213,12 @@ INSERT INTO `tbl_exponat`
 (1008 , '2020'         , 'NOT nachgebaut mit Transistoren'                    , 'R_008_n'     , true       ),
 (1009 , '1975'         , 'Taschenrechner Privileg 853 M'                      , 'R_009_t'     , true       ),
 (1010 , '1981'         , 'Pocket Computer (PC)'                               , 'R_010_s'     , true       ),
+(1011 , 'ca 1950'      , 'Teil eines Röhrenrechners'                          , 'R_007_e'     , true       ),
 
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
 (2002 , '2019'         , 'Nachbildung aus dem 3D-Drucker'                     , 'S_002_a'     , false      ),
-(2003 , 'ca. 1998'     , 'Harddisk offen'                                     , 'S_003_h'     , true       ),
+(2003 , 'ca. 1998'     , 'Harddisk offen'                                     , 'S_003_h'     , false      ),
 (2004 , '1997'         , '3.5 Zoll Boot-Diskette S.U.s.E. Linux Kernel 2.0.3x', 'S_004_d'     , true       ),
 (2005 , '2008'         , 'Ubuntu OS 8.10'                                     , 'S_005_u'     , true       ),
 (2006 , '2004'         , 'Vince Ebers Ur-Knaller'                             , 'S_006_c'     , true       ),
@@ -227,6 +228,7 @@ INSERT INTO `tbl_exponat`
 (2010 , 'ca. 1970'     , 'Magnetband Storage-Master'                          , 'S_010_m'     , true       ),
 (2011 , '2020'         , 'Bit nachgebaut mit Transitoren'                     , 'S_011_b'     , true       ),
 (2012 , '1999'         , 'Compact Flash SanDisk 8MB'                          , 'S_012_f'     , true       ),
+(2013 , 'ca. 1960'     , 'Harddisk'                                           , 'S_003_d'     , true       ),
 
 -- kommunizieren
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
@@ -306,7 +308,7 @@ VALUES
 (  1016 , 'rechnerchip.png'            , 'phi@smoch.ch' , 'Rechnerchip CD74HCT86E (xor)'                                                                                ,
                                                               'Computerchip im Gehäuse'                                                                                ),
 
-(  1017 , 'roehre.png'                 , 'phi@smoch.ch' , 'Verstärkerröhre'                                                                                             ,
+(  1017 , 'roehren/roehre.png'                 , 'phi@smoch.ch' , 'Verstärkerröhre'                                                                                             ,
                                                               'Verstärkerröhre'                                                                                        ),
 
 (  1018 , 'not/transistor_nachbau.png'                 , 'phi@smoch.ch' , 'elektronische Schaltung (NOT)'                                                               ,
@@ -326,6 +328,8 @@ VALUES
 
 (  1023 , 'pc1500.png'                            , 'phi@smoch.ch' , 'Pocket Computer'                                                                             ,
                                                               'PC 1500 (Sharp): Pocket Computer'                                                                                         ),
+(  1024 , 'roehren/RoehrenAlt.png'                 , 'phi@smoch.ch' , 'Röhren'                                                                                             ,
+                                                              'Röhren aus einem «Elektronengehirn»'                                                                                        ),
 
 
 -- speichern
@@ -354,7 +358,7 @@ VALUES
 (  2009 , 'bit/transistor_nachbau_schema.png', 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Transistoren'                                            ,
                                                               'Schema um ein Bit mittels Transistoren zu speichern'                                                    ),
 
-(  2010 , 'harddisk.png'                   , 'phi@smoch.ch' , 'Harddisk offen'                                                                                          ,
+(  2010 , 'harddisk/harddisk.png'          , 'phi@smoch.ch' , 'Harddisk offen'                                                                                          ,
                                                               'Harddisk geöffnet (Speicherkapazität unbekannt)'                                                        ),
 
 (  2011 , 'lochkarte.png'                  , 'phi@smoch.ch' , 'Lochkarte'                                                                                               ,
@@ -384,6 +388,8 @@ VALUES
                                                               'Flash Speicherkarte'                                                                                    ),
 (  2020 , 'kernspeicher/kernspeicher_ringe2.jpg'                 , 'phi@smoch.ch' , 'Kernspeicher'                                                                     ,
                                                               'Kernspeicher'                                                        ),
+(  2021 , 'harddisk/HardDiskGross.png'                 , 'phi@smoch.ch' , 'Harddisk'                                                                     ,
+                                                              'Harddisk'                                                        ),
 
 
 
@@ -458,7 +464,8 @@ INSERT INTO `tbl_erfindungsbild`
 ('transistor'    ,  1   ,   1013    ),  -- Transistor
 ('monkey'        ,  1   ,   1015    ),  -- Educated Monkey
 ('chip'          ,  1   ,   1016    ),  -- Rechnerchip
-('roehren'       ,  1   ,   1017    ),  -- Verstärkerröhre
+('roehren'       ,  1   ,   1024    ),  -- Röhre aus einem «Elektronengehirn»
+('roehren'       ,  2   ,   1017    ),  -- Verstärkerröhre
 ('neperstaebchen',  1   ,   1019    ),  -- Neperstäbchen
 ('binaersystem'  ,  1   ,   1020    ),  -- Nullen und Einsen
 ('taschenrechner',  1   ,   1022    ),  -- Taschenrechner
@@ -470,7 +477,8 @@ INSERT INTO `tbl_erfindungsbild`
 ('diskette'      ,  1   ,   2004    ),  -- Diskette S.U.s.E
 ('cd'            ,  1   ,   2005    ),  -- Ubuntu CD
 ('cd'            ,  2   ,   2006    ),  -- Vince Eberts CD "ur Knaller"
-('harddisk'      ,  1   ,   2010    ),  -- Harddisk
+('harddisk'      ,  1   ,   2021    ),  -- Harddisk
+('harddisk'      ,  2   ,   2010    ),  -- Harddisk
 ('lochkarte'     ,  1   ,   2011    ),  -- Lochkarte blau
 ('bit_relais'    ,  1   ,   2008    ),  -- Bit mit Relais Latch
 ('bit_transistor',  1   ,   2009    ),  -- Bit mit Transitor nachgebaut
@@ -521,6 +529,7 @@ INSERT INTO `tbl_exponatbild`
 (  1005       ,   1014    ,  1   ), -- Relais Nachbau: NOT
 (  1006       ,   1015    ,  1   ), -- The educated Monkey
 (  1007       ,   1017    ,  1   ), -- Verstärkerröhre
+(  1011       ,   1024    ,  1   ), -- Röhre aus einem Elektronengehirn
 (  1008       ,   1018    ,  1   ), -- not mit Transistoren
 (  1009       ,   1022    ,  1   ), -- Taschenrechner privileg 853M
 (  1010       ,   1023    ,  1   ), -- PC 1500 Sharp
@@ -528,7 +537,8 @@ INSERT INTO `tbl_exponatbild`
 -- speichern
 (  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
 (  2002       ,   2002    ,  1   ), -- Amphore Bild aus dem 3DDrucker
-(  2003       ,   2010    ,  1   ), -- Harddisk offen
+(  2003       ,   2010    ,  2   ), -- Harddisk offen
+(  2013       ,   2021    ,  1   ), -- Harddisk einer alten IBM
 (  2004       ,   2004    ,  1   ), -- Diskette S.U.s.E.
 (  2005       ,   2005    ,  1   ), -- CD (Ubuntu OS 2008 Oktober (10)
 (  2006       ,   2006    ,  1   ), -- CD (Audio : "Vince Eberts Ur-Knaller")
@@ -575,7 +585,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('not_relais'    ,  1005        ,  1   ),
 ('monkey'        ,  1006        ,  1   ),
 ('chip'          ,  1004        ,  1   ),
-('roehren'       ,  1007        ,  1   ),
+('roehren'       ,  1011        ,  1   ),
 ('not_transistor',  1008        ,  1   ),
 ('taschenrechner',  1009        ,  1   ),
 ('computer'      ,  1010        ,  1   ),
@@ -583,7 +593,8 @@ INSERT INTO `tbl_erfindungsexponat`
 -- speichern
 ('amphore'       ,  2001        ,  1   ),
 ('amphore'       ,  2002        ,  2   ),
-('harddisk'      ,  2003        ,  1   ),
+('harddisk'      ,  2013        ,  1   ),
+('harddisk'      ,  2003        ,  2   ),
 ('diskette'      ,  2004        ,  1   ),
 ('cd'            ,  2005        ,  1   ),
 ('cd'            ,  2006        ,  2   ),
