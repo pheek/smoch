@@ -216,6 +216,7 @@ INSERT INTO `tbl_exponat`
 (1009 , '1975'         , 'Taschenrechner Privileg 853 M'                      , 'R_009_t'     , true       ),
 (1010 , '1981'         , 'Pocket Computer (PC)'                               , 'R_010_s'     , true       ),
 (1011 , 'ca 1950'      , 'Teil eines Röhrenrechners'                          , 'R_007_e'     , true       ),
+(1012 , 'ca 1982'      , 'Wissenschaftlicher Taschenrechner HP 15C'           , 'R_011_h'     , true       ),
 
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
@@ -592,6 +593,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('not_transistor',  1008        ,  1   ),
 ('taschenrechner',  1009        ,  1   ),
 ('computer'      ,  1010        ,  1   ),
+('taschenrechner',  1012        ,  2   ),
 
 -- speichern
 ('amphore'       ,  2001        ,  1   ),
@@ -612,6 +614,7 @@ INSERT INTO `tbl_erfindungsexponat`
 -- kommunizieren
 -- ('schrift'       ,  3001        ,  1   ),
 ('morsetaste'    ,  3003        ,  1   ),
+('brief'         ,  3004        ,  1   ),
 ('telephon'      ,  3002        ,  1   ),
 
 -- diveses
