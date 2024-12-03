@@ -12,7 +12,6 @@
 	<p>Um einfache Berechnungen durchzuführen hat der Taschenrechner
 	rasch den <a href='https://smoch.ch/erfindung.php/zahlenschieber'>Zahlenschieber</a> oder den <a href='https://smoch.ch/erfindung.php/abakus'>Abakus</a> abgelöst.</p>
 
-
 	<h1>Funktionsweise und Aufbau</h1>
 	<p>Ein <a href='https://smoch.ch/erfindung.php/chip'>Rechnerchip</a> sorgt für Addition, Subtraktion, Multiplikation
 	und Division.</p>
@@ -25,10 +24,10 @@
        was überlegen, um Texte wie "<tt>LESE'ESEL</tt>" auf dem
 				 Rechner erscheinen zu lassen.</p>
 			 <p>Das im <a href='https://smoch.ch'>smoch</a> ausgestellte
-			 Exphonat stammt aus einer online-Auktion. Es handelt sich um
+			 Exponat des simplen Taschenrechners stammt aus einer online-Auktion. Es handelt sich um
 			 einen «<a href='https://www.calculator.org/calculators/Privileg_853_M.html'>privileg 853 M</a>» mit einer 8-Stellen Genauigkeit aus dem
 			 Jahre 1975.</p>
-
+       <p>Das ausgestellte Exponat des wissenschaftlichen Taschenrechners (HP-15C) wurde 1982 in Produktion gegeben. Das Exponat ist voll funktionsfähig.</p>
 	<h1>Quellenangaben</h1>
 	<p><a href='https://www.calculator.org/articles/A_First_Calculator.html'>www.calculator.org/articles/A_First_Calculator.html</a></p>
 </div>
