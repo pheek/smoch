@@ -25,7 +25,6 @@ INSERT INTO `tbl_program_parameter`
 ('bilder_dir'          , 'bilder/'             , 'Innerhalb von «erfindungen_pfad»'                 );
 
 
-
 -- --------------------------------------------------------------
 CREATE TABLE `tbl_session_variable` (
   `name`        varchar(20) PRIMARY KEY NOT NULL
@@ -102,6 +101,7 @@ INSERT INTO `tbl_erfindung`
 
 -- kommunizieren
 ('schrift'       , 'Schriften'                     , 'ca. 4000 v. Chr.', 3                  ),
+('brief'         , 'Briefe'                        , 'ca 1800 v. Chr.' , 3                  ),
 ('buchdruck'     , 'Buchdruck'                     ,      '868'        , 3                  ),
 ('morsetaste'    , 'Morsegerät/Relaisstation'      ,     '1833'        , 3                  ),
 ('enigma'        , 'Enigma'                        ,     '1918'        , 3                  ),
@@ -173,13 +173,14 @@ INSERT INTO `tbl_reihenfolge`
 
 -- kommunizieren
 ('schrift'       ,   3              ,   1      ),
-('buchdruck'     ,   3              ,   2      ),
-('morsetaste'    ,   3              ,   3      ),
-('telephon'      ,   3              ,   4      ),
-('enigma'        ,   3              ,   5      ),
-('glasfaser'     ,   3              ,   6      ),
-('ascii'         ,   3              ,   7      ),
-('smartphone'    ,   3              ,   8      );
+('brief'         ,   3              ,   2      ),
+('buchdruck'     ,   3              ,   3      ),
+('morsetaste'    ,   3              ,   4      ),
+('telephon'      ,   3              ,   5      ),
+('enigma'        ,   3              ,   6      ),
+('glasfaser'     ,   3              ,   7      ),
+('ascii'         ,   3              ,   8      ),
+('smartphone'    ,   3              ,   9      );
 
 
 
@@ -214,6 +215,7 @@ INSERT INTO `tbl_exponat`
 (1009 , '1975'         , 'Taschenrechner Privileg 853 M'                      , 'R_009_t'     , true       ),
 (1010 , '1981'         , 'Pocket Computer (PC)'                               , 'R_010_s'     , true       ),
 (1011 , 'ca 1950'      , 'Teil eines Röhrenrechners'                          , 'R_007_e'     , true       ),
+(1012 , 'ca 1982'      , 'Wissenschaftlicher Taschenrechner HP 15C'           , 'R_011_h'     , true       ),
 
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
@@ -234,6 +236,7 @@ INSERT INTO `tbl_exponat`
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
 (3002 , 'ca. 1930/40'  , 'Kurbeltelephon 30er Jahre'                          , 'K_002_t'     , true       ),
 (3003 , '????'         , 'Morsetaste'                                         , 'K_003_m'     , true       ),
+(3004 , '1920'         , 'Brief'                                              , 'K_004_b'     , true       ),
 
 -- diverse
 (9001 , '2010'         , 'HTC Desire'                                         , 'D_001_s'     , true       ),
@@ -330,6 +333,8 @@ VALUES
                                                               'PC 1500 (Sharp): Pocket Computer'                                                                                         ),
 (  1024 , 'roehren/RoehrenAlt.png'                 , 'phi@smoch.ch' , 'Röhren'                                                                                             ,
                                                               'Röhren aus einem «Elektronengehirn»'                                                                                        ),
+(  1025 , 'HP15C.png'                              , 'phi@smoch.ch' , 'Wissenschaftlicher Taschenrechner'                                                                                             ,
+                                                              'Wissenschaftlicher Taschenrechner HP-15C'                                                                                        ),
 
 
 -- speichern
@@ -408,6 +413,8 @@ VALUES
 
 (  3006 , 'enigma2.png'                    , 'phi@smoch.ch' , 'Walzen zur Rotor-Schlüsselmaschine'                                                                      ,
                                                               'Enigma'                                                                                                 ),
+(  3007 , 'brief.png'                      , 'phi@smoch.ch' , 'Brief Dr. Wander 1920'                                                                      ,
+                                                              'Brief'                                                                                                 ),
 
 
 -- diverse
@@ -469,6 +476,7 @@ INSERT INTO `tbl_erfindungsbild`
 ('neperstaebchen',  1   ,   1019    ),  -- Neperstäbchen
 ('binaersystem'  ,  1   ,   1020    ),  -- Nullen und Einsen
 ('taschenrechner',  1   ,   1022    ),  -- Taschenrechner
+('taschenrechner',  2   ,   1025    ),  -- Wissenschaftlicher Taschenrechner
 
 -- speichern
 ('amphore'       ,  1   ,   2001    ),  -- Amphora Etruskisch Popolonio
@@ -533,6 +541,7 @@ INSERT INTO `tbl_exponatbild`
 (  1008       ,   1018    ,  1   ), -- not mit Transistoren
 (  1009       ,   1022    ,  1   ), -- Taschenrechner privileg 853M
 (  1010       ,   1023    ,  1   ), -- PC 1500 Sharp
+(  1012       ,   1025    ,  1   ), -- HP 15 C
 
 -- speichern
 (  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
@@ -556,6 +565,7 @@ INSERT INTO `tbl_exponatbild`
 -- (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
 (  3003       ,   3003    ,  1   ), -- Morsetaste
 (  3002       ,   3002    ,  1   ), -- Telephon
+(  3004       ,   3007    ,  1   ), -- Brief
 -- diverses
 (  9001       ,   9001    ,  1   ), -- smartphone
 (  9002       ,   9002    ,  1   ), -- halbleiter Silicium
@@ -589,6 +599,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('not_transistor',  1008        ,  1   ),
 ('taschenrechner',  1009        ,  1   ),
 ('computer'      ,  1010        ,  1   ),
+('taschenrechner',  1012        ,  2   ),
 
 -- speichern
 ('amphore'       ,  2001        ,  1   ),
@@ -609,6 +620,7 @@ INSERT INTO `tbl_erfindungsexponat`
 -- kommunizieren
 -- ('schrift'       ,  3001        ,  1   ),
 ('morsetaste'    ,  3003        ,  1   ),
+('brief'         ,  3004        ,  1   ),
 ('telephon'      ,  3002        ,  1   ),
 
 -- diveses

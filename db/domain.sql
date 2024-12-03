@@ -3,8 +3,6 @@
 
 USE `smoch`;
 
-
-
 -- --------------------------------------------------------
 CREATE TABLE `tbl_program_parameter` (
   `name`        varchar(20) PRIMARY KEY NOT NULL
@@ -23,7 +21,6 @@ INSERT INTO `tbl_program_parameter`
 ('erfindungen_pfad'    , 'erfindungen/'        , 'Wo liegen die Artikel und die bilder?'            ),
 ('artikel_dir'         , 'artikel/'            , 'Innerhalb von «erfindungen_pfad»'                 ),
 ('bilder_dir'          , 'bilder/'             , 'Innerhalb von «erfindungen_pfad»'                 );
-
 
 
 -- --------------------------------------------------------------
@@ -334,6 +331,8 @@ VALUES
                                                               'PC 1500 (Sharp): Pocket Computer'                                                                                         ),
 (  1024 , 'roehren/RoehrenAlt.png'                 , 'phi@smoch.ch' , 'Röhren'                                                                                             ,
                                                               'Röhren aus einem «Elektronengehirn»'                                                                                        ),
+(  1025 , 'HP15C.png'                              , 'phi@smoch.ch' , 'Wissenschaftlicher Taschenrechner'                                                                                             ,
+                                                              'Wissenschaftlicher Taschenrechner HP-15C'                                                                                        ),
 
 
 -- speichern
@@ -412,6 +411,8 @@ VALUES
 
 (  3006 , 'enigma2.png'                    , 'phi@smoch.ch' , 'Walzen zur Rotor-Schlüsselmaschine'                                                                      ,
                                                               'Enigma'                                                                                                 ),
+(  3007 , 'brief.png'                      , 'phi@smoch.ch' , 'Brief Dr. Wander 1920'                                                                      ,
+                                                              'Brief'                                                                                                 ),
 
 
 -- diverse
@@ -473,6 +474,7 @@ INSERT INTO `tbl_erfindungsbild`
 ('neperstaebchen',  1   ,   1019    ),  -- Neperstäbchen
 ('binaersystem'  ,  1   ,   1020    ),  -- Nullen und Einsen
 ('taschenrechner',  1   ,   1022    ),  -- Taschenrechner
+('taschenrechner',  2   ,   1025    ),  -- Wissenschaftlicher Taschenrechner
 
 -- speichern
 ('amphore'       ,  1   ,   2001    ),  -- Amphora Etruskisch Popolonio
@@ -537,6 +539,7 @@ INSERT INTO `tbl_exponatbild`
 (  1008       ,   1018    ,  1   ), -- not mit Transistoren
 (  1009       ,   1022    ,  1   ), -- Taschenrechner privileg 853M
 (  1010       ,   1023    ,  1   ), -- PC 1500 Sharp
+(  1012       ,   1025    ,  1   ), -- HP 15 C
 
 -- speichern
 (  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
@@ -560,6 +563,7 @@ INSERT INTO `tbl_exponatbild`
 -- (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
 (  3003       ,   3003    ,  1   ), -- Morsetaste
 (  3002       ,   3002    ,  1   ), -- Telephon
+(  3004       ,   3007    ,  1   ), -- Brief
 -- diverses
 (  9001       ,   9001    ,  1   ), -- smartphone
 (  9002       ,   9002    ,  1   ), -- halbleiter Silicium
