@@ -102,6 +102,7 @@ INSERT INTO `tbl_erfindung`
 
 -- kommunizieren
 ('schrift'       , 'Schriften'                     , 'ca. 4000 v. Chr.', 3                  ),
+('brief'         , 'Briefe'                        , 'ca 1800 v. Chr.' , 3                  ),
 ('buchdruck'     , 'Buchdruck'                     ,      '868'        , 3                  ),
 ('morsetaste'    , 'Morsegerät/Relaisstation'      ,     '1833'        , 3                  ),
 ('enigma'        , 'Enigma'                        ,     '1918'        , 3                  ),
@@ -173,13 +174,14 @@ INSERT INTO `tbl_reihenfolge`
 
 -- kommunizieren
 ('schrift'       ,   3              ,   1      ),
-('buchdruck'     ,   3              ,   2      ),
-('morsetaste'    ,   3              ,   3      ),
-('telephon'      ,   3              ,   4      ),
-('enigma'        ,   3              ,   5      ),
-('glasfaser'     ,   3              ,   6      ),
-('ascii'         ,   3              ,   7      ),
-('smartphone'    ,   3              ,   8      );
+('brief'         ,   3              ,   2      ),
+('buchdruck'     ,   3              ,   3      ),
+('morsetaste'    ,   3              ,   4      ),
+('telephon'      ,   3              ,   5      ),
+('enigma'        ,   3              ,   6      ),
+('glasfaser'     ,   3              ,   7      ),
+('ascii'         ,   3              ,   8      ),
+('smartphone'    ,   3              ,   9      );
 
 
 
@@ -234,6 +236,7 @@ INSERT INTO `tbl_exponat`
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
 (3002 , 'ca. 1930/40'  , 'Kurbeltelephon 30er Jahre'                          , 'K_002_t'     , true       ),
 (3003 , '????'         , 'Morsetaste'                                         , 'K_003_m'     , true       ),
+(3004 , '1920'         , 'Brief'                                              , 'K_004_b'     , true       ),
 
 -- diverse
 (9001 , '2010'         , 'HTC Desire'                                         , 'D_001_s'     , true       ),
