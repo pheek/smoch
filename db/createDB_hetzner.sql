@@ -6,11 +6,11 @@
 -- --------------------------------------------------------------
 -- --DROP   DATABASE IF EXISTS `smoch`  ;
 -- --CREATE DATABASE           `smoch`  ;
-ALTER  DATABASE           `smoch_db`
+ALTER  DATABASE           `smocha_db`
   DEFAULT CHARACTER SET 'utf8'
 	DEFAULT COLLATE 'utf8_general_ci';
 
-USE                      `smoch_db`  ;
+USE                      `smocha_db`  ;
 
 -- USER SMOCH
 DROP   USER 'smoch';

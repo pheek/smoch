@@ -1,8 +1,7 @@
 -- 2019-05-18 phi
 -- DATENBANK zu SMOCH: DOMAIN Tabellen
 
-USE `smoch_db`;
-
+USE `smocha_db`;
 
 
 -- --------------------------------------------------------
@@ -15,7 +14,7 @@ CREATE TABLE `tbl_program_parameter` (
 
 INSERT INTO `tbl_program_parameter`
 (`name`                , `value`               , `description`                                      ) VALUES
-('isDevelop'           , 'true'                , 'false = scharf; true=localhost o. ä.'             ),
+('isDevelop'           , 'false'                , 'false = scharf; true=localhost o. ä.'             ),
 ('browser_path'        , '/'                   , 'url after "host:port" entry on targed host'       ),
 ('browser_path_develop', '/smoch/'             , 'same as browser_path, but on development machine.'),
 ('server_root'         , '/var/www/smoch'      , 'server root for php includes or file readings.'   ),
@@ -273,7 +272,7 @@ VALUES
                                                               'Mechanischer Zahlenschieber "Addimult" aus Metall'                                                      ),
 
 (  1004 , 'rechenschieber.png'             , 'phi@smoch.ch' , 'Rechenschieber'                                                                                          ,
-                                                              ' Logarithmischer Rechenschieber (Aristo Nr. 69)'                                                        ),
+                                                              'Logarithmischer Rechenschieber (Aristo Nr. 69)'                                                        ),
 
 (  1005 , 'zuse/zuse_z3_a.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3'                                                                                            ,
                                                               'Zuse Z3 Deutsches Museum (Foto 2018)'                                                                   ),

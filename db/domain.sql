@@ -271,7 +271,7 @@ VALUES
                                                               'Mechanischer Zahlenschieber "Addimult" aus Metall'                                                      ),
 
 (  1004 , 'rechenschieber.png'             , 'phi@smoch.ch' , 'Rechenschieber'                                                                                          ,
-                                                              ' Logarithmischer Rechenschieber (Aristo Nr. 69)'                                                        ),
+                                                              'Logarithmischer Rechenschieber (Aristo Nr. 69)'                                                        ),
 
 (  1005 , 'zuse/zuse_z3_a.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3'                                                                                            ,
                                                               'Zuse Z3 Deutsches Museum (Foto 2018)'                                                                   ),
