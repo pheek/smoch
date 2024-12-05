@@ -503,6 +503,7 @@ INSERT INTO `tbl_erfindungsbild`
 ('telephon'      ,  1   ,   3002    ),  -- Telephon
 ('enigma'        ,  1   ,   3005    ),  -- Enigma
 ('enigma'        ,  2   ,   3006    ),  -- Walzen der Enigma
+('brief'         ,  1   ,   3007    ),  -- Brief Dr. Wander
 
 -- diverse
 ('smartphone'    ,  1   ,   9006    ),  -- NOKIA Smarphone 1998
