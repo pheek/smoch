@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #
 # 2020 06 21: Create QR-Codes for museum
 #
@@ -9,6 +9,7 @@
 ## install fpdf first:
 ## python -m pip install fpdf
 from fpdf import FPDF;
+from fpdf.enums import XPos, YPos
 
 ## install python-mysql first:
 ## python -m pip install mysql-connector-python
@@ -59,43 +60,41 @@ def print_single_exponat(exp, nrOnPage):
 	##print(">>>>" + x[0] + "<<<");
 	pdf.cell(X_INDENT);
 	text = "bms.smoch.ch/erfindung.php/" + str(exp[0]);
-	pdf.cell(200, 6, txt=text, ln=1, align="L");
+	pdf.cell(200, 6, text=text, new_x=XPos.LMARGIN, new_y=YPos.NEXT, align="L");
 
 	pdf.set_font("times", size=12);
 	pdf.cell(X_INDENT);
 	pdf.set_text_color(80, 100, 0);
 	text = "Erfindung: " + str(exp[1]) + " (" + str(exp[2]) + ")";
-	pdf.cell(200, 6, txt=text, ln=1, align="L");
+	pdf.cell(200, 6, text=text,    new_x=XPos.LMARGIN, new_y=YPos.NEXT , align="L");
 	pdf.set_text_color(0, 0, 0);
 	
 	pdf.set_font("times", size=11);
 	pdf.cell(X_INDENT);
 	text = "Exponat: " + str(exp[5]) + " (" + str(exp[4]) + ")";
-	pdf.cell(200, 6, txt=text, ln=1, align="L");
+	pdf.cell(200, 6, text=text,   new_x=XPos.LMARGIN, new_y=YPos.NEXT  , align="L");
 
 	pdf.set_font("times", size=10);
 	pdf.cell(X_INDENT);
 	text = "Kategorie: " + str(exp[9]);
-	pdf.cell(200, 6, txt=text, ln=1, align="L");
+	pdf.cell(200, 6, text=text,   new_x=XPos.LMARGIN, new_y=YPos.NEXT  , align="L");
 
 	pdf.set_font("times", size=9);
 	pdf.cell(X_INDENT);
 	text = "Inventar Nr: " + str(exp[6]);
-	pdf.cell(200, 6, txt=text, ln=1, align="L");
-
-
+	pdf.cell(200, 6, text=text,   new_x=XPos.LMARGIN, new_y=YPos.NEXT  , align="L");
 	
 ## DB Connection
 
 print("Start: connecting to db smoch (localhost)");
-mydb = mariadb.connect(
+connection = mariadb.connect(
   host    ="localhost",
   user    ="smoch"    ,
   password="123"      ,
   database="smoch"
 );
 
-mycursor = mydb.cursor();
+mycursor = connection.cursor();
 
 mycursor.execute("SELECT * FROM `vw_erfindungsexponat`");
 

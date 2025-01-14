@@ -218,7 +218,7 @@ INSERT INTO `tbl_exponat`
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
 (2002 , '2019'         , 'Nachbildung aus dem 3D-Drucker'                     , 'S_002_a'     , false      ),
-(2003 , 'ca. 1998'     , 'Harddisk offen'                                     , 'S_003_h'     , false      ),
+(2003 , '60er Jahre'   , 'Harddisk, IBM 360'                                  , 'S_003_h'     , false      ),
 (2004 , '1997'         , '3.5 Zoll Boot-Diskette S.U.s.E. Linux Kernel 2.0.3x', 'S_004_d'     , true       ),
 (2005 , '2008'         , 'Ubuntu OS 8.10'                                     , 'S_005_u'     , true       ),
 (2006 , '2004'         , 'Vince Ebers Ur-Knaller'                             , 'S_006_c'     , true       ),
@@ -228,10 +228,10 @@ INSERT INTO `tbl_exponat`
 (2010 , 'ca. 1970'     , 'Magnetband Storage-Master'                          , 'S_010_m'     , true       ),
 (2011 , '2020'         , 'Bit nachgebaut mit Transitoren'                     , 'S_011_b'     , true       ),
 (2012 , '1999'         , 'Compact Flash SanDisk 8MB'                          , 'S_012_f'     , true       ),
-(2013 , 'ca. 1960'     , 'Harddisk'                                           , 'S_003_d'     , true       ),
-
+(2013 , 'ca. 1998'     , 'Harddisk offen'                                     , 'S_003_d'     , true       ),
+(2014 , 'anf. 20. Jh'  , 'Buch «Petra»'                                       , 'S_013_b'     , true       ),
 -- kommunizieren
--- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                   , 'K_001_k'     , false      ),
+-- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                , 'K_001_k'     , false      ),
 (3002 , 'ca. 1930/40'  , 'Kurbeltelephon 30er Jahre'                          , 'K_002_t'     , true       ),
 (3003 , '????'         , 'Morsetaste'                                         , 'K_003_m'     , true       ),
 (3004 , '1920'         , 'Brief'                                              , 'K_004_b'     , true       ),
@@ -391,10 +391,11 @@ VALUES
                                                               'Flash Speicherkarte'                                                                                    ),
 (  2020 , 'kernspeicher/kernspeicher_ringe2.jpg'                 , 'phi@smoch.ch' , 'Kernspeicher'                                                                     ,
                                                               'Kernspeicher'                                                        ),
-(  2021 , 'harddisk/HardDiskGross.png'                 , 'phi@smoch.ch' , 'Harddisk'                                                                     ,
+(  2021 , 'harddisk/HardDiskGross.png'     , 'phi@smoch.ch' , 'Harddisk'                                                                     ,
                                                               'Harddisk'                                                        ),
 
-
+(  2022 , 'buch_petra.jpg'                 ,'phi@smoch.ch' ,  'Buch' ,
+                                                              '«Petra»'),
 
 -- kommunizieren
 (  3001 , 'keilschrift.jpg'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
@@ -560,6 +561,8 @@ INSERT INTO `tbl_exponatbild`
 (  2011       ,   2017    ,  1   ), -- Bit nachgebaut mit Transistoren (Flip-Flop)
 (  2012       ,   2018    ,  1   ), -- Flash Speicherkarte Compact Flash
 (  2012       ,   2019    ,  2   ), -- Flash Speicherkarte Compact Flash
+(  2014       ,   2022    ,  2   ), -- Buch «Petra»
+
 -- kommunizieren
 -- (  3001       ,   3001    ,  1   ), -- Tontäfelchen selbt gebrannt
 (  3003       ,   3003    ,  1   ), -- Morsetaste
@@ -615,6 +618,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('magnetband'    ,  2010        ,  1   ),
 ('bit_transistor',  2011        ,  1   ),
 ('flash'         ,  2012        ,  1   ),
+('buchdruck'     ,  2014        ,  1   ),
 
 -- kommunizieren
 -- ('schrift'       ,  3001        ,  1   ),
