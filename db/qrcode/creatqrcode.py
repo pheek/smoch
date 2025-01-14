@@ -83,6 +83,8 @@ def print_single_exponat(exp, nrOnPage):
 	pdf.cell(X_INDENT);
 	text = "Inventar Nr: " + str(exp[6]);
 	pdf.cell(200, 6, text=text,   new_x=XPos.LMARGIN, new_y=YPos.NEXT  , align="L");
+
+
 	
 ## DB Connection
 
