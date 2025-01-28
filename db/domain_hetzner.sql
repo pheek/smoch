@@ -218,10 +218,10 @@ INSERT INTO `tbl_exponat`
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
 (2002 , '2019'         , 'Nachbildung aus dem 3D-Drucker'                     , 'S_002_a'     , false      ),
-(2003 , '60er Jahre'   , 'Harddisk, IBM 360'                                  , 'S_003_h'     , false      ),
-(2004 , '1997'         , '3.5 Zoll Boot-Diskette S.U.s.E. Linux Kernel 2.0.3x', 'S_004_d'     , true       ),
+(2003 , '60er Jahre'   , 'Harddisk, IBM 360'                                  , 'S_003_h'     , true       ),
+(2004 , '1997'         , '3.5 Zoll Boot-Diskette S.U.s.E. Linux Kernel 2.0.3x', 'S_004_d'     , false      ),
 (2005 , '2008'         , 'Ubuntu OS 8.10'                                     , 'S_005_u'     , true       ),
-(2006 , '2004'         , 'Vince Ebers Ur-Knaller'                             , 'S_006_c'     , true       ),
+(2006 , '2004'         , 'Vince Ebers Ur-Knaller'                             , 'S_006_c'     , false      ),
 (2007 , '1964'         , 'Lochkarte 80-Spalten f. EBCDIC (ungelocht)'         , 'S_007_l'     , true       ),
 (2008 , 'ca. 2010'     , 'Speicherchip C04040BE: Flip Flop'                   , 'S_008_c'     , true       ),
 (2009 , 'ca 1970'      , 'Kernspeicher DELL'                                  , 'S_009_k'     , true       ),
@@ -546,8 +546,8 @@ INSERT INTO `tbl_exponatbild`
 -- speichern
 (  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
 (  2002       ,   2002    ,  1   ), -- Amphore Bild aus dem 3DDrucker
-(  2003       ,   2010    ,  2   ), -- Harddisk offen
-(  2013       ,   2021    ,  1   ), -- Harddisk einer alten IBM
+(  2013       ,   2010    ,  2   ), -- Harddisk offen
+(  2003       ,   2021    ,  1   ), -- Harddisk einer alten IBM
 (  2004       ,   2004    ,  1   ), -- Diskette S.U.s.E.
 (  2005       ,   2005    ,  1   ), -- CD (Ubuntu OS 2008 Oktober (10)
 (  2006       ,   2006    ,  1   ), -- CD (Audio : "Vince Eberts Ur-Knaller")
