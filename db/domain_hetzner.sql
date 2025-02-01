@@ -217,10 +217,10 @@ INSERT INTO `tbl_exponat`
 
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
-(2002 , '2019'         , 'Nachbildung aus dem 3D-Drucker'                     , 'S_002_a'     , false      ),
+(2002 , '2019'         , 'Nachbildung aus dem 3D-Drucker'                     , 'S_002_a'     , true      ),
 (2003 , '60er Jahre'   , 'Harddisk, IBM 360'                                  , 'S_003_h'     , true       ),
 (2004 , '1997'         , '3.5 Zoll Boot-Diskette S.U.s.E. Linux Kernel 2.0.3x', 'S_004_d'     , false      ),
-(2005 , '2008'         , 'Ubuntu OS 8.10'                                     , 'S_005_u'     , true       ),
+(2005 , '2008'         , 'Ubuntu OS 8.10'                                     , 'S_005_u'     , false       ),
 (2006 , '2004'         , 'Vince Ebers Ur-Knaller'                             , 'S_006_c'     , false      ),
 (2007 , '1964'         , 'Lochkarte 80-Spalten f. EBCDIC (ungelocht)'         , 'S_007_l'     , true       ),
 (2008 , 'ca. 2010'     , 'Speicherchip C04040BE: Flip Flop'                   , 'S_008_c'     , true       ),
@@ -228,7 +228,7 @@ INSERT INTO `tbl_exponat`
 (2010 , 'ca. 1970'     , 'Magnetband Storage-Master'                          , 'S_010_m'     , true       ),
 (2011 , '2020'         , 'Bit nachgebaut mit Transitoren'                     , 'S_011_b'     , true       ),
 (2012 , '1999'         , 'Compact Flash SanDisk 8MB'                          , 'S_012_f'     , true       ),
-(2013 , 'ca. 1998'     , 'Harddisk offen'                                     , 'S_003_d'     , true       ),
+(2013 , 'ca. 1998'     , 'Harddisk offen'                                     , 'S_003_d'     , false       ),
 (2014 , 'anf. 20. Jh'  , 'Buch «Petra»'                                       , 'S_013_b'     , true       ),
 -- kommunizieren
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                , 'K_001_k'     , false      ),
