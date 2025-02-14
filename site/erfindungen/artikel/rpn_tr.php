@@ -15,10 +15,11 @@
 Dies hat zwei Vorteile: Erstens ist die Ausführungsreihenfolge immer klar und zweitens werden somit keine Klammern nötig.
 </p>
 
-
 <h1>Funktionsweise und Aufbau</h1>
 <p>Der HP 35 hat ein rotes Display mit Leuchtdioden. Der Stapel beläuft sich auf vier Zahlen. Somit konnte man bis zu vier Zahlen eingeben, ehe man diese durch Operationen miteinander verrechnete.</p>
 
 	<h1>Trivia</h1>
-<p>Dank einer Online-Auktion gelang dieses Exponat des weltweit ersten wissenschaftlichen Taschenrechners ins smoch.ch</p>
+<p>Dank einer Online-Auktion gelang dieses Exponat des weltweit ersten wissenschaftlichen Taschenrechners ins smoch.ch<br/>
+Der ausgestellte HP35 aus dem ist voll funktionsfähig.
+</p>
 </div>
