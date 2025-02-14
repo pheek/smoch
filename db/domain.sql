@@ -1,7 +1,7 @@
 -- 2019-05-18 phi
 -- DATENBANK zu SMOCH: DOMAIN Tabellen
 
-USE `smoch`;
+USE `smocha_db`;
 
 -- --------------------------------------------------------
 CREATE TABLE `tbl_program_parameter` (
@@ -13,7 +13,7 @@ CREATE TABLE `tbl_program_parameter` (
 
 INSERT INTO `tbl_program_parameter`
 (`name`                , `value`               , `description`                                      ) VALUES
-('isDevelop'           , 'true'                , 'false = scharf; true=localhost o. ä.'             ),
+('isDevelop'           , 'false'               , 'false = scharf; true=localhost o. ä.'             ),
 ('browser_path'        , '/'                   , 'url after "host:port" entry on targed host'       ),
 ('browser_path_develop', '/smoch/'             , 'same as browser_path, but on development machine.'),
 ('server_root'         , '/var/www/smoch'      , 'server root for php includes or file readings.'   ),
@@ -66,52 +66,53 @@ CREATE TABLE `tbl_erfindung` (
 
 
 INSERT INTO `tbl_erfindung`
-(`IDurl`,          `Titel`                         , `Jahrzahl`        , `defaultKategorie` ) VALUES
+(`IDurl`,          `Titel`                             , `Jahrzahl`        , `defaultKategorie` ) VALUES
 -- rechnen
-('abakus'        , 'Abakus'                        , 'ca. 2500 v. Chr.', 1                  ),
-('rechenschieber', 'Rechenschieber'                ,     '1632'        , 1                  ),
-('pascaline'     , 'Pascaline'                     ,     '1642'        , 1                  ),
-('neperstaebchen', 'Neperstäbchen'                 ,     '17. Jh.'     , 1                  ),
-('binaersystem'  , 'Binärsystem'                   ,     '1692'        , 1                  ),
-('zahlenschieber', 'Zahlenschieber (Addiator)'     , 'ca. 1700'        , 1                  ),
-('differenzenmaschine', 'Differenzenmaschine'      ,     '1822'        , 1                  ),
-('monkey'        , 'Educated Monkey'               ,     '1916'        , 1                  ),
-('computer'      , 'Computer'                      ,     '1937'        , 1                  ),
-('not_relais'    , 'NOT realisiert mit Relais'     ,     '1941'        , 1                  ),
-('roehren'       , 'Röhrenrechner'                 ,     '1942'        , 1                  ),
-('transistor'    , 'Bipolartransistor'             ,     '1948'        , 1                  ),
-('taschenrechner', 'Taschenrechner'                ,     '1967'        , 1                  ),
-('not_transistor', 'NOT realisiert mit Transistror', '????'            , 1                  ),
-('volladdierer'  , 'Volladdierer'                  , '????'            , 1                  ),
+('abakus'        , 'Abakus'                            , 'ca. 2500 v. Chr.', 1                  ),
+('rechenschieber', 'Rechenschieber'                    ,     '1632'        , 1                  ),
+('pascaline'     , 'Pascaline'                         ,     '1642'        , 1                  ),
+('neperstaebchen', 'Neperstäbchen'                     ,     '17. Jh.'     , 1                  ),
+('binaersystem'  , 'Binärsystem'                       ,     '1692'        , 1                  ),
+('zahlenschieber', 'Zahlenschieber (Addiator)'         , 'ca. 1700'        , 1                  ),
+('differenzenmaschine', 'Differenzenmaschine'          ,     '1822'        , 1                  ),
+('monkey'        , 'Educated Monkey'                   ,     '1916'        , 1                  ),
+('computer'      , 'Computer'                          ,     '1937'        , 1                  ),
+('not_relais'    , 'NOT realisiert mit Relais'         ,     '1941'        , 1                  ),
+('roehren'       , 'Röhrenrechner'                     ,     '1942'        , 1                  ),
+('transistor'    , 'Bipolartransistor'                 ,     '1948'        , 1                  ),
+('taschenrechner', 'Taschenrechner'                    ,     '1967'        , 1                  ),
+('rpn_tr'        , 'Wissenschaftlicher Taschenrechner' ,     '1972'        , 1                  ),
+('not_transistor', 'NOT realisiert mit Transistror'    , '????'            , 1                  ),
+('volladdierer'  , 'Volladdierer'                      , '????'            , 1                  ),
 
 -- speichern
-('amphore'       , 'Amphore'                       ,  'ca. 500 v. Chr.', 2                  ),
-('lochkarte'     , 'Lochkarte'                     , '18. Jahrhundert' , 2                  ),
-('magnetband'    , 'Magnetband'                    ,     '1898'        , 2                  ),
-('kernspeicher'  , 'Kernspeicher'                  ,     '1949'        , 2                  ),
-('harddisk'      , 'Harddisk'                      ,     '1956'        , 2                  ),
-('diskette'      , 'Diskette'                      ,     '1969'        , 2                  ),
-('cd'            , 'CD - ROM'                      ,     '1977'        , 2                  ),
-('flash'         , 'Flash Speicher'                ,     'ca. 1985'    , 2                  ),
-('bit_relais'    , 'Bit realisiert mit Relais'     ,     '????'        , 2                  ),
-('bit_transistor', 'Bit realisiert mit Transistor' ,     '????'        , 2                  ),
+('amphore'       , 'Amphore'                           ,  'ca. 500 v. Chr.', 2                  ),
+('lochkarte'     , 'Lochkarte'                         , '18. Jahrhundert' , 2                  ),
+('magnetband'    , 'Magnetband'                        ,     '1898'        , 2                  ),
+('kernspeicher'  , 'Kernspeicher'                      ,     '1949'        , 2                  ),
+('harddisk'      , 'Harddisk'                          ,     '1956'        , 2                  ),
+('diskette'      , 'Diskette'                          ,     '1969'        , 2                  ),
+('cd'            , 'CD - ROM'                          ,     '1977'        , 2                  ),
+('flash'         , 'Flash Speicher'                    ,     'ca. 1985'    , 2                  ),
+('bit_relais'    , 'Bit realisiert mit Relais'         ,     '????'        , 2                  ),
+('bit_transistor', 'Bit realisiert mit Transistor'     ,     '????'        , 2                  ),
 
 
 -- kommunizieren
-('schrift'       , 'Schriften'                     , 'ca. 4000 v. Chr.', 3                  ),
-('brief'         , 'Briefe'                        , 'ca 1800 v. Chr.' , 3                  ),
-('buchdruck'     , 'Buchdruck'                     ,      '868'        , 3                  ),
-('morsetaste'    , 'Morsegerät/Relaisstation'      ,     '1833'        , 3                  ),
-('enigma'        , 'Enigma'                        ,     '1918'        , 3                  ),
-('glasfaser'     , 'Lichtwellenleiter'             ,     '1960'        , 3                  ),
-('telephon'      , 'Telefon'                       ,     '1861'        , 3                  ),
-('ascii'         , 'ASCII'                         ,     '1963'        , 3                  ),
+('schrift'       , 'Schriften'                         , 'ca. 4000 v. Chr.', 3                  ),
+('brief'         , 'Briefe'                            , 'ca 1800 v. Chr.' , 3                  ),
+('buchdruck'     , 'Buchdruck'                         ,      '868'        , 3                  ),
+('morsetaste'    , 'Morsegerät/Relaisstation'          ,     '1833'        , 3                  ),
+('enigma'        , 'Enigma'                            ,     '1918'        , 3                  ),
+('glasfaser'     , 'Lichtwellenleiter'                 ,     '1960'        , 3                  ),
+('telephon'      , 'Telefon'                           ,     '1861'        , 3                  ),
+('ascii'         , 'ASCII'                             ,     '1963'        , 3                  ),
 
 -- diverse Kategorien
-('smartphone'    , 'Smartphone'                    ,     '1994'        , 3                  ),
-('chip'          , 'Rechner- / Speicherchip'       , 'ca. 1950'        , 1                  ),
-('wafer'         , 'Wafer'                         ,     '1960'        , 2                  ),
-('halbleiter'    , 'Halbleiter (Silicium)'         ,     '1874'        , 1                  );
+('smartphone'    , 'Smartphone'                        ,     '1994'        , 3                  ),
+('chip'          , 'Rechner- / Speicherchip'           , 'ca. 1950'        , 1                  ),
+('wafer'         , 'Wafer'                             ,     '1960'        , 2                  ),
+('halbleiter'    , 'Halbleiter (Silicium)'             ,     '1874'        , 1                  );
 
 
 
@@ -150,7 +151,8 @@ INSERT INTO `tbl_reihenfolge`
 ('chip'          ,      1           ,  16      ),
 ('wafer'         ,      1           ,  17      ),
 ('taschenrechner',      1           ,  18      ),
-('smartphone'    ,      1           ,  19      ),
+('rpn_tr'        ,      1           ,  19      ),
+('smartphone'    ,      1           ,  20      ),
 
 -- speichern
 ('amphore'       ,   2              ,   1      ),
@@ -214,13 +216,13 @@ INSERT INTO `tbl_exponat`
 (1010 , '1981'         , 'Pocket Computer (PC)'                               , 'R_010_s'     , true       ),
 (1011 , 'ca 1950'      , 'Teil eines Röhrenrechners'                          , 'R_007_e'     , true       ),
 (1012 , 'ca 1982'      , 'Wissenschaftlicher Taschenrechner HP 15C'           , 'R_011_h'     , true       ),
-
+(1013 , '1972'         , 'Wissenschaftlicher Taschenrechner HP 35'            , 'R_012_h'     , true       ),
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
-(2002 , '2019'         , 'Nachbildung aus dem 3D-Drucker'                     , 'S_002_a'     , true      ),
+(2002 , '2019'         , 'Nachbildung aus dem 3D-Drucker'                     , 'S_002_a'     , true       ),
 (2003 , '60er Jahre'   , 'Harddisk, IBM 360'                                  , 'S_003_h'     , true       ),
 (2004 , '1997'         , '3.5 Zoll Boot-Diskette S.U.s.E. Linux Kernel 2.0.3x', 'S_004_d'     , false      ),
-(2005 , '2008'         , 'Ubuntu OS 8.10'                                     , 'S_005_u'     , false       ),
+(2005 , '2008'         , 'Ubuntu OS 8.10'                                     , 'S_005_u'     , false      ),
 (2006 , '2004'         , 'Vince Ebers Ur-Knaller'                             , 'S_006_c'     , false      ),
 (2007 , '1964'         , 'Lochkarte 80-Spalten f. EBCDIC (ungelocht)'         , 'S_007_l'     , true       ),
 (2008 , 'ca. 2010'     , 'Speicherchip C04040BE: Flip Flop'                   , 'S_008_c'     , true       ),
@@ -228,7 +230,7 @@ INSERT INTO `tbl_exponat`
 (2010 , 'ca. 1970'     , 'Magnetband Storage-Master'                          , 'S_010_m'     , true       ),
 (2011 , '2020'         , 'Bit nachgebaut mit Transitoren'                     , 'S_011_b'     , true       ),
 (2012 , '1999'         , 'Compact Flash SanDisk 8MB'                          , 'S_012_f'     , true       ),
-(2013 , 'ca. 1998'     , 'Harddisk offen'                                     , 'S_003_d'     , false       ),
+(2013 , 'ca. 1998'     , 'Harddisk offen'                                     , 'S_003_d'     , false      ),
 (2014 , 'anf. 20. Jh'  , 'Buch «Petra»'                                       , 'S_013_b'     , true       ),
 -- kommunizieren
 -- (3001 , '2019'         , 'Tontäfelchen selbst gebrannt ;-)'                , 'K_001_k'     , false      ),
@@ -333,6 +335,8 @@ VALUES
                                                               'Röhren aus einem «Elektronengehirn»'                                                                                        ),
 (  1025 , 'HP15C.png'                              , 'phi@smoch.ch' , 'Wissenschaftlicher Taschenrechner'                                                                                             ,
                                                               'Wissenschaftlicher Taschenrechner HP-15C'                                                                                        ),
+(  1026 , 'HP35.png'                               , 'phi@smoch.ch' , 'Wissenschaftlicher Taschenrechner'                                                                                             ,
+                                                              'Wissenschaftlicher Taschenrechner HP-35'                                                                                        ),																															
 
 
 -- speichern
@@ -475,8 +479,8 @@ INSERT INTO `tbl_erfindungsbild`
 ('neperstaebchen',  1   ,   1019    ),  -- Neperstäbchen
 ('binaersystem'  ,  1   ,   1020    ),  -- Nullen und Einsen
 ('taschenrechner',  1   ,   1022    ),  -- Taschenrechner
-('taschenrechner',  2   ,   1025    ),  -- Wissenschaftlicher Taschenrechner
-
+('rpn_tr'        ,  1   ,   1026    ),  -- Wissenschaftlicher TR HP 35
+('rpn_tr'        ,  2   ,   1025    ),  -- Wissenschaftlicher Taschenrechner HP 15C
 -- speichern
 ('amphore'       ,  1   ,   2001    ),  -- Amphora Etruskisch Popolonio
 ('amphore'       ,  2   ,   2002    ),  -- 3D-Drucker Amhpore
@@ -541,8 +545,8 @@ INSERT INTO `tbl_exponatbild`
 (  1008       ,   1018    ,  1   ), -- not mit Transistoren
 (  1009       ,   1022    ,  1   ), -- Taschenrechner privileg 853M
 (  1010       ,   1023    ,  1   ), -- PC 1500 Sharp
-(  1012       ,   1025    ,  1   ), -- HP 15 C
-
+(  1013       ,   1026    ,  1   ), -- HP 35
+(  1012       ,   1025    ,  2   ), -- HP 15 C
 -- speichern
 (  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
 (  2002       ,   2002    ,  1   ), -- Amphore Bild aus dem 3DDrucker
@@ -601,7 +605,8 @@ INSERT INTO `tbl_erfindungsexponat`
 ('not_transistor',  1008        ,  1   ),
 ('taschenrechner',  1009        ,  1   ),
 ('computer'      ,  1010        ,  1   ),
-('taschenrechner',  1012        ,  2   ),
+('rpn_tr'        ,  1013        ,  1   ),
+('rpn_tr'        ,  1012        ,  2   ),
 
 -- speichern
 ('amphore'       ,  2001        ,  1   ),
@@ -632,8 +637,6 @@ INSERT INTO `tbl_erfindungsexponat`
 ('halbleiter'    ,  9002        ,  1   ),
 ('wafer'         ,  9003        ,  1   ),
 ('transistor'    ,  9004        ,  1   );
-
-
 
 -- Mehrere Exponate zu einem Objekt sind möglich.
 -- Es gibt auch Exponate, welche nur ein Bild haben.
@@ -705,7 +708,8 @@ INSERT INTO `tbl_editor`
 ('rechenschieber', 1),
 ('pascaline'     , 1),
 ('computer'      , 1),
-
+('taschenrechner', 1),
+('rpn_tr'        , 1),
 -- speichern
 ('amphore'       , 1),
 ('harddisk'      , 1),

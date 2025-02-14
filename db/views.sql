@@ -1,7 +1,7 @@
 -- 2019-05-18 phi
 -- DATENBANK zu SMOCH (Views)
 
-USE `smoch`;
+USE `smocha_db`;
 
 -- Exponate, wo ein Kärtchen dazu erstellt werden soll.
 -- Es existiert entweder ein Exponat, oder ein Photo ist im Schaukasten.

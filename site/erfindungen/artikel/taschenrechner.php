@@ -27,7 +27,6 @@
 			 Exponat des simplen Taschenrechners stammt aus einer online-Auktion. Es handelt sich um
 			 einen «<a href='https://www.calculator.org/calculators/Privileg_853_M.html'>privileg 853 M</a>» mit einer 8-Stellen Genauigkeit aus dem
 			 Jahre 1975.</p>
-       <p>Das ausgestellte Exponat des wissenschaftlichen Taschenrechners (HP-15C) wurde 1982 in Produktion gegeben. Das Exponat ist voll funktionsfähig.</p>
 	<h1>Quellenangaben</h1>
 	<p><a href='https://www.calculator.org/articles/A_First_Calculator.html'>www.calculator.org/articles/A_First_Calculator.html</a></p>
 </div>

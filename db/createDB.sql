@@ -4,15 +4,15 @@
 -- --------------------------------------------------------------
 -- db
 -- --------------------------------------------------------------
-DROP   DATABASE IF EXISTS `smoch`  ;
-CREATE DATABASE           `smoch`  ;
-ALTER  DATABASE           `smoch`
+DROP   DATABASE IF EXISTS `smocha_db`  ;
+CREATE DATABASE           `smocha_db`  ;
+ALTER  DATABASE           `smocha_db`
   DEFAULT CHARACTER SET 'utf8'
 	DEFAULT COLLATE 'utf8_general_ci';
 
-USE                      `smoch`  ;
+USE                      `smocha_db`  ;
 
 -- USER SMOCH
 DROP   USER 'smoch';
 CREATE USER 'smoch' IDENTIFIED BY '123';
-GRANT SELECT  ON `smoch`.* TO 'smoch'@'%';
+GRANT SELECT ON `smocha_db`.* TO 'smoch'@'%';

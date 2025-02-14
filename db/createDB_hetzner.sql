@@ -15,4 +15,4 @@ USE                      `smocha_db`  ;
 -- USER SMOCH
 DROP   USER 'smoch';
 CREATE USER 'smoch' IDENTIFIED BY '123';
-GRANT SELECT  ON `smoch_db`.* TO 'smoch'@'%';
+GRANT SELECT ON `smocha_db`.* TO 'smoch'@'%';
