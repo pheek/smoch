@@ -56,11 +56,11 @@ INSERT INTO `tbl_kategorie`
 -- Erfindungen
 --
 CREATE TABLE `tbl_erfindung` (
-  `IDurl`            varchar(200) NOT NULL PRIMARY KEY
+  `IDurl`            varchar(200)  NOT NULL PRIMARY KEY
                                            COMMENT 'withount *.php without *http://" without path. Wird ebenfalls verwendet für das Freitext-Prefix'
-, `Titel`            varchar(30)  NOT NULL COMMENT 'visible title'
-, `Jahrzahl`         varchar(20)  NOT NULL COMMENT 'sometimes as text (eg. 900 - 1200)'
-, `defaultKategorie` int          NOT NULL COMMENT 'Welche Kategorie ist Standard bei Verwendung mit QR Codes?'
+, `Titel`            Text          NOT NULL COMMENT 'visible title'
+, `Jahrzahl`         varchar(20)   NOT NULL COMMENT 'sometimes as text (eg. 900 - 1200)'
+, `defaultKategorie` int           NOT NULL COMMENT 'Welche Kategorie ist Standard bei Verwendung mit QR Codes?'
 , FOREIGN KEY (`defaultKategorie`) REFERENCES `tbl_kategorie` (`ID`)
 );
 
@@ -215,7 +215,7 @@ INSERT INTO `tbl_exponat`
 (1009 , '1975'         , 'Taschenrechner Privileg 853 M'                      , 'R_009_t'     , true       ),
 (1010 , '1981'         , 'Pocket Computer (PC)'                               , 'R_010_s'     , true       ),
 (1011 , 'ca 1950'      , 'Teil eines Röhrenrechners'                          , 'R_007_e'     , true       ),
-(1012 , 'ca 1982'      , 'Wissenschaftlicher Taschenrechner HP 15C'           , 'R_011_h'     , true       ),
+(1012 , 'ca 1982'      , 'Wissenschaftlicher Taschenrechner HP 15C'           , 'R_011_h'     , false       ),
 (1013 , '1972'         , 'Wissenschaftlicher Taschenrechner HP 35'            , 'R_012_h'     , true       ),
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),

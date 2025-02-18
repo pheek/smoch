@@ -11,9 +11,18 @@
 from fpdf import FPDF;
 from fpdf.enums import XPos, YPos
 
-## install python-mysql first:
-## python -m pip install mysql-connector-python
-import mysql.connector as mariadb;
+## All DB stuff
+import MySQLdb
+
+db = MySQLdb.connect(host="localhost",    # your host, usually localhost
+                     user="smoch",         # your username
+                     passwd="123",  # your password
+                     db="smocha_db")        # name of the data base
+
+# you must create a Cursor object. It will let
+#  you execute all the queries you need
+mycursor = db.cursor()
+
 
 ## install qr-code first
 ## python -m pip install opencv-python qrcode
@@ -33,7 +42,7 @@ def create_temp_qrCode(id):
 	)
 	qr.add_data(url + str( id));
 	qr.make(fit=True);
-	img = qr.make_image(fill_color="#000", back_color="#cf0");
+	img = qr.make_image(fill_color="#9e142d", back_color="#fff");
 	img.save(filename);
 
 X_INDENT = 41;
@@ -83,21 +92,11 @@ def print_single_exponat(exp, nrOnPage):
 	pdf.cell(X_INDENT);
 	text = "Inventar Nr: " + str(exp[6]);
 	pdf.cell(200, 6, text=text,   new_x=XPos.LMARGIN, new_y=YPos.NEXT  , align="L");
+	
+
 
 
 	
-## DB Connection
-
-print("Start: connecting to db smoch (localhost)");
-connection = mariadb.connect(
-  host    ="localhost",
-  user    ="smoch"    ,
-  password="123"      ,
-  database="smoch"
-);
-
-mycursor = connection.cursor();
-
 mycursor.execute("SELECT * FROM `vw_erfindungsexponat`");
 
 myresult = mycursor.fetchall();
