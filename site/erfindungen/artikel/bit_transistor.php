@@ -19,24 +19,18 @@
 	somit komplett andere Inhalte anzeigen.</p>
 	 
 	<h1>Funktionsweise und Aufbau</h1>
-	 <p>Die beiden Taster (unten in den Bildern) sind in der Praxis
-	 natürlich durch externe Ströme zu realisieren. Diese <i>externen
-	 Ströme</i> können durch Spannungen an der Basis der beiden
-	 Transistoren oder durch weitere Transistoren statt den Tastern
-		 umgesetzt werden.
+	 <p>Die beiden Leitungen "SET" bzw. "RESET" setzen bzw. löschen das Bit.
+	 In der Schaltung sind dies das grüne (SET) bzw. das orange (RESET) Kabel.
+	 
+	 Wird bei SET eine Spannung angelegt, so schaltet der linke Transistor durch und der rechte wird blockiert, sodass an der OUT-Leitung eine Spannung erzeugt wird. Die OUT-Leitung ist im Exponat das gelbe Kabel.
 	 </p>
-	<p>Hier dienen die beiden Taster jedoch der
-	 Veranschaulichung. Wird ein Taster gedrückt, so fließt dort der
-	 Strom ab und der Basisstrom am Transistor wird unterbrochen. Somit
-	 fließt der Strom durch den anderen Transistor und behält seinen
-		Zustand solange, bis der andere Taster gedrückt wird.
-	</p>
 
-	<p>Die obige Schaltung wurde mit ca. 8.5 Volt getestet. Beim
+<p>Die beiden weiteren Anschlüsse (rot/schwarz) dienen der Stromversorgung. Es reicht nämlich ein ganz kurzer «Stromstoß» bei SET bzw. RESET, um das Flip-Flop in den anderen Zustand zu versetzen. Danach bleibt die Output-Leitung bis auf weitere Anweisung (SET, RESET) im selben Zustand. Damit nach einem SET (auch von wenigen Millisekunden) das Bit bei OUT erhalten bleibt, muss permanent eine Stromversorgung anliegen. Dies macht diesen Speicher zum «flüchtigen Speicher»; wird die Stromversorgung unterbrochen (Ausschlten des PC), so verliert das Bit seinen definierten Zustand.</p>
+
+	<p>Die obige Schaltung wurde mit 9 Volt getestet. Beim
 	gesperrten rechten Transistor liefert der Output ca. 7.5 Volt, was
 	noch gut reicht, um weitere Transistoren anzusteuern.</p>
 
-	
 
 	<h1>Trivia</h1>
 	 <p>Die obige Schaltung wurde einen <a href='https://www.smoch.ch/skript/Grundlagen_Digitaltechnik_2020_04_18_V1.19.pdf'>Kurs</a>
