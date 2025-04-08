@@ -22,7 +22,7 @@
 	 <p>Die beiden Leitungen "SET" bzw. "RESET" setzen bzw. löschen das Bit.
 	 In der Schaltung sind dies das grüne (SET) bzw. das orange (RESET) Kabel.
 	 
-	 Wird bei SET eine Spannung angelegt, so schaltet der linke Transistor durch und der rechte wird blockiert, sodass an der OUT-Leitung eine Spannung erzeugt wird. Die OUT-Leitung ist im Exponat das gelbe Kabel.
+	 Wird bei SET eine Spannung angelegt, so schaltet der rechte Transistor durch. Dadurch liegt am linken Transistor an der Basis keine Spannung mehr an und der linke wird blockiert, sodass an der OUT-Leitung eine Spannung erzeugt wird. Die OUT-Leitung ist im Exponat das gelbe Kabel.
 	 </p>
 
 <p>Die beiden weiteren Anschlüsse (rot/schwarz) dienen der Stromversorgung. Es reicht nämlich ein ganz kurzer «Stromstoß» bei SET bzw. RESET, um das Flip-Flop in den anderen Zustand zu versetzen. Danach bleibt die Output-Leitung bis auf weitere Anweisung (SET, RESET) im selben Zustand. Damit nach einem SET (auch von wenigen Millisekunden) das Bit bei OUT erhalten bleibt, muss permanent eine Stromversorgung anliegen. Dies macht diesen Speicher zum «flüchtigen Speicher»; wird die Stromversorgung unterbrochen (Ausschlten des PC), so verliert das Bit seinen definierten Zustand.</p>
