@@ -57,7 +57,7 @@ INSERT INTO `tbl_kategorie`
 --
 CREATE TABLE `tbl_erfindung` (
   `IDurl`            varchar(200)  NOT NULL PRIMARY KEY
-                                           COMMENT 'withount *.php without *http://" without path. Wird ebenfalls verwendet für das Freitext-Prefix'
+                                            COMMENT 'withount *.php without *http://" without path. Wird ebenfalls verwendet für das Freitext-Prefix'
 , `Titel`            Text          NOT NULL COMMENT 'visible title'
 , `Jahrzahl`         varchar(20)   NOT NULL COMMENT 'sometimes as text (eg. 900 - 1200)'
 , `defaultKategorie` int           NOT NULL COMMENT 'Welche Kategorie ist Standard bei Verwendung mit QR Codes?'
@@ -68,51 +68,52 @@ CREATE TABLE `tbl_erfindung` (
 INSERT INTO `tbl_erfindung`
 (`IDurl`,          `Titel`                             , `Jahrzahl`        , `defaultKategorie` ) VALUES
 -- rechnen
-('abakus'        , 'Abakus'                            , 'ca. 2500 v. Chr.', 1                  ),
-('rechenschieber', 'Rechenschieber'                    ,     '1632'        , 1                  ),
-('pascaline'     , 'Pascaline'                         ,     '1642'        , 1                  ),
-('neperstaebchen', 'Neperstäbchen'                     ,     '17. Jh.'     , 1                  ),
-('binaersystem'  , 'Binärsystem'                       ,     '1692'        , 1                  ),
-('zahlenschieber', 'Zahlenschieber (Addiator)'         , 'ca. 1700'        , 1                  ),
-('differenzenmaschine', 'Differenzenmaschine'          ,     '1822'        , 1                  ),
-('monkey'        , 'Educated Monkey'                   ,     '1916'        , 1                  ),
-('computer'      , 'Computer'                          ,     '1937'        , 1                  ),
-('not_relais'    , 'NOT realisiert mit Relais'         ,     '1941'        , 1                  ),
-('roehren'       , 'Röhrenrechner'                     ,     '1942'        , 1                  ),
-('transistor'    , 'Bipolartransistor'                 ,     '1948'        , 1                  ),
-('taschenrechner', 'Taschenrechner'                    ,     '1967'        , 1                  ),
-('rpn_tr'        , 'Wissenschaftlicher Taschenrechner' ,     '1972'        , 1                  ),
-('not_transistor', 'NOT realisiert mit Transistror'    , '????'            , 1                  ),
-('volladdierer'  , 'Volladdierer'                      , '????'            , 1                  ),
+('abakus'             , 'Abakus'                            , 'ca. 2500 v. Chr.', 1                  ),
+('rechenschieber'     , 'Rechenschieber'                    ,     '1632'        , 1                  ),
+('pascaline'          , 'Pascaline'                         ,     '1642'        , 1                  ),
+('neperstaebchen'     , 'Neperstäbchen'                     ,     '17. Jh.'     , 1                  ),
+('binaersystem'       , 'Binärsystem'                       ,     '1692'        , 1                  ),
+('zahlenschieber'     , 'Zahlenschieber (Addiator)'         , 'ca. 1700'        , 1                  ),
+('differenzenmaschine', 'Differenzenmaschine'               ,     '1822'        , 1                  ),
+('monkey'             , 'Educated Monkey'                   ,     '1916'        , 1                  ),
+('elektr_rechner'     , 'Elektriomechanischer Rechner'      ,     '1927'        , 1                  ),
+('computer'           , 'Computer'                          ,     '1937'        , 1                  ),
+('not_relais'         , 'NOT realisiert mit Relais'         ,     '1941'        , 1                  ),
+('roehren'            , 'Röhrenrechner'                     ,     '1942'        , 1                  ),
+('transistor'         , 'Bipolartransistor'                 ,     '1948'        , 1                  ),
+('taschenrechner'     , 'Taschenrechner'                    ,     '1967'        , 1                  ),
+('rpn_tr'             , 'Wissenschaftlicher Taschenrechner' ,     '1972'        , 1                  ),
+('not_transistor'     , 'NOT realisiert mit Transistror'    , '????'            , 1                  ),
+('volladdierer'       , 'Volladdierer'                      , '????'            , 1                  ),
 
 -- speichern
-('amphore'       , 'Amphore'                           ,  'ca. 500 v. Chr.', 2                  ),
-('lochkarte'     , 'Lochkarte'                         , '18. Jahrhundert' , 2                  ),
-('magnetband'    , 'Magnetband'                        ,     '1898'        , 2                  ),
-('kernspeicher'  , 'Kernspeicher'                      ,     '1949'        , 2                  ),
-('harddisk'      , 'Harddisk'                          ,     '1956'        , 2                  ),
-('diskette'      , 'Diskette'                          ,     '1969'        , 2                  ),
-('cd'            , 'CD - ROM'                          ,     '1977'        , 2                  ),
-('flash'         , 'Flash Speicher'                    ,     'ca. 1985'    , 2                  ),
-('bit_relais'    , 'Bit realisiert mit Relais'         ,     '????'        , 2                  ),
-('bit_transistor', 'Bit realisiert mit Transistor'     ,     '????'        , 2                  ),
+('amphore'            , 'Amphore'                           ,  'ca. 500 v. Chr.', 2                  ),
+('lochkarte'          , 'Lochkarte'                         , '18. Jahrhundert' , 2                  ),
+('magnetband'         , 'Magnetband'                        ,     '1898'        , 2                  ),
+('kernspeicher'       , 'Kernspeicher'                      ,     '1949'        , 2                  ),
+('harddisk'           , 'Harddisk'                          ,     '1956'        , 2                  ),
+('diskette'           , 'Diskette'                          ,     '1969'        , 2                  ),
+('cd'                 , 'CD - ROM'                          ,     '1977'        , 2                  ),
+('flash'              , 'Flash Speicher'                    ,     'ca. 1985'    , 2                  ),
+('bit_relais'         , 'Bit realisiert mit Relais'         ,     '????'        , 2                  ),
+('bit_transistor'     , 'Bit realisiert mit Transistor'     ,     '????'        , 2                  ),
 
 
 -- kommunizieren
-('schrift'       , 'Schriften'                         , 'ca. 4000 v. Chr.', 3                  ),
-('brief'         , 'Briefe'                            , 'ca 1800 v. Chr.' , 3                  ),
-('buchdruck'     , 'Buchdruck'                         ,      '868'        , 3                  ),
-('morsetaste'    , 'Morsegerät/Relaisstation'          ,     '1833'        , 3                  ),
-('enigma'        , 'Enigma'                            ,     '1918'        , 3                  ),
-('glasfaser'     , 'Lichtwellenleiter'                 ,     '1960'        , 3                  ),
-('telephon'      , 'Telefon'                           ,     '1861'        , 3                  ),
-('ascii'         , 'ASCII'                             ,     '1963'        , 3                  ),
+('schrift'            , 'Schriften'                         , 'ca. 4000 v. Chr.', 3                  ),
+('brief'              , 'Briefe'                            , 'ca 1800 v. Chr.' , 3                  ),
+('buchdruck'          , 'Buchdruck'                         ,      '868'        , 3                  ),
+('morsetaste'         , 'Morsegerät/Relaisstation'          ,     '1833'        , 3                  ),
+('enigma'             , 'Enigma'                            ,     '1918'        , 3                  ),
+('glasfaser'          , 'Lichtwellenleiter'                 ,     '1960'        , 3                  ),
+('telephon'           , 'Telefon'                           ,     '1861'        , 3                  ),
+('ascii'              , 'ASCII'                             ,     '1963'        , 3                  ),
 
 -- diverse Kategorien
-('smartphone'    , 'Smartphone'                        ,     '1994'        , 3                  ),
-('chip'          , 'Rechner- / Speicherchip'           , 'ca. 1950'        , 1                  ),
-('wafer'         , 'Wafer'                             ,     '1960'        , 2                  ),
-('halbleiter'    , 'Halbleiter (Silicium)'             ,     '1874'        , 1                  );
+('smartphone'         , 'Smartphone'                        ,     '1994'        , 3                  ),
+('chip'               , 'Rechner- / Speicherchip'           , 'ca. 1950'        , 1                  ),
+('wafer'              , 'Wafer'                             ,     '1960'        , 2                  ),
+('halbleiter'         , 'Halbleiter (Silicium)'             ,     '1874'        , 1                  );
 
 
 
@@ -130,57 +131,58 @@ CREATE TABLE `tbl_reihenfolge` (
 
 
 INSERT INTO `tbl_reihenfolge`
-(`IDurl_fk`      , `kategorie_fk`, `ord`    ) VALUES
+(`IDurl_fk`           , `kategorie_fk`, `ord`    ) VALUES
 
 -- rechnen
-('abakus'        ,      1           ,   1      ),
-('rechenschieber',      1           ,   2      ),
-('pascaline'     ,      1           ,   3      ),
-('neperstaebchen',      1           ,   4      ),
-('binaersystem'  ,      1           ,   5      ),
-('zahlenschieber',      1           ,   6      ),
-('differenzenmaschine', 1           ,   7      ),
-('halbleiter'    ,      1           ,   8      ),
-('monkey'        ,      1           ,   9      ),
-('not_relais'    ,      1           ,  10      ),
-('computer'      ,      1           ,  11      ),
-('roehren'       ,      1           ,  12      ),
-('volladdierer'  ,      1           ,  13      ),
-('transistor'    ,      1           ,  14      ),
-('not_transistor',      1           ,  15      ),
-('chip'          ,      1           ,  16      ),
-('wafer'         ,      1           ,  17      ),
-('taschenrechner',      1           ,  18      ),
-('rpn_tr'        ,      1           ,  19      ),
-('smartphone'    ,      1           ,  20      ),
+('abakus'             ,             1 ,   1      ),
+('rechenschieber'     ,             1 ,   2      ),
+('pascaline'          ,             1 ,   3      ),
+('neperstaebchen'     ,             1 ,   4      ),
+('binaersystem'       ,             1 ,   5      ),
+('zahlenschieber'     ,             1 ,   6      ),
+('differenzenmaschine',             1 ,   7      ),
+('halbleiter'         ,             1 ,   8      ),
+('monkey'             ,             1 ,   9      ),
+('elektr_rechner'     ,             1 ,  10      ),
+('not_relais'         ,             1 ,  11      ),
+('computer'           ,             1 ,  12      ),
+('roehren'            ,             1 ,  13      ),
+('volladdierer'       ,             1 ,  14      ),
+('transistor'         ,             1 ,  15      ),
+('not_transistor'     ,             1 ,  16      ),
+('chip'               ,             1 ,  17      ),
+('wafer'              ,             1 ,  18      ),
+('taschenrechner'     ,             1 ,  19      ),
+('rpn_tr'             ,             1 ,  20      ),
+('smartphone'         ,             1 ,  21      ),
 
 -- speichern
-('amphore'       ,   2              ,   1      ),
-('buchdruck'     ,   2              ,   2      ),
-('lochkarte'     ,   2              ,   3      ),
-('halbleiter'    ,   2              ,   4      ),
-('magnetband'    ,   2              ,   5      ),
-('bit_relais'    ,   2              ,   6      ),
-('bit_transistor',   2              ,   7      ),
-('kernspeicher'  ,   2              ,   8      ),
-('chip'          ,   2              ,   9      ),
-('harddisk'      ,   2              ,  10      ),
-('wafer'         ,   2              ,  11      ),
-('diskette'      ,   2              ,  12      ),
-('cd'            ,   2              ,  13      ),
-('flash'         ,   2              ,  14      ),
-('smartphone'    ,   2              ,  15      ),
+('amphore'            ,             2 ,   1      ),
+('buchdruck'          ,             2 ,   2      ),
+('lochkarte'          ,             2 ,   3      ),
+('halbleiter'         ,             2 ,   4      ),
+('magnetband'         ,             2 ,   5      ),
+('bit_relais'         ,             2 ,   6      ),
+('bit_transistor'     ,             2 ,   7      ),
+('kernspeicher'       ,             2 ,   8      ),
+('chip'               ,             2 ,   9      ),
+('harddisk'           ,             2 ,  10      ),
+('wafer'              ,             2 ,  11      ),
+('diskette'           ,             2 ,  12      ),
+('cd'                 ,             2 ,  13      ),
+('flash'              ,             2 ,  14      ),
+('smartphone'         ,             2 ,  15      ),
 
 -- kommunizieren
-('schrift'       ,   3              ,   1      ),
-('brief'         ,   3              ,   2      ),
-('buchdruck'     ,   3              ,   3      ),
-('morsetaste'    ,   3              ,   4      ),
-('telephon'      ,   3              ,   5      ),
-('enigma'        ,   3              ,   6      ),
-('glasfaser'     ,   3              ,   7      ),
-('ascii'         ,   3              ,   8      ),
-('smartphone'    ,   3              ,   9      );
+('schrift'            ,             3 ,   1      ),
+('brief'              ,             3 ,   2      ),
+('buchdruck'          ,             3 ,   3      ),
+('morsetaste'         ,             3 ,   4      ),
+('telephon'           ,             3 ,   5      ),
+('enigma'             ,             3 ,   6      ),
+('glasfaser'          ,             3 ,   7      ),
+('ascii'              ,             3 ,   8      ),
+('smartphone'         ,             3 ,   9      );
 
 
 
@@ -215,8 +217,9 @@ INSERT INTO `tbl_exponat`
 (1009 , '1975'         , 'Taschenrechner Privileg 853 M'                      , 'R_009_t'     , true       ),
 (1010 , '1981'         , 'Pocket Computer (PC)'                               , 'R_010_s'     , true       ),
 (1011 , 'ca 1950'      , 'Teil eines Röhrenrechners'                          , 'R_007_e'     , true       ),
-(1012 , 'ca 1982'      , 'Wissenschaftlicher Taschenrechner HP 15C'           , 'R_011_h'     , false       ),
+(1012 , 'ca 1982'      , 'Wissenschaftlicher Taschenrechner HP 15C'           , 'R_011_h'     , false      ),
 (1013 , '1972'         , 'Wissenschaftlicher Taschenrechner HP 35'            , 'R_012_h'     , true       ),
+(1014 , '????'         , 'Elektromechanischer Tischrechner'                   , 'R_013_e'     , true       ),
 -- speichern
 (2001 , '2016'         , 'Nachbildung Etruskischer Amphore aus Popolonio'     , 'S_001_a'     , true       ),
 (2002 , '2019'         , 'Nachbildung aus dem 3D-Drucker'                     , 'S_002_a'     , true       ),
@@ -259,184 +262,75 @@ CREATE TABLE `tbl_bild` (
 
 
 INSERT INTO `tbl_bild`
-(`ID`   , `filename`                       , `bildrechte`   , `alt_text`                                                                                                ,
-                                                              `bildlegende`                                                                                            )
+(`ID`   , `filename`                                    , `bildrechte`   , `alt_text`                                                  , `bildlegende`                                                                                            )
 VALUES
 -- RECHNEN
-(  1001 , 'abakus.png'                     , 'phi@smoch.ch' , 'Abakus (Zählrahmen aus Holz)'                                                                            ,
-                                                              'Chinesischer Abakus neu'                                                                                ),
-
-(  1002 , 'pascaline.jpg'                  , 'phi@smoch.ch' , 'Pascaline'                                                                                               ,
-                                                              'Pascaline: Diese Rechenmaschine nach Blaise Pascal steht im Deutschen Museum in München (Foto 2018)'    ),
-
-(  1003 , 'zahlenschieber.png'             , 'phi@smoch.ch' , 'Zahlenschieber Addimult'                                                                                 ,
-                                                              'Mechanischer Zahlenschieber "Addimult" aus Metall'                                                      ),
-
-(  1004 , 'rechenschieber.png'             , 'phi@smoch.ch' , 'Rechenschieber'                                                                                          ,
-                                                              'Logarithmischer Rechenschieber (Aristo Nr. 69)'                                                        ),
-
-(  1005 , 'zuse/zuse_z3_a.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3'                                                                                            ,
-                                                              'Zuse Z3 Deutsches Museum (Foto 2018)'                                                                   ),
-
-(  1006 , 'zuse/zuse_z3_b.jpg'                  , 'phi@smoch.ch' , 'Zuse Z3'                                                                                            ,
-                                                              'Zuse Z3 Deutsches Museum (Foto 2018)'                                                                   ),
-
-(  1007 , 'zuse/zuse_z4.jpg'                    , 'phi@smoch.ch' , 'Zuse Z4'                                                                                            ,
-                                                              'Zuse Z4 Deutsches Museum (Foto 2018)'                                                                   ),
-
-(  1008 , 'zuse/zuse_z4_eingabetastatur.jpg'    , 'phi@smoch.ch' , 'Zuse Z4 Eingabetastatur'                                                                            ,
-                                                              'Zuse Z4 Eingabetastatur (Deutsches Museum in München / Foto 2018)'                                      ),
-
-(  1009 , 'not/relais_nachbau_schema.png'    , 'phi@smoch.ch' , 'Schema (elektronisch) für das NOT-Gatter mit Relais'                                                   ,
-                                                              'Schema für ein NOT-Gatter mittels Relais'                                                               ),
-
-(  1010 , 'not/transistor_nachbau_schema.png', 'phi@smoch.ch' , 'Schema (elektronisch) für das NOT-Gatter mit Transistoren'                                             ,
-                                                              'Schema (elektronisch), um ein NOT-Gatter mittels Tranistoren zu bauen.'                                 ),
-
-(  1011 , 'differenzenmaschine.png'        , 'phi@smoch.ch' , 'Foto Differenzenmaschine'                                                                                ,
-                                                              'Ch. Babbage: Differenzenmaschine im Da Vinci Museum in Mailand'                                         ),
-
-(  1012 , 'volladdierer/schema.png '       , 'phi@smoch.ch' , 'Schema (elektronisch) für den Volladdierer'                                                              ,
-                                                              'Schema, um einen Volladdierer zu bauen.'                                                                ),
-
-(  1013 , 'transistor.png ',    'phi@smoch.ch' , 'Transistoren'                                                                                                         ,
-                                                              'Transistoren'                                                                                           ),
-
-(  1014 , 'not/relais_nachbau.png ',    'phi@smoch.ch' , 'NOT Nachbau mit Relais'                                                                                       ,
-                                                              'NOT Nachbau mit Relais'                                                                                 ),
-
-(  1015 , 'monkey.png ',    'phi@smoch.ch' , 'The educated Monkey'                                                                                                      ,
-                                                              'The educated Monkey'                                                                                    ),
-
-(  1016 , 'rechnerchip.png'            , 'phi@smoch.ch' , 'Rechnerchip CD74HCT86E (xor)'                                                                                ,
-                                                              'Computerchip im Gehäuse'                                                                                ),
-
-(  1017 , 'roehren/roehre.png'                 , 'phi@smoch.ch' , 'Verstärkerröhre'                                                                                             ,
-                                                              'Verstärkerröhre'                                                                                        ),
-
-(  1018 , 'not/transistor_nachbau.png'                 , 'phi@smoch.ch' , 'elektronische Schaltung (NOT)'                                                               ,
-                                                              'Nachbau einer NOT-Schaltung mit Transistoren'                                                           ),
-
-(  1019 , 'neperstaebchen.png'                 , 'phi@smoch.ch' , 'Holzstäbe mit Zahlen'                                                                                ,
-                                                              'Neperstäbchen (Foto aus dem Deutschen Museum)'                                                          ),
-
-(  1020 , 'binaer.png'                          , 'phi@smoch.ch' , 'Nullen und Einsen'                                                                                  ,
-                                                              'Binäre Darstellung von Zahlen und Zeichen'                                                              ),
-
-(  1021 , 'volladdierer/transistor_nachbau.png'                          , 'phi@smoch.ch' , 'Schlatung'                                                                                  ,
-                                                              'Volladdierer mit Transistoren nachgebaut'                                                               ),
-
-(  1022 , 'taschenrechner.png'                          , 'phi@smoch.ch' , 'Taschenrechner'                                                                             ,
-                                                              'Taschenrechner'                                                                                         ),
-
-(  1023 , 'pc1500.png'                            , 'phi@smoch.ch' , 'Pocket Computer'                                                                             ,
-                                                              'PC 1500 (Sharp): Pocket Computer'                                                                                         ),
-(  1024 , 'roehren/RoehrenAlt.png'                 , 'phi@smoch.ch' , 'Röhren'                                                                                             ,
-                                                              'Röhren aus einem «Elektronengehirn»'                                                                                        ),
-(  1025 , 'HP15C.png'                              , 'phi@smoch.ch' , 'Wissenschaftlicher Taschenrechner'                                                                                             ,
-                                                              'Wissenschaftlicher Taschenrechner HP-15C'                                                                                        ),
-(  1026 , 'HP35.png'                               , 'phi@smoch.ch' , 'Wissenschaftlicher Taschenrechner'                                                                                             ,
-                                                              'Wissenschaftlicher Taschenrechner HP-35'                                                                                        ),																															
-
+(  1001 , 'abakus.png'                                  , 'phi@smoch.ch' , 'Abakus (Zählrahmen aus Holz)'                               , 'Chinesischer Abakus neu'                                                                                ),
+(  1002 , 'pascaline.jpg'                               , 'phi@smoch.ch' , 'Pascaline'                                                  , 'Pascaline: Diese Rechenmaschine nach Blaise Pascal steht im Deutschen Museum in München (Foto 2018)'    ),
+(  1003 , 'zahlenschieber.png'                          , 'phi@smoch.ch' , 'Zahlenschieber Addimult'                                    , 'Mechanischer Zahlenschieber "Addimult" aus Metall'                                                      ),
+(  1004 , 'rechenschieber.png'                          , 'phi@smoch.ch' , 'Rechenschieber'                                             , 'Logarithmischer Rechenschieber (Aristo Nr. 69)'                                                         ),
+(  1005 , 'zuse/zuse_z3_a.jpg'                          , 'phi@smoch.ch' , 'Zuse Z3'                                                    , 'Zuse Z3 Deutsches Museum (Foto 2018)'                                                                   ),
+(  1006 , 'zuse/zuse_z3_b.jpg'                          , 'phi@smoch.ch' , 'Zuse Z3'                                                    , 'Zuse Z3 Deutsches Museum (Foto 2018)'                                                                   ),
+(  1007 , 'zuse/zuse_z4.jpg'                            , 'phi@smoch.ch' , 'Zuse Z4'                                                    , 'Zuse Z4 Deutsches Museum (Foto 2018)'                                                                   ),
+(  1008 , 'zuse/zuse_z4_eingabetastatur.jpg'            , 'phi@smoch.ch' , 'Zuse Z4 Eingabetastatur'                                    , 'Zuse Z4 Eingabetastatur (Deutsches Museum in München / Foto 2018)'                                      ),
+(  1009 , 'not/relais_nachbau_schema.png'               , 'phi@smoch.ch' , 'Schema (elektronisch) für das NOT-Gatter mit Relais'        , 'Schema für ein NOT-Gatter mittels Relais'                                                               ),
+(  1010 , 'not/transistor_nachbau_schema.png'           , 'phi@smoch.ch' , 'Schema (elektronisch) für das NOT-Gatter mit Transistoren'  , 'Schema (elektronisch), um ein NOT-Gatter mittels Tranistoren zu bauen.'                                 ),
+(  1011 , 'differenzenmaschine.png'                     , 'phi@smoch.ch' , 'Foto Differenzenmaschine'                                   , 'Ch. Babbage: Differenzenmaschine im Da Vinci Museum in Mailand'                                         ),
+(  1012 , 'volladdierer/schema.png '                    , 'phi@smoch.ch' , 'Schema (elektronisch) für den Volladdierer'                 , 'Schema, um einen Volladdierer zu bauen.'                                                                ),
+(  1013 , 'transistor.png '                             , 'phi@smoch.ch' , 'Transistoren'                                               , 'Transistoren'                                                                                           ),
+(  1014 , 'not/relais_nachbau.png '                     , 'phi@smoch.ch' , 'NOT Nachbau mit Relais'                                     , 'NOT Nachbau mit Relais'                                                                                 ),
+(  1015 , 'monkey.png '                                 , 'phi@smoch.ch' , 'The educated Monkey'                                        , 'The educated Monkey'                                                                                    ),
+(  1016 , 'rechnerchip.png'                             , 'phi@smoch.ch' , 'Rechnerchip CD74HCT86E (xor)'                               , 'Computerchip im Gehäuse'                                                                                ),
+(  1017 , 'roehren/roehre.png'                          , 'phi@smoch.ch' , 'Verstärkerröhre'                                            , 'Verstärkerröhre'                                                                                        ),
+(  1018 , 'not/transistor_nachbau.png'                  , 'phi@smoch.ch' , 'elektronische Schaltung (NOT)'                              , 'Nachbau einer NOT-Schaltung mit Transistoren'                                                           ),
+(  1019 , 'neperstaebchen.png'                          , 'phi@smoch.ch' , 'Holzstäbe mit Zahlen'                                       , 'Neperstäbchen (Foto aus dem Deutschen Museum)'                                                          ),
+(  1020 , 'binaer.png'                                  , 'phi@smoch.ch' , 'Nullen und Einsen'                                          , 'Binäre Darstellung von Zahlen und Zeichen'                                                              ),
+(  1021 , 'volladdierer/transistor_nachbau.png'         , 'phi@smoch.ch' , 'Schlatung'                                                  , 'Volladdierer mit Transistoren nachgebaut'                                                               ),
+(  1022 , 'taschenrechner.png'                          , 'phi@smoch.ch' , 'Taschenrechner'                                             , 'Taschenrechner'                                                                                         ),
+(  1023 , 'pc1500.png'                                  , 'phi@smoch.ch' , 'Pocket Computer'                                            , 'PC 1500 (Sharp): Pocket Computer'                                                                       ),
+(  1024 , 'roehren/RoehrenAlt.png'                      , 'phi@smoch.ch' , 'Röhren'                                                     , 'Röhren aus einem «Elektronengehirn»'                                                                    ),
+(  1025 , 'HP15C.png'                                   , 'phi@smoch.ch' , 'Wissenschaftlicher Taschenrechner'                          , 'Wissenschaftlicher Taschenrechner HP-15C'                                                               ),
+(  1026 , 'HP35.png'                                    , 'phi@smoch.ch' , 'Wissenschaftlicher Taschenrechner'                          , 'Wissenschaftlicher Taschenrechner HP-35'                                                                ),
+(  1027 , 'elektr_rechner.png'                          , 'phi@smoch.ch' , 'Elektromechanischer Tischrechner'                           , 'Elektromechanischer Tischrechner'                                                                       ),
 
 -- speichern
-(  2001 , 'amphora/amphore_etruskisch.png'         , 'phi@smoch.ch' , 'Amphore aus Ton'                                                                                 ,
-                                                              'Etruskische Amphore: Nachbildung aus Popolonio'                                                         ),
-
-(  2002 , 'amphora/amphore_3d_druck.png'           , 'phi@smoch.ch' , 'Amphore aus Plastik'                                                                             ,
-                                                              'Amphore dem 3D-Drucker (Prusa)'                                                                         ),
-
-(  2003 , 'amphora/Athena_Herakles_Staatliche_Antikensammlungen_2301.jpg', 'http://www.wikimedia.org' , 'Athena Herakles Staatliche Antikensammlungen'                  ,
-                                                              'Athena Herakles Staatliche Antikensammlungen (Bild wikimedia.org)'                                      ),
-
-(  2004 , 'diskette35.png'                 , 'phi@smoch.ch' , 'Diskette 3.5 Zoll'                                                                                       ,
-                                                              'Diskette 3.5 Zoll (S.u.S.E Linux Install Disk)'                                                         ),
-
-
-(  2005 , 'cd-ubuntu.png'                  , 'phi@smoch.ch' , 'Compct Disk (CD)'                                                                                        ,
-                                                              'Compact Disk (Daten: Ubuntu V8.10 Install CD)'                                                          ),
-
-(  2006 , 'cd-vince.png'                   , 'phi@smoch.ch' , 'Compct Disk (CD)'                                                                                        ,
-                                                              'Audio CD (Vince Eberts: Ur-Knaller)'                                                                    ),
-
-(  2008 , 'bit/relais_nachbau_schema.png'    , 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Relais'                                                  ,
-                                                              'Schema  um ein Bit mittels Relais zu speichern'                                                         ),
-
-(  2009 , 'bit/transistor_nachbau_schema.png', 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Transistoren'                                            ,
-                                                              'Schema um ein Bit mittels Transistoren zu speichern'                                                    ),
-
-(  2010 , 'harddisk/harddisk.png'          , 'phi@smoch.ch' , 'Harddisk offen'                                                                                          ,
-                                                              'Harddisk geöffnet (Speicherkapazität unbekannt)'                                                        ),
-
-(  2011 , 'lochkarte.png'                  , 'phi@smoch.ch' , 'Lochkarte'                                                                                               ,
-                                                              'Lochkarte'                                                                                              ),
-
-(  2012 , 'kernspeicher/kernspeicher_ringe.jpg'                  , 'phi@smoch.ch' , 'Kernspeicher Ringe'                                                                ,
-                                                              'Ringe eines Kenrspeichers'                                                                              ),
-
-(  2013 , 'kernspeicher/kernspeicher_modul.png'                  , 'phi@smoch.ch' , 'Kernspeichermodul'                                                                 ,
-                                                              'Kernspeichermodul'                                                                                      ),
-
-(  2014 , 'kernspeicher/kernspeicher_seitenansicht.jpg'                  , 'phi@smoch.ch' , 'Kernspeicher'                                                              ,
-                                                              'Kernspeicher'                                                                                           ),
-
-(  2015 , 'magnetband.png'                 , 'phi@smoch.ch' , 'Magnetband'                                                                                             ,
-                                                              'Magentband'                                                                                             ),
-
-(  2016 , 'speicherchip.png'               , 'phi@smoch.ch' , 'Speicherchip C04040BE (Flip-Flop)'                                                                       ,
-                                                              'Speicherchip im Gehäuse'                                                                                ),
-
-(  2017 , 'bit/transistor_nachbau.png'     , 'phi@smoch.ch' , 'Elektronische Schaltung'                                                                                 ,
-                                                              'Bit nachgebaut mittels Transistoner (Flip-Flop)'                                                        ),
-
-(  2018 , 'flash/compactFlash8mb.png'      , 'phi@smoch.ch' , 'Compact Flash 8MB'                                                                                       ,
-                                                              'Flash Speicherkarte'                                                                                    ),
-(  2019 , 'flash/compactFlash8mbTop.png'   , 'phi@smoch.ch' , 'Compact Flash 8MB'                                                                                       ,
-                                                              'Flash Speicherkarte'                                                                                    ),
-(  2020 , 'kernspeicher/kernspeicher_ringe2.jpg'                 , 'phi@smoch.ch' , 'Kernspeicher'                                                                     ,
-                                                              'Kernspeicher'                                                        ),
-(  2021 , 'harddisk/HardDiskGross.png'     , 'phi@smoch.ch' , 'Harddisk'                                                                     ,
-                                                              'Harddisk'                                                        ),
-
-(  2022 , 'buch_petra.jpg'                 ,'phi@smoch.ch' ,  'Buch' ,
-                                                              '«Petra»'),
+(  2001 , 'amphora/amphore_etruskisch.png'              , 'phi@smoch.ch' , 'Amphore aus Ton'                                            , 'Etruskische Amphore: Nachbildung aus Popolonio'                                                         ),
+(  2002 , 'amphora/amphore_3d_druck.png'                , 'phi@smoch.ch' , 'Amphore aus Plastik'                                        , 'Amphore dem 3D-Drucker (Prusa)'                                                                         ),
+(  2003 , 'amphora/Athena_Herakles_Staatliche_Antikensammlungen_2301.jpg', 'http://www.wikimedia.org' , 'Athena Herakles Staatliche Antikensammlungen' , 'Athena Herakles Staatliche Antikensammlungen (Bild wikimedia.org)'                       ),
+(  2004 , 'diskette35.png'                              , 'phi@smoch.ch' , 'Diskette 3.5 Zoll'                                          , 'Diskette 3.5 Zoll (S.u.S.E Linux Install Disk)'                                                         ),
+(  2005 , 'cd-ubuntu.png'                               , 'phi@smoch.ch' , 'Compct Disk (CD)'                                           , 'Compact Disk (Daten: Ubuntu V8.10 Install CD)'                                                          ),
+(  2006 , 'cd-vince.png'                                , 'phi@smoch.ch' , 'Compct Disk (CD)'                                           , 'Audio CD (Vince Eberts: Ur-Knaller)'                                                                    ),
+(  2008 , 'bit/relais_nachbau_schema.png'               , 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Relais'       , 'Schema  um ein Bit mittels Relais zu speichern'                                                         ),
+(  2009 , 'bit/transistor_nachbau_schema.png'           , 'phi@smoch.ch' , 'Schema (elektronisch) für den Bitspeicher mit Transistoren' , 'Schema um ein Bit mittels Transistoren zu speichern'                                                    ),
+(  2010 , 'harddisk/harddisk.png'                       , 'phi@smoch.ch' , 'Harddisk offen'                                             , 'Harddisk geöffnet (Speicherkapazität unbekannt)'                                                        ),
+(  2011 , 'lochkarte.png'                               , 'phi@smoch.ch' , 'Lochkarte'                                                  , 'Lochkarte'                                                                                              ),
+(  2012 , 'kernspeicher/kernspeicher_ringe.jpg'         , 'phi@smoch.ch' , 'Kernspeicher Ringe'                                         , 'Ringe eines Kenrspeichers'                                                                              ),
+(  2013 , 'kernspeicher/kernspeicher_modul.png'         , 'phi@smoch.ch' , 'Kernspeichermodul'                                          , 'Kernspeichermodul'                                                                                      ),
+(  2014 , 'kernspeicher/kernspeicher_seitenansicht.jpg' , 'phi@smoch.ch' , 'Kernspeicher'                                               , 'Kernspeicher'                                                                                           ),
+(  2015 , 'magnetband.png'                              , 'phi@smoch.ch' , 'Magnetband'                                                 , 'Magentband'                                                                                             ),
+(  2016 , 'speicherchip.png'                            , 'phi@smoch.ch' , 'Speicherchip C04040BE (Flip-Flop)'                          , 'Speicherchip im Gehäuse'                                                                                ),
+(  2017 , 'bit/transistor_nachbau.png'                  , 'phi@smoch.ch' , 'Elektronische Schaltung'                                    , 'Bit nachgebaut mittels Transistoner (Flip-Flop)'                                                        ),
+(  2018 , 'flash/compactFlash8mb.png'                   , 'phi@smoch.ch' , 'Compact Flash 8MB'                                          , 'Flash Speicherkarte'                                                                                    ),
+(  2019 , 'flash/compactFlash8mbTop.png'                , 'phi@smoch.ch' , 'Compact Flash 8MB'                                          , 'Flash Speicherkarte'                                                                                    ),
+(  2020 , 'kernspeicher/kernspeicher_ringe2.jpg'        , 'phi@smoch.ch' , 'Kernspeicher'                                               , 'Kernspeicher'                                                                                           ),
+(  2021 , 'harddisk/HardDiskGross.png'                  , 'phi@smoch.ch' , 'Harddisk'                                                   , 'Harddisk'                                                                                               ),
+(  2022 , 'buch_petra.jpg'                              , 'phi@smoch.ch' , 'Buch'                                                       , '«Petra»'                                                                                                ),
 
 -- kommunizieren
-(  3001 , 'keilschrift.jpg'                , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                                                                     ,
-                                                              'Keilschrift auf Ton; Auszug Gesetzbuch Hammurabis (Bild: Erik Nitsche «In Wort und Bild»)'              ),
-
-(  3002 , 'telephon.png'                   , 'phi@smoch.ch' , 'Telephon'                                                                                                ,
-                                                              'Kurbeltelephon'                                                                                         ),
-
-(  3003 , 'morsetaste.png'                 , 'phi@smoch.ch' , 'Morsetaste'                                                                                              ,
-                                                              'Morsetaste'                                                                                             ),
-
-(  3005 , 'enigma1.png'                    , 'phi@smoch.ch' , 'Rotor-Schlüsselmaschine'                                                                                 ,
-                                                              'Enigma'                                                                                                 ),
-
-(  3006 , 'enigma2.png'                    , 'phi@smoch.ch' , 'Walzen zur Rotor-Schlüsselmaschine'                                                                      ,
-                                                              'Enigma'                                                                                                 ),
-(  3007 , 'brief.png'                      , 'phi@smoch.ch' , 'Brief Dr. Wander 1920'                                                                      ,
-                                                              'Brief'                                                                                                 ),
-
+(  3001 , 'keilschrift.jpg'                             , 'phi@smoch.ch' , 'Keilschrift auf Ton'                                        , 'Keilschrift auf Ton; Auszug Gesetzbuch Hammurabis (Bild: Erik Nitsche «In Wort und Bild»)'              ),
+(  3002 , 'telephon.png'                                , 'phi@smoch.ch' , 'Telephon'                                                   , 'Kurbeltelephon'                                                                                         ),
+(  3003 , 'morsetaste.png'                              , 'phi@smoch.ch' , 'Morsetaste'                                                 , 'Morsetaste'                                                                                             ),
+(  3005 , 'enigma1.png'                                 , 'phi@smoch.ch' , 'Rotor-Schlüsselmaschine'                                    , 'Enigma'                                                                                                 ),
+(  3006 , 'enigma2.png'                                 , 'phi@smoch.ch' , 'Walzen zur Rotor-Schlüsselmaschine'                         , 'Enigma'                                                                                                 ),
+(  3007 , 'brief.png'                                   , 'phi@smoch.ch' , 'Brief Dr. Wander 1920'                                      , 'Brief'                                                                                                  ),
 
 -- diverse
-(  9001 , 'smartphone/smartphone_htc_desire.png'      , 'phi@smoch.ch' , 'Smartphone'                                                                                   ,
-                                                              'Smartphone HTC Desire'                                                                                  ),
-
-(  9002 , 'halbleiter.png'                 , 'phi@smoch.ch' , 'Siliziumkristall'                                                                                        ,
-                                                              'Silizium: Eines der häufigsten Elemente: Daraus werden die meisten Halbleiter gebaut.'                  ),
-
-(  9003 , 'wafer/wafer.png'                , 'phi@smoch.ch' , 'Waferplatte'                                                                                             ,
-                                                              'Waferplatte, wie sie für die Chip Herstellung verwendet wird.'                                          ),
-
-(  9004 , 'wafer/wafer_mikroskop.jpg'      , 'phi@smoch.ch' , 'Mikroskopie eines Wafers (Ausschnitt)'                                                                   ,
-                                                              'Auschnitt Mikroskopier (Wafer)'                                                                         ),
-(  9005 , 'gutenbergBibel.jpg'             , 'wikimedia.org (2020)', 'Gedruckte Buchseite'                                                                              ,
-                                                              'Auschnitt aus der Gutenberg-Bibel (Quelle: Wikimedia.org 2020)'                                         ),
-(  9006 , 'smartphone/nokia.png'           , 'phi@smoch.ch' , 'Smartphone'                                                                                              ,
-                                                              'Nokia 6150 SAT Smartphone'                                                                              );
-
+(  9001 , 'smartphone/smartphone_htc_desire.png'        , 'phi@smoch.ch' , 'Smartphone'                                                 , 'Smartphone HTC Desire'                                                                                  ),
+(  9002 , 'halbleiter.png'                              , 'phi@smoch.ch' , 'Siliziumkristall'                                           , 'Silizium: Eines der häufigsten Elemente: Daraus werden die meisten Halbleiter gebaut.'                  ),
+(  9003 , 'wafer/wafer.png'                             , 'phi@smoch.ch' , 'Waferplatte'                                                , 'Waferplatte, wie sie für die Chip Herstellung verwendet wird.'                                          ),
+(  9004 , 'wafer/wafer_mikroskop.jpg             '      , 'phi@smoch.ch' , 'Mikroskopie eines Wafers (Ausschnitt)'                      , 'Auschnitt Mikroskopier (Wafer)'                                                                         ),
+(  9005 , 'gutenbergBibel.jpg'                          , 'wikimedia.org (2020)', 'Gedruckte Buchseite'                                 , 'Auschnitt aus der Gutenberg-Bibel (Quelle: Wikimedia.org 2020)'                                         ),
+(  9006 , 'smartphone/nokia.png'                        , 'phi@smoch.ch' , 'Smartphone'                                                 , 'Nokia 6150 SAT Smartphone'                                                                              );
 
 
 -- -----------------------------------------------------
@@ -481,6 +375,8 @@ INSERT INTO `tbl_erfindungsbild`
 ('taschenrechner',  1   ,   1022    ),  -- Taschenrechner
 ('rpn_tr'        ,  1   ,   1026    ),  -- Wissenschaftlicher TR HP 35
 ('rpn_tr'        ,  2   ,   1025    ),  -- Wissenschaftlicher Taschenrechner HP 15C
+('elektr_rechner',  1   ,   1027    ),  -- Elektromechanischer Tischrechner
+
 -- speichern
 ('amphore'       ,  1   ,   2001    ),  -- Amphora Etruskisch Popolonio
 ('amphore'       ,  2   ,   2002    ),  -- 3D-Drucker Amhpore
@@ -547,6 +443,8 @@ INSERT INTO `tbl_exponatbild`
 (  1010       ,   1023    ,  1   ), -- PC 1500 Sharp
 (  1013       ,   1026    ,  1   ), -- HP 35
 (  1012       ,   1025    ,  2   ), -- HP 15 C
+(  1014       ,   1027    ,  1   ), -- Elektromechanischer Tischrechner
+
 -- speichern
 (  2001       ,   2001    ,  1   ), -- Etruskische Amphoore Popolonio
 (  2002       ,   2002    ,  1   ), -- Amphore Bild aus dem 3DDrucker
@@ -607,6 +505,7 @@ INSERT INTO `tbl_erfindungsexponat`
 ('computer'      ,  1010        ,  1   ),
 ('rpn_tr'        ,  1013        ,  1   ),
 ('rpn_tr'        ,  1012        ,  2   ),
+('elektr_rechner',  1014        ,  1   ),
 
 -- speichern
 ('amphore'       ,  2001        ,  1   ),
@@ -710,6 +609,7 @@ INSERT INTO `tbl_editor`
 ('computer'      , 1),
 ('taschenrechner', 1),
 ('rpn_tr'        , 1),
+('elektr_rechner', 1),
 -- speichern
 ('amphore'       , 1),
 ('harddisk'      , 1),
