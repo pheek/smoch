@@ -76,7 +76,7 @@ INSERT INTO `tbl_erfindung`
 ('zahlenschieber'     , 'Zahlenschieber (Addiator)'         , 'ca. 1700'        , 1                  ),
 ('differenzenmaschine', 'Differenzenmaschine'               ,     '1822'        , 1                  ),
 ('monkey'             , 'Educated Monkey'                   ,     '1916'        , 1                  ),
-('elektr_rechner'     , 'Elektriomechanischer Rechner'      ,     '1927'        , 1                  ),
+('elektr_rechner'     , 'Elektromechanischer Rechner'       , 'ca. 1925'        , 1                  ),
 ('computer'           , 'Computer'                          ,     '1937'        , 1                  ),
 ('not_relais'         , 'NOT realisiert mit Relais'         ,     '1941'        , 1                  ),
 ('roehren'            , 'Röhrenrechner'                     ,     '1942'        , 1                  ),
